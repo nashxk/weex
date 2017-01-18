@@ -348,8 +348,7 @@
             var size = j === 1 
                       ? Math.floor(Math.random() * 8 + 10) 
                       : Math.floor(Math.random() * 6 + 3),
-                velocity = (0.01 - 0.00025*size) 
-                          * ((0.5 - Math.random()) >= 0 ? 1: -1),
+                velocity = 1 / ((size - 3) * 45),
                 planet = new Planet(size, '#fff', velocity)
 
             orbit.addPlanet(planet)
@@ -443,6 +442,7 @@
      */
     function initLayerAnim () {
       var featureScene = document.querySelector('.feature')
+      var img_level_1 = featureScene.querySelector('.level1')
       var img_level_2 = featureScene.querySelector('.level2')
       var img_level_3 = featureScene.querySelector('.level3')
       var img_level_4 = featureScene.querySelector('.level4')
@@ -451,22 +451,16 @@
         threshold: -30,
         appear: function (el, offset) {
           var layerSequence = [
-            { e: img_level_4, p: { translateX: '-20px', translateY: '-112px' }, o: { easing: 'ease-out', duration: 900 } },
-            { e: img_level_3, p: { translateX: '-10px', translateY: '-75px' }, o: { easing: 'ease-out', duration: 700, sequenceQueue: false } },
-            { e: img_level_2, p: { translateX: '5px', translateY: '-35px' }, o: { easing: 'ease-out', duration: 500, sequenceQueue: false  } }
+            { e: img_level_1, p: { left: '0px' }, o: { easing: 'ease-out', duration: 700 } },
+            { e: img_level_2, p: { left: '15px' }, o: { easing: 'ease-out', duration: 700}},
+            { e: img_level_3, p: { left: '15px' }, o: { easing: 'ease-out', duration: 700 } },
+            { e: img_level_4, p: { left: '-15px' }, o: { easing: 'ease-out', duration: 700 } }
           ]
 
           Velocity.RunSequence(layerSequence)
           this._destroy()
         }
       })
-
-      // var vueEl = document.querySelector('.supporting-vue')
-      // var vueScroll = new AppearController(vueEl, {
-      //   threshold: -30,
-      //   callback: function (el, offset) {
-      //   }
-      // })
     }
 
     initLayerAnim()

@@ -25,7 +25,7 @@ SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可�
 前期准备
 已经安装了JDK version&amp;gt;=1.7 并配置了环境变量
 已经">
-<meta property="og:updated_time" content="2017-01-17T06:18:07.000Z">
+<meta property="og:updated_time" content="2017-01-17T07:38:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集成 Weex 到已有应用">
 <meta name="twitter:description" content="集成 Weex 到已有应用集成到 Android注：以下文档都是假设您已经具备一定的Android开发经验。
@@ -383,7 +383,7 @@ SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可�
       </h1>
     
   
-  <time class="article-date" datetime="2017-01-17T06:18:07.000Z">Updated time: 17/01/2017</time>
+  <time class="article-date" datetime="2017-01-17T07:38:46.000Z">Updated time: 17/01/2017</time>
 </header>
     <h1 id="集成-Weex-到已有应用"><a href="#集成-Weex-到已有应用" class="headerlink" title="集成 Weex 到已有应用"></a>集成 Weex 到已有应用</h1><h2 id="集成到-Android"><a href="#集成到-Android" class="headerlink" title="集成到 Android"></a>集成到 Android</h2><p>注：以下文档都是假设您已经具备一定的Android开发经验。</p>
 <h3 id="Android-集成有两种方式"><a href="#Android-集成有两种方式" class="headerlink" title="Android 集成有两种方式"></a>Android 集成有两种方式</h3><ol>
@@ -427,33 +427,31 @@ SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可�
 </ol>
 <h4 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h4><p>WXSample地址</p>
 <p><code>https://github.com/xkli/WXSample.git</code></p>
-<h2 id="集成到-iOS"><a href="#集成到-iOS" class="headerlink" title="集成到 iOS"></a>集成到 iOS</h2><h3 id="cocoaPods-引入-Weex-iOS-SDK到工程"><a href="#cocoaPods-引入-Weex-iOS-SDK到工程" class="headerlink" title="cocoaPods 引入 Weex iOS SDK到工程"></a>cocoaPods 引入 Weex iOS SDK到工程</h3><p>可以通过源码编译出 Weex SDK，可以在新的 feature 或者 bugfix 分支，尝试最新的 feature</p>
-<h4 id="cocoaPods集成"><a href="#cocoaPods集成" class="headerlink" title="cocoaPods集成"></a>cocoaPods集成</h4><p>  假设你已经完成了安装<a href="https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html" target="_blank" rel="external">iOS 开发环境</a> 和 <a href="https://guides.cocoapods.org/using/getting-started.html" target="_blank" rel="external">CocoaPods</a></p>
-<ol>
-<li><p>从 github 上 clone 一份代码    </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">git clone https://github.com/alibaba/weex.git</div></pre></td></tr></table></figure>
+<h2 id="集成到-iOS"><a href="#集成到-iOS" class="headerlink" title="集成到 iOS"></a>集成到 iOS</h2><h3 id="通过cocoaPods-集成-Weex-iOS-SDK到你的项目"><a href="#通过cocoaPods-集成-Weex-iOS-SDK到你的项目" class="headerlink" title="通过cocoaPods 集成 Weex iOS SDK到你的项目"></a>通过cocoaPods 集成 Weex iOS SDK到你的项目</h3><p>首先假设你已经完成了安装 <a href="https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html" target="_blank" rel="external">iOS 开发环境</a> 和 <a href="https://guides.cocoapods.org/using/getting-started.html" target="_blank" rel="external">CocoaPods</a></p>
+<h4 id="第一步：添加依赖"><a href="#第一步：添加依赖" class="headerlink" title="第一步：添加依赖"></a>第一步：添加依赖</h4><p>导入 Weex iOS SDK 到你已有的项目, 如果没有，可以<a href="https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html" target="_blank" rel="external">参考</a>新建项目<br>在继续下面内容之前，确保你已有的项目目录有名称为 <code>Podfile</code> 文件，如果没有，创建一个，用文本编辑器打开</p>
+<ul>
+<li><p>集成 framework  </p>
+<p>WeexSDK  在 cocoaPods 上最新版本 可以在<a href="https://cocoapods.org/pods/WeexSDK" target="_blank" rel="external">这</a>获取   </p>
+<p>在 <code>Podfile</code> 文件中添加如下内容</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">source &apos;git@github.com:CocoaPods/Specs.git&apos; </div><div class="line">target &apos;YourTarget&apos; do</div><div class="line">    platform :ios, &apos;7.0&apos; </div><div class="line">    pod &apos;WeexSDK&apos;, &apos;0.9.5&apos;   ## 建议使用WeexSDK新版本 </div><div class="line">end</div></pre></td></tr></table></figure>
 </li>
-<li><p>把 WeexSDK 导入到你已有的项目，如果没有，可以<a href="https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html" target="_blank" rel="external">参考</a>新建项目<br>拷贝 <code>ios/sdk</code> 下面目录到你的项目目录，在添加依赖之前，确保项目目录有 <code>Podfile</code>，如果没有，创建一个，用文本编辑器打开，添加如下依赖</p>
-<p> 如果使用正式版本如 0.6.1 的，就不需要做  拷贝 <code>ios/sdk</code> 这个操作，直接引用 cocoaPods 的 master repo 上就可以，这个需要在 Podfile 最前面添加</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">source &apos;https://github.com/CocoaPods/Specs.git&apos;</div></pre></td></tr></table></figure>
- <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">target &apos;YourTarget&apos; do</div><div class="line">    platform :ios, &apos;7.0&apos; </div><div class="line">    pod &apos;WeexSDK&apos;, :path=&gt;&apos;./sdk/&apos;   # pod &apos;WeexSDK&apos;, &apos;0.6.1&apos;</div><div class="line">end</div></pre></td></tr></table></figure>
-<p> 在命令行（terminal）中，切换到当前目录，运行 <code>pod install</code>, 过一会，项目的 .workspace 结尾的文件就被创建出来，到这步，依赖已经添加完了</p>
+</ul>
+<ul>
+<li><p>源码集成</p>
+<p>首先 拷贝 <code>ios/sdk</code> 目录到你已有项目目录 (此处以拷贝到你已有项目的根目录为例子)，然后在 <code>Podfile</code> 文件中添加</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">source &apos;git@github.com:CocoaPods/Specs.git&apos; </div><div class="line">target &apos;YourTarget&apos; do</div><div class="line">    platform :ios, &apos;7.0&apos; </div><div class="line">    pod &apos;WeexSDK&apos;, :path=&gt;&apos;./sdk/&apos; </div><div class="line">end</div></pre></td></tr></table></figure>
 </li>
-<li><p>初始化 Weex 环境<br>在 AppDelegate.m 文件中做初始化操作，一般会在 <code>didFinishLaunchingWithOptions</code> 方法中如下添加</p>
+</ul>
+<h4 id="第二步：安装依赖"><a href="#第二步：安装依赖" class="headerlink" title="第二步：安装依赖"></a>第二步：安装依赖</h4><p>打开命令行，切换到你已有项目 <code>Podfile</code> 这个文件存在的目录，执行 <code>pod install</code>，没有出现任何错误表示已经完成环境配置。</p>
+<h4 id="第三步：初始化-Weex-环境"><a href="#第三步：初始化-Weex-环境" class="headerlink" title="第三步：初始化 Weex 环境"></a>第三步：初始化 Weex 环境</h4><p>在 <code>AppDelegate.m</code> 文件中做初始化操作，一般会在 <code>didFinishLaunchingWithOptions</code> 方法中如下添加。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">//business configuration</div><div class="line">[WXAppConfiguration setAppGroup:@&quot;AliApp&quot;];</div><div class="line">[WXAppConfiguration setAppName:@&quot;WeexDemo&quot;];</div><div class="line">[WXAppConfiguration setAppVersion:@&quot;1.0.0&quot;];</div><div class="line"></div><div class="line">//init sdk enviroment   </div><div class="line">[WXSDKEngine initSDKEnviroment];</div><div class="line"></div><div class="line">//register custom module and component，optional</div><div class="line">[WXSDKEngine registerComponent:@&quot;MyView&quot; withClass:[MyViewComponent class]];</div><div class="line">[WXSDKEngine registerModule:@&quot;event&quot; withClass:[WXEventModule class]];</div><div class="line"></div><div class="line">//register the implementation of protocol, optional</div><div class="line">[WXSDKEngine registerHandler:[WXNavigationDefaultImpl new] withProtocol:@protocol(WXNavigationProtocol)];</div><div class="line"></div><div class="line">//set the log level    </div><div class="line">[WXLog setLogLevel: WXLogLevelAll];</div></pre></td></tr></table></figure>
-</li>
-<li><p>渲染 weex Instance<br>Weex 支持整体页面渲染和部分渲染两种模式，你需要做的事情是用指定的 URL 渲染 weex 的 view，然后添加到它的父容器上，父容器一般都是 viewController</p>
+<h4 id="第四步：渲染-weex-Instance"><a href="#第四步：渲染-weex-Instance" class="headerlink" title="第四步：渲染 weex Instance"></a>第四步：渲染 weex Instance</h4><p>Weex 支持整体页面渲染和部分渲染两种模式，你需要做的事情是用指定的 URL 渲染 Weex 的 view，然后添加到它的父容器上，父容器一般都是 viewController。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">#import &lt;WeexSDK/WXSDKInstance.h&gt;</div><div class="line">- (void)viewDidLoad </div><div class="line">&#123;</div><div class="line">    [super viewDidLoad];</div><div class="line"></div><div class="line">    _instance = [[WXSDKInstance alloc] init];</div><div class="line">    _instance.viewController = self;</div><div class="line">    _instance.frame = self.view.frame; </div><div class="line"></div><div class="line">    __weak typeof(self) weakSelf = self;</div><div class="line">    _instance.onCreate = ^(UIView *view) &#123;</div><div class="line">        [weakSelf.weexView removeFromSuperview];</div><div class="line">        [weakSelf.view addSubview:weakSelf.weexView];</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    _instance.onFailed = ^(NSError *error) &#123;</div><div class="line">        //process failure</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    _instance.renderFinish = ^ (UIView *view) &#123;</div><div class="line">        //process renderFinish</div><div class="line">    &#125;;</div><div class="line">    [_instance renderWithURL:self.url options:@&#123;@&quot;bundleUrl&quot;:[self.url absoluteString]&#125; data:nil];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>   WXSDKInstance 是很重要的一个类，提供了基础的方法和一些回调，如<code>renderWithURL</code>,<code>onCreate</code>,<code>onFailed</code>等，可以参见 <code>WXSDKInstance.h</code>的  声明</p>
-<ol>
-<li><p>销毁 Weex Instance</p>
-<p>在 viewController 的 dealloc 阶段 销毁掉 weex instance， 释放内存，避免造成内存泄露</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">- (void)dealloc</div><div class="line">&#123;</div><div class="line">    [_instance destroyInstance];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="导入-Weex-SDK-framework到工程"><a href="#导入-Weex-SDK-framework到工程" class="headerlink" title="导入 Weex SDK framework到工程"></a>导入 Weex SDK framework到工程</h3><p>  参考<a href="https://open.taobao.com/doc2/detail?spm=a219a.7629140.0.0.tFddsV&amp;&amp;docType=1&amp;articleId=104829" target="_blank" rel="external">此处</a>直接导入weexSDK</p>
+<p>WXSDKInstance 是很重要的一个类，提供了基础的方法和一些回调，如 <code>renderWithURL</code>, <code>onCreate</code>, <code>onFailed</code> 等，可以参见 <code>WXSDKInstance.h</code> 的声明。</p>
+<h4 id="第五步：销毁-Weex-Instance"><a href="#第五步：销毁-Weex-Instance" class="headerlink" title="第五步：销毁 Weex Instance"></a>第五步：销毁 Weex Instance</h4><p>   在 viewController 的 dealloc 阶段 销毁掉 Weex instance，释放内存，避免造成内存泄露。</p>
+   <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">- (void)dealloc</div><div class="line">&#123;</div><div class="line">    [_instance destroyInstance];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="导入-Weex-SDK-framework-到工程"><a href="#导入-Weex-SDK-framework-到工程" class="headerlink" title="导入 Weex SDK framework 到工程"></a>导入 Weex SDK framework 到工程</h3><p>  可以通过源码编译出 Weex SDK，可以在新的 feature 或者 bugfix 分支，尝试最新的 feature。</p>
+<p>  参考<a href="https://open.taobao.com/doc2/detail?spm=a219a.7629140.0.0.tFddsV&amp;&amp;docType=1&amp;articleId=104829" target="_blank" rel="external">此处</a>直接导入 weexSDK。</p>
 
   </div>
   

@@ -727,7 +727,7 @@ pre .attr {
   height: 405px;
   position: absolute;
   top: 30%;
-  right: -40px;
+  right: 0px;
   z-index: 1; }
   .feature .right-box .imgbox {
     position: absolute; }
@@ -736,25 +736,33 @@ pre .attr {
     height: 405px;
     background: url("../images/level1.png") 50% 50%/contain no-repeat;
     background-origin: content-box;
-    z-index: 9; }
+    z-index: 9;
+    top: 0;
+    left: 660px; }
   .feature .right-box .level2 {
     width: 660px;
     height: 405px;
     background: url("../images/level2.png") 50% 50%/contain no-repeat;
     background-origin: content-box;
-    z-index: 99; }
+    z-index: 99;
+    top: -30px;
+    left: 660px; }
   .feature .right-box .level3 {
     width: 660px;
     height: 405px;
     background: url("../images/level3.png") 50% 50%/contain no-repeat;
     background-origin: content-box;
-    z-index: 99; }
+    z-index: 99;
+    top: -60px;
+    left: 660px; }
   .feature .right-box .level4 {
     width: 660px;
     height: 405px;
     background: url("../images/level4.png") 50% 50%/contain no-repeat;
     background-origin: content-box;
-    z-index: 999; }
+    z-index: 999;
+    top: -85px;
+    left: 660px; }
 
 .feature .right-img {
   width: 70%;
