@@ -5,37 +5,34 @@
   
   <title>iOS APIs | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="iOS APIsWeex iOS SDK 接入参考
-Native 对外接口
+  <meta name="description" content="iOS APIsNative 对外接口
 注册 SDK 默认的 Module、Handler 和 Component
 注册自定义 module、Handler 和 Component
 重置 JSFramework
 
 Handler (对应于 Android 的 Adapter) 介绍
-WXImgLoaderDefaultImpl 图片下载 handler。Weex">
+WXImgLoaderDefaultImpl 图片下载 handler。Weex 会把需要设置图片的 View 和">
 <meta property="og:type" content="website">
 <meta property="og:title" content="iOS APIs">
 <meta property="og:url" content="https://weex-project.io/cn/references/ios-apis.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="iOS APIsWeex iOS SDK 接入参考
-Native 对外接口
+<meta property="og:description" content="iOS APIsNative 对外接口
 注册 SDK 默认的 Module、Handler 和 Component
 注册自定义 module、Handler 和 Component
 重置 JSFramework
 
 Handler (对应于 Android 的 Adapter) 介绍
-WXImgLoaderDefaultImpl 图片下载 handler。Weex">
-<meta property="og:updated_time" content="2017-01-18T07:15:14.000Z">
+WXImgLoaderDefaultImpl 图片下载 handler。Weex 会把需要设置图片的 View 和">
+<meta property="og:updated_time" content="2017-01-19T03:19:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS APIs">
-<meta name="twitter:description" content="iOS APIsWeex iOS SDK 接入参考
-Native 对外接口
+<meta name="twitter:description" content="iOS APIsNative 对外接口
 注册 SDK 默认的 Module、Handler 和 Component
 注册自定义 module、Handler 和 Component
 重置 JSFramework
 
 Handler (对应于 Android 的 Adapter) 介绍
-WXImgLoaderDefaultImpl 图片下载 handler。Weex">
+WXImgLoaderDefaultImpl 图片下载 handler。Weex 会把需要设置图片的 View 和">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -1285,20 +1282,20 @@ WXImgLoaderDefaultImpl 图片下载 handler。Weex">
       </h1>
     
   
-  <time class="article-date" datetime="2017-01-18T07:15:14.000Z">Updated time: 18/01/2017</time>
+  <time class="article-date" datetime="2017-01-19T03:19:37.000Z">Updated time: 19/01/2017</time>
 </header>
-    <h1 id="iOS-APIs"><a href="#iOS-APIs" class="headerlink" title="iOS APIs"></a>iOS APIs</h1><p>Weex iOS SDK 接入参考</p>
-<h2 id="Native-对外接口"><a href="#Native-对外接口" class="headerlink" title="Native 对外接口"></a>Native 对外接口</h2><ul>
+    <h1 id="iOS-APIs"><a href="#iOS-APIs" class="headerlink" title="iOS APIs"></a>iOS APIs</h1><h2 id="Native-对外接口"><a href="#Native-对外接口" class="headerlink" title="Native 对外接口"></a>Native 对外接口</h2><ul>
 <li>注册 SDK 默认的 Module、Handler 和 Component</li>
 <li>注册自定义 module、Handler 和 Component</li>
 <li>重置 JSFramework</li>
 </ul>
 <h2 id="Handler-对应于-Android-的-Adapter-介绍"><a href="#Handler-对应于-Android-的-Adapter-介绍" class="headerlink" title="Handler (对应于 Android 的 Adapter) 介绍"></a>Handler (对应于 Android 的 Adapter) 介绍</h2><ul>
-<li>WXImgLoaderDefaultImpl 图片下载 handler。Weex 会把需要设置图片的 View 和 URL 透露出来，Native 端需要实现这个接口进行图片下载。WeexSDK kernel 本身没有提供图片下载的默认实现。</li>
-</ul>
+<li><p>WXImgLoaderDefaultImpl 图片下载 handler。Weex 会把需要设置图片的 View 和 URL 透露出来，Native 端需要实现这个接口进行图片下载。WeexSDK kernel 本身没有提供图片下载的默认实现。</p>
 <p>接口定义如下：</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">  @protocol WXImgLoaderProtocol &lt;WXModuleProtocol&gt;</div><div class="line">/**</div><div class="line"> * @abstract Creates a image download handler with a given URL</div><div class="line"> *</div><div class="line"> * @param imageUrl The URL of the image to download</div><div class="line"> *</div><div class="line"> * @param imageFrame  The frame of the image you want to set</div><div class="line"> *</div><div class="line"> * @param options : The options to be used for this download</div><div class="line"> *</div><div class="line"> * @param completedBlock : A block called once the download is completed.</div><div class="line"> *                 image : the image which has been download to local.</div><div class="line"> *                 error : the error which has happened in download.</div><div class="line"> *              finished : a Boolean value indicating whether download action has finished.</div><div class="line"> */</div><div class="line">- (id&lt;WXImageOperationProtocol&gt;)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)options completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock;</div><div class="line">@end</div></pre></td></tr></table></figure>
-</code></pre><h2 id="Native-和-JS-通信"><a href="#Native-和-JS-通信" class="headerlink" title="Native 和 JS 通信"></a>Native 和 JS 通信</h2><ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">  @protocol WXImgLoaderProtocol &lt;WXModuleProtocol&gt;</div><div class="line">/**</div><div class="line">  * @abstract Creates a image download handler with a given URL</div><div class="line">  *</div><div class="line">  * @param imageUrl The URL of the image to download</div><div class="line">  *</div><div class="line">  * @param imageFrame  The frame of the image you want to set</div><div class="line">  *</div><div class="line">  * @param options : The options to be used for this download</div><div class="line">  *</div><div class="line">  * @param completedBlock : A block called once the download is completed.</div><div class="line">  *                 image : the image which has been download to local.</div><div class="line">  *                 error : the error which has happened in download.</div><div class="line">  *              finished : a Boolean value indicating whether download action has finished.</div><div class="line">  */</div><div class="line">- (id&lt;WXImageOperationProtocol&gt;)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)options completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock;</div><div class="line">@end</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Native-和-JS-通信"><a href="#Native-和-JS-通信" class="headerlink" title="Native 和 JS 通信"></a>Native 和 JS 通信</h2><ul>
 <li><p>自定义通知事件</p>
 <p>用于 native 自定义部分和 js 进行实践通知，比如传递下拉事件到 js，这个是在 component 基类的方法，可以直接使用</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">/**</div><div class="line">  * @abstract Fire an event to the component and tell Javascript which value has been changed. </div><div class="line">  * @param eventName 事件名称，可以在weex文件某个标签组件监听，命名规范为 onXXX</div><div class="line">  * @param params 数据</div><div class="line">  * @param domChanges 发生改变的数据</div><div class="line">  **/</div><div class="line">- (void)fireEvent:(NSString *)eventName params:(NSDictionary *)params domChanges:(NSDictionary *)domChanges</div></pre></td></tr></table></figure>
@@ -1314,11 +1311,11 @@ WXImgLoaderDefaultImpl 图片下载 handler。Weex">
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@implementation WXEchoModule</div><div class="line">@synthesize weexInstance; // 让该module 获得当前instance</div><div class="line">WX_EXPORT_METHOD(@selector(echo:))</div><div class="line">- (void)echo:(NSString *)param callback:(WXModuleKeepAliveCallback)callback</div><div class="line">&#123;</div><div class="line">  callback(param,ture);// 此处设置true，该回调function 可以多次回调执行，可以写循环测试.</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="动态适配容器"><a href="#动态适配容器" class="headerlink" title="动态适配容器"></a>动态适配容器</h2><p>WeexSDK 在 WXSDKInstance 类中提供了方法 setFrame(CGRect) 来改变容器的大小。</p>
+<h2 id="动态适配容器"><a href="#动态适配容器" class="headerlink" title="动态适配容器"></a>动态适配容器</h2><p>WeexSDK 在 <code>WXSDKInstance</code> 类中提供了方法 <code>setFrame(CGRect)</code> 来改变容器的大小。</p>
 <p>如：在导航栏从有到无过程，需要 weexView 的变化， 可以在此时 native 调用该方法设置</p>
 <h2 id="降级使用"><a href="#降级使用" class="headerlink" title="降级使用"></a>降级使用</h2><p>Weex 处于发展阶段会增加一些新的特性和功能，但是这些新的特性和功能都必须升级 SDK 才能实现，对于没有升级的应用应该怎么处理呢？可以使用降级功能。</p>
 <p>所谓降级功能就是 Weex 无法运行的版本或者手机，可以用 Weex h5 来代替。</p>
-<p>Native 端可以通过接口 IWXRenderListener 中的 onException 方法进行处理，如果是主动降级 errCode 是以“|”分割的字符。“|”前面的字符为1表示主动降级，Native 端可以跳转到对应的 H5 页面。或者用其他的方式提示用户当前环境不支持 Weex。</p>
+<p>Native 端可以通过接口 <code>IWXRenderListener</code> 中的 <code>onException</code> 方法进行处理，如果是主动降级 errCode 是以“|”分割的字符。“|”前面的字符为1表示主动降级，Native 端可以跳转到对应的 H5 页面。或者用其他的方式提示用户当前环境不支持 Weex。</p>
 
   </div>
   
