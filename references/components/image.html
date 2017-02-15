@@ -13,7 +13,7 @@ Notes: the styles of width and height should be specified,">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="&amp;lt;image&amp;gt;Summaryimage tag is used to render a specified picture, and it shouldn’t contain any child component. You can use img as alias.
 Notes: the styles of width and height should be specified,">
-<meta property="og:updated_time" content="2017-02-14T06:33:25.000Z">
+<meta property="og:updated_time" content="2017-02-14T09:42:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<image>">
 <meta name="twitter:description" content="&amp;lt;image&amp;gt;Summaryimage tag is used to render a specified picture, and it shouldn’t contain any child component. You can use img as alias.
@@ -1229,7 +1229,7 @@ Notes: the styles of width and height should be specified,">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-14T06:33:25.000Z">Updated time: 14/02/2017</time>
+  <time class="article-date" datetime="2017-02-14T09:42:22.000Z">Updated time: 14/02/2017</time>
 </header>
     <h1 id="lt-image-gt"><a href="#lt-image-gt" class="headerlink" title="&lt;image&gt;"></a>&lt;image&gt;</h1><h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><p><code>image</code> tag is used to render a specified picture, and it shouldn’t contain any child component. You can use <code>img</code> as alias.</p>
 <p><strong>Notes:</strong> the styles of <code>width</code> and <code>height</code> should be specified, otherwise it won’t work.</p>
@@ -1238,6 +1238,7 @@ Notes: the styles of width and height should be specified,">
 <h3 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h3><ul>
 <li><code>src</code>: &lt;string&gt; image source url</li>
 <li><code>resize</code>: <span class="api-version">v0.5+</span> &lt;string&gt; the ‘ScaleType’ of the component. The default value is <code>stretch</code>, if this attribute is not specified. Possible values are <code>cover</code>, <code>contain</code>, each of which has the same meaning with w3c standard.</li>
+<li><code>placeholder</code>: <span class="api-version">v0.9+</span> &lt;string&gt; image to display while the network image src is loading.</li>
 </ul>
 <p>Other attributes please check out the <a href="../common-attrs.html">common attributes</a>.</p>
 <h3 id="Styles"><a href="#Styles" class="headerlink" title="Styles"></a>Styles</h3><ul>
@@ -1255,7 +1256,7 @@ Notes: the styles of width and height should be specified,">
 <ul>
 <li>support <code>click</code> event. Check out <a href="../common-event.html">common events</a></li>
 <li>support <code>appear</code> / <code>disappear</code> event. Check out <a href="../common-event.html">common events</a>    </li>
-<li><code>load</code><sup class="wx-v">v0.8+</sup> event. The <code>load</code> event fires on an image has been loaded. Only Android and iOS are supported currently. <a href="http://dotwe.org/25bd347da6a59603dd31ec057d2691da" target="_blank" rel="external">example</a>    <ul>
+<li><code>load</code><sup class="api-version">v0.8+</sup> event. The <code>load</code> event fires on an image has been loaded. Only Android and iOS are supported currently. <a href="http://dotwe.org/25bd347da6a59603dd31ec057d2691da" target="_blank" rel="external">example</a>    <ul>
 <li>event object<ul>
 <li><code>success</code> : <code>true</code> if the image was loaded successfully, otherwise <code>false</code></li>
 <li><code>size</code> : the original size of image, contains two parameters: <code>naturalWidth</code> representing the original width of image in pixels, <code>naturalHeight</code> representing the original height of image in pixels. default value. The default value for both parameters is <code>0</code>.</li>
