@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://weex-project.io/references/advanced/extend-to-android.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Extend to AndroidModule extendweex sdk support Module extend, Weex SDK provides only rendering capabilities, rather than have other capabilities, such as network, picture, and URL redirection. If you">
-<meta property="og:updated_time" content="2017-02-16T12:25:37.000Z">
+<meta property="og:updated_time" content="2017-02-17T05:53:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Extend to Android">
 <meta name="twitter:description" content="Extend to AndroidModule extendweex sdk support Module extend, Weex SDK provides only rendering capabilities, rather than have other capabilities, such as network, picture, and URL redirection. If you">
@@ -394,6 +394,11 @@
         
       
     
+      
+      
+        
+      
+    
    
     
       <li>
@@ -447,11 +452,11 @@
           <ul class="chapter">
             
               <li>
-                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
-                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -516,19 +521,19 @@
           <ul class="chapter">
             
               <li>
-                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
-              </li>
-            
-              <li>
                 <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
               </li>
             
               <li>
-                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
               </li>
             
               <li>
                 <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
@@ -585,6 +590,11 @@
     
       <li>
         <h3 class="chapter-title"><a href="/references/web-standards.html" class="sidebar-link  ">Web standards</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
         
       </li>
     
@@ -962,6 +972,11 @@
         
       
     
+      
+      
+        
+      
+    
    
     
       <li>
@@ -1015,11 +1030,11 @@
           <ul class="chapter">
             
               <li>
-                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
-                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -1084,19 +1099,19 @@
           <ul class="chapter">
             
               <li>
-                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
-              </li>
-            
-              <li>
                 <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
               </li>
             
               <li>
-                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
               </li>
             
               <li>
                 <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
@@ -1153,6 +1168,11 @@
     
       <li>
         <h3 class="chapter-title"><a href="/references/web-standards.html" class="sidebar-link  ">Web standards</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
         
       </li>
     
@@ -1244,7 +1264,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-16T12:25:37.000Z">Updated time: 16/02/2017</time>
+  <time class="article-date" datetime="2017-02-17T05:53:55.000Z">Updated time: 17/02/2017</time>
 </header>
     <h1 id="Extend-to-Android"><a href="#Extend-to-Android" class="headerlink" title="Extend to Android"></a>Extend to Android</h1><h2 id="Module-extend"><a href="#Module-extend" class="headerlink" title="Module extend"></a>Module extend</h2><p>weex sdk support Module extend, Weex SDK provides only rendering capabilities, rather than have other capabilities, such as network, picture, and URL redirection. If you want the these features, you need to implement it.</p>
 <p>For example: If you want to implement an address jumping function, you can achieve a Module Follow the steps below.</p>
@@ -1281,6 +1301,21 @@
 <h4 id="Register-the-Component"><a href="#Register-the-Component" class="headerlink" title="Register the Component"></a>Register the Component</h4><figure class="highlight java"><table><tr><td class="code"><pre><div class="line">WXSDKEngine.registerComponent(<span class="string">"MyView"</span>, MyViewComponent.class);</div></pre></td></tr></table></figure>
 <h3 id="Adapter-extend"><a href="#Adapter-extend" class="headerlink" title="Adapter extend"></a>Adapter extend</h3><h4 id="ImagedownloadAdapter"><a href="#ImagedownloadAdapter" class="headerlink" title="ImagedownloadAdapter"></a>ImagedownloadAdapter</h4><p>Weex SDK has no image download capability, you need to implement <code>IWXImgLoaderAdapter</code>. Refer to the following examples.</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ImageAdapter</span> <span class="keyword">implements</span> <span class="title">IWXImgLoaderAdapter</span> </span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">private</span> Activity mContext;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">ImageAdapter</span><span class="params">(Activity activity)</span> </span>&#123;</div><div class="line">    mContext = activity;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setImage</span><span class="params">(<span class="keyword">final</span> String url, <span class="keyword">final</span> ImageView view,</span></span></div><div class="line">      WXImageQuality quality, WXImageStrategy strategy) &#123;</div><div class="line">    mContext.runOnUiThread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line"></div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (TextUtils.isEmpty(url)) &#123;</div><div class="line">          view.setImageBitmap(<span class="keyword">null</span>);</div><div class="line">          <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        String temp = url;</div><div class="line">        <span class="keyword">if</span> (url.startsWith(<span class="string">"//"</span>))&#123;</div><div class="line">          temp = <span class="string">"http:"</span> + url;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (view.getLayoutParams().width&lt;=<span class="number">0</span> || view.getLayoutParams().height&lt;=<span class="number">0</span>) &#123;</div><div class="line">          <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        Picasso.with(WXEnvironment.getApplication())</div><div class="line">            .load(temp)</div><div class="line">            .resize(view.getLayoutParams().width,</div><div class="line">                view.getLayoutParams().height).into(view);</div><div class="line">      &#125;</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="Component-Method"><a href="#Component-Method" class="headerlink" title="Component Method"></a>Component Method</h4><p> from WeexSDK <code>0.9.5</code>, you can define your component method</p>
+<p> for example, define a method in component:</p>
+ <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@JSMethod</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">focus</span><span class="params">()</span></span>&#123;</div><div class="line"> <span class="comment">//method implementation</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> after your registration for your own custom component, now you can call it in your js file.</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">template</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">mycomponent</span> <span class="attr">id</span>=<span class="string">'mycomponent'</span>&gt;</span><span class="tag">&lt;/<span class="name">mycomponent</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">template</span>&gt;</span>
+<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">
+  module.exports = {
+    created: function() {
+      this.$el('mycomponent').focus();
+    }
+  }
+</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+</code></pre>
 
   </div>
   

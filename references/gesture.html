@@ -19,7 +19,7 @@ Experiment Feature
 
 Weex encapsulates native touch events to provide a gesture system. Using gesture is similar to use event in Weex. Just set on attributes on a node to listen to gesture.
 Typ">
-<meta property="og:updated_time" content="2017-02-16T12:25:37.000Z">
+<meta property="og:updated_time" content="2017-02-17T05:53:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Gesture">
 <meta name="twitter:description" content="Gesture
@@ -406,6 +406,11 @@ Typ">
         
       
     
+      
+      
+        
+      
+    
    
     
       <li>
@@ -459,11 +464,11 @@ Typ">
           <ul class="chapter">
             
               <li>
-                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
-                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -528,19 +533,19 @@ Typ">
           <ul class="chapter">
             
               <li>
-                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
-              </li>
-            
-              <li>
                 <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
               </li>
             
               <li>
-                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
               </li>
             
               <li>
                 <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
@@ -597,6 +602,11 @@ Typ">
     
       <li>
         <h3 class="chapter-title"><a href="/references/web-standards.html" class="sidebar-link  ">Web standards</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
         
       </li>
     
@@ -974,6 +984,11 @@ Typ">
         
       
     
+      
+      
+        
+      
+    
    
     
       <li>
@@ -1027,11 +1042,11 @@ Typ">
           <ul class="chapter">
             
               <li>
-                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
-                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -1096,19 +1111,19 @@ Typ">
           <ul class="chapter">
             
               <li>
-                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
-              </li>
-            
-              <li>
                 <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
               </li>
             
               <li>
-                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
               </li>
             
               <li>
                 <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
@@ -1165,6 +1180,11 @@ Typ">
     
       <li>
         <h3 class="chapter-title"><a href="/references/web-standards.html" class="sidebar-link  ">Web standards</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
         
       </li>
     
@@ -1256,7 +1276,7 @@ Typ">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-16T12:25:37.000Z">Updated time: 16/02/2017</time>
+  <time class="article-date" datetime="2017-02-17T05:53:55.000Z">Updated time: 17/02/2017</time>
 </header>
     <h1 id="Gesture"><a href="#Gesture" class="headerlink" title="Gesture"></a>Gesture</h1><blockquote>
 <p>Experiment Feature</p>
@@ -1276,6 +1296,11 @@ Typ">
 <li><code>panend</code></li>
 </ul>
 </li>
+<li><strong>Horizontal/Vertical Pan</strong> <span class="api-version">v0.10+</span> . Mainly used for cell swipe gestures before conflict resolving system is completed. start/move/end state of the gesture will be passed by <code>state</code> property. <strong>Note</strong>: These gestures are in conflict with click event on Android currently.<ul>
+<li><code>horizontalpan</code></li>
+<li><code>verticalpan</code></li>
+</ul>
+</li>
 <li><strong>Swipe</strong>. Swipe is fired when user swipe a touch point on the screen. A serial of motion will only trigger one Swipe gesture.</li>
 <li><strong>LongPress</strong>. Swipe is fired when a touch point is held for 500 ms or more.</li>
 </ul>
@@ -1288,17 +1313,17 @@ Typ">
 <h2 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h2><p>The following properties can be used in gesture callback:</p>
 <ul>
 <li><code>direction</code>. Only exists for <strong>Swipe</strong> gesture. Indicate the direcion of the swipe, choose from <code>up</code>, <code>left</code>, <code>bottom</code>, <code>right</code>.</li>
-<li><code>changedTouches</code>. An array of motion for every touch pointer that has contribute to the current gesture. </li>
+<li><code>changedTouches</code>. An array of motion for every touch pointer that has contribute to the current gesture.</li>
 </ul>
 <h3 id="changedTouches"><a href="#changedTouches" class="headerlink" title="changedTouches"></a>changedTouches</h3><p><code>changedTouches</code> is an array, with the following properties in its children:</p>
 <ul>
 <li><code>identifier</code>. A unique identifier for a touch pointer.</li>
-<li><code>pageX</code>. The X coordinate of the touch pointer relative to the left edge of the document. </li>
+<li><code>pageX</code>. The X coordinate of the touch pointer relative to the left edge of the document.</li>
 <li><code>pageY</code>. The Y coordinate of the touch pointer relative to the top of the document.</li>
 <li><code>screenX</code>. The X coordinate of the touch point relative to the left edge of the screen.</li>
 <li><code>screenY</code>. The Y coordinate of the touch point relative to the top edge of the screen.</li>
 </ul>
-<h2 id="Constrain"><a href="#Constrain" class="headerlink" title="Constrain"></a>Constrain</h2><p>Currently, Weex Android do not support listening to gesture on <code>scroller</code>, <code>list</code> and <code>webview</code>, as it would lead a large amount of event conflicting. </p>
+<h2 id="Constrain"><a href="#Constrain" class="headerlink" title="Constrain"></a>Constrain</h2><p>Currently, Weex Android do not support listening to gesture on <code>scroller</code>, <code>list</code> and <code>webview</code>, as it would lead a large amount of event conflicting.</p>
 
   </div>
   
