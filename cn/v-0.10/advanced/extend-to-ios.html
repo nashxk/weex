@@ -23,7 +23,7 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
 
 自定义的module类 必须实现 WXModuleProtocol
 必须添加宏WX_EXPORT_METHO">
-<meta property="og:updated_time" content="2017-02-16T12:25:37.000Z">
+<meta property="og:updated_time" content="2017-02-17T05:53:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS 扩展">
 <meta name="twitter:description" content="iOS 扩展Module 扩展swift 扩展 module 
@@ -332,7 +332,7 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-16T12:25:37.000Z">Updated time: 16/02/2017</time>
+  <time class="article-date" datetime="2017-02-17T05:53:55.000Z">Updated time: 17/02/2017</time>
 </header>
     <h2 id="iOS-扩展"><a href="#iOS-扩展" class="headerlink" title="iOS 扩展"></a>iOS 扩展</h2><h3 id="Module-扩展"><a href="#Module-扩展" class="headerlink" title="Module 扩展"></a>Module 扩展</h3><p><a href="https://github.com/weexteam/article/issues/55" target="_blank" rel="external">swift</a> 扩展 module </p>
 <p>Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络，图片，URL跳转这些特性，需要自己动手实现他们<br>例如，如果你想实现一个url地址跳转函数，你可以按照如下步骤实现一个 Module</p>
@@ -357,12 +357,9 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
 </li>
 </ol>
 <p>   Weex SDK没有 图片下载，navigation 操作的能力，请大家自己实现这些 protocol</p>
-<ol>
-<li><p><strong>WXImgLoaderProtocol</strong>  </p>
-<p>weexSDK 没有图片下载的能力，需要实现 WXImgLoaderProtocol,参考下面的例子</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">WXImageLoaderProtocol.h</div><div class="line">@protocol WXImgLoaderProtocol &lt;WXModuleProtocol&gt;</div><div class="line">/**</div><div class="line"> * @abstract Creates a image download handler with a given URL</div><div class="line"> * @param imageUrl The URL of the image to download</div><div class="line"> * @param imageFrame  The frame of the image you want to set</div><div class="line"> * @param options : The options to be used for this download</div><div class="line"> * @param completedBlock : A block called once the download is completed.</div><div class="line">   image : the image which has been download to local.</div><div class="line">   error : the error which has happened in download.</div><div class="line">   finished : a Boolean value indicating whether download action has finished.</div><div class="line">*/</div><div class="line">-(id&lt;WXImageOperationProtocol&gt;)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)options completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock;</div><div class="line">@end</div></pre></td></tr></table></figure>
-</li>
-</ol>
+<h3 id="handler-扩展"><a href="#handler-扩展" class="headerlink" title="handler 扩展"></a>handler 扩展</h3><p>   <strong>WXImgLoaderProtocol</strong>  </p>
+<p>   weexSDK 没有提供图片下载的能力，需要实现 WXImgLoaderProtocol,参考下面的例子</p>
+   <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">WXImageLoaderProtocol.h</div><div class="line">@protocol WXImgLoaderProtocol &lt;WXModuleProtocol&gt;</div><div class="line">/**</div><div class="line"> * @abstract Creates a image download handler with a given URL</div><div class="line"> * @param imageUrl The URL of the image to download</div><div class="line"> * @param imageFrame  The frame of the image you want to set</div><div class="line"> * @param options : The options to be used for this download</div><div class="line"> * @param completedBlock : A block called once the download is completed.</div><div class="line">   image : the image which has been download to local.</div><div class="line">   error : the error which has happened in download.</div><div class="line">   finished : a Boolean value indicating whether download action has finished.</div><div class="line">*/</div><div class="line">-(id&lt;WXImageOperationProtocol&gt;)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)options completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock;</div><div class="line">@end</div></pre></td></tr></table></figure>
 <p>   实现上述协议  </p>
    <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@implementation WXImgLoaderDefaultImpl</div><div class="line">#pragma mark -</div><div class="line">#pragma mark WXImgLoaderProtocol</div><div class="line"></div><div class="line">- (id&lt;WXImageOperationProtocol&gt;)downloadImageWithURL:(NSString *)url imageFrame:(CGRect)imageFrame userInfo:(NSDictionary *)userInfo completed:(void(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock</div><div class="line">&#123;</div><div class="line">    if ([url hasPrefix:@&quot;//&quot;]) &#123;</div><div class="line">        url = [@&quot;http:&quot; stringByAppendingString:url];</div><div class="line">    &#125;</div><div class="line">    return (id&lt;WXImageOperationProtocol&gt;)[[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:url] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) &#123;     </div><div class="line">    &#125; completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) &#123;</div><div class="line">    if (completedBlock) &#123;</div><div class="line">        completedBlock(image, error, finished);</div><div class="line">    &#125;</div><div class="line">    &#125;];</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure>
 <ol>
@@ -371,6 +368,59 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">WXSDKEngine.h</div><div class="line">/**</div><div class="line">* @abstract Registers a handler for a given handler instance and specific protocol</div><div class="line">* @param handler The handler instance to register</div><div class="line">* @param protocol The protocol to confirm</div><div class="line">*/</div><div class="line">+ (void)registerHandler:(id)handler withProtocol:(Protocol *)protocol;</div><div class="line"></div><div class="line">[WXSDKEngine registerHandler:[WXImgLoaderDefaultImpl new] withProtocol:@protocol(WXImgLoaderProtocol)]</div></pre></td></tr></table></figure>
 </li>
 </ol>
+<h4 id="Component-扩展"><a href="#Component-扩展" class="headerlink" title="Component 扩展"></a>Component 扩展</h4><p>   虽然WeexSDK中有提供内置的一些Component，但这有可能并不能满足你的需求。在之前你可能已经写了一些很酷炫native的组件，想包装一下，导入到Weex中，因此我们提供了让开发者实现自己的native Component<br>   下面将以WeexSDK 中已经存在的 Component：<code>image</code>为例子，介绍一下如何构建一个native Component.<br>   假设你已经了解IOS开发  </p>
+<ol>
+<li>注册 Component<br>注册一个component比较简单，调用 <code>WXSDKEngine</code> 中的 <code>registerComponent:withClass:</code>方法，传入组件的标签名称，还有对应的class<br>然后你可以创建一个 <code>WXImageComponent</code> 表示<code>image</code>组件的实现     在.we 文件中，只需要写 <pre><code>&lt;image&gt;&lt;/image&gt;  
+</code></pre></li>
+<li><p>添加属性<br>现在我们要做一些让image component更加强大的事情。既然作为一个图片的component，那它应该要有源，给他加上一个 <code>src</code>的属性，同时给它加上一个<code>resize</code>的属性（可以配置的有<code>contain/cover/stretch</code>）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@interface WXImageComponent ()</div><div class="line"></div><div class="line">@property (nonatomic, strong) NSString *imageSrc;</div><div class="line">@property (nonatomic, assign) UIViewContentMode resizeMode;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
+<p>component中所有的style，attribute，events都会被传递到 Component的初始化方法中，所以，你可以在初始化方法中存储你感兴趣的一些属性值</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@implementation WXImageComponent</div><div class="line"></div><div class="line">- (instancetype)initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance</div><div class="line">&#123;</div><div class="line">    if (self = [super initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance]) &#123;</div><div class="line">        _imageSrc = [WXConvert NSString:attributes[@&quot;src&quot;]];</div><div class="line">        _resizeMode = [WXConvert UIViewContentMode:attributes[@&quot;resize&quot;]];</div><div class="line">&#125;</div><div class="line"></div><div class="line">    return self;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>   attribute中拿到的值的类型都是<code>id</code>,我们可以用转换方法把它转换到任何值。Weex SDK提供了一些基础的转换方法，可以参考 <code>WXConvert</code>类，或者你可以添加自己的转换函数</p>
+<ol>
+<li><p>Hooking 渲染生命周期<br>   native 的component 是由Weex管理的，weex 创建，布局，渲染，销毁。weex的component生命周期都是可以hook的，你可以在这些生命周期中去做自己的事情</p>
+<p>| 方法 | 描述 |<br>| :-: | — |<br>| initWithRef:type:… | 用给定的属性初始化一个component. |<br>| layoutDidFinish | 在component完成布局时候会调用. |<br>| loadView | 创建component管理的view. |<br>| viewWillLoad | 在component的view加载之前会调用. |<br>| viewDidLoad | 在component的view加载完之后调用. |<br>| viewWillUnload | 在component的view被释放之前调用. |<br>| viewDidUnload | 在component的view被释放之后调用. |<br>| updateStyles: | 在component的style更新时候调用. |<br>| updateAttributes: | 在component的attribute更新时候调用. |<br>| addEvent: | 给component添加event的时候调用. |<br>| removeEvent: | 在event移除的时候调用. |</p>
+<p>在image component的例子里面，如果我们需要我们自己的image view 的话，可以复写 <code>loadView</code>这个方法.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">- (UIView *)loadView</div><div class="line">&#123;</div><div class="line">    return [[WXImageView alloc] init];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>   现在我们使用 <code>WXImageView</code> 渲染 <code>image</code> component。  </p>
+<ol>
+<li><p>作为一个image component，我们需要拿到服务器图片，而且把它设置进image view 里. 这个操作可以在 <code>viewDidLoad</code> 方法中做，这个方法是在view已经被创建而且加载了时候weex SDK会调用到，而且<code>viewDidLoad</code>这个方法是你做额外初始化工作比如改变content mode(也就是设置resize) 的最好时间.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">- (void)viewDidLoad</div><div class="line">&#123;</div><div class="line">    UIImageView *imageView = (UIImageView *)self.view;</div><div class="line">    imageView.contentMode = _resizeMode;</div><div class="line">    imageView.userInteractionEnabled = YES;</div><div class="line">    imageView.clipsToBounds = YES;</div><div class="line">    imageView.exclusiveTouch = YES;</div><div class="line"></div><div class="line">    // Do your image fetching and updating logic</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><p>如果可以改变image的src,也可以hook <code>updateAttributes:</code>方法来做属性更新操作，当<code>updateAttributes:</code>或者 <code>updateStyles:</code>被调用的时候， component的view 已经加载完成</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">- (void)updateAttributes:(NSDictionary *)attributes</div><div class="line">&#123;</div><div class="line">    if (attributes[@&quot;src&quot;]) &#123;</div><div class="line">        _imageSrc = [WXConvert NSString:attributes[@&quot;src&quot;]];</div><div class="line">        // Do your image updating logic</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    if (attributes[@&quot;resize&quot;]) &#123;</div><div class="line">        _resizeMode = [WXConvert UIViewContentMode:attributes[@&quot;resize&quot;]];</div><div class="line">        self.view.contentMode = _resizeMode;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>   或许你需要考虑更多的生命周期方法去Hook，当布局完成时候，像<code>layoutDidFinish</code>，如果你想了解更多，可以参考一下<code>WXComponent.h</code> 声明的方法<br>   现在你可以用在任何 .we文件里面使用 <code>&lt;image&gt;</code>，而且可以加上 image的属性</p>
+   <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;image style=&quot;your-custom-style&quot; src=&quot;image-remote-source&quot; resize=&quot;contain/cover/stretch&quot;&gt;&lt;/image&gt;</div></pre></td></tr></table></figure>
+<h5 id="component-方法"><a href="#component-方法" class="headerlink" title="component 方法"></a>component 方法</h5><p>WeexSDK 0.9.5 之后支持了在js中直接调用component的方法，这里提供一个例子，</p>
+<ul>
+<li><p>自定义一个WXMyCompoenent 的组件</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@implementation WXMyComponent</div><div class="line">WX_EXPORT_METHOD(@selector(focus)) // 暴露该方法给js</div><div class="line">- (instancetype)initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance</div><div class="line">&#123;</div><div class="line">    if (self = [super initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance]) &#123;</div><div class="line">        // handle your attributes</div><div class="line">        // handle your styles</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return self;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)focus</div><div class="line">&#123;</div><div class="line">    NSLog(@&quot;you got it&quot;);</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>注册组件 <code>[WXSDKEngine registerComponent:@&quot;mycomponent&quot; withClass:[WXMyComponent class]]</code></li>
+<li><p>在weex 文件中调用</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">template</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">mycomponent</span> <span class="attr">id</span>=<span class="string">'mycomponent'</span>&gt;</span><span class="tag">&lt;/<span class="name">mycomponent</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">template</span>&gt;</span>
+<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">
+  module.exports = {
+    created: function() {
+      this.$el('mycomponent').focus();
+    }
+  }
+</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+</code></pre>
+</li>
+</ul>
 
   </div>
   

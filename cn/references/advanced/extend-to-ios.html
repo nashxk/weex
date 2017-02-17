@@ -23,7 +23,7 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
 
 自定义的module类 必须实现 WXModuleProtocol
 必须添加宏WX_EXPORT_METHOD, 它可以">
-<meta property="og:updated_time" content="2017-02-16T12:25:37.000Z">
+<meta property="og:updated_time" content="2017-02-17T05:53:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS 扩展">
 <meta name="twitter:description" content="Module 扩展swift 扩展 module 
@@ -438,11 +438,11 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
               </li>
             
               <li>
-                <a href="/cn/references/html5-apis.html" class="sidebar-link  ">HTML5 APIs</a>
+                <a href="/cn/references/jsfm-apis.html" class="sidebar-link  ">JS Framework APIs</a>
               </li>
             
               <li>
-                <a href="/cn/references/jsfm-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+                <a href="/cn/references/html5-apis.html" class="sidebar-link  ">HTML5 APIs</a>
               </li>
             
               <li>
@@ -1025,11 +1025,11 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
               </li>
             
               <li>
-                <a href="/cn/references/html5-apis.html" class="sidebar-link  ">HTML5 APIs</a>
+                <a href="/cn/references/jsfm-apis.html" class="sidebar-link  ">JS Framework APIs</a>
               </li>
             
               <li>
-                <a href="/cn/references/jsfm-apis.html" class="sidebar-link  ">JS Framework APIs</a>
+                <a href="/cn/references/html5-apis.html" class="sidebar-link  ">HTML5 APIs</a>
               </li>
             
               <li>
@@ -1300,7 +1300,7 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-16T12:25:37.000Z">Updated time: 16/02/2017</time>
+  <time class="article-date" datetime="2017-02-17T05:53:55.000Z">Updated time: 17/02/2017</time>
 </header>
     <h2 id="Module-扩展"><a href="#Module-扩展" class="headerlink" title="Module 扩展"></a>Module 扩展</h2><p><a href="https://github.com/weexteam/article/issues/55" target="_blank" rel="external">swift</a> 扩展 module </p>
 <p>Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络，图片，URL跳转这些特性，需要自己动手实现他们<br>例如，如果你想实现一个url地址跳转函数，你可以按照如下步骤实现一个 Module</p>
@@ -1410,6 +1410,30 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
 <p>或许你需要考虑更多的生命周期方法去 Hook，当布局完成时候，像 <code>layoutDidFinish</code>，如果你想了解更多，可以参考一下<code>WXComponent.h</code> 声明的方法。</p>
 <p>现在你可以用在任何 <code>.we</code> 文件里面使用 <code>&lt;image&gt;</code>，而且可以加上 image 的属性。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">image</span> <span class="attr">style</span>=<span class="string">"your-custom-style"</span> <span class="attr">src</span>=<span class="string">"image-remote-source"</span> <span class="attr">resize</span>=<span class="string">"contain/cover/stretch"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div></pre></td></tr></table></figure>
+<h5 id="component-方法"><a href="#component-方法" class="headerlink" title="component 方法"></a>component 方法</h5><p>WeexSDK 0.9.5 之后支持了在 js 中直接调用 component 的方法，这里提供一个例子</p>
+<ul>
+<li><p>自定义一个 WXMyCompoenent 的组件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@implementation WXMyComponent</div><div class="line">WX_EXPORT_METHOD(@selector(focus)) // 暴露该方法给js</div><div class="line">- (instancetype)initWithRef:(NSString *)ref type:(NSString *)type styles:(NSDictionary *)styles attributes:(NSDictionary *)attributes events:(NSArray *)events weexInstance:(WXSDKInstance *)weexInstance</div><div class="line">&#123;</div><div class="line">    if (self = [super initWithRef:ref type:type styles:styles attributes:attributes events:events weexInstance:weexInstance]) &#123;</div><div class="line">        // handle your attributes</div><div class="line">        // handle your styles</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return self;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)focus</div><div class="line">&#123;</div><div class="line">    NSLog(@&quot;you got it&quot;);</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>注册组件 <code>[WXSDKEngine registerComponent:@&quot;mycomponent&quot; withClass:[WXMyComponent class]]</code></p>
+</li>
+<li><p>在 weex 文件中调用</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">template</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">mycomponent</span> <span class="attr">id</span>=<span class="string">'mycomponent'</span>&gt;</span><span class="tag">&lt;/<span class="name">mycomponent</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">template</span>&gt;</span>
+<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">
+  module.exports = {
+    created:function() {
+      this.$el('mycomponent').focus();
+    }
+  }
+</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+</code></pre>
+</li>
+</ul>
+
   </div>
   
 </article>
