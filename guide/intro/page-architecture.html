@@ -5,16 +5,19 @@
   
   <title>Weex Page Architecture | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Weex Page ArchitectureWork in progress.">
+  <meta name="description" content="Weex Page ArchitectureA Weex page is a independent mobile page which includes UI, interaction logic, device power, lifecycle management etc.
+UINative DOM ModelWeex page has its HTML-like DOM model to">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Weex Page Architecture">
 <meta property="og:url" content="https://weex-project.io/guide/intro/page-architecture.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="Weex Page ArchitectureWork in progress.">
-<meta property="og:updated_time" content="2017-02-17T05:53:55.000Z">
+<meta property="og:description" content="Weex Page ArchitectureA Weex page is a independent mobile page which includes UI, interaction logic, device power, lifecycle management etc.
+UINative DOM ModelWeex page has its HTML-like DOM model to">
+<meta property="og:updated_time" content="2017-02-20T02:16:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Weex Page Architecture">
-<meta name="twitter:description" content="Weex Page ArchitectureWork in progress.">
+<meta name="twitter:description" content="Weex Page ArchitectureA Weex page is a independent mobile page which includes UI, interaction logic, device power, lifecycle management etc.
+UINative DOM ModelWeex page has its HTML-like DOM model to">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -208,7 +211,7 @@
               </li>
             
               <li>
-                <a href="/guide/intro/app-architecture.html" class="sidebar-link  ">App Architecture</a>
+                <a href="/guide/intro/app-architecture.html" class="sidebar-link  ">Mobile App Architecture</a>
               </li>
             
               <li>
@@ -344,7 +347,7 @@
               </li>
             
               <li>
-                <a href="/guide/intro/app-architecture.html" class="sidebar-link  ">App Architecture</a>
+                <a href="/guide/intro/app-architecture.html" class="sidebar-link  ">Mobile App Architecture</a>
               </li>
             
               <li>
@@ -380,9 +383,31 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-17T05:53:55.000Z">Updated time: 17/02/2017</time>
+  <time class="article-date" datetime="2017-02-20T02:16:53.000Z">Updated time: 20/02/2017</time>
 </header>
-    <h1 id="Weex-Page-Architecture"><a href="#Weex-Page-Architecture" class="headerlink" title="Weex Page Architecture"></a>Weex Page Architecture</h1><p>Work in progress.</p>
+    <h1 id="Weex-Page-Architecture"><a href="#Weex-Page-Architecture" class="headerlink" title="Weex Page Architecture"></a>Weex Page Architecture</h1><p>A Weex page is a independent mobile page which includes UI, interaction logic, device power, lifecycle management etc.</p>
+<h2 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h2><h3 id="Native-DOM-Model"><a href="#Native-DOM-Model" class="headerlink" title="Native DOM Model"></a>Native DOM Model</h3><p>Weex page has its HTML-like DOM model to manage UI. It will be decomposed into a DOM tree which consists of some DOM nodes.</p>
+<p><strong>Links</strong></p>
+<ul>
+<li><a href="../../references/native-dom-api.html">Weex Native DOM APIs</a></li>
+</ul>
+<h3 id="Components"><a href="#Components" class="headerlink" title="Components"></a>Components</h3><p>Weex supports many kinds of components. Some of them are content components such as text, image and videos. Some of them are container components such as div, list, scroller. Also there are some special components like slider, input, textarea, and switch.</p>
+<p><strong>Links</strong></p>
+<ul>
+<li><a href="../../references/components/index.html">All components Weex supports</a></li>
+</ul>
+<h3 id="Layout-System"><a href="#Layout-System" class="headerlink" title="Layout System"></a>Layout System</h3><p>Weex use some CSS properties to layout every nodes in the DOM tree together. It includes:</p>
+<ul>
+<li>Box model: Describe the <code>width</code>, <code>height</code>, <code>padding</code>, <code>margin</code> and <code>border</code> of a component node.</li>
+<li>Flexbox: Describe the relations between different nodes with CSS Flexbox Spec.</li>
+<li>Supportting <code>absolute</code>, <code>relative</code>, <code>fixed</code> and <code>sticky</code> value of CSS <code>position</code> property.</li>
+</ul>
+<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><p>Weex supports lots of device features through modules such as storage, navigation, modals etc. Each of them exposes some JS APIs.</p>
+<p><strong>Links</strong></p>
+<ul>
+<li><a href="../../references/modules/index.html">All modules Weex supports</a></li>
+</ul>
+<h3 id="Lifecycle"><a href="#Lifecycle" class="headerlink" title="Lifecycle"></a>Lifecycle</h3><p>Every Weex page has its lifecycle which is defined and implemented in WeexSDK. All Weex pages will go through the whole process, from being created and last to being destroyed.</p>
 
   </div>
   

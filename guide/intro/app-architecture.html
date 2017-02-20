@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>App Architecture | Weex</title>
+  <title>Mobile App Architecture | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="App ArchitectureWork in progress.">
+  <meta name="description" content="Mobile App ArchitectureToday’s Mobile AppLet’s talk about what we think a mobile app should be.
+Mobile App Needs Parallel DevelopmentNowadays, all mobile app teams requires the ability to develop in p">
 <meta property="og:type" content="website">
-<meta property="og:title" content="App Architecture">
+<meta property="og:title" content="Mobile App Architecture">
 <meta property="og:url" content="https://weex-project.io/guide/intro/app-architecture.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="App ArchitectureWork in progress.">
-<meta property="og:updated_time" content="2017-02-17T05:53:55.000Z">
+<meta property="og:description" content="Mobile App ArchitectureToday’s Mobile AppLet’s talk about what we think a mobile app should be.
+Mobile App Needs Parallel DevelopmentNowadays, all mobile app teams requires the ability to develop in p">
+<meta property="og:updated_time" content="2017-02-20T02:16:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="App Architecture">
-<meta name="twitter:description" content="App ArchitectureWork in progress.">
+<meta name="twitter:title" content="Mobile App Architecture">
+<meta name="twitter:description" content="Mobile App ArchitectureToday’s Mobile AppLet’s talk about what we think a mobile app should be.
+Mobile App Needs Parallel DevelopmentNowadays, all mobile app teams requires the ability to develop in p">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -208,7 +211,7 @@
               </li>
             
               <li>
-                <a href="/guide/intro/app-architecture.html" class="sidebar-link current ">App Architecture</a>
+                <a href="/guide/intro/app-architecture.html" class="sidebar-link current ">Mobile App Architecture</a>
               </li>
             
               <li>
@@ -344,7 +347,7 @@
               </li>
             
               <li>
-                <a href="/guide/intro/app-architecture.html" class="sidebar-link current ">App Architecture</a>
+                <a href="/guide/intro/app-architecture.html" class="sidebar-link current ">Mobile App Architecture</a>
               </li>
             
               <li>
@@ -376,13 +379,36 @@
   
     
       <h1 class="article-title" itemprop="name">
-        App Architecture
+        Mobile App Architecture
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-17T05:53:55.000Z">Updated time: 17/02/2017</time>
+  <time class="article-date" datetime="2017-02-20T02:16:53.000Z">Updated time: 20/02/2017</time>
 </header>
-    <h1 id="App-Architecture"><a href="#App-Architecture" class="headerlink" title="App Architecture"></a>App Architecture</h1><p>Work in progress.</p>
+    <h1 id="Mobile-App-Architecture"><a href="#Mobile-App-Architecture" class="headerlink" title="Mobile App Architecture"></a>Mobile App Architecture</h1><h2 id="Today’s-Mobile-App"><a href="#Today’s-Mobile-App" class="headerlink" title="Today’s Mobile App"></a>Today’s Mobile App</h2><p>Let’s talk about what we think a mobile app should be.</p>
+<h3 id="Mobile-App-Needs-Parallel-Development"><a href="#Mobile-App-Needs-Parallel-Development" class="headerlink" title="Mobile App Needs Parallel Development"></a>Mobile App Needs Parallel Development</h3><p>Nowadays, all mobile app teams requires the ability to develop in parallel. When a mobile app keeps growing, supporting large-scale parallel development must become a very important key thing. Otherwise it’s really easy to become a bottleneck.</p>
+<h3 id="Mobile-App-Needs-to-be-Dynamic"><a href="#Mobile-App-Needs-to-be-Dynamic" class="headerlink" title="Mobile App Needs to be Dynamic"></a>Mobile App Needs to be Dynamic</h3><p>Today the development of mobile apps is very heavy. And it’s really slow in iteration, release, distribution and online bugfix. The size of the package of an app is growing fast too. All of this is not suitable for this mobile internet age. Mobile app needs to be dynaimic which is out of the cumbersome process of version deployment and distribution.</p>
+<h3 id="Mobile-App-Needs-Open-Interconnection"><a href="#Mobile-App-Needs-Open-Interconnection" class="headerlink" title="Mobile App Needs Open Interconnection"></a>Mobile App Needs Open Interconnection</h3><p>Today in your phone, things are hard to connect and share between different apps. They needs some container with common standard and specs to be shared with each other.</p>
+<h2 id="Our-Thinking-of-Mobile-App"><a href="#Our-Thinking-of-Mobile-App" class="headerlink" title="Our Thinking of Mobile App"></a>Our Thinking of Mobile App</h2><p>We think a dynamic, parallel development supported, standardized mobile app should be like this:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">|------|------|------|------| |-----|</div><div class="line">| page | page | page | page | | api |</div><div class="line">|------|------|------|------| | api |</div><div class="line">| page | page | page | page | | api |</div><div class="line">|------|------|------|------| | api |</div><div class="line">| page | page | page | page | | api |</div><div class="line">|---------------------------| | api |</div><div class="line">|           router          | | api |</div><div class="line">|---------------------------| |-----|</div></pre></td></tr></table></figure>
+<ul>
+<li>Pages: A whole mobile app should be divided into several mobile pages. Each mobile page has its own “URL”.</li>
+<li>Router: All the mobile pages above will be connected with router. And navigators or tab bars are just doing this job.</li>
+<li>Features: All kinds of APIs or services provided from the device. Every mobile page could use these features as they like.</li>
+</ul>
+<p>So before you build your mobile app, make sure how many mobile pages your mobile app has and what are they. How do they connect each other. Give each mobile page a URL. And sort out all the APIs and services your mobile app needs.</p>
+<p>Then create the pages and develop, debug and deploy them using Weex.</p>
+<p><strong>Links</strong></p>
+<ul>
+<li><a href="./page-architecture.html">Mobile page architecture</a></li>
+</ul>
+<p>If you have built a complete mobile app already and just want to using Weex to rebuild part of these pages, that’s absolutely no problem. Because Weex is just a SDK to build mobile pages which can coexist very well with other native views or hybrid pages.</p>
+<p>If the feature of WeexSDK is limited to your mobile app. You can extend your own components and modules. It requires some native development knowledge. But with our efforts on delivering more and more features, we believe this part of job will be getting smaller and smaller.</p>
+<p><strong>Links</strong></p>
+<ul>
+<li><a href="../../references/advanced/extend-to-ios.html">Extend to iOS</a></li>
+<li><a href="../../references/advanced/extend-to-android.html">Extend to Android</a></li>
+</ul>
 
   </div>
   
