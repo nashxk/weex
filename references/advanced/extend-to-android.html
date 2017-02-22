@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://weex-project.io/references/advanced/extend-to-android.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Extend to AndroidModule extendweex sdk support Module extend, Weex SDK provides only rendering capabilities, rather than have other capabilities, such as network, picture, and URL redirection. If you">
-<meta property="og:updated_time" content="2017-02-20T02:16:53.000Z">
+<meta property="og:updated_time" content="2017-02-22T03:27:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Extend to Android">
 <meta name="twitter:description" content="Extend to AndroidModule extendweex sdk support Module extend, Weex SDK provides only rendering capabilities, rather than have other capabilities, such as network, picture, and URL redirection. If you">
@@ -1264,7 +1264,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-20T02:16:53.000Z">Updated time: 20/02/2017</time>
+  <time class="article-date" datetime="2017-02-22T03:27:59.000Z">Updated time: 22/02/2017</time>
 </header>
     <h1 id="Extend-to-Android"><a href="#Extend-to-Android" class="headerlink" title="Extend to Android"></a>Extend to Android</h1><h2 id="Module-extend"><a href="#Module-extend" class="headerlink" title="Module extend"></a>Module extend</h2><p>weex sdk support Module extend, Weex SDK provides only rendering capabilities, rather than have other capabilities, such as network, picture, and URL redirection. If you want the these features, you need to implement it.</p>
 <p>For example: If you want to implement an address jumping function, you can achieve a Module Follow the steps below.</p>
@@ -1279,6 +1279,8 @@
 </ul>
 <p>Refer to the following example:</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WXEventModule</span> <span class="keyword">extends</span> <span class="title">WXModule</span></span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String WEEX_CATEGORY=<span class="string">"com.taobao.android.intent.category.WEEX"</span>;</div><div class="line"></div><div class="line">  <span class="meta">@WXModuleAnno</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">openURL</span><span class="params">(String url)</span></span>&#123;</div><div class="line">      <span class="comment">//implement your module logic here</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="Support-synchronous-asynchronous-callback"><a href="#Support-synchronous-asynchronous-callback" class="headerlink" title="Support synchronous/asynchronous callback"></a>Support synchronous/asynchronous callback</h4><p>You can add  <code>@JSMethod (uiThread = false or true)</code> annotation to choose the callback mode of moudle. See the follow example.</p>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">  // as sync-callback mode</div><div class="line">@JSMethod (uiThread = false)</div><div class="line">public void testSyncCall()&#123;</div><div class="line">    WXLogUtils.d("WXComponentSyncTest : Thread.currentThread().getName());</div><div class="line">&#125;</div><div class="line"></div><div class="line">// as async-callback mode</div><div class="line">@JSMethod (uiThread = true)</div><div class="line">public void testAsyncCall()&#123;</div><div class="line">    WXLogUtils.e("WXComponentASynTest : Thread.currentThread().getName() );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="Register-the-moulde"><a href="#Register-the-moulde" class="headerlink" title="Register the moulde"></a>Register the moulde</h3><figure class="highlight java"><table><tr><td class="code"><pre><div class="line">WXSDKEngine.registerModule(<span class="string">"event"</span>, WXEventModule.class);</div></pre></td></tr></table></figure>
 <h3 id="Use-this-module-in-weex-DSL"><a href="#Use-this-module-in-weex-DSL" class="headerlink" title="Use this module in weex DSL"></a>Use this module in weex DSL</h3><p>Now <code>event</code> moudle is avaiable in weex, use the module like this:</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> event = <span class="built_in">require</span>(<span class="string">'@weex-module/event'</span>);</div><div class="line">event.openURL(<span class="string">"http://www.github.com"</span>);</div></pre></td></tr></table></figure>
@@ -1308,10 +1310,10 @@
 <pre><code class="html"><span class="tag">&lt;<span class="name">template</span>&gt;</span>
   <span class="tag">&lt;<span class="name">mycomponent</span> <span class="attr">id</span>=<span class="string">'mycomponent'</span>&gt;</span><span class="tag">&lt;/<span class="name">mycomponent</span>&gt;</span>
 <span class="tag">&lt;/<span class="name">template</span>&gt;</span>
-<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">
-  module.exports = {
-    created: function() {
-      this.$el('mycomponent').focus();
+<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript">
+  <span class="built_in">module</span>.exports = {
+    <span class="attr">created</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+      <span class="keyword">this</span>.$el(<span class="string">'mycomponent'</span>).focus();
     }
   }
 </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
@@ -1347,7 +1349,7 @@
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

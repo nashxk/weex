@@ -5,16 +5,16 @@
   
   <title>Integrate Devtool to Android | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Integrate Devtool to AndroidWork in progresss.">
+  <meta name="description" content="Integrate Devtool to AndroidWeex devtools is a custom devtools for weex that implements Chrome Debugging Protocol inspired by Stetho, it is designed to help you quickly inspect your app and debug your">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Integrate Devtool to Android">
 <meta property="og:url" content="https://weex-project.io/references/advanced/integrate-devtool-to-android.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="Integrate Devtool to AndroidWork in progresss.">
-<meta property="og:updated_time" content="2017-02-20T02:16:53.000Z">
+<meta property="og:description" content="Integrate Devtool to AndroidWeex devtools is a custom devtools for weex that implements Chrome Debugging Protocol inspired by Stetho, it is designed to help you quickly inspect your app and debug your">
+<meta property="og:updated_time" content="2017-02-22T03:06:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Integrate Devtool to Android">
-<meta name="twitter:description" content="Integrate Devtool to AndroidWork in progresss.">
+<meta name="twitter:description" content="Integrate Devtool to AndroidWeex devtools is a custom devtools for weex that implements Chrome Debugging Protocol inspired by Stetho, it is designed to help you quickly inspect your app and debug your">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -1264,9 +1264,72 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-20T02:16:53.000Z">Updated time: 20/02/2017</time>
+  <time class="article-date" datetime="2017-02-22T03:06:35.000Z">Updated time: 22/02/2017</time>
 </header>
-    <h1 id="Integrate-Devtool-to-Android"><a href="#Integrate-Devtool-to-Android" class="headerlink" title="Integrate Devtool to Android"></a>Integrate Devtool to Android</h1><p>Work in progresss.</p>
+    <h1 id="Integrate-Devtool-to-Android"><a href="#Integrate-Devtool-to-Android" class="headerlink" title="Integrate Devtool to Android"></a>Integrate Devtool to Android</h1><p>Weex devtools is a custom devtools for weex that implements Chrome Debugging Protocol inspired by Stetho, it is designed to help you quickly inspect your app and debug your JS bundle source in a Chrome web page. To make it work, at first you must integrate devtool to your App. This page will help you integrate devtool to your Android App.</p>
+<h2 id="Integrate-to-Android"><a href="#Integrate-to-Android" class="headerlink" title="Integrate to Android"></a>Integrate to Android</h2><h3 id="Installing-Dependencies"><a href="#Installing-Dependencies" class="headerlink" title="Installing Dependencies"></a>Installing Dependencies</h3><p>Weex Devtools depend on <code>weex_inspector</code>. I strongly recommend you use the latest version since both Weex SDK and devtools are developed iteratively and rapidly. See the release version list <a href="https://github.com/weexteam/weex_devtools_android/releases" target="_blank" rel="external">here</a>. All the release version will publish to the <a href="https://bintray.com/alibabaweex/maven/weex_inspector" target="_blank" rel="external">jcenter repo</a>. There are two choices to install it: </p>
+<ul>
+<li><p>From Gradle</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">  <span class="keyword">compile</span> <span class="string">'com.taobao.android:weex_inspector:0.8.0.0'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>From source code</p>
+<p>you need to copy the dir of inspector to the same dir of your app and add <code>include &quot;:inspector&quot;</code>in your project’s <code>settings.gradle</code> file just like playground have done, then add dependency in your app’s <code>build.gralde</code>.</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">  <span class="keyword">compile</span> <span class="keyword">project</span>(<span class="string">':inspector'</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="Version-compatibility"><a href="#Version-compatibility" class="headerlink" title="Version compatibility"></a>Version compatibility</h4><table>
+<thead>
+<tr>
+<th>weex sdk</th>
+<th>weex inspector</th>
+<th>Debugger Server</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.8.0.1+</td>
+<td>0.0.8.1+</td>
+<td>0.2.39+</td>
+</tr>
+<tr>
+<td>0.7.0+</td>
+<td>0.0.7.13</td>
+<td>0.2.38</td>
+</tr>
+<tr>
+<td>0.6.0+</td>
+<td>0.0.2.2</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Adding-Debug-mode-switch"><a href="#Adding-Debug-mode-switch" class="headerlink" title="Adding Debug mode switch"></a>Adding Debug mode switch</h3><p>The key to control the opening and closing of the debug mode can be summarized as three rules:</p>
+<p><strong>No.1: Set the switch and Debugger Server addresses via <code>sRemoteDebugMode</code> and <code>sRemoteDebugProxyUrl</code>.</strong></p>
+<p><code>WXEnvironment</code> class has a pair of static variables mark Weex current debug mode:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> sRemoteDebugMode; <span class="comment">// default close</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> String sRemoteDebugProxyUrl; <span class="comment">// Debugger Server addresses</span></div></pre></td></tr></table></figure>
+<p>You have to set <code>WXEnvironment.sRemoteDebugMode</code> and <code>WXEnvironment.sRemoteDebugProxyUrl</code> at the right time, for example:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initDebugEnvironment</span><span class="params">(<span class="keyword">boolean</span> enable, String host)</span> </span>&#123;</div><div class="line">  WXEnvironment.sRemoteDebugMode = enable;</div><div class="line">  WXEnvironment.sRemoteDebugProxyUrl = <span class="string">"ws://"</span> + host + <span class="string">":8088/debugProxy/native"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>No.2: You must call <code>WXSDKEngine.reload()</code> method when <code>sRemoteDebugMode</code> was changed.</strong></p>
+<p>You can control a state of debug mode via the <code>WXEnvironment.sRemoteDebugMode</code>, but you need reset Weex runtime if you changed a state of debug mode.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">launchInspector</span><span class="params">(<span class="keyword">boolean</span> remoteDebug)</span> </span>&#123;</div><div class="line">  <span class="keyword">if</span> (WXEnvironment.isApkDebugable()) &#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">      <span class="keyword">if</span> (mWxDebugProxy != <span class="keyword">null</span>) &#123;</div><div class="line">        mWxDebugProxy.stop();</div><div class="line">      &#125;</div><div class="line">      HackedClass&lt;Object&gt; debugProxyClass = WXHack.into(<span class="string">"com.taobao.weex.devtools.debug.DebugServerProxy"</span>);</div><div class="line">      mWxDebugProxy = (IWXDebugProxy) debugProxyClass.constructor(Context.class, WXBridgeManager.class)</div><div class="line">              .getInstance(WXEnvironment.getApplication(), WXBridgeManager.<span class="keyword">this</span>);</div><div class="line">      <span class="keyword">if</span> (mWxDebugProxy != <span class="keyword">null</span>) &#123;</div><div class="line">        mWxDebugProxy.start();</div><div class="line">        <span class="keyword">if</span> (remoteDebug) &#123;</div><div class="line">          mWXBridge = mWxDebugProxy.getWXBridge();</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">          <span class="keyword">if</span> (mWXBridge != <span class="keyword">null</span> &amp;&amp; !(mWXBridge <span class="keyword">instanceof</span> WXBridge)) &#123;</div><div class="line">            mWXBridge = <span class="keyword">null</span>;</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125; <span class="keyword">catch</span> (HackAssertionException e) &#123;</div><div class="line">      WXLogUtils.e(<span class="string">"launchInspector HackAssertionException "</span>, e);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>In this way, You can control the debug mode flexibly.</p>
+<p><strong>No.3: Auto refresh page via <code>ACTION_DEBUG_INSTANCE_REFRESH</code> broadcast</strong></p>
+<p><code>ACTION_DEBUG_INSTANCE_REFRESH</code> can be broadcast messages when the debug mode is switched or Chrome page refresh. You can use this mechanism to inform the current page to refresh in time.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RefreshBroadcastReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (IWXDebugProxy.ACTION_DEBUG_INSTANCE_REFRESH.equals(intent.getAction())) &#123;</div><div class="line">      <span class="keyword">if</span> (mUri != <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">if</span> (TextUtils.equals(mUri.getScheme(), <span class="string">"http"</span>) || TextUtils.equals(mUri.getScheme(), <span class="string">"https"</span>)) &#123;</div><div class="line">          loadWXfromService(mUri.toString());</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">          loadWXfromLocal(<span class="keyword">true</span>);</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>The easiest way is reuse the code of playground. On the other hand QR code is not necessary, if you review the source code you can draw a conclusion that QR CODE is just a way to set devtools server address. There are two examples of how to open debug modes in the Playground App:</p>
+<ul>
+<li><p>Set the debug mode via <code>XXXApplication</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyApplication</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</div><div class="line">  <span class="keyword">super</span>.onCreate();</div><div class="line">  initDebugEnvironment(<span class="keyword">true</span>, <span class="string">"xxx.xxx.xxx.xxx"</span><span class="comment">/*"DEBUG_SERVER_HOST"*/</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Set the debug mode by scan QR code</p>
+<p>You review the source code of playground.</p>
+<ul>
+<li>Debug mode switch control: <a href="https://github.com/weexteam/weex_devtools_android/blob/master/playground/app/src/main/java/com/alibaba/weex/WXApplication.java" target="_blank" rel="external"><code>WXApplication.java</code></a></li>
+<li>Refresh control <a href="https://github.com/weexteam/weex_devtools_android/blob/master/playground/app/src/main/java/com/alibaba/weex/WXPageActivity.java" target="_blank" rel="external"><code>WXPageActivity.java</code></a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Known-Issues"><a href="#Known-Issues" class="headerlink" title="Known Issues"></a>Known Issues</h2><p>You can report issues and bugs <a href="https://github.com/weexteam/weex_devtools_android/issues" target="_blank" rel="external">here</a>. We will reply as soon as possible.</p>
 
   </div>
   
@@ -1298,7 +1361,7 @@
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">
