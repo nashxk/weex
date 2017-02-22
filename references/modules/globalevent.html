@@ -13,7 +13,7 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="globalEventv0.8+ (developing)
 SummaryglobalEvent are used to listen for persistent events, such as changes in positioning information, gyroscopes, and so on. A global event is a secondary API that req">
-<meta property="og:updated_time" content="2017-02-20T02:16:53.000Z">
+<meta property="og:updated_time" content="2017-02-22T03:18:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="globalEvent">
 <meta name="twitter:description" content="globalEventv0.8+ (developing)
@@ -1267,7 +1267,7 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-20T02:16:53.000Z">Updated time: 20/02/2017</time>
+  <time class="article-date" datetime="2017-02-22T03:18:57.000Z">Updated time: 22/02/2017</time>
 </header>
     <h1 id="globalEvent"><a href="#globalEvent" class="headerlink" title="globalEvent"></a>globalEvent</h1><p><span class="weex-version">v0.8+ (developing)</span></p>
 <h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p><code>globalEvent</code> are used to listen for persistent events, such as changes in positioning information, gyroscopes, and so on. A global event is a secondary API that requires additional APIs to work with.</p>
@@ -1280,14 +1280,14 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
 <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">  * </div><div class="line">  * @param eventName eventName</div><div class="line">  * @param params event params</div><div class="line">  */</div><div class="line">instance.fireGlobalEventCallback(eventName,params);</div></pre></td></tr></table></figure>
 <p>How to dispatch a global event in a weex-html5 component or module ? Just dispatch the event on the document element:</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> evt = <span class="keyword">new</span> Event(<span class="string">'some-type'</span>)</div><div class="line">evt.data = &#123; <span class="attr">foo</span>: <span class="string">'bar'</span> &#125;</div><div class="line"><span class="built_in">document</span>.dispatchEvent(evt)</div></pre></td></tr></table></figure>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><h4 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h4><figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Map&lt;String,Object&gt; params=<span class="keyword">new</span> HashMap&lt;&gt;();</div><div class="line">params.put(<span class="string">"key"</span>,<span class="string">"value"</span>);</div><div class="line">mWXSDKInstance.fireGlobalEventCallback(<span class="string">"geolocation"</span>,params);</div></pre></td></tr></table></figure>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><h4 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h4><figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Map&lt;String,Object&gt; params=<span class="keyword">new</span> HashMap&lt;&gt;();</div><div class="line">params.put(<span class="string">"key"</span>,<span class="string">"value"</span>);</div><div class="line">mWXSDKInstance.fireGlobalEventCallback(<span class="string">"geolocation"</span>, params);</div></pre></td></tr></table></figure>
 <h4 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h4><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">[weexInstance fireGlobalEvent:@&quot;geolocation&quot; params:@&#123;@&quot;key&quot;:@&quot;value&quot;&#125;];</div></pre></td></tr></table></figure>
 <h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="addEventListener-String-eventName-String-callback"><a href="#addEventListener-String-eventName-String-callback" class="headerlink" title="addEventListener(String eventName, String callback)"></a>addEventListener(String eventName, String callback)</h3><p>register global event.</p>
 <h4 id="Arguments"><a href="#Arguments" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
 <li><code>eventName</code><em>(string)</em>: The name of the event you want to listen to.  </li>
 <li><code>callback</code><em>(function)</em>: the callback function after executing this action.  </li>
 </ul>
-<h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> globalEvent = <span class="built_in">require</span>(<span class="string">'@weex-module/globalEvent'</span>);</div><div class="line">globalEvent.addEventListener(<span class="string">"geolocation"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">2<span class="built_in">console</span>.log(<span class="string">"get geolocation"</span>)</div><div class="line">2&#125;);</div></pre></td></tr></table></figure>
+<h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> globalEvent = <span class="built_in">require</span>(<span class="string">'@weex-module/globalEvent'</span>);</div><div class="line">globalEvent.addEventListener(<span class="string">"geolocation"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">2<span class="built_in">console</span>.log(<span class="string">"get geolocation"</span>)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h3 id="removeEventListener-String-eventName"><a href="#removeEventListener-String-eventName" class="headerlink" title="removeEventListener(String eventName)"></a>removeEventListener(String eventName)</h3><p>remove global event </p>
 <h4 id="Arguments-1"><a href="#Arguments-1" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
 <li><code>eventName</code><em>(string)</em>: You no longer need to listen for event names.</li>
@@ -1324,7 +1324,7 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

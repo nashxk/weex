@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://weex-project.io/v-0.10/advanced/extend-to-android.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Extend to AndroidModule extendweex sdk support Module extend,Weex SDK provides only rendering capabilities, rather than have other capabilities, such as network, picture, and URL redirection. If you w">
-<meta property="og:updated_time" content="2017-02-20T02:16:53.000Z">
+<meta property="og:updated_time" content="2017-02-22T03:06:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Extend to Android">
 <meta name="twitter:description" content="Extend to AndroidModule extendweex sdk support Module extend,Weex SDK provides only rendering capabilities, rather than have other capabilities, such as network, picture, and URL redirection. If you w">
@@ -264,7 +264,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-20T02:16:53.000Z">Updated time: 20/02/2017</time>
+  <time class="article-date" datetime="2017-02-22T03:06:35.000Z">Updated time: 22/02/2017</time>
 </header>
     <h1 id="Extend-to-Android"><a href="#Extend-to-Android" class="headerlink" title="Extend to Android"></a>Extend to Android</h1><h3 id="Module-extend"><a href="#Module-extend" class="headerlink" title="Module extend"></a>Module extend</h3><p>weex sdk support Module extend,<br>Weex SDK provides only rendering capabilities, rather than have other capabilities, such as network, picture, and URL redirection. If you want the these features, you need to implement it.</p>
 <p>For example: If you want to implement an address jumping function, you can achieve a Module Follow the steps below.</p>
@@ -308,10 +308,10 @@
 <pre><code class="html"><span class="tag">&lt;<span class="name">template</span>&gt;</span>
   <span class="tag">&lt;<span class="name">mycomponent</span> <span class="attr">id</span>=<span class="string">'mycomponent'</span>&gt;</span><span class="tag">&lt;/<span class="name">mycomponent</span>&gt;</span>
 <span class="tag">&lt;/<span class="name">template</span>&gt;</span>
-<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">
-  module.exports = {
-    created: function() {
-      this.$el('mycomponent').focus();
+<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript">
+  <span class="built_in">module</span>.exports = {
+    <span class="attr">created</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+      <span class="keyword">this</span>.$el(<span class="string">'mycomponent'</span>).focus();
     }
   }
 </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
@@ -347,7 +347,7 @@
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">
