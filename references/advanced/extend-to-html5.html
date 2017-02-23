@@ -5,16 +5,59 @@
   
   <title>Extend to HTML5 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Extend to HTML5Work in progresss.">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
+  <meta name="description" content="Extend to HTML5Weex itself offers a lot of built-in components and modules, but also has the ability to expand horizontally. It allows developers to expand and customize themselves. But it is importan">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Extend to HTML5">
 <meta property="og:url" content="https://weex-project.io/references/advanced/extend-to-html5.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="Extend to HTML5Work in progresss.">
-<meta property="og:updated_time" content="2017-02-22T03:06:35.000Z">
+<meta property="og:description" content="Extend to HTML5Weex itself offers a lot of built-in components and modules, but also has the ability to expand horizontally. It allows developers to expand and customize themselves. But it is importan">
+<meta property="og:updated_time" content="2017-02-23T07:20:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Extend to HTML5">
-<meta name="twitter:description" content="Extend to HTML5Work in progresss.">
+<meta name="twitter:description" content="Extend to HTML5Weex itself offers a lot of built-in components and modules, but also has the ability to expand horizontally. It allows developers to expand and customize themselves. But it is importan">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -452,11 +495,11 @@
           <ul class="chapter">
             
               <li>
-                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
-                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -1030,11 +1073,11 @@
           <ul class="chapter">
             
               <li>
-                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
-                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -1264,9 +1307,19 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:06:35.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T07:20:17.000Z">Updated time: 23/02/2017</time>
 </header>
-    <h1 id="Extend-to-HTML5"><a href="#Extend-to-HTML5" class="headerlink" title="Extend to HTML5"></a>Extend to HTML5</h1><p>Work in progresss.</p>
+    <h1 id="Extend-to-HTML5"><a href="#Extend-to-HTML5" class="headerlink" title="Extend to HTML5"></a>Extend to HTML5</h1><p>Weex itself offers a lot of built-in components and modules, but also has the ability to expand horizontally. It allows developers to expand and customize themselves. But it is important to note that Weex is a cross-platform solution. When extending its built-in components or modules, you need to implement it on the three ends (Android, iOS, Web).       </p>
+<p>After Weex switches the kernel to Vue 2.x, it will be easier to extend the Vue component on the Web side.    </p>
+<h2 id="Extend-Web-components"><a href="#Extend-Web-components" class="headerlink" title="Extend Web components"></a>Extend Web components</h2><p>Vue.js is an independent front-end framework. In the browser, you can not use the Weex container for page rendering. So, the two things are the same: (1) for the Weex platform to expand Vue.js Web components. (2) directly using Vue.js to develop a Web component. The development of components can refer to its documentation: <a href="https://vuejs.org/v2/guide/components.html" target="_blank" rel="external">component</a>. It is also recommended to use the <figure class="highlight plain"><figcaption><span>file to write components. How to use it: [Single file component](https://vuejs.org/v2/guide/single-file-components.html).   </span></figcaption><table><tr><td class="code"><pre><div class="line"></div><div class="line">### Example of component extension</div><div class="line">To extend ```&lt;sidebar&gt;``` as an example, you should first write the logic of the component itself:   </div><div class="line"></div><div class="line">```html</div><div class="line">&lt;!-- sidebar.vue --&gt;</div><div class="line">&lt;template&gt;</div><div class="line">  &lt;div class=&quot;sidebar&quot;&gt;</div><div class="line">    &lt;slot&gt;&lt;/slot&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;style scoped&gt;</div><div class="line">  .sidebar &#123;</div><div class="line">    /* ... */</div><div class="line">  &#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;script&gt;</div><div class="line">  export default &#123;</div><div class="line">    props: [],</div><div class="line">    data () &#123;</div><div class="line">      return &#123;&#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>And then register the <figure class="highlight plain"><figcaption><span>component globally before using it:</span></figcaption><table><tr><td class="code"><pre><div class="line"></div><div class="line">```javascript</div><div class="line">import Vue from &apos;vue&apos;</div><div class="line">import Sidebar from &apos;./path/to/sidebar.vue&apos;</div><div class="line">// register the ```&lt;sidebar&gt;``` component globally</div><div class="line">Vue.component(&apos;sidebar&apos;, Sidebar)</div></pre></td></tr></table></figure></p>
+<p>When you extend the Weex component, if you only use the built-in components provided by Weex and use the styles that Weex supports, it is no different from the normal custom component and does not need to be implemented at the Native side.   </p>
+<p>If you find a component that does not support labels and styles that are not supported by Weex, you will need to really extend the Weex component. At the same time, you also need to extend in the Android side and the iOS side, or will lead to rendering exception.    </p>
+<h2 id="Extend-the-Web-module"><a href="#Extend-the-Web-module" class="headerlink" title="Extend the Web module"></a>Extend the Web module</h2><p>In addition to the common components, Weex also provides a common module, you can easily call the native API. In general, the registered Weex module requires three ends to be implemented, otherwise it will affect its normal use.</p>
+<h3 id="Register-the-module"><a href="#Register-the-module" class="headerlink" title="Register the module"></a>Register the module</h3><p>If we import the <figure class="highlight plain"><figcaption><span>library, we can get the weex variable globally. You can register the module using the ```registerModule```method.    </span></figcaption><table><tr><td class="code"><pre><div class="line"></div><div class="line">#### API format  </div><div class="line">+ `registerModule`</div><div class="line"></div><div class="line">21.```name```: &#123;String&#125; Required, module name.     </div><div class="line">22.```define```: &#123;Object&#125; Required, module definition.    </div><div class="line">2</div><div class="line">#### The example of register module   </div><div class="line">The following code registers a module called guide:      </div><div class="line"></div><div class="line">```javascript</div><div class="line">weex.registerModule(&apos;guide&apos;, &#123;</div><div class="line">  greeting () &#123;</div><div class="line">    console.log(&apos;Hello, nice to meet you. I am your guide.&apos;)</div><div class="line">  &#125;,</div><div class="line">  farewell () &#123;</div><div class="line">    console.log(&apos;Goodbye, I am always at your service.&apos;)</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h3 id="Use-the-module"><a href="#Use-the-module" class="headerlink" title="Use the module"></a>Use the module</h3><p>Weex provides the require method for getting registered modules. You only need to pass the module name directly:     </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">//import module</span></div><div class="line"><span class="keyword">const</span> guide = weex.requireModule(<span class="string">'guide'</span>)</div><div class="line"><span class="comment">// use the methods of module</span></div><div class="line">guide.greeting()</div><div class="line">guide.farewell()</div></pre></td></tr></table></figure>
+<p>The above wording is as useful as the native end, except that the methods in the module are provided by Native.</p>
 
   </div>
   
@@ -1283,12 +1336,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/references/advanced/extend-to-html5.html">English</a>
+          <a href="/references/advanced/extend-to-html5.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/references/advanced/extend-to-html5.html">中文</a>
+          <a href="/cn/references/advanced/extend-to-html5.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

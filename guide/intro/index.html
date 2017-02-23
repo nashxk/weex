@@ -5,6 +5,49 @@
   
   <title>Intro | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="Intro
 How it works
 Web Dev Experience
@@ -23,7 +66,7 @@ Using Vue
 Write once, Run Everywhere
 App Architecture
 Weex Page Architecture">
-<meta property="og:updated_time" content="2017-02-22T03:06:35.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:06:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Intro">
 <meta name="twitter:description" content="Intro
@@ -398,7 +441,7 @@ Weex Page Architecture">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:06:35.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:06:31.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h1><ul>
 <li><a href="./how-it-works.html">How it works</a></li>
@@ -424,12 +467,12 @@ Weex Page Architecture">
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/guide/intro/index.html">English</a>
+          <a href="/guide/intro/index.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/guide/intro/index.html">中文</a>
+          <a href="/cn/guide/intro/index.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

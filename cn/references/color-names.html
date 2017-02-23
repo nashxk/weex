@@ -5,6 +5,49 @@
   
   <title>颜色名称列表 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="Weex 支持的所有颜色名称基础颜色关键词:
 
 
@@ -93,7 +136,7 @@ fuchsia(晚樱)
 
 
 g">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:04:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="颜色名称列表">
 <meta name="twitter:description" content="Weex 支持的所有颜色名称基础颜色关键词:
@@ -625,11 +668,11 @@ g">
               </li>
             
               <li>
-                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -1221,11 +1264,11 @@ g">
               </li>
             
               <li>
-                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -1423,7 +1466,7 @@ g">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:04:05.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="Weex-支持的所有颜色名称"><a href="#Weex-支持的所有颜色名称" class="headerlink" title="Weex 支持的所有颜色名称"></a>Weex 支持的所有颜色名称</h1><h3 id="基础颜色关键词"><a href="#基础颜色关键词" class="headerlink" title="基础颜色关键词:"></a>基础颜色关键词:</h3><table>
 <thead>
@@ -2113,12 +2156,12 @@ g">
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/references/color-names.html">English</a>
+          <a href="/references/color-names.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/references/color-names.html">中文</a>
+          <a href="/cn/references/color-names.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

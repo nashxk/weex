@@ -5,6 +5,49 @@
   
   <title>Web standards | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="Web standardsHTMLrefs: https://www.advancedwebranking.com/html/ 2016-12-11
 Overview
 
@@ -65,7 +108,7 @@ supported
 
 97%
 &amp;lt;title&amp;g">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:04:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web standards">
 <meta name="twitter:description" content="Web standardsHTMLrefs: https://www.advancedwebranking.com/html/ 2016-12-11
@@ -533,11 +576,11 @@ supported
           <ul class="chapter">
             
               <li>
-                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
-                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -1111,11 +1154,11 @@ supported
           <ul class="chapter">
             
               <li>
-                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
-                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -1345,7 +1388,7 @@ supported
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:04:05.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="Web-standards"><a href="#Web-standards" class="headerlink" title="Web standards"></a>Web standards</h1><h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>refs: <a href="https://www.advancedwebranking.com/html/" target="_blank" rel="external">https://www.advancedwebranking.com/html/</a> 2016-12-11</p>
 <h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><table>
@@ -3766,12 +3809,12 @@ supported
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/references/web-standards.html">English</a>
+          <a href="/references/web-standards.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/references/web-standards.html">中文</a>
+          <a href="/cn/references/web-standards.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

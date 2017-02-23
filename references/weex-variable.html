@@ -5,16 +5,65 @@
   
   <title>Weex Variable | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Weex VariableWork in progresss.">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
+  <meta name="description" content="Weex instance variableEach Weex page has a separate weex variable, which exists in the JS context. They hold a single instance or method of the current Weex page.   
+weex.config
+This variable contains">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Weex Variable">
 <meta property="og:url" content="https://weex-project.io/references/weex-variable.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="Weex VariableWork in progresss.">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:description" content="Weex instance variableEach Weex page has a separate weex variable, which exists in the JS context. They hold a single instance or method of the current Weex page.   
+weex.config
+This variable contains">
+<meta property="og:updated_time" content="2017-02-23T07:20:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Weex Variable">
-<meta name="twitter:description" content="Weex VariableWork in progresss.">
+<meta name="twitter:description" content="Weex instance variableEach Weex page has a separate weex variable, which exists in the JS context. They hold a single instance or method of the current Weex page.   
+weex.config
+This variable contains">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -452,11 +501,11 @@
           <ul class="chapter">
             
               <li>
-                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
-                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -1030,11 +1079,11 @@
           <ul class="chapter">
             
               <li>
-                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
-                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -1264,9 +1313,38 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T07:20:17.000Z">Updated time: 23/02/2017</time>
 </header>
-    <h1 id="Weex-Variable"><a href="#Weex-Variable" class="headerlink" title="Weex Variable"></a>Weex Variable</h1><p>Work in progresss.</p>
+    <h1 id="Weex-instance-variable"><a href="#Weex-instance-variable" class="headerlink" title="Weex instance variable"></a>Weex instance variable</h1><p>Each Weex page has a separate weex variable, which exists in the JS context. They hold a single instance or method of the current Weex page.   </p>
+<p><code>weex.config</code></p>
+<p>This variable contains all the environment information for the current Weex page, including not only:       </p>
+<ul>
+<li><code>BundleUrl</code>: string: The URL of the JS bundle.</li>
+<li><code>Env: Object</code>: environment object.</li>
+<li><code>WeexVersion: string</code>: Weex sdk version.</li>
+<li><code>AppName: string</code>: application name.</li>
+<li><code>AppVersion: string</code>: app version.</li>
+<li><code>Platform: string</code>: platform information, that is iOS, Android or Web.</li>
+<li><code>OsVersion: string</code>: system version.</li>
+<li><code>DeviceModel: string</code>: device model (native application only).</li>
+<li><code>DeviceWidth: number</code>: device width, default 750.</li>
+<li><code>DeviceHeight: number</code>: device height.    </li>
+</ul>
+<p><code>weex.requireModule(module: string): Object</code>     </p>
+<p>Get all the methods of a native module, such as:    </p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">template</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">text</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">text</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">template</span>&gt;</span>
+<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">
+  var modal = weex.requireModule('modal')
+  modal.toast({
+    message: 'I am a toast.',
+    duration: 3
+  })
+</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+</code></pre>
+<p><code>weex.document: Document</code> </p>
+<p>Returns the document object of the current Weex page.</p>
 
   </div>
   
@@ -1283,12 +1361,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/references/weex-variable.html">English</a>
+          <a href="/references/weex-variable.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/references/weex-variable.html">中文</a>
+          <a href="/cn/references/weex-variable.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

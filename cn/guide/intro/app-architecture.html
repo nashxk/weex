@@ -5,6 +5,49 @@
   
   <title>用 Weex 构建移动应用 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="用 Weex 构建移动应用今天的移动应用这里谈一谈 Weex 对移动应用的理解。
 移动应用需要支撑并行研发如今移动应用的开发需要并行研发的能力，当一个移动应用发展到一定规模的时候，能否支撑大规模的并行研发就成为了一件非常关键而又重要的事情。否则很容易变成工程瓶颈。
 移动应用需要动态性如今移动应用不论从研发节奏、部署的灵活性和时效性、包大小、还是从研发到发布再到反馈的迭代周期上，都和移动互联网的发展">
@@ -15,7 +58,7 @@
 <meta property="og:description" content="用 Weex 构建移动应用今天的移动应用这里谈一谈 Weex 对移动应用的理解。
 移动应用需要支撑并行研发如今移动应用的开发需要并行研发的能力，当一个移动应用发展到一定规模的时候，能否支撑大规模的并行研发就成为了一件非常关键而又重要的事情。否则很容易变成工程瓶颈。
 移动应用需要动态性如今移动应用不论从研发节奏、部署的灵活性和时效性、包大小、还是从研发到发布再到反馈的迭代周期上，都和移动互联网的发展">
-<meta property="og:updated_time" content="2017-02-22T03:06:35.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:06:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用 Weex 构建移动应用">
 <meta name="twitter:description" content="用 Weex 构建移动应用今天的移动应用这里谈一谈 Weex 对移动应用的理解。
@@ -386,7 +429,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:06:35.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:06:31.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="用-Weex-构建移动应用"><a href="#用-Weex-构建移动应用" class="headerlink" title="用 Weex 构建移动应用"></a>用 Weex 构建移动应用</h1><h2 id="今天的移动应用"><a href="#今天的移动应用" class="headerlink" title="今天的移动应用"></a>今天的移动应用</h2><p>这里谈一谈 Weex 对移动应用的理解。</p>
 <h3 id="移动应用需要支撑并行研发"><a href="#移动应用需要支撑并行研发" class="headerlink" title="移动应用需要支撑并行研发"></a>移动应用需要支撑并行研发</h3><p>如今移动应用的开发需要并行研发的能力，当一个移动应用发展到一定规模的时候，能否支撑大规模的并行研发就成为了一件非常关键而又重要的事情。否则很容易变成工程瓶颈。</p>
@@ -428,12 +471,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/guide/intro/app-architecture.html">English</a>
+          <a href="/guide/intro/app-architecture.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/guide/intro/app-architecture.html">中文</a>
+          <a href="/cn/guide/intro/app-architecture.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

@@ -5,6 +5,49 @@
   
   <title>ViewModel APIs | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="接口你可以在组件的方法中通过 this （Vm）上下文访问这些 API。
 例子：
 &amp;lt;script&amp;gt;module.exports = &amp;#123;  methods: &amp;#123;    somemethod: function() &amp;#123;      this.$vm(&apos;someId&apos;);    &amp;#125;  &amp;#125;&amp;#125;&amp;lt;/script&amp;gt;
@@ -17,7 +60,7 @@ $(id)不建">
 例子：
 &amp;lt;script&amp;gt;module.exports = &amp;#123;  methods: &amp;#123;    somemethod: function() &amp;#123;      this.$vm(&apos;someId&apos;);    &amp;#125;  &amp;#125;&amp;#125;&amp;lt;/script&amp;gt;
 $(id)不建">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:04:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ViewModel APIs">
 <meta name="twitter:description" content="接口你可以在组件的方法中通过 this （Vm）上下文访问这些 API。
@@ -1029,7 +1072,7 @@ $(id)不建">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:04:05.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><p>你可以在组件的方法中通过 <code>this</code> （Vm）上下文访问这些 API。</p>
 <p>例子：</p>
@@ -1083,12 +1126,12 @@ $(id)不建">
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/v-0.10/references/api.html">English</a>
+          <a href="/v-0.10/references/api.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/references/api.html">中文</a>
+          <a href="/cn/v-0.10/references/api.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

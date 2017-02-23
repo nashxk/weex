@@ -5,6 +5,49 @@
   
   <title>&lt;a&gt; | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="&amp;lt;a&amp;gt;&amp;lt;a&amp;gt; 组件定义了指向某个页面的一个超链接. 此组件的作用和用法与HTML5中的 &amp;lt;a&amp;gt; 非常类似，区别在于 Weex 的 &amp;lt;a&amp;gt; 组件不能直接在里面添加文本（字符串），如果要展示文本，应该添加 &amp;lt;text&amp;gt; 组件。
 一个简单例子：
 &amp;lt;template&amp;gt;  &amp;lt;div class=&quot;wrapper&quot;&amp;gt;    &amp;">
@@ -15,7 +58,7 @@
 <meta property="og:description" content="&amp;lt;a&amp;gt;&amp;lt;a&amp;gt; 组件定义了指向某个页面的一个超链接. 此组件的作用和用法与HTML5中的 &amp;lt;a&amp;gt; 非常类似，区别在于 Weex 的 &amp;lt;a&amp;gt; 组件不能直接在里面添加文本（字符串），如果要展示文本，应该添加 &amp;lt;text&amp;gt; 组件。
 一个简单例子：
 &amp;lt;template&amp;gt;  &amp;lt;div class=&quot;wrapper&quot;&amp;gt;    &amp;">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:04:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<a>">
 <meta name="twitter:description" content="&amp;lt;a&amp;gt;&amp;lt;a&amp;gt; 组件定义了指向某个页面的一个超链接. 此组件的作用和用法与HTML5中的 &amp;lt;a&amp;gt; 非常类似，区别在于 Weex 的 &amp;lt;a&amp;gt; 组件不能直接在里面添加文本（字符串），如果要展示文本，应该添加 &amp;lt;text&amp;gt; 组件。
@@ -1026,7 +1069,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:04:05.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="lt-a-gt"><a href="#lt-a-gt" class="headerlink" title="&lt;a&gt;"></a>&lt;a&gt;</h1><p><code>&lt;a&gt;</code> 组件定义了指向某个页面的一个超链接. 此组件的作用和用法与HTML5中的 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a" target="_blank" rel="external"><code>&lt;a&gt;</code></a> 非常类似，区别在于 Weex 的 <code>&lt;a&gt;</code> 组件<strong>不能</strong>直接在里面添加文本（字符串），如果要展示文本，应该添加 <code>&lt;text&gt;</code> 组件。</p>
 <p>一个简单例子：</p>
@@ -1080,12 +1123,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/v-0.10/references/components/a.html">English</a>
+          <a href="/v-0.10/references/components/a.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/references/components/a.html">中文</a>
+          <a href="/cn/v-0.10/references/components/a.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

@@ -5,6 +5,49 @@
   
   <title>JS Bundle format (英) | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="JS Bundle formatJS Bundle Version: v0.3.0
 v0.5.0Whole Syntax and StructureA JS Bundle is actually a JavaScript file which follows ES5 standard. The code is used to define some custom components for th">
 <meta property="og:type" content="website">
@@ -13,7 +56,7 @@ v0.5.0Whole Syntax and StructureA JS Bundle is actually a JavaScript file which 
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="JS Bundle formatJS Bundle Version: v0.3.0
 v0.5.0Whole Syntax and StructureA JS Bundle is actually a JavaScript file which follows ES5 standard. The code is used to define some custom components for th">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:04:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS Bundle format (英)">
 <meta name="twitter:description" content="JS Bundle formatJS Bundle Version: v0.3.0
@@ -1023,7 +1066,7 @@ v0.5.0Whole Syntax and StructureA JS Bundle is actually a JavaScript file which 
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:04:05.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="JS-Bundle-format"><a href="#JS-Bundle-format" class="headerlink" title="JS Bundle format"></a>JS Bundle format</h1><p>JS Bundle Version: v0.3.0</p>
 <h2 id="v0-5-0"><a href="#v0-5-0" class="headerlink" title="v0.5.0"></a>v0.5.0</h2><h3 id="Whole-Syntax-and-Structure"><a href="#Whole-Syntax-and-Structure" class="headerlink" title="Whole Syntax and Structure"></a>Whole Syntax and Structure</h3><p>A JS Bundle is actually a JavaScript file which follows <strong>ES5</strong> standard. The code is used to define some custom components for the instance and bootstrap the instance with certain name, config and data. Developers could use all kinds of JS code packager like webpack, browserify, requirejs to organize your whole instance code.</p>
@@ -1147,12 +1190,12 @@ v0.5.0Whole Syntax and StructureA JS Bundle is actually a JavaScript file which 
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/v-0.10/references/specs/index.html">English</a>
+          <a href="/v-0.10/references/specs/index.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/references/specs/index.html">中文</a>
+          <a href="/cn/v-0.10/references/specs/index.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

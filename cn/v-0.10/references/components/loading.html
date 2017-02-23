@@ -5,6 +5,49 @@
   
   <title>&lt;loading&gt; | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="&amp;lt;loading&amp;gt;v0.6.1+
 &amp;lt;loading&amp;gt; 为 &amp;lt;scroller&amp;gt; 和 &amp;lt;list&amp;gt; 提供上拉加载功能。用法与特性与 &amp;lt;refresh&amp;gt; 类似， 是 &amp;lt;scroller&amp;gt; 和 &amp;lt;list&amp;gt; 的子组件，且只能在被 &amp;lt;scroller&amp;gt; 和 &amp;lt;list&amp;gt; 包含时才能被正确的渲染。
 子">
@@ -15,7 +58,7 @@
 <meta property="og:description" content="&amp;lt;loading&amp;gt;v0.6.1+
 &amp;lt;loading&amp;gt; 为 &amp;lt;scroller&amp;gt; 和 &amp;lt;list&amp;gt; 提供上拉加载功能。用法与特性与 &amp;lt;refresh&amp;gt; 类似， 是 &amp;lt;scroller&amp;gt; 和 &amp;lt;list&amp;gt; 的子组件，且只能在被 &amp;lt;scroller&amp;gt; 和 &amp;lt;list&amp;gt; 包含时才能被正确的渲染。
 子">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:04:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<loading>">
 <meta name="twitter:description" content="&amp;lt;loading&amp;gt;v0.6.1+
@@ -1026,7 +1069,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:04:05.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="lt-loading-gt"><a href="#lt-loading-gt" class="headerlink" title="&lt;loading&gt;"></a>&lt;loading&gt;</h1><p><span class="weex-version">v0.6.1+</span></p>
 <p><code>&lt;loading&gt;</code> 为 <code>&lt;scroller&gt;</code> 和 <code>&lt;list&gt;</code> 提供上拉加载功能。用法与特性与 <code>&lt;refresh&gt;</code> 类似， 是 <code>&lt;scroller&gt;</code> 和 <code>&lt;list&gt;</code> 的子组件，且只能在被 <code>&lt;scroller&gt;</code> 和 <code>&lt;list&gt;</code> 包含时才能被正确的渲染。</p>
@@ -1081,12 +1124,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/v-0.10/references/components/loading.html">English</a>
+          <a href="/v-0.10/references/components/loading.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/references/components/loading.html">中文</a>
+          <a href="/cn/v-0.10/references/components/loading.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

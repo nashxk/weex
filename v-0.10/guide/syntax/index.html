@@ -5,6 +5,49 @@
   
   <title>Syntax | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="SyntaxThe syntax of Weex is deeply inspired from Vue.js, an elegant JavaScript framework with component system and reactive data binding.
 A simple Weex page sample is just a piece of &amp;lt;template&amp;gt;">
 <meta property="og:type" content="website">
@@ -13,7 +56,7 @@ A simple Weex page sample is just a piece of &amp;lt;template&amp;gt;">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="SyntaxThe syntax of Weex is deeply inspired from Vue.js, an elegant JavaScript framework with component system and reactive data binding.
 A simple Weex page sample is just a piece of &amp;lt;template&amp;gt;">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:05:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Syntax">
 <meta name="twitter:description" content="SyntaxThe syntax of Weex is deeply inspired from Vue.js, an elegant JavaScript framework with component system and reactive data binding.
@@ -507,7 +550,7 @@ A simple Weex page sample is just a piece of &amp;lt;template&amp;gt;">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:05:21.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h1><p><em>The syntax of Weex is deeply inspired from <a href="http://vuejs.org/" target="_blank" rel="external">Vue.js</a>, an elegant JavaScript framework with component system and reactive data binding.</em></p>
 <p>A simple Weex page sample is just a piece of <code>&lt;template&gt;</code> code, a piece of <code>&lt;style&gt;</code> code and a piece of <code>&lt;script&gt;</code> code. The three parts together describe a whole Weex page.</p>
@@ -562,12 +605,12 @@ A simple Weex page sample is just a piece of &amp;lt;template&amp;gt;">
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/v-0.10/guide/syntax/index.html">English</a>
+          <a href="/v-0.10/guide/syntax/index.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/guide/syntax/index.html">中文</a>
+          <a href="/cn/v-0.10/guide/syntax/index.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

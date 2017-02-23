@@ -5,6 +5,49 @@
   
   <title>集成 Weex 到已有应用 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="集成 Weex 到已有应用集成到 Android注：以下文档都是假设您已经具备一定的Android开发经验。
 Android 集成有两种方式
 源码依赖：能够快速使用WEEX最新功能，可以根据自己项目的特性进行相关改进。
@@ -25,7 +68,7 @@ SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可�
 前期准备
 已经安装了JDK version&amp;gt;=1.7 并配置了环境变量
 已经">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:04:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集成 Weex 到已有应用">
 <meta name="twitter:description" content="集成 Weex 到已有应用集成到 Android注：以下文档都是假设您已经具备一定的Android开发经验。
@@ -401,7 +444,7 @@ SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可�
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:04:05.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="集成-Weex-到已有应用"><a href="#集成-Weex-到已有应用" class="headerlink" title="集成 Weex 到已有应用"></a>集成 Weex 到已有应用</h1><h2 id="集成到-Android"><a href="#集成到-Android" class="headerlink" title="集成到 Android"></a>集成到 Android</h2><p>注：以下文档都是假设您已经具备一定的Android开发经验。</p>
 <h3 id="Android-集成有两种方式"><a href="#Android-集成有两种方式" class="headerlink" title="Android 集成有两种方式"></a>Android 集成有两种方式</h3><ol>
@@ -486,12 +529,12 @@ SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可�
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/guide/integrate-to-your-app.html">English</a>
+          <a href="/guide/integrate-to-your-app.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/guide/integrate-to-your-app.html">中文</a>
+          <a href="/cn/guide/integrate-to-your-app.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

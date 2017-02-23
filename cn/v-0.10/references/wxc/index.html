@@ -5,6 +5,49 @@
   
   <title>官方扩展组件 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="官方扩展组件Weex 官方扩展组件指的是以 wxc- 开头的组件，这些组件不属于内建组件的一部分，而是 Weex 团队基于内建组件扩展的一些常用组件。这些组件依赖 weex-components，需要安装依赖后才可使用。
 使用方式如下：
 
@@ -29,7 +72,7 @@ npm install weex-components
 使用
 需要在 &amp;lt;script&amp;gt; 中引入依赖。
 &amp;">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:04:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="官方扩展组件">
 <meta name="twitter:description" content="官方扩展组件Weex 官方扩展组件指的是以 wxc- 开头的组件，这些组件不属于内建组件的一部分，而是 Weex 团队基于内建组件扩展的一些常用组件。这些组件依赖 weex-components，需要安装依赖后才可使用。
@@ -1047,7 +1090,7 @@ npm install weex-components
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:04:05.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="官方扩展组件"><a href="#官方扩展组件" class="headerlink" title="官方扩展组件"></a>官方扩展组件</h1><p>Weex 官方扩展组件指的是以 <code>wxc-</code> 开头的组件，这些组件不属于内建组件的一部分，而是 Weex 团队基于内建组件扩展的一些常用组件。这些组件依赖 <code>weex-components</code>，需要安装依赖后才可使用。</p>
 <p>使用方式如下：</p>
@@ -1076,12 +1119,12 @@ npm install weex-components
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/v-0.10/references/wxc/index.html">English</a>
+          <a href="/v-0.10/references/wxc/index.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/references/wxc/index.html">中文</a>
+          <a href="/cn/v-0.10/references/wxc/index.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

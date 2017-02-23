@@ -5,6 +5,49 @@
   
   <title>组件通信 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="组件间通信自定义事件Weex 支持自定义事件，这里有两个相关的设计：1，监听自定义事件；2，创建自定义事件。
 监听自定义事件每个 Weex 的 ViewModel 都支持 this.$on(type, handler) 和 this.$off(type[, handler]) 的 API。type 是监听的自定义事件类型，handler 是事件处理函数。
 当 handler 被触发时，会有一个事件">
@@ -15,7 +58,7 @@
 <meta property="og:description" content="组件间通信自定义事件Weex 支持自定义事件，这里有两个相关的设计：1，监听自定义事件；2，创建自定义事件。
 监听自定义事件每个 Weex 的 ViewModel 都支持 this.$on(type, handler) 和 this.$off(type[, handler]) 的 API。type 是监听的自定义事件类型，handler 是事件处理函数。
 当 handler 被触发时，会有一个事件">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:04:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="组件通信">
 <meta name="twitter:description" content="组件间通信自定义事件Weex 支持自定义事件，这里有两个相关的设计：1，监听自定义事件；2，创建自定义事件。
@@ -476,7 +519,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:04:05.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="组件间通信"><a href="#组件间通信" class="headerlink" title="组件间通信"></a>组件间通信</h1><h2 id="自定义事件"><a href="#自定义事件" class="headerlink" title="自定义事件"></a>自定义事件</h2><p>Weex 支持自定义事件，这里有两个相关的设计：1，监听自定义事件；2，创建自定义事件。</p>
 <h2 id="监听自定义事件"><a href="#监听自定义事件" class="headerlink" title="监听自定义事件"></a>监听自定义事件</h2><p>每个 Weex 的 ViewModel 都支持 <code>this.$on(type, handler)</code> 和 <code>this.$off(type[, handler])</code> 的 API。<code>type</code> 是监听的自定义事件类型，<code>handler</code> 是事件处理函数。</p>
@@ -505,12 +548,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/v-0.10/guide/syntax/comm.html">English</a>
+          <a href="/v-0.10/guide/syntax/comm.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/guide/syntax/comm.html">中文</a>
+          <a href="/cn/v-0.10/guide/syntax/comm.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

@@ -5,6 +5,49 @@
   
   <title>Playground | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="Weex Playground AppOne of best parts of Weex is Native Runtime . After preview your we file render in H5 using weex-toolkit CLI , you can try Native Runtime in a standalone App , this is Weex Playgrou">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Playground">
@@ -12,7 +55,7 @@
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Weex Playground AppOne of best parts of Weex is Native Runtime . After preview your we file render in H5 using weex-toolkit CLI , you can try Native Runtime in a standalone App , this is Weex Playgrou">
 <meta property="og:image" content="https://gw.alicdn.com/mt/TB1AoPdOXXXXXcXapXXXXXXXXXX-720-1280.png">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:05:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Playground">
 <meta name="twitter:description" content="Weex Playground AppOne of best parts of Weex is Native Runtime . After preview your we file render in H5 using weex-toolkit CLI , you can try Native Runtime in a standalone App , this is Weex Playgrou">
@@ -248,7 +291,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:05:21.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="Weex-Playground-App"><a href="#Weex-Playground-App" class="headerlink" title="Weex Playground App"></a>Weex Playground App</h1><p>One of best parts of Weex is Native Runtime . After preview your <code>we file</code> render in H5 using weex-toolkit CLI , you can try Native Runtime in a standalone App , this is Weex Playground App . More then that ,Weex playground App preset  a lot of  Demo &amp; ShowCase ,so you will get to experience  performance of Weex native runtime  easily.</p>
 <p>Android and IOS version of Playground App can be downloaded <a href="http://alibaba.github.io/weex/download.html" target="_blank" rel="external">here</a>.</p>
@@ -271,12 +314,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/v-0.10/tools/playground.html">English</a>
+          <a href="/v-0.10/tools/playground.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/tools/playground.html">中文</a>
+          <a href="/cn/v-0.10/tools/playground.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

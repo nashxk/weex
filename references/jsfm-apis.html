@@ -5,6 +5,49 @@
   
   <title>JS Framework APIs | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="JS Framework APIsBroadcastChannel v0.9+BroadcastChannel API is the solution for inter-instance communication.
 Reference
 BroadcastChannel specification.
@@ -23,7 +66,7 @@ MessageEvent specification
 
 API
 postMessage(mess">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:04:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS Framework APIs">
 <meta name="twitter:description" content="JS Framework APIsBroadcastChannel v0.9+BroadcastChannel API is the solution for inter-instance communication.
@@ -470,11 +513,11 @@ postMessage(mess">
           <ul class="chapter">
             
               <li>
-                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
-                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -1048,11 +1091,11 @@ postMessage(mess">
           <ul class="chapter">
             
               <li>
-                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
-                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -1282,7 +1325,7 @@ postMessage(mess">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:04:05.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="JS-Framework-APIs"><a href="#JS-Framework-APIs" class="headerlink" title="JS Framework APIs"></a>JS Framework APIs</h1><h2 id="BroadcastChannel-v0-9"><a href="#BroadcastChannel-v0-9" class="headerlink" title="BroadcastChannel v0.9+"></a>BroadcastChannel <span class="api-version">v0.9+</span></h2><p><code>BroadcastChannel</code> API is the solution for inter-instance communication.</p>
 <h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
@@ -1317,12 +1360,12 @@ postMessage(mess">
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/references/jsfm-apis.html">English</a>
+          <a href="/references/jsfm-apis.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/references/jsfm-apis.html">中文</a>
+          <a href="/cn/references/jsfm-apis.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

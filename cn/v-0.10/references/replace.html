@@ -5,13 +5,56 @@
   
   <title>Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="Replace optionThe replace option is boolean type. It determined whether this composed component will be replaced with the &amp;lt;template&amp;gt; content or just as a normal &amp;lt;div&amp;gt; element which include">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Weex">
 <meta property="og:url" content="https://weex-project.io/cn/v-0.10/references/replace.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Replace optionThe replace option is boolean type. It determined whether this composed component will be replaced with the &amp;lt;template&amp;gt; content or just as a normal &amp;lt;div&amp;gt; element which include">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:05:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Weex">
 <meta name="twitter:description" content="Replace optionThe replace option is boolean type. It determined whether this composed component will be replaced with the &amp;lt;template&amp;gt; content or just as a normal &amp;lt;div&amp;gt; element which include">
@@ -176,7 +219,7 @@
   <div class="article-entry" itemprop="articleBody">
     <header class="article-header">
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:05:21.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="Replace-option"><a href="#Replace-option" class="headerlink" title="Replace option"></a>Replace option</h1><p>The <code>replace</code> option is boolean type. It determined whether this composed component will be replaced with the <code>&lt;template&gt;</code> content or just as a normal <code>&lt;div&gt;</code> element which include the <code>&lt;template&gt;</code> content.</p>
 <p>For example:</p>
@@ -204,12 +247,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/v-0.10/references/replace.html">English</a>
+          <a href="/v-0.10/references/replace.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/references/replace.html">中文</a>
+          <a href="/cn/v-0.10/references/replace.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

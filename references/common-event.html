@@ -5,13 +5,56 @@
   
   <title>Common Events | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="Common EventsWeex provide the ability to let events trigger action, like starting a JavaScript when a user click on a component. Bellow are the common event attributes that can be added to weex compon">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Common Events">
 <meta property="og:url" content="https://weex-project.io/references/common-event.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Common EventsWeex provide the ability to let events trigger action, like starting a JavaScript when a user click on a component. Bellow are the common event attributes that can be added to weex compon">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:04:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Common Events">
 <meta name="twitter:description" content="Common EventsWeex provide the ability to let events trigger action, like starting a JavaScript when a user click on a component. Bellow are the common event attributes that can be added to weex compon">
@@ -452,11 +495,11 @@
           <ul class="chapter">
             
               <li>
-                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
-                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -1030,11 +1073,11 @@
           <ul class="chapter">
             
               <li>
-                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
-                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -1264,7 +1307,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:04:05.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="Common-Events"><a href="#Common-Events" class="headerlink" title="Common Events"></a>Common Events</h1><p>Weex provide the ability to let events trigger action, like starting a JavaScript when a user click on a component. Bellow are the common event attributes that can be added to weex components to define event actions.    </p>
 <h2 id="Click-event"><a href="#Click-event" class="headerlink" title="Click event"></a>Click event</h2><p>The onclick attribute fires on a click gesture on the element.<br><strong>Notes: </strong> The <code>input</code> and <code>switch</code> component does not currently support the <code>click</code> event, please use <code>change</code> or <code>input</code> event instead.    </p>
@@ -1315,12 +1358,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/references/common-event.html">English</a>
+          <a href="/references/common-event.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/references/common-event.html">中文</a>
+          <a href="/cn/references/common-event.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>
