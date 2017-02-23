@@ -5,6 +5,49 @@
   
   <title>&lt;image&gt; | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="&amp;lt;image&amp;gt;&amp;lt;image&amp;gt; 组件用于渲染图片，并且它不能包含任何子组件。可以用 &amp;lt;img&amp;gt; 作简写。
 需要注意的是，需要明确指定 width 和 height，否则图片无法显示。
 简单例子：
@@ -18,7 +61,7 @@
 简单例子：
 &amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;img style=&quot;width: 560;height: 560;&quot; src=&quot;https:/">
 <meta property="og:image" content="https://weex-project.io/../images/image_1.jpg">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:06:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<image>">
 <meta name="twitter:description" content="&amp;lt;image&amp;gt;&amp;lt;image&amp;gt; 组件用于渲染图片，并且它不能包含任何子组件。可以用 &amp;lt;img&amp;gt; 作简写。
@@ -513,11 +556,11 @@
               </li>
             
               <li>
-                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -1109,11 +1152,11 @@
               </li>
             
               <li>
-                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -1311,7 +1354,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:06:31.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="lt-image-gt"><a href="#lt-image-gt" class="headerlink" title="&lt;image&gt;"></a>&lt;image&gt;</h1><p><code>&lt;image&gt;</code> 组件用于渲染图片，并且它不能包含任何子组件。可以用 <code>&lt;img&gt;</code> 作简写。</p>
 <p>需要注意的是，需要明确指定 <code>width</code> 和 <code>height</code>，否则图片无法显示。</p>
@@ -1393,12 +1436,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/references/components/image.html">English</a>
+          <a href="/references/components/image.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/references/components/image.html">中文</a>
+          <a href="/cn/references/components/image.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

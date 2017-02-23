@@ -5,6 +5,49 @@
   
   <title>Special Element | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="Special ElementContentThe element serves as content distribution outlet in a composed component template. The element itself will be replaced.
 alias: ‘slot’.
 ExampleAs shown in the example, ‘content’">
@@ -15,7 +58,7 @@ ExampleAs shown in the example, ‘content’">
 <meta property="og:description" content="Special ElementContentThe element serves as content distribution outlet in a composed component template. The element itself will be replaced.
 alias: ‘slot’.
 ExampleAs shown in the example, ‘content’">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:05:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Special Element">
 <meta name="twitter:description" content="Special ElementContentThe element serves as content distribution outlet in a composed component template. The element itself will be replaced.
@@ -978,7 +1021,7 @@ ExampleAs shown in the example, ‘content’">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:05:21.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="Special-Element"><a href="#Special-Element" class="headerlink" title="Special Element"></a>Special Element</h1><h2 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h2><p>The element serves as content distribution outlet in a composed component template. The element itself will be replaced.</p>
 <p>alias: ‘slot’.</p>
@@ -1000,12 +1043,12 @@ ExampleAs shown in the example, ‘content’">
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/v-0.10/references/special-element.html">English</a>
+          <a href="/v-0.10/references/special-element.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/references/special-element.html">中文</a>
+          <a href="/cn/v-0.10/references/special-element.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

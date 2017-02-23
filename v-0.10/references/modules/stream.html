@@ -5,6 +5,49 @@
   
   <title>stream | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="streamA series of stream api. It provides a network request.
 APIfetch(options, callback,progressCallback)Start a network request, use two callbacks to receive server’s response data.
 Arguments
@@ -19,7 +62,7 @@ APIfetch(options, callback,progressCallback)Start a network request, use two cal
 Arguments
 
 option">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:04:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="stream">
 <meta name="twitter:description" content="streamA series of stream api. It provides a network request.
@@ -984,7 +1027,7 @@ option">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:04:05.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="stream"><a href="#stream" class="headerlink" title="stream"></a>stream</h1><p>A series of stream api. It provides a network request.</p>
 <h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="fetch-options-callback-progressCallback"><a href="#fetch-options-callback-progressCallback" class="headerlink" title="fetch(options, callback,progressCallback)"></a>fetch(options, callback,progressCallback)</h3><p>Start a network request, use two callbacks to receive server’s response data.</p>
@@ -1051,12 +1094,12 @@ option">
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/v-0.10/references/modules/stream.html">English</a>
+          <a href="/v-0.10/references/modules/stream.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/references/modules/stream.html">中文</a>
+          <a href="/cn/v-0.10/references/modules/stream.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

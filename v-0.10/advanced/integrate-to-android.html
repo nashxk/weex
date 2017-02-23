@@ -5,6 +5,49 @@
   
   <title>Integrate to Android | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="Integrate to AndroidWhen you need to use the new features or to customize specific features, you can rely on the Source SDK for development。
 PrerequisitesAssuming you have the Android SDK installed, r">
 <meta property="og:type" content="website">
@@ -13,7 +56,7 @@ PrerequisitesAssuming you have the Android SDK installed, r">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Integrate to AndroidWhen you need to use the new features or to customize specific features, you can rely on the Source SDK for development。
 PrerequisitesAssuming you have the Android SDK installed, r">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:05:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Integrate to Android">
 <meta name="twitter:description" content="Integrate to AndroidWhen you need to use the new features or to customize specific features, you can rely on the Source SDK for development。
@@ -267,7 +310,7 @@ PrerequisitesAssuming you have the Android SDK installed, r">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:05:21.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="Integrate-to-Android"><a href="#Integrate-to-Android" class="headerlink" title="Integrate to Android"></a>Integrate to Android</h1><p>When you need to use the new features or to customize specific features, you can rely on the Source SDK for development。</p>
 <h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><p>Assuming you have the Android SDK installed, run <code>android</code> to open the Android SDK Manager.</p>
@@ -336,12 +379,12 @@ PrerequisitesAssuming you have the Android SDK installed, r">
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/v-0.10/advanced/integrate-to-android.html">English</a>
+          <a href="/v-0.10/advanced/integrate-to-android.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/advanced/integrate-to-android.html">中文</a>
+          <a href="/cn/v-0.10/advanced/integrate-to-android.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

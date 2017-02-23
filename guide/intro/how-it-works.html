@@ -5,6 +5,49 @@
   
   <title>How it works | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="How it worksOverall StructureWeex is a client-side technology on the surface, but in fact it connects the whole way from the local development environment to the cloud deployment and distribution.
 Dev">
 <meta property="og:type" content="website">
@@ -14,7 +57,7 @@ Dev">
 <meta property="og:description" content="How it worksOverall StructureWeex is a client-side technology on the surface, but in fact it connects the whole way from the local development environment to the cloud deployment and distribution.
 Dev">
 <meta property="og:image" content="https://weex-project.io/../images/flow.png">
-<meta property="og:updated_time" content="2017-02-22T03:06:35.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:06:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How it works">
 <meta name="twitter:description" content="How it worksOverall StructureWeex is a client-side technology on the surface, but in fact it connects the whole way from the local development environment to the cloud deployment and distribution.
@@ -385,7 +428,7 @@ Dev">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:06:35.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:06:31.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="How-it-works"><a href="#How-it-works" class="headerlink" title="How it works"></a>How it works</h1><h2 id="Overall-Structure"><a href="#Overall-Structure" class="headerlink" title="Overall Structure"></a>Overall Structure</h2><p>Weex is a client-side technology on the surface, but in fact it connects the whole way from the local development environment to the cloud deployment and distribution.</p>
 <p>Developers can first write an app page just like writing a web page, and then compile the app page into a piece of JavaScript which is called Weex JS bundle.</p>
@@ -438,12 +481,12 @@ Dev">
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/guide/intro/how-it-works.html">English</a>
+          <a href="/guide/intro/how-it-works.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/guide/intro/how-it-works.html">中文</a>
+          <a href="/cn/guide/intro/how-it-works.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

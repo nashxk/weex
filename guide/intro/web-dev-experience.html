@@ -5,13 +5,56 @@
   
   <title>Web Dev Experience | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="Web Dev ExperienceWhat is Web Dev Experience?Weex dev experience is very close to web dev experience. It describes the UI structure and content with HTML or HTML-based template, describes the UI style">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Web Dev Experience">
 <meta property="og:url" content="https://weex-project.io/guide/intro/web-dev-experience.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Web Dev ExperienceWhat is Web Dev Experience?Weex dev experience is very close to web dev experience. It describes the UI structure and content with HTML or HTML-based template, describes the UI style">
-<meta property="og:updated_time" content="2017-02-22T03:06:35.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:06:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web Dev Experience">
 <meta name="twitter:description" content="Web Dev ExperienceWhat is Web Dev Experience?Weex dev experience is very close to web dev experience. It describes the UI structure and content with HTML or HTML-based template, describes the UI style">
@@ -380,7 +423,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:06:35.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:06:31.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="Web-Dev-Experience"><a href="#Web-Dev-Experience" class="headerlink" title="Web Dev Experience"></a>Web Dev Experience</h1><h2 id="What-is-Web-Dev-Experience"><a href="#What-is-Web-Dev-Experience" class="headerlink" title="What is Web Dev Experience?"></a>What is Web Dev Experience?</h2><p>Weex dev experience is very close to web dev experience. It describes the UI structure and content with HTML or HTML-based template, describes the UI style with CSS, and describes user behavior and business logic with JavaScript. And it has completed project mechanism.</p>
 <h2 id="Why-We-Choose-Web-Dev-Experience"><a href="#Why-We-Choose-Web-Dev-Experience" class="headerlink" title="Why We Choose Web Dev Experience?"></a>Why We Choose Web Dev Experience?</h2><ol>
@@ -420,12 +463,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/guide/intro/web-dev-experience.html">English</a>
+          <a href="/guide/intro/web-dev-experience.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/guide/intro/web-dev-experience.html">中文</a>
+          <a href="/cn/guide/intro/web-dev-experience.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

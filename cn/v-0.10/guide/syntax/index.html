@@ -5,6 +5,49 @@
   
   <title>语法介绍 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="语法综述Weex 代码由 &amp;lt;template&amp;gt;、&amp;lt;style&amp;gt;、&amp;lt;script&amp;gt; 三个部分构成。
 
 &amp;lt;template&amp;gt;：必须的，使用 HTML 语法描述页面结构，内容由多个标签组成，不同的标签代表不同的组件。
@@ -19,7 +62,7 @@
 &amp;lt;template&amp;gt;：必须的，使用 HTML 语法描述页面结构，内容由多个标签组成，不同的标签代表不同的组件。
 &amp;lt;style&amp;gt;：可选的，使用 CSS 语法描述页面的具体展现形式。
 &amp;lt;script&amp;gt;：可选的，使用 JavaScri">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:04:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="语法介绍">
 <meta name="twitter:description" content="语法综述Weex 代码由 &amp;lt;template&amp;gt;、&amp;lt;style&amp;gt;、&amp;lt;script&amp;gt; 三个部分构成。
@@ -482,7 +525,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:04:05.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="语法综述"><a href="#语法综述" class="headerlink" title="语法综述"></a>语法综述</h1><p>Weex 代码由 <code>&lt;template&gt;</code>、<code>&lt;style&gt;</code>、<code>&lt;script&gt;</code> 三个部分构成。</p>
 <ul>
@@ -538,12 +581,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/v-0.10/guide/syntax/index.html">English</a>
+          <a href="/v-0.10/guide/syntax/index.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/guide/syntax/index.html">中文</a>
+          <a href="/cn/v-0.10/guide/syntax/index.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

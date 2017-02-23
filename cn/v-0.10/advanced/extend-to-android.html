@@ -5,6 +5,49 @@
   
   <title>Android 扩展 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="Android 扩展Weex 提供了扩展机制，可以根据自己的业务进行定制自己的功能。主要分为两类扩展：  
 
 Module 扩展 非 UI 的特定功能。例如 sendHttp、openURL 等。
@@ -19,7 +62,7 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
 Module 扩展 非 UI 的特定功能。例如 sendHttp、openURL 等。
 Component 扩展 实现特别功能的 Native 控件。例如：RichTextview，RefreshListview 等。
 Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
-<meta property="og:updated_time" content="2017-02-22T03:06:35.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:06:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 扩展">
 <meta name="twitter:description" content="Android 扩展Weex 提供了扩展机制，可以根据自己的业务进行定制自己的功能。主要分为两类扩展：  
@@ -326,7 +369,7 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:06:35.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:06:31.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="Android-扩展"><a href="#Android-扩展" class="headerlink" title="Android 扩展"></a>Android 扩展</h1><p>Weex 提供了扩展机制，可以根据自己的业务进行定制自己的功能。<br>主要分为两类扩展：  </p>
 <ul>
@@ -387,12 +430,12 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/v-0.10/advanced/extend-to-android.html">English</a>
+          <a href="/v-0.10/advanced/extend-to-android.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/advanced/extend-to-android.html">中文</a>
+          <a href="/cn/v-0.10/advanced/extend-to-android.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

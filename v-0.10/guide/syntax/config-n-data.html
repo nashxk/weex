@@ -5,6 +5,49 @@
   
   <title>Page Config &amp; Data | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="Page Config &amp;amp; DataYou can write some instance config and data in some additional &amp;lt;script&amp;gt; at the top-level Weex component.
 
 the instance config could declare some meta informations like whic">
@@ -15,7 +58,7 @@ the instance config could declare some meta informations like whic">
 <meta property="og:description" content="Page Config &amp;amp; DataYou can write some instance config and data in some additional &amp;lt;script&amp;gt; at the top-level Weex component.
 
 the instance config could declare some meta informations like whic">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:05:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Page Config & Data">
 <meta name="twitter:description" content="Page Config &amp;amp; DataYou can write some instance config and data in some additional &amp;lt;script&amp;gt; at the top-level Weex component.
@@ -510,7 +553,7 @@ the instance config could declare some meta informations like whic">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:05:21.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="Page-Config-amp-Data"><a href="#Page-Config-amp-Data" class="headerlink" title="Page Config &amp; Data"></a>Page Config &amp; Data</h1><p>You can write some instance config and data in some additional <code>&lt;script&gt;</code> at the <strong>top-level</strong> Weex component.</p>
 <ul>
@@ -541,12 +584,12 @@ the instance config could declare some meta informations like whic">
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/v-0.10/guide/syntax/config-n-data.html">English</a>
+          <a href="/v-0.10/guide/syntax/config-n-data.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/guide/syntax/config-n-data.html">中文</a>
+          <a href="/cn/v-0.10/guide/syntax/config-n-data.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

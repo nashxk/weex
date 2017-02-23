@@ -5,6 +5,49 @@
   
   <title>&lt;a&gt; | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="&amp;lt;a&amp;gt;a defines a hyperlink to a page in the web. Its purpose and syntax is very similar to  in HTML5.
 Child ComponentsThis type of component supports all kinds of weex component as it’s child comp">
 <meta property="og:type" content="website">
@@ -13,7 +56,7 @@ Child ComponentsThis type of component supports all kinds of weex component as i
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="&amp;lt;a&amp;gt;a defines a hyperlink to a page in the web. Its purpose and syntax is very similar to  in HTML5.
 Child ComponentsThis type of component supports all kinds of weex component as it’s child comp">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:04:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<a>">
 <meta name="twitter:description" content="&amp;lt;a&amp;gt;a defines a hyperlink to a page in the web. Its purpose and syntax is very similar to  in HTML5.
@@ -975,7 +1018,7 @@ Child ComponentsThis type of component supports all kinds of weex component as i
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:04:05.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="lt-a-gt"><a href="#lt-a-gt" class="headerlink" title="&lt;a&gt;"></a>&lt;a&gt;</h1><p><code>a</code> defines a hyperlink to a page in the web. Its purpose and syntax is very similar to <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a" target="_blank" rel="external"><a></a> in HTML5.</a></p>
 <h2 id="Child-Components"><a href="#Child-Components" class="headerlink" title="Child Components"></a>Child Components</h2><p>This type of component supports all kinds of weex component as it’s child components except for its own kind.</p>
@@ -1004,12 +1047,12 @@ Child ComponentsThis type of component supports all kinds of weex component as i
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/v-0.10/references/components/a.html">English</a>
+          <a href="/v-0.10/references/components/a.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/references/components/a.html">中文</a>
+          <a href="/cn/v-0.10/references/components/a.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

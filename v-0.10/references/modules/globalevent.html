@@ -5,6 +5,49 @@
   
   <title>globalEvent | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="globalEventv0.8+ (developing)
 SummaryglobalEvent are used to listen for persistent events, such as changes in positioning information, gyroscopes, and so on. A global event is a secondary API that req">
 <meta property="og:type" content="website">
@@ -13,7 +56,7 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="globalEventv0.8+ (developing)
 SummaryglobalEvent are used to listen for persistent events, such as changes in positioning information, gyroscopes, and so on. A global event is a secondary API that req">
-<meta property="og:updated_time" content="2017-02-22T03:05:48.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:04:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="globalEvent">
 <meta name="twitter:description" content="globalEventv0.8+ (developing)
@@ -975,7 +1018,7 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:05:48.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:04:05.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="globalEvent"><a href="#globalEvent" class="headerlink" title="globalEvent"></a>globalEvent</h1><p><span class="weex-version">v0.8+ (developing)</span></p>
 <h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p><code>globalEvent</code> are used to listen for persistent events, such as changes in positioning information, gyroscopes, and so on. A global event is a secondary API that requires additional APIs to work with.</p>
@@ -1017,12 +1060,12 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/v-0.10/references/modules/globalevent.html">English</a>
+          <a href="/v-0.10/references/modules/globalevent.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/references/modules/globalevent.html">中文</a>
+          <a href="/cn/v-0.10/references/modules/globalevent.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>

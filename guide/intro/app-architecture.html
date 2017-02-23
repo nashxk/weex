@@ -5,6 +5,49 @@
   
   <title>Mobile App Architecture | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  ;(function(){
+    var currentOrigin = location.origin,
+        currentPathname = location.pathname,
+        currentLang = navigator.language,
+        selectedLang = '';
+
+    if (!currentLang) {
+      currentLang = navigator.browserLanguage;
+    }
+
+    if (window.sessionStorage) {
+      selectedLang = window.sessionStorage.getItem('lang')
+    }
+
+    if (!selectedLang) {
+      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
+        location.href = getUrl('cn', currentOrigin, currentPathname);
+      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
+        location.href = getUrl('en', currentOrigin, currentPathname);
+      }
+    }
+
+    function getUrl (lang, origin, path) {
+      if (lang == 'en') {
+        if (path.indexOf('/cn/') == 0) {
+          return origin + path.substr(3)
+        } else {
+          return origin + path
+        }
+      } else {
+        var langPath = '/' + lang + '/'
+        var pathStart = path.indexOf(langPath)
+
+        if (pathStart == 0) {
+          return origin + path
+        } else {
+          return origin + langPath + path.substr(1)
+        }
+      }
+    }
+  })();
+  </script>
   <meta name="description" content="Mobile App ArchitectureToday’s Mobile AppLet’s talk about what we think a mobile app should be.
 Mobile App Needs Parallel DevelopmentNowadays, all mobile app teams requires the ability to develop in p">
 <meta property="og:type" content="website">
@@ -13,7 +56,7 @@ Mobile App Needs Parallel DevelopmentNowadays, all mobile app teams requires the
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Mobile App ArchitectureToday’s Mobile AppLet’s talk about what we think a mobile app should be.
 Mobile App Needs Parallel DevelopmentNowadays, all mobile app teams requires the ability to develop in p">
-<meta property="og:updated_time" content="2017-02-22T03:06:35.000Z">
+<meta property="og:updated_time" content="2017-02-23T06:06:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mobile App Architecture">
 <meta name="twitter:description" content="Mobile App ArchitectureToday’s Mobile AppLet’s talk about what we think a mobile app should be.
@@ -383,7 +426,7 @@ Mobile App Needs Parallel DevelopmentNowadays, all mobile app teams requires the
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-22T03:06:35.000Z">Updated time: 22/02/2017</time>
+  <time class="article-date" datetime="2017-02-23T06:06:31.000Z">Updated time: 23/02/2017</time>
 </header>
     <h1 id="Mobile-App-Architecture"><a href="#Mobile-App-Architecture" class="headerlink" title="Mobile App Architecture"></a>Mobile App Architecture</h1><h2 id="Today’s-Mobile-App"><a href="#Today’s-Mobile-App" class="headerlink" title="Today’s Mobile App"></a>Today’s Mobile App</h2><p>Let’s talk about what we think a mobile app should be.</p>
 <h3 id="Mobile-App-Needs-Parallel-Development"><a href="#Mobile-App-Needs-Parallel-Development" class="headerlink" title="Mobile App Needs Parallel Development"></a>Mobile App Needs Parallel Development</h3><p>Nowadays, all mobile app teams requires the ability to develop in parallel. When a mobile app keeps growing, supporting large-scale parallel development must become a very important key thing. Otherwise it’s really easy to become a bottleneck.</p>
@@ -425,12 +468,12 @@ Mobile App Needs Parallel DevelopmentNowadays, all mobile app teams requires the
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu pick-lang">
         <li>
-          <a href="/guide/intro/app-architecture.html">English</a>
+          <a href="/guide/intro/app-architecture.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/guide/intro/app-architecture.html">中文</a>
+          <a href="/cn/guide/intro/app-architecture.html" data-lang="cn">中文</a>
         </li>
       </ul>
     </div>
