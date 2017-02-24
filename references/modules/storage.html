@@ -58,7 +58,7 @@ APIsetItem(key, value, callback)When passed a key name and value, will add that 
 <meta property="og:description" content="storagev0.7+
 Summarystorage is a series of apis, allowing you to for example add, modify or delete stored data items.
 APIsetItem(key, value, callback)When passed a key name and value, will add that ke">
-<meta property="og:updated_time" content="2017-02-24T06:52:10.000Z">
+<meta property="og:updated_time" content="2017-02-24T07:04:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="storage">
 <meta name="twitter:description" content="storagev0.7+
@@ -570,19 +570,19 @@ APIsetItem(key, value, callback)When passed a key name and value, will add that 
           <ul class="chapter">
             
               <li>
-                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
-              </li>
-            
-              <li>
                 <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
               </li>
             
               <li>
-                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
               </li>
             
               <li>
                 <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
               </li>
             
               <li>
@@ -1148,19 +1148,19 @@ APIsetItem(key, value, callback)When passed a key name and value, will add that 
           <ul class="chapter">
             
               <li>
-                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
-              </li>
-            
-              <li>
                 <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
               </li>
             
               <li>
-                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
               </li>
             
               <li>
                 <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+              </li>
+            
+              <li>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
               </li>
             
               <li>
@@ -1313,7 +1313,7 @@ APIsetItem(key, value, callback)When passed a key name and value, will add that 
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-24T06:52:10.000Z">Updated time: 24/02/2017</time>
+  <time class="article-date" datetime="2017-02-24T07:04:32.000Z">Updated time: 24/02/2017</time>
 </header>
     <h1 id="storage"><a href="#storage" class="headerlink" title="storage"></a>storage</h1><p><span class="weex-version">v0.7+</span></p>
 <h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p><code>storage</code> is a series of apis, allowing you to for example add, modify or delete stored data items.</p>
@@ -1333,7 +1333,7 @@ APIsetItem(key, value, callback)When passed a key name and value, will add that 
 <li><code>key</code><em>(string)</em>:  the name of the key you want to remove.”” or null is not allowed.</li>
 <li><code>callback</code><em>(object)</em>: the callback function after executing this action.  </li>
 </ul>
-<h5 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> storage = <span class="built_in">require</span>(<span class="string">'@weex-module/storage'</span>);</div><div class="line">storage.removeItem(<span class="string">'foo'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">  <span class="comment">// callback. 'e' is an object that contains 'result' and 'data'.</span></div><div class="line">  <span class="comment">// e.result will return 'success' or 'failed' according to the executing result.</span></div><div class="line">  <span class="comment">// e.data will always return 'undefined' in this function if success.</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h5 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> storage = weex.requireModule(<span class="string">'storage'</span>);</div><div class="line">storage.removeItem(<span class="string">'foo'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">  <span class="comment">// callback. 'e' is an object that contains 'result' and 'data'.</span></div><div class="line">  <span class="comment">// e.result will return 'success' or 'failed' according to the executing result.</span></div><div class="line">  <span class="comment">// e.data will always return 'undefined' in this function if success.</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h3 id="length-callback"><a href="#length-callback" class="headerlink" title="length(callback)"></a>length(callback)</h3><p>Returns an integer representing the number of data items stored in the Storage object.</p>
 <h4 id="Arguments-3"><a href="#Arguments-3" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
 <li><code>callback</code><em>(object)</em>: the callback function after executing this action.  </li>
