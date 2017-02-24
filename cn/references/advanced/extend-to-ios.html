@@ -66,7 +66,7 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
 
 自定义的module类 必须实现 WXModuleProtocol
 必须添加宏WX_EXPORT_METHOD, 它可以">
-<meta property="og:updated_time" content="2017-02-24T06:52:10.000Z">
+<meta property="og:updated_time" content="2017-02-24T07:08:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS 扩展">
 <meta name="twitter:description" content="Module 扩展swift 扩展 module 
@@ -563,11 +563,11 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
               </li>
             
               <li>
-                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
@@ -600,11 +600,11 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
               </li>
             
               <li>
-                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
               </li>
             
               <li>
-                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
@@ -724,12 +724,12 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
         
           <ul class="chapter">
             
               <li>
-                <a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a>
+                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
               </li>
             
               <li>
@@ -1159,11 +1159,11 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
               </li>
             
               <li>
-                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
@@ -1196,11 +1196,11 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
               </li>
             
               <li>
-                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
               </li>
             
               <li>
-                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
@@ -1320,12 +1320,12 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
         
           <ul class="chapter">
             
               <li>
-                <a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a>
+                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
               </li>
             
               <li>
@@ -1361,7 +1361,7 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-24T06:52:10.000Z">Updated time: 24/02/2017</time>
+  <time class="article-date" datetime="2017-02-24T07:08:51.000Z">Updated time: 24/02/2017</time>
 </header>
     <h2 id="Module-扩展"><a href="#Module-扩展" class="headerlink" title="Module 扩展"></a>Module 扩展</h2><p><a href="https://github.com/weexteam/article/issues/55" target="_blank" rel="external">swift</a> 扩展 module </p>
 <p>Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络，图片，URL跳转这些特性，需要自己动手实现他们<br>例如，如果你想实现一个url地址跳转函数，你可以按照如下步骤实现一个 Module</p>
@@ -1382,7 +1382,7 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">WXSDKEngine.h</div><div class="line">/**</div><div class="line">*  @abstract Registers a module for a given name</div><div class="line">*  @param name The module name to register</div><div class="line">*  @param clazz  The module class to register</div><div class="line">**/</div><div class="line">+ (void)registerModule:(NSString *)name withClass:(Class)clazz;</div><div class="line">[WXSDKEngine registerModule:@&quot;event&quot; withClass:[WXEventModule class]];</div></pre></td></tr></table></figure>
 </li>
 <li><p><strong>使用自己的module</strong><br> 这里的  require 里面的event 就是在 上一步调用<code>registerModule:</code> 注册module 时候的name</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> eventModule = <span class="built_in">require</span>(<span class="string">'@weex-module/event'</span>); </div><div class="line">eventModule.openURL(<span class="string">'url'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">ret</span>) </span>&#123;   </div><div class="line">    nativeLog(ret);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> eventModule = weex.requireModule(<span class="string">'event'</span>); </div><div class="line">eventModule.openURL(<span class="string">'url'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">ret</span>) </span>&#123;   </div><div class="line">    nativeLog(ret);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>   Weex SDK没有 图片下载，navigation 操作的能力，请大家自己实现这些 protocol</p>
