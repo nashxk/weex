@@ -5,49 +5,6 @@
   
   <title>数据绑定 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="数据绑定Weex使用 mustache 的语法 ({{...}}) 来对 &amp;lt;template&amp;gt; 中的模板和 &amp;lt;script&amp;gt; 里的数据进行绑定. 一旦数据额模板绑定了, 数据上的修改会实时的在模板内容中生效。
 数据绑定路径&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;text style=&quot;font-size: &amp;#123;&amp;#123;size&amp;">
 <meta property="og:type" content="website">
@@ -56,7 +13,7 @@
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="数据绑定Weex使用 mustache 的语法 ({{...}}) 来对 &amp;lt;template&amp;gt; 中的模板和 &amp;lt;script&amp;gt; 里的数据进行绑定. 一旦数据额模板绑定了, 数据上的修改会实时的在模板内容中生效。
 数据绑定路径&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;text style=&quot;font-size: &amp;#123;&amp;#123;size&amp;">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据绑定">
 <meta name="twitter:description" content="数据绑定Weex使用 mustache 的语法 ({{...}}) 来对 &amp;lt;template&amp;gt; 中的模板和 &amp;lt;script&amp;gt; 里的数据进行绑定. 一旦数据额模板绑定了, 数据上的修改会实时的在模板内容中生效。
@@ -118,12 +75,28 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/guide/syntax/data-binding.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/data-binding.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -141,7 +114,7 @@
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -516,7 +489,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h1><p>Weex使用 <em>mustache</em> 的语法 (<code>{{...}}</code>) 来对 <code>&lt;template&gt;</code> 中的模板和 <code>&lt;script&gt;</code> 里的数据进行绑定. 一旦数据额模板绑定了, 数据上的修改会实时的在模板内容中生效。</p>
 <h2 id="数据绑定路径"><a href="#数据绑定路径" class="headerlink" title="数据绑定路径"></a>数据绑定路径</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: &#123;&#123;size&#125;&#125;"</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">      <span class="attr">size</span>: <span class="number">48</span>,</div><div class="line">      <span class="attr">title</span>: <span class="string">'Alibaba Weex Team'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -583,7 +556,7 @@
           <a href="/v-0.10/guide/syntax/data-binding.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/guide/syntax/data-binding.html" data-lang="cn">中文</a>
+          <a href="/cn/v-0.10/guide/syntax/data-binding.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

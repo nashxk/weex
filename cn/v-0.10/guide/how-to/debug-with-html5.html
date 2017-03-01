@@ -5,49 +5,6 @@
   
   <title>在浏览器中调试 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="如何在浏览器中调试？由于 weex-html5 可以在现代移动浏览器上运行，因此自然支持在浏览器的开发工具中调试 weex-html5 代码。下面将介绍如何使用浏览器的 devTools 调试和分析 weex-html5 程序。以chrome的调试工具为例：
 
 Elements使用 Elements 面板来检查 weex-html5 页面的布局和设计，并操纵 DOM 和 CSS 来自由地做一些开发">
@@ -59,7 +16,7 @@ Elements使用 Elements 面板来检查 weex-html5 页面的布局和设计，�
 
 Elements使用 Elements 面板来检查 weex-html5 页面的布局和设计，并操纵 DOM 和 CSS 来自由地做一些开发">
 <meta property="og:image" content="https://gw.alicdn.com/mt/TB1V1hIMpXXXXaHXVXXXXXXXXXX-983-730.png">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在浏览器中调试">
 <meta name="twitter:description" content="如何在浏览器中调试？由于 weex-html5 可以在现代移动浏览器上运行，因此自然支持在浏览器的开发工具中调试 weex-html5 代码。下面将介绍如何使用浏览器的 devTools 调试和分析 weex-html5 程序。以chrome的调试工具为例：
@@ -123,12 +80,28 @@ Elements使用 Elements 面板来检查 weex-html5 页面的布局和设计，�
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/guide/how-to/debug-with-html5.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/debug-with-html5.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -146,7 +119,7 @@ Elements使用 Elements 面板来检查 weex-html5 页面的布局和设计，�
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -521,7 +494,7 @@ Elements使用 Elements 面板来检查 weex-html5 页面的布局和设计，�
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="如何在浏览器中调试？"><a href="#如何在浏览器中调试？" class="headerlink" title="如何在浏览器中调试？"></a>如何在浏览器中调试？</h1><p>由于 weex-html5 可以在现代移动浏览器上运行，因此自然支持在浏览器的开发工具中调试 weex-html5 代码。下面将介绍如何使用浏览器的 devTools 调试和分析 weex-html5 程序。以chrome的调试工具为例：</p>
 <p><img src="https://gw.alicdn.com/mt/TB1V1hIMpXXXXaHXVXXXXXXXXXX-983-730.png" alt="chrome&#39;s debug tool"></p>
@@ -559,7 +532,7 @@ Elements使用 Elements 面板来检查 weex-html5 页面的布局和设计，�
           <a href="/v-0.10/guide/how-to/debug-with-html5.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/guide/how-to/debug-with-html5.html" data-lang="cn">中文</a>
+          <a href="/cn/v-0.10/guide/how-to/debug-with-html5.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

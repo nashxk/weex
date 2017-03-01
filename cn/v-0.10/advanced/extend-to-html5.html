@@ -5,49 +5,6 @@
   
   <title>weex-html5 扩展 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="扩展 weex-html5简介Weex 是一个高可扩展性的跨平台动态化开发方案，你可以在现有组件基础上定制自己需要的三端组件。你可以为 Weex API 模块添加新的方法，或者创建新的 API 模块和新的加载器。按照以下几个步骤扩展你的组件，API 或者加载器。
 首先要明确的是，组件和 API 模块是基于 Weex 的扩展，但是独立于 Weex，组件的定义本身是不需要依赖于 Weex 的，这样有助">
 <meta property="og:type" content="website">
@@ -56,7 +13,7 @@
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="扩展 weex-html5简介Weex 是一个高可扩展性的跨平台动态化开发方案，你可以在现有组件基础上定制自己需要的三端组件。你可以为 Weex API 模块添加新的方法，或者创建新的 API 模块和新的加载器。按照以下几个步骤扩展你的组件，API 或者加载器。
 首先要明确的是，组件和 API 模块是基于 Weex 的扩展，但是独立于 Weex，组件的定义本身是不需要依赖于 Weex 的，这样有助">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="weex-html5 扩展">
 <meta name="twitter:description" content="扩展 weex-html5简介Weex 是一个高可扩展性的跨平台动态化开发方案，你可以在现有组件基础上定制自己需要的三端组件。你可以为 Weex API 模块添加新的方法，或者创建新的 API 模块和新的加载器。按照以下几个步骤扩展你的组件，API 或者加载器。
@@ -118,12 +75,28 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/advanced/extend-to-html5.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/advanced/extend-to-html5.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -143,7 +116,7 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -161,7 +134,7 @@
           </a>
         </li>
         <li>
-          <a href="/cn/faq">
+          <a href="/cn/faq.html">
             FAQ
           </a>
         </li>
@@ -360,7 +333,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="扩展-weex-html5"><a href="#扩展-weex-html5" class="headerlink" title="扩展 weex-html5"></a>扩展 weex-html5</h1><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Weex 是一个高可扩展性的跨平台动态化开发方案，你可以在现有组件基础上定制自己需要的三端组件。你可以为 Weex API 模块添加新的方法，或者创建新的 API 模块和新的加载器。按照以下几个步骤扩展你的组件，API 或者加载器。</p>
 <p>首先要明确的是，组件和 API 模块是基于 Weex 的扩展，但是独立于 Weex，组件的定义本身是不需要依赖于 Weex 的，这样有助于组件的分散化管理，去除中心化依赖。</p>
@@ -435,7 +408,7 @@
           <a href="/v-0.10/advanced/extend-to-html5.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/advanced/extend-to-html5.html" data-lang="cn">中文</a>
+          <a href="/cn/v-0.10/advanced/extend-to-html5.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

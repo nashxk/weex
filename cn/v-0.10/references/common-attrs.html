@@ -5,49 +5,6 @@
   
   <title>通用特性 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="通用特性特性（attribute）与 HTML 中元素特性类似，提供了与 Weex 元素有关的其他附加信息。所有的元素都可以拥有特性, 特性总是在 Weex 元素的起始标签中定义，并总是以键值对的形式出现，例如：name=&amp;quot;value&amp;quot;。可以使用 Mustache 对特性值进行数据绑定。
 Notes!
 Weex 遵循 HTML attribute 命名规范, 所以请 不要在特性">
@@ -58,7 +15,7 @@ Weex 遵循 HTML attribute 命名规范, 所以请 不要在特性">
 <meta property="og:description" content="通用特性特性（attribute）与 HTML 中元素特性类似，提供了与 Weex 元素有关的其他附加信息。所有的元素都可以拥有特性, 特性总是在 Weex 元素的起始标签中定义，并总是以键值对的形式出现，例如：name=&amp;quot;value&amp;quot;。可以使用 Mustache 对特性值进行数据绑定。
 Notes!
 Weex 遵循 HTML attribute 命名规范, 所以请 不要在特性">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通用特性">
 <meta name="twitter:description" content="通用特性特性（attribute）与 HTML 中元素特性类似，提供了与 Weex 元素有关的其他附加信息。所有的元素都可以拥有特性, 特性总是在 Weex 元素的起始标签中定义，并总是以键值对的形式出现，例如：name=&amp;quot;value&amp;quot;。可以使用 Mustache 对特性值进行数据绑定。
@@ -121,12 +78,28 @@ Weex 遵循 HTML attribute 命名规范, 所以请 不要在特性">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/references/common-attrs.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/references/common-attrs.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -144,7 +117,7 @@ Weex 遵循 HTML attribute 命名规范, 所以请 不要在特性">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -445,11 +418,11 @@ Weex 遵循 HTML attribute 命名规范, 所以请 不要在特性">
           <ul class="chapter">
             
               <li>
-                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
@@ -481,11 +454,11 @@ Weex 遵循 HTML attribute 命名规范, 所以请 不要在特性">
               </li>
             
               <li>
-                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
@@ -901,11 +874,11 @@ Weex 遵循 HTML attribute 命名规范, 所以请 不要在特性">
           <ul class="chapter">
             
               <li>
-                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
@@ -937,11 +910,11 @@ Weex 遵循 HTML attribute 命名规范, 所以请 不要在特性">
               </li>
             
               <li>
-                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
@@ -1069,7 +1042,7 @@ Weex 遵循 HTML attribute 命名规范, 所以请 不要在特性">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="通用特性"><a href="#通用特性" class="headerlink" title="通用特性"></a>通用特性</h1><p>特性（attribute）与 HTML 中元素特性类似，提供了与 Weex 元素有关的其他附加信息。所有的元素都可以拥有特性, 特性总是在 Weex 元素的起始标签中定义，并总是以键值对的形式出现，例如：<code>name=&quot;value&quot;</code>。可以使用 <a href="https://mustache.github.io/" target="_blank" rel="external">Mustache</a> 对特性值进行数据绑定。</p>
 <p><strong>Notes!</strong></p>
@@ -1118,7 +1091,7 @@ Weex 遵循 HTML attribute 命名规范, 所以请 不要在特性">
           <a href="/v-0.10/references/common-attrs.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/references/common-attrs.html" data-lang="cn">中文</a>
+          <a href="/cn/v-0.10/references/common-attrs.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

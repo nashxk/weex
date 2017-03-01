@@ -5,49 +5,6 @@
   
   <title>&lt;wxc-navpage&gt; | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="&amp;lt;wxc-navpage&amp;gt; (v0.5+)&amp;lt;wxc-navpage&amp;gt; 组件是一个包含 navbar 的容器组件，可以根据业务场景定制 navbar 组件。同时，可以使用 navigator 模块控制页面的跳转，具体参考 navigator module。一般情况，都是配合 navbar 组件使用。如果不了解 navigator 相关知识，建议先了解下 iOS 或者 Andr">
 <meta property="og:type" content="website">
 <meta property="og:title" content="<wxc-navpage>">
@@ -55,7 +12,7 @@
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="&amp;lt;wxc-navpage&amp;gt; (v0.5+)&amp;lt;wxc-navpage&amp;gt; 组件是一个包含 navbar 的容器组件，可以根据业务场景定制 navbar 组件。同时，可以使用 navigator 模块控制页面的跳转，具体参考 navigator module。一般情况，都是配合 navbar 组件使用。如果不了解 navigator 相关知识，建议先了解下 iOS 或者 Andr">
 <meta property="og:image" content="https://weex-project.io/../images/nav.jpg">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<wxc-navpage>">
 <meta name="twitter:description" content="&amp;lt;wxc-navpage&amp;gt; (v0.5+)&amp;lt;wxc-navpage&amp;gt; 组件是一个包含 navbar 的容器组件，可以根据业务场景定制 navbar 组件。同时，可以使用 navigator 模块控制页面的跳转，具体参考 navigator module。一般情况，都是配合 navbar 组件使用。如果不了解 navigator 相关知识，建议先了解下 iOS 或者 Andr">
@@ -117,12 +74,28 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/references/wxc/wxc-navpage.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/references/wxc/wxc-navpage.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -140,7 +113,7 @@
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -441,11 +414,11 @@
           <ul class="chapter">
             
               <li>
-                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
@@ -477,11 +450,11 @@
               </li>
             
               <li>
-                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
@@ -897,11 +870,11 @@
           <ul class="chapter">
             
               <li>
-                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
@@ -933,11 +906,11 @@
               </li>
             
               <li>
-                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
@@ -1065,7 +1038,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="lt-wxc-navpage-gt-v0-5"><a href="#lt-wxc-navpage-gt-v0-5" class="headerlink" title="&lt;wxc-navpage&gt; (v0.5+)"></a>&lt;wxc-navpage&gt; <sup>(v0.5+)</sup></h1><p><code>&lt;wxc-navpage&gt;</code> 组件是一个包含 navbar 的容器组件，可以根据业务场景定制 navbar 组件。同时，可以使用 <code>navigator</code> 模块控制页面的跳转，具体参考 <a href="../modules/navigator.html"><code>navigator module</code></a>。一般情况，都是配合 navbar 组件使用。如果不了解 navigator 相关知识，建议先了解下 iOS 或者 Android 的相关组件。在 H5 上，其实是相当于导航栏。</p>
 <p>用法：在 <code>script</code> 标签中通过一个 <code>require</code> 语句引入，即：<code>require(&#39;weex-components&#39;);</code></p>
@@ -1153,7 +1126,7 @@
           <a href="/v-0.10/references/wxc/wxc-navpage.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/references/wxc/wxc-navpage.html" data-lang="cn">中文</a>
+          <a href="/cn/v-0.10/references/wxc/wxc-navpage.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

@@ -5,49 +5,6 @@
   
   <title>iOS APIs | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="iOS APIsNative 对外接口
 注册 SDK 默认的 Module、Handler 和 Component
 注册自定义 module、Handler 和 Component
@@ -66,7 +23,7 @@ WXImgLoaderDefaultImpl 图片下载 handler。Weex 会把需要设置图片的 V
 
 Handler (对应于 Android 的 Adapter) 介绍
 WXImgLoaderDefaultImpl 图片下载 handler。Weex 会把需要设置图片的 View 和">
-<meta property="og:updated_time" content="2017-02-28T06:16:31.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS APIs">
 <meta name="twitter:description" content="iOS APIsNative 对外接口
@@ -133,12 +90,28 @@ WXImgLoaderDefaultImpl 图片下载 handler。Weex 会把需要设置图片的 V
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/ios-apis.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/ios-apis.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -156,7 +129,7 @@ WXImgLoaderDefaultImpl 图片下载 handler。Weex 会把需要设置图片的 V
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -747,7 +720,7 @@ WXImgLoaderDefaultImpl 图片下载 handler。Weex 会把需要设置图片的 V
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -1343,7 +1316,7 @@ WXImgLoaderDefaultImpl 图片下载 handler。Weex 会把需要设置图片的 V
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -1361,7 +1334,7 @@ WXImgLoaderDefaultImpl 图片下载 handler。Weex 会把需要设置图片的 V
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:16:31.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="iOS-APIs"><a href="#iOS-APIs" class="headerlink" title="iOS APIs"></a>iOS APIs</h1><h2 id="Native-对外接口"><a href="#Native-对外接口" class="headerlink" title="Native 对外接口"></a>Native 对外接口</h2><ul>
 <li>注册 SDK 默认的 Module、Handler 和 Component</li>
@@ -1416,7 +1389,7 @@ WXImgLoaderDefaultImpl 图片下载 handler。Weex 会把需要设置图片的 V
           <a href="/references/ios-apis.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/references/ios-apis.html" data-lang="cn">中文</a>
+          <a href="/cn/references/ios-apis.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

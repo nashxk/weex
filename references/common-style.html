@@ -5,49 +5,6 @@
   
   <title>Common Style | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="Common StyleAll of weex tags share some common style rules
 Box Model
 Weex box model based on the CSS box model, all of weex elements can be considered as boxes.  The term “box model” is used when talk">
@@ -63,7 +20,7 @@ Weex box model based on the CSS box model, all of weex elements can be considere
 <meta property="og:image" content="https://weex-project.io/./images/css-flexbox-align.jpg">
 <meta property="og:image" content="https://weex-project.io/./images/css-flexbox-sample.png">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1KGwIPpXXXXbxXFXXXXXXXXXX-400-205.png">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Common Style">
 <meta name="twitter:description" content="Common StyleAll of weex tags share some common style rules
@@ -127,12 +84,28 @@ Weex box model based on the CSS box model, all of weex elements can be considere
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/common-style.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/common-style.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -150,7 +123,7 @@ Weex box model based on the CSS box model, all of weex elements can be considere
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -589,11 +562,11 @@ Weex box model based on the CSS box model, all of weex elements can be considere
               </li>
             
               <li>
-                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
               </li>
             
               <li>
-                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
@@ -732,7 +705,7 @@ Weex box model based on the CSS box model, all of weex elements can be considere
     
     
       <li>
-        <h3 class="chapter-title"><a href="/v-0.10/references/index.html" class="sidebar-link">Legacy</a></h3>
+        <h3 class="chapter-title"><a href="/v-0.10/references/index.html" class="sidebar-link">Old Syntax Doc</a></h3>
       </li>
     
   </ul>
@@ -1176,11 +1149,11 @@ Weex box model based on the CSS box model, all of weex elements can be considere
               </li>
             
               <li>
-                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
               </li>
             
               <li>
-                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
@@ -1319,7 +1292,7 @@ Weex box model based on the CSS box model, all of weex elements can be considere
     
     
       <li>
-        <h3 class="chapter-title"><a href="/v-0.10/references/index.html" class="sidebar-link">Legacy</a></h3>
+        <h3 class="chapter-title"><a href="/v-0.10/references/index.html" class="sidebar-link">Old Syntax Doc</a></h3>
       </li>
     
   </ul>
@@ -1337,7 +1310,7 @@ Weex box model based on the CSS box model, all of weex elements can be considere
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="Common-Style"><a href="#Common-Style" class="headerlink" title="Common Style"></a>Common Style</h1><p>All of weex tags share some common style rules</p>
 <h2 id="Box-Model"><a href="#Box-Model" class="headerlink" title="Box Model"></a>Box Model</h2><p><img src="./images/css-boxmodel.png" alt="box model"></p>
@@ -1512,7 +1485,7 @@ Weex box model based on the CSS box model, all of weex elements can be considere
           <a href="/references/common-style.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/references/common-style.html" data-lang="cn">中文</a>
+          <a href="/cn/references/common-style.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

@@ -5,56 +5,13 @@
   
   <title>animation | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="animationSmooth and meaningful animation is very effective for enhancing the user experience of mobile application, you can use the animation module to perform animation on components. A animation can">
 <meta property="og:type" content="website">
 <meta property="og:title" content="animation">
 <meta property="og:url" content="https://weex-project.io/v-0.10/references/modules/animation.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="animationSmooth and meaningful animation is very effective for enhancing the user experience of mobile application, you can use the animation module to perform animation on components. A animation can">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="animation">
 <meta name="twitter:description" content="animationSmooth and meaningful animation is very effective for enhancing the user experience of mobile application, you can use the animation module to perform animation on components. A animation can">
@@ -115,12 +72,28 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/references/modules/animation.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/references/modules/animation.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -138,7 +111,7 @@
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -425,11 +398,11 @@
           <ul class="chapter">
             
               <li>
-                <a href="/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
-                <a href="/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
@@ -857,11 +830,11 @@
           <ul class="chapter">
             
               <li>
-                <a href="/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
-                <a href="/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
@@ -1015,7 +988,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="animation"><a href="#animation" class="headerlink" title="animation"></a>animation</h1><p>Smooth and meaningful animation is very effective for enhancing the user experience of mobile application, you can use the <code>animation</code> module to perform animation on components. A animation can perform a series of simple transformations  (position, size, rotation, background color, and opacity) on the component. So, if you have a <code>image</code> component, you can move, rotate, grow, or shrink it.</p>
 <h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="transition-node-options-callback"><a href="#transition-node-options-callback" class="headerlink" title="transition(node, options, callback)"></a>transition(node, options, callback)</h3><p><a href="http://dotwe.org/5be74019d5e510fa95c5dedec24f7ce5" target="_blank" rel="external">example</a></p>
@@ -1180,7 +1153,7 @@
           <a href="/v-0.10/references/modules/animation.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/references/modules/animation.html" data-lang="cn">中文</a>
+          <a href="/cn/v-0.10/references/modules/animation.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

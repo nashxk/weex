@@ -5,49 +5,6 @@
   
   <title>Get Started | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="Get StartedWeex is a framework for building Mobile cross-platform high performance UI. Developers can write *.vue files to build native pages or an App. This page will help you write a Weex page in 2">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Get Started">
@@ -56,7 +13,7 @@
 <meta property="og:description" content="Get StartedWeex is a framework for building Mobile cross-platform high performance UI. Developers can write *.vue files to build native pages or an App. This page will help you write a Weex page in 2">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1Ymw3OpXXXXcvXpXXXXXXXXXX-500-1013.jpg">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1kHFrOFXXXXaYXXXXXXXXXXXX-615-308.jpg">
-<meta property="og:updated_time" content="2017-03-01T03:03:36.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Get Started">
 <meta name="twitter:description" content="Get StartedWeex is a framework for building Mobile cross-platform high performance UI. Developers can write *.vue files to build native pages or an App. This page will help you write a Weex page in 2">
@@ -118,12 +75,28 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/guide/index.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/guide/index.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -141,7 +114,7 @@
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -272,7 +245,7 @@
     
     
       <li>
-        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link">Legacy</a></h3>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link">Old Syntax Doc</a></h3>
       </li>
     
   </ul>
@@ -408,7 +381,7 @@
     
     
       <li>
-        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link">Legacy</a></h3>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link">Old Syntax Doc</a></h3>
       </li>
     
   </ul>
@@ -426,20 +399,23 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-03-01T03:03:36.000Z">Updated time: 01/03/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="Get-Started"><a href="#Get-Started" class="headerlink" title="Get Started"></a>Get Started</h1><p>Weex is a framework for building Mobile cross-platform high performance UI. Developers can write <code>*.vue</code> files to build native pages or an App. This page will help you write a Weex page in 2 minutes.</p>
-<h2 id="What-is-Vue"><a href="#What-is-Vue" class="headerlink" title="What is Vue?"></a>What is Vue?</h2><p><a href="https://vuejs.org/" target="_blank" rel="external">Vue.js</a> is an excellent progressive JavaScript framework written by <a href="https://twitter.com/youyuxi" target="_blank" rel="external">Evan You</a> which is very ease and flexible to use. Developers can write <code>*.vue</code> files with friendly <code>&lt;template&gt;</code>, <code>&lt;style&gt;</code>, <code>&lt;script&gt;</code> tags to build componentized web app. Now Weex and Vue has supported each other officially. Weex put Vue 2.x as its built-in JS Framework, and Vue has already been able to develop native mobile app.</p>
+<h2 id="What-is-Vue"><a href="#What-is-Vue" class="headerlink" title="What is Vue?"></a>What is Vue?</h2><p><a href="https://vuejs.org/" target="_blank" rel="external">Vue.js</a> is an excellent progressive JavaScript framework written by <a href="https://twitter.com/youyuxi" target="_blank" rel="external">Evan You</a>. Now Weex and Vue has supported each other officially. Weex put Vue 2.x as its built-in JS Framework, and Vue has already been able to develop native mobile app.</p>
 <h2 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world"></a>Hello world</h2><p>The easiest way to try Weex is to use the <a href="../playground.html">Playground App</a> and write a Hello World example at <a href="https://dotwe.org" target="_blank" rel="external">dotWe</a>. You don’t need to consider installing the development environment or writing native code, just do the following two things:</p>
 <ul>
 <li>Install the <a href="../playground.html">Playground App</a> for your phone.</li>
 <li>Open <a href="http://dotwe.org/vue/4d5a0471ece3daabd4681bc6d703c4c1" target="_blank" rel="external">the Hello World example</a> in a new tab, click run, and then use the Playground App to scan the QR code.</li>
 </ul>
-<p>Nailed it!</p>
+<p>Nailed it! In this case, We can see HTML semantic tags, CSS styles and Javascript code. This is one of the simplest Weex examples. It rendered a “Hello World” in the page. Please note that this is not a Web page.</p>
 <p><img src="https://img.alicdn.com/tps/TB1Ymw3OpXXXXcvXpXXXXXXXXXX-500-1013.jpg" alt="mobile_preview"></p>
+<h3 id="What-happened"><a href="#What-happened" class="headerlink" title="What happened?"></a>What happened?</h3><p>As shown in the following code：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span>&#123;&#123;text&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">  .text &#123;</div><div class="line">    font-size: 50;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">    data () &#123;</div><div class="line">      <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">text</span>: <span class="string">'Hello World.'</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>It’s too easy，right? Let’s focus on the syntax, obviously this is vue.</p>
 <p>You can try to modify the Hello World, then generate a new QR code to scan.</p>
-<h2 id="Set-up-development-environment"><a href="#Set-up-development-environment" class="headerlink" title="Set up development environment"></a>Set up development environment</h2><p>You will need Node.js and the Weex CLi.</p>
+<h2 id="Set-up-development-environment"><a href="#Set-up-development-environment" class="headerlink" title="Set up development environment"></a>Set up development environment</h2><p>Use dotWe is a good choice, But if you want to develop locally on your own machine, you will set up your development environment.</p>
+<p>You will need Node.js and the Weex CLi.</p>
 <p>You can installing Node using <a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a> (Simple bash script to manage multiple active node.js versions). Run the following commands in a Terminal after installing nvm:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ nvm install 6.10.0</div><div class="line">$ nvm use 6.10.0</div></pre></td></tr></table></figure>
 <p>Node.js comes with npm, which lets you install the Weex Cli.</p>
@@ -477,7 +453,7 @@
           <a href="/guide/index.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/guide/index.html" data-lang="cn">中文</a>
+          <a href="/cn/guide/index.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

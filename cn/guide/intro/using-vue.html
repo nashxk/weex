@@ -5,49 +5,6 @@
   
   <title>使用 Vue 开发 Weex 页面 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="使用 Vue 开发 Weex 页面Vue in WeexVue.js 是 Evan You 开发的渐进式 JavaScript 框架，在易用性、灵活性和性能等方面都非常优秀。开发者能够通过撰写 *.vue 文件，基于 &amp;lt;template&amp;gt;, &amp;lt;style&amp;gt;, &amp;lt;script&amp;gt; 快速构建组件化的 web 应用。
 
 Vue.js 在 2016 年 10 月正式发布了">
@@ -59,7 +16,7 @@ Vue.js 在 2016 年 10 月正式发布了">
 
 Vue.js 在 2016 年 10 月正式发布了">
 <meta property="og:image" content="https://weex-project.io//cn.vuejs.org/images/vue-component.png">
-<meta property="og:updated_time" content="2017-02-28T06:16:31.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 Vue 开发 Weex 页面">
 <meta name="twitter:description" content="使用 Vue 开发 Weex 页面Vue in WeexVue.js 是 Evan You 开发的渐进式 JavaScript 框架，在易用性、灵活性和性能等方面都非常优秀。开发者能够通过撰写 *.vue 文件，基于 &amp;lt;template&amp;gt;, &amp;lt;style&amp;gt;, &amp;lt;script&amp;gt; 快速构建组件化的 web 应用。
@@ -123,12 +80,28 @@ Vue.js 在 2016 年 10 月正式发布了">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/guide/intro/using-vue.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/guide/intro/using-vue.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -146,7 +119,7 @@ Vue.js 在 2016 年 10 月正式发布了">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -277,7 +250,7 @@ Vue.js 在 2016 年 10 月正式发布了">
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -413,7 +386,7 @@ Vue.js 在 2016 年 10 月正式发布了">
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -431,7 +404,7 @@ Vue.js 在 2016 年 10 月正式发布了">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:16:31.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="使用-Vue-开发-Weex-页面"><a href="#使用-Vue-开发-Weex-页面" class="headerlink" title="使用 Vue 开发 Weex 页面"></a>使用 Vue 开发 Weex 页面</h1><h2 id="Vue-in-Weex"><a href="#Vue-in-Weex" class="headerlink" title="Vue in Weex"></a>Vue in Weex</h2><p><a href="https://vuejs.org/" target="_blank" rel="external">Vue.js</a> 是 Evan You 开发的渐进式 JavaScript 框架，在易用性、灵活性和性能等方面都非常优秀。开发者能够通过撰写 <code>*.vue</code> 文件，基于 <code>&lt;template&gt;</code>, <code>&lt;style&gt;</code>, <code>&lt;script&gt;</code> 快速构建组件化的 web 应用。</p>
 <p><img src="//cn.vuejs.org/images/vue-component.png" alt="a vue file"></p>
@@ -478,7 +451,7 @@ Vue.js 在 2016 年 10 月正式发布了">
           <a href="/guide/intro/using-vue.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/guide/intro/using-vue.html" data-lang="cn">中文</a>
+          <a href="/cn/guide/intro/using-vue.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

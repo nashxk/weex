@@ -5,49 +5,6 @@
   
   <title>如何引入第三方库 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="如何引入第三方库0.4
 在 Get started 中，我们学习了知道可以在 &amp;lt;script&amp;gt; 标签中编写 JavaScript 代码。但是在项目中常用的功能或模块，例如解析url参数，将属性从一些对象扩展到另一个对象等等，在每个组件中复制和粘贴这些代码是一个糟糕的做法，因此迫切需要通过 require 的方式对可复用的代码进行管理。Weex 为开发人员提供了 CommonJS 风格的">
 <meta property="og:type" content="website">
@@ -56,7 +13,7 @@
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="如何引入第三方库0.4
 在 Get started 中，我们学习了知道可以在 &amp;lt;script&amp;gt; 标签中编写 JavaScript 代码。但是在项目中常用的功能或模块，例如解析url参数，将属性从一些对象扩展到另一个对象等等，在每个组件中复制和粘贴这些代码是一个糟糕的做法，因此迫切需要通过 require 的方式对可复用的代码进行管理。Weex 为开发人员提供了 CommonJS 风格的">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何引入第三方库">
 <meta name="twitter:description" content="如何引入第三方库0.4
@@ -118,12 +75,28 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/guide/how-to/require-3rd-party-libs.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/guide/how-to/require-3rd-party-libs.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -141,7 +114,7 @@
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -516,7 +489,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="如何引入第三方库"><a href="#如何引入第三方库" class="headerlink" title="如何引入第三方库"></a>如何引入第三方库</h1><p><span class="weex-version">0.4</span></p>
 <p>在 <a href="../index.html">Get started</a> 中，我们学习了知道可以在 <code>&lt;script&gt;</code> 标签中编写 JavaScript 代码。但是在项目中常用的功能或模块，例如解析url参数，将属性从一些对象扩展到另一个对象等等，在每个组件中复制和粘贴这些代码是一个糟糕的做法，因此迫切需要通过 <code>require</code> 的方式对可复用的代码进行管理。Weex 为开发人员提供了 CommonJS 风格的 require 语法。</p>
@@ -550,7 +523,7 @@
           <a href="/v-0.10/guide/how-to/require-3rd-party-libs.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/guide/how-to/require-3rd-party-libs.html" data-lang="cn">中文</a>
+          <a href="/cn/v-0.10/guide/how-to/require-3rd-party-libs.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

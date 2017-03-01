@@ -5,49 +5,6 @@
   
   <title>集成到 Android | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="WEEX SDK 集成到 Android 工程注：以下文档都是假设您已经具备一定的Android开发经验。
 Android 集成有两种方式
 源码依赖：能够快速使用WEEX最新功能，可以根据自己项目的特性进行相关改进。
@@ -68,7 +25,7 @@ SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可�
 前期准备
 已经安装了JDK version&amp;gt;=1.7 并配置了环境变量
 已经安">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集成到 Android">
 <meta name="twitter:description" content="WEEX SDK 集成到 Android 工程注：以下文档都是假设您已经具备一定的Android开发经验。
@@ -136,12 +93,28 @@ SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可�
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/advanced/integrate-to-android.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/advanced/integrate-to-android.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -161,7 +134,7 @@ SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可�
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -179,7 +152,7 @@ SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可�
           </a>
         </li>
         <li>
-          <a href="/cn/faq">
+          <a href="/cn/faq.html">
             FAQ
           </a>
         </li>
@@ -378,7 +351,7 @@ SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可�
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="WEEX-SDK-集成到-Android-工程"><a href="#WEEX-SDK-集成到-Android-工程" class="headerlink" title="WEEX SDK 集成到 Android 工程"></a>WEEX SDK 集成到 Android 工程</h1><p>注：以下文档都是假设您已经具备一定的Android开发经验。</p>
 <h3 id="Android-集成有两种方式"><a href="#Android-集成有两种方式" class="headerlink" title="Android 集成有两种方式"></a>Android 集成有两种方式</h3><ol>
@@ -442,7 +415,7 @@ SDK依赖：WEEX 会在jcenter 定期发布稳定版本。jcenter注:国内可�
           <a href="/v-0.10/advanced/integrate-to-android.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/advanced/integrate-to-android.html" data-lang="cn">中文</a>
+          <a href="/cn/v-0.10/advanced/integrate-to-android.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

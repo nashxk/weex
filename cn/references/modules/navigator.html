@@ -5,49 +5,6 @@
   
   <title>navigator | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="navigator 导航控制v0.6.1+
 众所周知，在浏览器里，我们可以通过前进或者回退按钮来切换页面，iOS/Android 的 navigator 模块就是用来实现类似的效果的。除了前进、回退功能，该模块还允许我们指定在切换页面的时候是否应用动画效果。
 APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指定在页面跳转时是否需要动画，以及操作完成后需">
@@ -58,7 +15,7 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
 <meta property="og:description" content="navigator 导航控制v0.6.1+
 众所周知，在浏览器里，我们可以通过前进或者回退按钮来切换页面，iOS/Android 的 navigator 模块就是用来实现类似的效果的。除了前进、回退功能，该模块还允许我们指定在切换页面的时候是否应用动画效果。
 APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指定在页面跳转时是否需要动画，以及操作完成后需">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="navigator">
 <meta name="twitter:description" content="navigator 导航控制v0.6.1+
@@ -121,12 +78,28 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/modules/navigator.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/modules/navigator.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -144,7 +117,7 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -735,7 +708,7 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -1331,7 +1304,7 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -1349,7 +1322,7 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="navigator-导航控制"><a href="#navigator-导航控制" class="headerlink" title="navigator 导航控制"></a><code>navigator</code> 导航控制</h1><p><span class="weex-version">v0.6.1+</span></p>
 <p>众所周知，在浏览器里，我们可以通过前进或者回退按钮来切换页面，iOS/Android 的 <code>navigator</code> 模块就是用来实现类似的效果的。除了前进、回退功能，该模块还允许我们指定在切换页面的时候是否应用动画效果。</p>
@@ -1394,7 +1367,7 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
           <a href="/references/modules/navigator.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/references/modules/navigator.html" data-lang="cn">中文</a>
+          <a href="/cn/references/modules/navigator.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

@@ -5,49 +5,6 @@
   
   <title>iOS 扩展 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="iOS 扩展Module 扩展swift 扩展 module 
 Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络，图片，URL跳转这些特性，需要自己动手实现他们例如，如果你想实现一个url地址跳转函数，你可以按照如下步骤实现一个 Module
 
@@ -66,7 +23,7 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
 
 自定义的module类 必须实现 WXModuleProtocol
 必须添加宏WX_EXPORT_METHO">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS 扩展">
 <meta name="twitter:description" content="iOS 扩展Module 扩展swift 扩展 module 
@@ -133,12 +90,28 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/advanced/extend-to-ios.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/advanced/extend-to-ios.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -158,7 +131,7 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -176,7 +149,7 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
           </a>
         </li>
         <li>
-          <a href="/cn/faq">
+          <a href="/cn/faq.html">
             FAQ
           </a>
         </li>
@@ -375,7 +348,7 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h2 id="iOS-扩展"><a href="#iOS-扩展" class="headerlink" title="iOS 扩展"></a>iOS 扩展</h2><h3 id="Module-扩展"><a href="#Module-扩展" class="headerlink" title="Module 扩展"></a>Module 扩展</h3><p><a href="https://github.com/weexteam/article/issues/55" target="_blank" rel="external">swift</a> 扩展 module </p>
 <p>Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络，图片，URL跳转这些特性，需要自己动手实现他们<br>例如，如果你想实现一个url地址跳转函数，你可以按照如下步骤实现一个 Module</p>
@@ -454,10 +427,10 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
 <pre><code class="html"><span class="tag">&lt;<span class="name">template</span>&gt;</span>
   <span class="tag">&lt;<span class="name">mycomponent</span> <span class="attr">id</span>=<span class="string">'mycomponent'</span>&gt;</span><span class="tag">&lt;/<span class="name">mycomponent</span>&gt;</span>
 <span class="tag">&lt;/<span class="name">template</span>&gt;</span>
-<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">
-  module.exports = {
-    created: function() {
-      this.$el('mycomponent').focus();
+<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript">
+  <span class="built_in">module</span>.exports = {
+    <span class="attr">created</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+      <span class="keyword">this</span>.$el(<span class="string">'mycomponent'</span>).focus();
     }
   }
 </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
@@ -485,7 +458,7 @@ Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络�
           <a href="/v-0.10/advanced/extend-to-ios.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/advanced/extend-to-ios.html" data-lang="cn">中文</a>
+          <a href="/cn/v-0.10/advanced/extend-to-ios.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>
