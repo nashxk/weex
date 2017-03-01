@@ -56,7 +56,7 @@
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Built-in ModulesHow to useYou can use a simply way like requireModule(&amp;#39;name&amp;#39;) to access the apis of module. e.g.
 &amp;lt;script&amp;gt;  const modal = weex.requireModule(&apos;modal&apos;)  module.exports = &amp;#1">
-<meta property="og:updated_time" content="2017-02-24T06:56:29.000Z">
+<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Built-in Modules">
 <meta name="twitter:description" content="Built-in ModulesHow to useYou can use a simply way like requireModule(&amp;#39;name&amp;#39;) to access the apis of module. e.g.
@@ -445,6 +445,11 @@
         
       
     
+      
+      
+        
+      
+    
    
     
       <li>
@@ -498,11 +503,11 @@
           <ul class="chapter">
             
               <li>
-                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
-                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -654,7 +659,7 @@
               </li>
             
               <li>
-                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex &amp; vue-router</a>
+                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex and vue-router</a>
               </li>
             
           </ul>
@@ -698,6 +703,10 @@
         <h3 class="chapter-title"><a href="/references/migration/index.html" class="sidebar-link  ">Migration</a></h3>
         
           <ul class="chapter">
+            
+              <li>
+                <a href="/references/platfrom-difference.html" class="sidebar-link  ">Platform Differences Between Weex and Web</a>
+              </li>
             
               <li>
                 <a href="/references/migration/migration-from-weex.html" class="sidebar-link  ">Migration from Weex</a>
@@ -1023,6 +1032,11 @@
         
       
     
+      
+      
+        
+      
+    
    
     
       <li>
@@ -1076,11 +1090,11 @@
           <ul class="chapter">
             
               <li>
-                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
-                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -1232,7 +1246,7 @@
               </li>
             
               <li>
-                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex &amp; vue-router</a>
+                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex and vue-router</a>
               </li>
             
           </ul>
@@ -1278,6 +1292,10 @@
           <ul class="chapter">
             
               <li>
+                <a href="/references/platfrom-difference.html" class="sidebar-link  ">Platform Differences Between Weex and Web</a>
+              </li>
+            
+              <li>
                 <a href="/references/migration/migration-from-weex.html" class="sidebar-link  ">Migration from Weex</a>
               </li>
             
@@ -1310,7 +1328,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-24T06:56:29.000Z">Updated time: 24/02/2017</time>
+  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
 </header>
     <h1 id="Built-in-Modules"><a href="#Built-in-Modules" class="headerlink" title="Built-in Modules"></a>Built-in Modules</h1><h2 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use"></a>How to use</h2><p>You can use a simply way like <code>requireModule(&#39;name&#39;)</code> to access the apis of module. e.g.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">const</span> modal = weex.requireModule(<span class="string">'modal'</span>)</div><div class="line"></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">data</span>: &#123;&#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">toast</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        modal.toast(&#123;</div><div class="line">          <span class="attr">message</span>: <span class="string">'props: '</span> + event.data.join(<span class="string">', '</span>)</div><div class="line">        &#125;)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>

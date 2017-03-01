@@ -48,16 +48,16 @@
     }
   })();
   </script>
-  <meta name="description" content="Difference with WebWork in progresss.">
+  <meta name="description" content="Differences between using Vue in Web and WeexPlatform DifferencesVue.js was designed for the Web platform at the begining. Although it can be based on Weex to develop native applications, there are st">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Difference with Web">
 <meta property="og:url" content="https://weex-project.io/references/vue/difference-with-web.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="Difference with WebWork in progresss.">
-<meta property="og:updated_time" content="2017-02-24T06:56:29.000Z">
+<meta property="og:description" content="Differences between using Vue in Web and WeexPlatform DifferencesVue.js was designed for the Web platform at the begining. Although it can be based on Weex to develop native applications, there are st">
+<meta property="og:updated_time" content="2017-02-28T06:16:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Difference with Web">
-<meta name="twitter:description" content="Difference with WebWork in progresss.">
+<meta name="twitter:description" content="Differences between using Vue in Web and WeexPlatform DifferencesVue.js was designed for the Web platform at the begining. Although it can be based on Weex to develop native applications, there are st">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -442,6 +442,11 @@
         
       
     
+      
+      
+        
+      
+    
    
     
       <li>
@@ -495,11 +500,11 @@
           <ul class="chapter">
             
               <li>
-                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
-                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -651,7 +656,7 @@
               </li>
             
               <li>
-                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex &amp; vue-router</a>
+                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex and vue-router</a>
               </li>
             
           </ul>
@@ -695,6 +700,10 @@
         <h3 class="chapter-title"><a href="/references/migration/index.html" class="sidebar-link  ">Migration</a></h3>
         
           <ul class="chapter">
+            
+              <li>
+                <a href="/references/platfrom-difference.html" class="sidebar-link  ">Platform Differences Between Weex and Web</a>
+              </li>
             
               <li>
                 <a href="/references/migration/migration-from-weex.html" class="sidebar-link  ">Migration from Weex</a>
@@ -1020,6 +1029,11 @@
         
       
     
+      
+      
+        
+      
+    
    
     
       <li>
@@ -1073,11 +1087,11 @@
           <ul class="chapter">
             
               <li>
-                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
-                <a href="/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -1229,7 +1243,7 @@
               </li>
             
               <li>
-                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex &amp; vue-router</a>
+                <a href="/references/vue/difference-of-vuex.html" class="sidebar-link  ">Using Vuex and vue-router</a>
               </li>
             
           </ul>
@@ -1275,6 +1289,10 @@
           <ul class="chapter">
             
               <li>
+                <a href="/references/platfrom-difference.html" class="sidebar-link  ">Platform Differences Between Weex and Web</a>
+              </li>
+            
+              <li>
                 <a href="/references/migration/migration-from-weex.html" class="sidebar-link  ">Migration from Weex</a>
               </li>
             
@@ -1307,9 +1325,72 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-24T06:56:29.000Z">Updated time: 24/02/2017</time>
+  <time class="article-date" datetime="2017-02-28T06:16:31.000Z">Updated time: 28/02/2017</time>
 </header>
-    <h1 id="Difference-with-Web"><a href="#Difference-with-Web" class="headerlink" title="Difference with Web"></a>Difference with Web</h1><p>Work in progresss.</p>
+    <h1 id="Differences-between-using-Vue-in-Web-and-Weex"><a href="#Differences-between-using-Vue-in-Web-and-Weex" class="headerlink" title="Differences between using Vue in Web and Weex"></a>Differences between using Vue in Web and Weex</h1><h2 id="Platform-Differences"><a href="#Platform-Differences" class="headerlink" title="Platform Differences"></a>Platform Differences</h2><p>Vue.js was designed for the Web platform at the begining. Although it can be based on Weex to develop native applications, there are still many differences between web and native. See <a href="../ platform-difference.html">Platform Differences Between Weex and Web</a> for more details.</p>
+<p>Due to those differences, Weex doesn’t support those features in Vue.js (mostly are DOM-related):</p>
+<ul>
+<li>Event bubbling and capturing are not supported. Event modifiers, such as <code>.prevent</code>,<code>.capture</code>, <code>.stop</code>,<code>.self</code> are meaningless in the native environment.</li>
+<li>The keyboard event modifiers, like <code>.{KeyCode | keyAlias}</code> is also meaningless. (see <a href="https://vuejs.org/v2/guide/events.html#Key-Modifiers" target="_blank" rel="external">docs in Vue.js</a>)</li>
+<li>No need to call <code>vm.$mount</code> manually, the entry component will mount to the root view of the native container by default.</li>
+<li><code>v-html</code> and<code>v-text</code> directives are not supported.</li>
+</ul>
+<h2 id="Functional-differences"><a href="#Functional-differences" class="headerlink" title="Functional differences"></a>Functional differences</h2><h3 id="Vue-2-0-Runtime-only-build"><a href="#Vue-2-0-Runtime-only-build" class="headerlink" title="Vue 2.0 Runtime-only build"></a>Vue 2.0 Runtime-only build</h3><p>Vue 2.0 provides two available builds, the standalone build and the runtime-only build. see the <a href="https://vuejs.org/v2/guide/installation.html#Standalone-vs-Runtime-only-Build" target="_blank" rel="external">official document</a> for more information.</p>
+<p>Weex only required the runtime-only build of Vue 2.0 for better performance and less code size.</p>
+<p>The specific differences are:</p>
+<ul>
+<li>The <code>template</code> attribute is not supported when defining a component.</li>
+<li>Does not support using <code>x-templates</code>.</li>
+<li>Does not support using <code>Vue.compile</code>.</li>
+</ul>
+<h3 id="Isolate-the-context-of-multiple-pages"><a href="#Isolate-the-context-of-multiple-pages" class="headerlink" title="Isolate the context of multiple pages"></a>Isolate the context of multiple pages</h3><p>Weex use the “multiple-pages” concept in native, different js bundle will be run in different native views, there context is isolated. Even the <code>Vue</code> variable is not the same instance between js bundles. (However, all the js bundle will share the same Weex runtime.)</p>
+<p>Based on this feature, the global configurations in <code>Vue</code> will only take effect on the current page:</p>
+<ul>
+<li><code>Vue.config</code></li>
+<li><code>Vue.component</code></li>
+<li><code>Vue.directive</code></li>
+<li><code>Vue.filter</code></li>
+<li><code>Vue.mixin</code></li>
+<li><code>Vue.use</code></li>
+</ul>
+<blockquote>
+<p>Note: Those methods are still work, but its effect will be limited to the current page.</p>
+</blockquote>
+<h2 id="Restrictions-in-style"><a href="#Restrictions-in-style" class="headerlink" title="Restrictions in style"></a>Restrictions in style</h2><p>CSS is very flexible, has a lot of properties, support a variety of layout modes. This is the advantage of CSS, but also a bottleneck in browser performance optimization.</p>
+<p>The style in Weex is parsed by the native renderer, and for the sake of performance and complexity, Weex makes some trade-offs about CSS features to make it better suited to <em>“best practices”</em>.</p>
+<h3 id="Single-class-selector"><a href="#Single-class-selector" class="headerlink" title="Single class selector"></a>Single class selector</h3><p>Weex only supports to use single class name in <code>&lt;style&gt;</code>, does not support <em>type selectors</em>, <em>ID selectors</em>, <em>attribute selectors</em>, <em>adjacent sibling selectors</em> and the <em>combinators</em>.</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="comment">/* Support single class name selector */</span></div><div class="line"><span class="selector-class">.one-class</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">36px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* Does not support to use combinators between selector */</span></div><div class="line"><span class="selector-class">.parent</span> &gt; <span class="selector-class">.child</span> &#123;</div><div class="line">  <span class="attribute">padding-top</span>: <span class="number">10px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.foo</span> + <span class="selector-class">.bar</span> &#123;</div><div class="line">  <span class="attribute">margin-left</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* Does not support attribute selectors. The `v-cloak` directive is not supported */</span></div><div class="line"><span class="selector-attr">[V-cloak]</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#FF6600</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The restriction is only for the style definition, does not affect the use of class names. You can still use multiple class names on a single tag, such as:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"one two three"</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="Scoped-by-default"><a href="#Scoped-by-default" class="headerlink" title="Scoped by default"></a>Scoped by default</h3><p>In Weex, For single file components, the styles written in the <code>&lt;style&gt;</code> can only be used in the current component.</p>
+<p>In order to maintain consistency with Native, it is recommended that you write the style in the <code>.vue</code> file with the<code>scoped</code> attribute, that is, <code>&lt;style scoped&gt;</code>.</p>
+<h3 id="Supported-CSS-attributes"><a href="#Supported-CSS-attributes" class="headerlink" title="Supported CSS attributes"></a>Supported CSS attributes</h3><p>Weex supports a subset of CSS, and will continue to expand.</p>
+<p>Weex supports <em>box-model</em> and <em>flexbox</em>, as well as other common styles. See <a href="../ common-style.html">Weex Common Style</a> and <a href="http://weex.apache.org/references/web-standards.html" target="_blank" rel="external">Supported Web Standards</a> for more information.</p>
+<p>In addition, you should also pay attention to the following points:</p>
+<ul>
+<li>No need to write style prefix.</li>
+<li>Weex doesn’t support <code>display: none;</code> and therefore doesn’t support the <code>v-show</code> directive.</li>
+<li>In order to optimize the efficiency of CSS parser, Weex doesn’t support shorthand attributes, involving the following attributes:<ul>
+<li><code>flex</code></li>
+<li><code>border</code>, <code>border-(top|bottom|left|right)</code></li>
+<li><code>margin</code></li>
+<li><code>padding</code></li>
+<li><code>font</code></li>
+<li><code>background</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="Differences-in-development"><a href="#Differences-in-development" class="headerlink" title="Differences in development"></a>Differences in development</h2><p>Because of the platform difference, you have to compile your source file in two different ways:</p>
+<ul>
+<li>For the web, you can compile source files in any official way, such as Webpack + vue-loader or Browserify + vueify. and require the <a href="https://www.npmjs.com/package/weex-vue-render" target="_blank" rel="external">weex-vue-render</a>, which is a group of Weex build-in components.</li>
+<li>For Android and iOS, we’ve provided <a href="https://github.com/weepteam/weep-loader" target="_blank" rel="external">weex-loader</a> to compile the <code>.vue</code> files. That is, use Webpack + weex-loader to generate the js bundle that is available for the native.</li>
+</ul>
+<h3 id="Use-weex-loader"><a href="#Use-weex-loader" class="headerlink" title="Use weex-loader"></a>Use weex-loader</h3><p><a href="https://github.com/weexteam/weex-loader" target="_blank" rel="external">weex-loader</a> is a loader for Webpack, see the <a href="http://webpack.github.io/docs/using-loaders.html" target="_blank" rel="external">official document</a> to learn how to use it.</p>
+<p>One more thing should be reminded is that if the <em>entry file</em> of your webpack config is a <code>.vue</code> file, you also need to pass an additional <code>entry</code> parameter, usually set to <code>true</code>.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="comment">// Add the entry parameter for the .vue file</span></div><div class="line">  entry: <span class="string">'./path/to/App.vue?entry=true'</span>,</div><div class="line"></div><div class="line">  <span class="comment">// other configurations ...</span></div><div class="line"></div><div class="line">  <span class="built_in">module</span>: &#123;</div><div class="line">    <span class="attr">loaders</span>: [&#123;</div><div class="line"></div><div class="line">      <span class="comment">// matches the .vue file path that contains the entry parameter</span></div><div class="line">      test: <span class="regexp">/\.vue(\?^^]+)?$/</span>,</div><div class="line">      <span class="attr">loaders</span>: [<span class="string">'weex-loader'</span>]</div><div class="line">    &#125;]</div><div class="line">  &#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>You don’t need to write those additional parameters if you are using <code>.js</code> file as entry file.</strong> We recommend using javascript files as the entry file of webpack config.</p>
+<h3 id="Setup-native-development-environments"><a href="#Setup-native-development-environments" class="headerlink" title="Setup native development environments"></a>Setup native development environments</h3><p>Since your are using Weex to develop native apps, setup native development environments, both Android and iOS, would be very useful.</p>
+<p>See <a href="../../guide/integrate-to-your-app.html">Integrating Weex to the existing application</a> for more information.</p>
 
   </div>
   
