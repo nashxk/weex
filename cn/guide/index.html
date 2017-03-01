@@ -5,49 +5,6 @@
   
   <title>快速上手 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="快速上手Weex 是一套简单易用的跨平台开发方案，能以 web 的开发体验构建高性能、可扩展的 native 应用，为了做到这些，Weex 与  Vue 合作，使用 Vue 作为上层框架，并遵循 W3C 标准实现了统一的 JSEngine 和 DOM API，这样一来，你甚至可以使用其他框架驱动 Weex，打造三端一致的 native 应用。
 Vue 是什么？Vue.js 是 Evan You 开">
 <meta property="og:type" content="website">
@@ -58,7 +15,7 @@ Vue 是什么？Vue.js 是 Evan You 开">
 Vue 是什么？Vue.js 是 Evan You 开">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1Ymw3OpXXXXcvXpXXXXXXXXXX-500-1013.jpg">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1kHFrOFXXXXaYXXXXXXXXXXXX-615-308.jpg">
-<meta property="og:updated_time" content="2017-03-01T03:03:36.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快速上手">
 <meta name="twitter:description" content="快速上手Weex 是一套简单易用的跨平台开发方案，能以 web 的开发体验构建高性能、可扩展的 native 应用，为了做到这些，Weex 与  Vue 合作，使用 Vue 作为上层框架，并遵循 W3C 标准实现了统一的 JSEngine 和 DOM API，这样一来，你甚至可以使用其他框架驱动 Weex，打造三端一致的 native 应用。
@@ -121,12 +78,28 @@ Vue 是什么？Vue.js 是 Evan You 开">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/guide/index.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/guide/index.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -144,7 +117,7 @@ Vue 是什么？Vue.js 是 Evan You 开">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -275,7 +248,7 @@ Vue 是什么？Vue.js 是 Evan You 开">
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -411,7 +384,7 @@ Vue 是什么？Vue.js 是 Evan You 开">
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -429,18 +402,22 @@ Vue 是什么？Vue.js 是 Evan You 开">
       </h1>
     
   
-  <time class="article-date" datetime="2017-03-01T03:03:36.000Z">Updated time: 01/03/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h1><p>Weex 是一套简单易用的跨平台开发方案，能以 web 的开发体验构建高性能、可扩展的 native 应用，为了做到这些，Weex 与  Vue 合作，使用 Vue 作为上层框架，并遵循 W3C 标准实现了统一的 JSEngine 和 DOM API，这样一来，你甚至可以使用其他框架驱动 Weex，打造三端一致的 native 应用。</p>
-<h2 id="Vue-是什么？"><a href="#Vue-是什么？" class="headerlink" title="Vue 是什么？"></a>Vue 是什么？</h2><p>Vue.js 是 Evan You 开发的渐进式 JavaScript 框架，在易用性、灵活性和性能等方面都非常优秀。开发者能够通过撰写 <code>*.vue</code> 文件，基于 <code>&lt;template&gt;</code>, <code>&lt;style&gt;</code>, <code>&lt;script&gt;</code> 快速构建组件化的 web 应用。</p>
+<h2 id="Vue-是什么？"><a href="#Vue-是什么？" class="headerlink" title="Vue 是什么？"></a>Vue 是什么？</h2><p>Vue.js 是 Evan You 开发的渐进式 JavaScript 框架。开发者能够通过撰写 <code>*.vue</code> 文件，基于 <code>&lt;template&gt;</code>, <code>&lt;style&gt;</code>, <code>&lt;script&gt;</code> 快速构建组件化的 web 应用。</p>
 <h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><p>尝试 Weex 最简单的方法是使用 <a href="https://alibaba.github.io/weex/download.html" target="_blank" rel="external">Playground App</a> 和在 <a href="http://dotwe.org" target="_blank" rel="external">dotWe</a> 编写一个 <a href="http://dotwe.org/vue/4d5a0471ece3daabd4681bc6d703c4c1" target="_blank" rel="external">Hello World</a> 例子。你不需要考虑安装开发环境或编写 native 代码，只需要做下面两件事：</p>
 <ul>
 <li>为你的手机安装 <a href="https://alibaba.github.io/weex/download.html" target="_blank" rel="external">Playground App</a>，当然，Weex 是跨平台的框架，你依然可以使用浏览器进行预览，只是这样你就无法感受到 native 优秀的体验了。</li>
 <li>在新标签页中打开 <a href="http://dotwe.org/vue/4d5a0471ece3daabd4681bc6d703c4c1" target="_blank" rel="external">Hello World</a> 例子，点击预览，然后用  Playground 扫码即可。</li>
 </ul>
+<p>在这个例子中，我们看到了熟悉的 HTML 语义化标签、CSS 样式和 Javascript 代码。这是一个最简单的 Weex 示例，它在页面中渲染了一个 “Hello World”。请注意，这不是一个 H5 页面，而是 native 的。</p>
 <p><img src="https://img.alicdn.com/tps/TB1Ymw3OpXXXXcvXpXXXXXXXXXX-500-1013.jpg" alt="mobile_preview"></p>
-<p>很简单，我们可以看到语法就是我们熟悉的 Vue。你可以修改这个例子，再次扫码尝试。</p>
-<h2 id="搭建开发环境"><a href="#搭建开发环境" class="headerlink" title="搭建开发环境"></a>搭建开发环境</h2><h3 id="第一步：安装依赖"><a href="#第一步：安装依赖" class="headerlink" title="第一步：安装依赖"></a>第一步：安装依赖</h3><p>Weex 官方提供了 weex-toolkit 的脚手架工具来辅助开发和调试。首先，你需要 Node.js 和 weex-toolkit。</p>
+<h3 id="发生了什么？"><a href="#发生了什么？" class="headerlink" title="发生了什么？"></a>发生了什么？</h3><p>就如示例代码所示：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span>&#123;&#123;text&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.text</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">50</span>;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">    data () &#123;</div><div class="line">      <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">text</span>: <span class="string">'Hello World.'</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>我们暂时不去关心 Weex 的技术细节，仅看大致的代码结构，我们可以看到语法就是我们熟悉的 Vue。你可以修改这个例子，再次扫码尝试。</p>
+<h2 id="搭建开发环境"><a href="#搭建开发环境" class="headerlink" title="搭建开发环境"></a>搭建开发环境</h2><p>使用 dotWe 对 Weex 尝鲜是一个不错的选择，但如果你想更专业的开发 Weex， dotWe 就不怎么够用了。本节会教你如何搭建本地开发环境进行 Weex 开发。</p>
+<h3 id="第一步：安装依赖"><a href="#第一步：安装依赖" class="headerlink" title="第一步：安装依赖"></a>第一步：安装依赖</h3><p>Weex 官方提供了 weex-toolkit 的脚手架工具来辅助开发和调试。首先，你需要 Node.js 和 weex-toolkit。</p>
 <p>安装 Node.js 方式多种多样，最简单的方式是在 <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js 官网</a> 下载可执行程序直接安装即可。</p>
 <p>对于 Mac，可以使用 <a href="http://brew.sh/" target="_blank" rel="external">Homebrew</a> 进行安装：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">brew install node</div></pre></td></tr></table></figure>
@@ -498,7 +475,7 @@ Vue 是什么？Vue.js 是 Evan You 开">
           <a href="/guide/index.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/guide/index.html" data-lang="cn">中文</a>
+          <a href="/cn/guide/index.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

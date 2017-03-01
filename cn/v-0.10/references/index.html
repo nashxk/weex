@@ -5,49 +5,6 @@
   
   <title>Bootstrap | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="Bootstrap除了其默认的意义，&amp;lt;script&amp;gt;标签支持在页面的顶级组件中通过 type 属性定义两种配置。
 
 type=&amp;quot;data&amp;quot;: 配置初始化数据，这里定义的数据会覆盖定义在&amp;lt;script&amp;gt;中的数据；
@@ -64,7 +21,7 @@ type=&amp;quot;data&amp;quot;: 配置初始化数据，这里定义的数据会�
 type=&amp;quot;config&amp;quot;: 定义配置项。
 
 &amp;lt;script type=&quot;data&quot;&amp;gt;  /* (可选) 定义初">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bootstrap">
 <meta name="twitter:description" content="Bootstrap除了其默认的意义，&amp;lt;script&amp;gt;标签支持在页面的顶级组件中通过 type 属性定义两种配置。
@@ -130,12 +87,28 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/references/index.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/references/index.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -153,7 +126,7 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -454,11 +427,11 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
           <ul class="chapter">
             
               <li>
-                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
@@ -490,11 +463,11 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
               </li>
             
               <li>
-                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
@@ -910,11 +883,11 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
           <ul class="chapter">
             
               <li>
-                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
+                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/v-0.10/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/cn/v-0.10/references/components/a.html" class="sidebar-link  ">&lt;a&gt;</a>
               </li>
             
               <li>
@@ -946,11 +919,11 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
               </li>
             
               <li>
-                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/v-0.10/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/cn/v-0.10/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
@@ -1078,7 +1051,7 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a>Bootstrap</h1><p>除了其默认的意义，<code>&lt;script&gt;</code>标签支持在页面的顶级组件中通过 <code>type</code> 属性定义两种配置。</p>
 <ul>
@@ -1117,7 +1090,7 @@ type=&amp;quot;config&amp;quot;: 定义配置项。
           <a href="/v-0.10/references/index.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/references/index.html" data-lang="cn">中文</a>
+          <a href="/cn/v-0.10/references/index.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

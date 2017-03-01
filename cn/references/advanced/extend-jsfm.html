@@ -5,49 +5,6 @@
   
   <title>拓展 JS framework | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="定制自己的 JS Framework这部分扩展能力还在讨论尝试中，可能随时会有调整，请留意。
 Weex 希望能够尊重尽可能多的开发者的使用习惯，所以除了 Weex 官方支持的 Vue 2.0 之外，开发者还可以定制并横向扩展自己的或自己喜欢的 JS Framework。完整一套 JS Framework 的定制和扩展需要以下几个步骤：
 
@@ -62,7 +19,7 @@ Weex 希望能够尊重尽可能多的开发者的使用习惯，所以除了 We
 
 首先你要有一套完整的 JS Framework。
 了解 We">
-<meta property="og:updated_time" content="2017-02-28T06:16:31.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="拓展 JS framework">
 <meta name="twitter:description" content="定制自己的 JS Framework这部分扩展能力还在讨论尝试中，可能随时会有调整，请留意。
@@ -127,12 +84,28 @@ Weex 希望能够尊重尽可能多的开发者的使用习惯，所以除了 We
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/advanced/extend-jsfm.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/advanced/extend-jsfm.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -150,7 +123,7 @@ Weex 希望能够尊重尽可能多的开发者的使用习惯，所以除了 We
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -741,7 +714,7 @@ Weex 希望能够尊重尽可能多的开发者的使用习惯，所以除了 We
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -1337,7 +1310,7 @@ Weex 希望能够尊重尽可能多的开发者的使用习惯，所以除了 We
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -1355,7 +1328,7 @@ Weex 希望能够尊重尽可能多的开发者的使用习惯，所以除了 We
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:16:31.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="定制自己的-JS-Framework"><a href="#定制自己的-JS-Framework" class="headerlink" title="定制自己的 JS Framework"></a>定制自己的 JS Framework</h1><p><em>这部分扩展能力还在讨论尝试中，可能随时会有调整，请留意。</em></p>
 <p>Weex 希望能够尊重尽可能多的开发者的使用习惯，所以除了 Weex 官方支持的 Vue 2.0 之外，开发者还可以定制并横向扩展自己的或自己喜欢的 JS Framework。完整一套 JS Framework 的定制和扩展需要以下几个步骤：</p>
@@ -1483,7 +1456,7 @@ Weex 希望能够尊重尽可能多的开发者的使用习惯，所以除了 We
           <a href="/references/advanced/extend-jsfm.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/references/advanced/extend-jsfm.html" data-lang="cn">中文</a>
+          <a href="/cn/references/advanced/extend-jsfm.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

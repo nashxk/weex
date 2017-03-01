@@ -5,10 +5,7 @@
 * Mixin
 ***********************/
 .search {
-  position: relative;
-  /*.search-label {
-    display: block;
-  }*/ }
+  position: relative; }
   .search .search-form {
     width: 100%;
     position: relative; }

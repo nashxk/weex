@@ -5,49 +5,6 @@
   
   <title>Vue 2.x 在 Weex 和 Web 中的差异 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="Vue.js 在 Weex 和 Web 中的差异平台差异Vue.js 最初是为 Web 平台设计的，虽然可以基于 Weex 开发原生应用，但是 Web 开发和原生开发毕竟不同，在功能和开发体验上都有一些差异，这些差异从本质上讲是原生开发平台和 Web 平台之间的差异，可以通过《Weex 和 Web 平台的差异》了解更多细节和原因。
 由于运行平台存在差异，Weex 不支持 Vue.js 中与 DOM">
 <meta property="og:type" content="website">
@@ -56,7 +13,7 @@
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Vue.js 在 Weex 和 Web 中的差异平台差异Vue.js 最初是为 Web 平台设计的，虽然可以基于 Weex 开发原生应用，但是 Web 开发和原生开发毕竟不同，在功能和开发体验上都有一些差异，这些差异从本质上讲是原生开发平台和 Web 平台之间的差异，可以通过《Weex 和 Web 平台的差异》了解更多细节和原因。
 由于运行平台存在差异，Weex 不支持 Vue.js 中与 DOM">
-<meta property="og:updated_time" content="2017-02-28T06:16:31.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue 2.x 在 Weex 和 Web 中的差异">
 <meta name="twitter:description" content="Vue.js 在 Weex 和 Web 中的差异平台差异Vue.js 最初是为 Web 平台设计的，虽然可以基于 Weex 开发原生应用，但是 Web 开发和原生开发毕竟不同，在功能和开发体验上都有一些差异，这些差异从本质上讲是原生开发平台和 Web 平台之间的差异，可以通过《Weex 和 Web 平台的差异》了解更多细节和原因。
@@ -118,12 +75,28 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/vue/difference-with-web.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/vue/difference-with-web.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -141,7 +114,7 @@
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -732,7 +705,7 @@
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -1328,7 +1301,7 @@
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -1346,7 +1319,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:16:31.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="Vue-js-在-Weex-和-Web-中的差异"><a href="#Vue-js-在-Weex-和-Web-中的差异" class="headerlink" title="Vue.js 在 Weex 和 Web 中的差异"></a>Vue.js 在 Weex 和 Web 中的差异</h1><h2 id="平台差异"><a href="#平台差异" class="headerlink" title="平台差异"></a>平台差异</h2><p>Vue.js 最初是为 Web 平台设计的，虽然可以基于 Weex 开发原生应用，但是 Web 开发和原生开发毕竟不同，在功能和开发体验上都有一些差异，这些差异从本质上讲是原生开发平台和 Web 平台之间的差异，可以通过<a href="../platform-difference.html">《Weex 和 Web 平台的差异》</a>了解更多细节和原因。</p>
 <p>由于运行平台存在差异，Weex 不支持 Vue.js 中与 DOM 相关的功能：</p>
@@ -1427,7 +1400,7 @@
           <a href="/references/vue/difference-with-web.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/references/vue/difference-with-web.html" data-lang="cn">中文</a>
+          <a href="/cn/references/vue/difference-with-web.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

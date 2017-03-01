@@ -5,49 +5,6 @@
   
   <title>&lt;a&gt; | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="&amp;lt;a&amp;gt;&amp;lt;a&amp;gt; 组件定义了指向某个页面的一个超链接. 此组件的作用和用法与HTML5中的 &amp;lt;a&amp;gt; 非常类似，区别在于 Weex 的 &amp;lt;a&amp;gt; 组件不能直接在里面添加文本（字符串），如果要展示文本，应该添加 &amp;lt;text&amp;gt; 组件。
 子组件此组件支持除了自己外的所有 Weex 组件作为子组件。
 特性
@@ -60,7 +17,7 @@ href {string}：定义了超链接的 UR">
 子组件此组件支持除了自己外的所有 Weex 组件作为子组件。
 特性
 href {string}：定义了超链接的 UR">
-<meta property="og:updated_time" content="2017-02-28T06:16:31.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<a>">
 <meta name="twitter:description" content="&amp;lt;a&amp;gt;&amp;lt;a&amp;gt; 组件定义了指向某个页面的一个超链接. 此组件的作用和用法与HTML5中的 &amp;lt;a&amp;gt; 非常类似，区别在于 Weex 的 &amp;lt;a&amp;gt; 组件不能直接在里面添加文本（字符串），如果要展示文本，应该添加 &amp;lt;text&amp;gt; 组件。
@@ -124,12 +81,28 @@ href {string}：定义了超链接的 UR">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/components/a.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/components/a.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -147,7 +120,7 @@ href {string}：定义了超链接的 UR">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -738,7 +711,7 @@ href {string}：定义了超链接的 UR">
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -1334,7 +1307,7 @@ href {string}：定义了超链接的 UR">
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -1352,7 +1325,7 @@ href {string}：定义了超链接的 UR">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:16:31.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="lt-a-gt"><a href="#lt-a-gt" class="headerlink" title="&lt;a&gt;"></a>&lt;a&gt;</h1><p><code>&lt;a&gt;</code> 组件定义了指向某个页面的一个超链接. 此组件的作用和用法与HTML5中的 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a" target="_blank" rel="external"><code>&lt;a&gt;</code></a> 非常类似，区别在于 Weex 的 <code>&lt;a&gt;</code> 组件<strong>不能</strong>直接在里面添加文本（字符串），如果要展示文本，应该添加 <code>&lt;text&gt;</code> 组件。</p>
 <h2 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h2><p>此组件支持除了自己外的所有 Weex 组件作为子组件。</p>
@@ -1408,7 +1381,7 @@ href {string}：定义了超链接的 UR">
           <a href="/references/components/a.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/references/components/a.html" data-lang="cn">中文</a>
+          <a href="/cn/references/components/a.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

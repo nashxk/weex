@@ -5,49 +5,6 @@
   
   <title>Migration | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="Migration
 Migration from Weex
 The difference between Weex and Vue">
@@ -58,7 +15,7 @@ The difference between Weex and Vue">
 <meta property="og:description" content="Migration
 Migration from Weex
 The difference between Weex and Vue">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Migration">
 <meta name="twitter:description" content="Migration
@@ -121,12 +78,28 @@ The difference between Weex and Vue">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/migration/index.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/migration/index.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -144,7 +117,7 @@ The difference between Weex and Vue">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -583,11 +556,11 @@ The difference between Weex and Vue">
               </li>
             
               <li>
-                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
               </li>
             
               <li>
-                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
@@ -726,7 +699,7 @@ The difference between Weex and Vue">
     
     
       <li>
-        <h3 class="chapter-title"><a href="/v-0.10/references/index.html" class="sidebar-link">Legacy</a></h3>
+        <h3 class="chapter-title"><a href="/v-0.10/references/index.html" class="sidebar-link">Old Syntax Doc</a></h3>
       </li>
     
   </ul>
@@ -1170,11 +1143,11 @@ The difference between Weex and Vue">
               </li>
             
               <li>
-                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
               </li>
             
               <li>
-                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
@@ -1313,7 +1286,7 @@ The difference between Weex and Vue">
     
     
       <li>
-        <h3 class="chapter-title"><a href="/v-0.10/references/index.html" class="sidebar-link">Legacy</a></h3>
+        <h3 class="chapter-title"><a href="/v-0.10/references/index.html" class="sidebar-link">Old Syntax Doc</a></h3>
       </li>
     
   </ul>
@@ -1331,7 +1304,7 @@ The difference between Weex and Vue">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="Migration"><a href="#Migration" class="headerlink" title="Migration"></a>Migration</h1><ul>
 <li><a href="./migration-from-weex.html">Migration from Weex</a></li>
@@ -1358,7 +1331,7 @@ The difference between Weex and Vue">
           <a href="/references/migration/index.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/references/migration/index.html" data-lang="cn">中文</a>
+          <a href="/cn/references/migration/index.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

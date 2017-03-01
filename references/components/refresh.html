@@ -5,49 +5,6 @@
   
   <title>&lt;refresh&gt; &amp; &lt;loading&gt; | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="refresh &amp;amp; loadingv0.6.1+
 Loading ComponentsTo be rendered properly, the refresh/loading Components must appear inside the Scroller Component or the List Component.
 Child ComponentsAny other compon">
@@ -58,7 +15,7 @@ Child ComponentsAny other compon">
 <meta property="og:description" content="refresh &amp;amp; loadingv0.6.1+
 Loading ComponentsTo be rendered properly, the refresh/loading Components must appear inside the Scroller Component or the List Component.
 Child ComponentsAny other compon">
-<meta property="og:updated_time" content="2017-02-28T06:16:31.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<refresh> & <loading>">
 <meta name="twitter:description" content="refresh &amp;amp; loadingv0.6.1+
@@ -121,12 +78,28 @@ Child ComponentsAny other compon">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/components/refresh.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/components/refresh.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -144,7 +117,7 @@ Child ComponentsAny other compon">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -583,11 +556,11 @@ Child ComponentsAny other compon">
               </li>
             
               <li>
-                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
               </li>
             
               <li>
-                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
@@ -726,7 +699,7 @@ Child ComponentsAny other compon">
     
     
       <li>
-        <h3 class="chapter-title"><a href="/v-0.10/references/index.html" class="sidebar-link">Legacy</a></h3>
+        <h3 class="chapter-title"><a href="/v-0.10/references/index.html" class="sidebar-link">Old Syntax Doc</a></h3>
       </li>
     
   </ul>
@@ -1170,11 +1143,11 @@ Child ComponentsAny other compon">
               </li>
             
               <li>
-                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
               </li>
             
               <li>
-                <a href="/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+                <a href="/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
@@ -1313,7 +1286,7 @@ Child ComponentsAny other compon">
     
     
       <li>
-        <h3 class="chapter-title"><a href="/v-0.10/references/index.html" class="sidebar-link">Legacy</a></h3>
+        <h3 class="chapter-title"><a href="/v-0.10/references/index.html" class="sidebar-link">Old Syntax Doc</a></h3>
       </li>
     
   </ul>
@@ -1331,7 +1304,7 @@ Child ComponentsAny other compon">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:16:31.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="refresh-amp-loading"><a href="#refresh-amp-loading" class="headerlink" title="refresh &amp; loading"></a>refresh &amp; loading</h1><p><span class="weex-version">v0.6.1+</span></p>
 <h2 id="Loading-Components"><a href="#Loading-Components" class="headerlink" title="Loading Components"></a>Loading Components</h2><p>To be rendered properly, the refresh/loading Components must appear inside the Scroller Component or the List Component.</p>
@@ -1394,7 +1367,7 @@ Child ComponentsAny other compon">
           <a href="/references/components/refresh.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/references/components/refresh.html" data-lang="cn">中文</a>
+          <a href="/cn/references/components/refresh.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

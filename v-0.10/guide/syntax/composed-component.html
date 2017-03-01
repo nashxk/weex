@@ -5,49 +5,6 @@
   
   <title>Composed Component | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="Composed ComponentIf some part of weex file is reused often, you could create a composed component represent these part.
 You can create a file named foo.we to define a composed component, the componen">
 <meta property="og:type" content="website">
@@ -56,7 +13,7 @@ You can create a file named foo.we to define a composed component, the componen"
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Composed ComponentIf some part of weex file is reused often, you could create a composed component represent these part.
 You can create a file named foo.we to define a composed component, the componen">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Composed Component">
 <meta name="twitter:description" content="Composed ComponentIf some part of weex file is reused often, you could create a composed component represent these part.
@@ -118,12 +75,28 @@ You can create a file named foo.we to define a composed component, the componen"
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/guide/syntax/composed-component.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/composed-component.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -141,7 +114,7 @@ You can create a file named foo.we to define a composed component, the componen"
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -550,7 +523,7 @@ You can create a file named foo.we to define a composed component, the componen"
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="Composed-Component"><a href="#Composed-Component" class="headerlink" title="Composed Component"></a>Composed Component</h1><p>If some part of weex file is reused often, you could create a composed component represent these part.</p>
 <p>You can create a file named <code>foo.we</code> to define a composed component, the component name is just <code>&lt;foo&gt;</code>.</p>
@@ -591,7 +564,7 @@ You can create a file named foo.we to define a composed component, the componen"
           <a href="/v-0.10/guide/syntax/composed-component.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/guide/syntax/composed-component.html" data-lang="cn">中文</a>
+          <a href="/cn/v-0.10/guide/syntax/composed-component.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

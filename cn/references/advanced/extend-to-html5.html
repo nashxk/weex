@@ -5,49 +5,6 @@
   
   <title>HTML5 扩展 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="如何扩展 Weex Web 端的组件和模块Weex 本身提供了很多内置组件和模块，也具备横向扩展的能力，允许开发者自行扩展和定制。需要注意的是，Weex 是一个跨平台的解决方案，扩展其内置组件或模块，需要在三端（Android、iOS、Web）中都有相应的实现。
 Weex 将内核切换成 Vue 2.x 之后，在 Web 端扩展 Vue 组件将变得更加容易。
 扩展 Web 组件Vue.js 本身就是">
@@ -58,7 +15,7 @@ Weex 将内核切换成 Vue 2.x 之后，在 Web 端扩展 Vue 组件将变得�
 <meta property="og:description" content="如何扩展 Weex Web 端的组件和模块Weex 本身提供了很多内置组件和模块，也具备横向扩展的能力，允许开发者自行扩展和定制。需要注意的是，Weex 是一个跨平台的解决方案，扩展其内置组件或模块，需要在三端（Android、iOS、Web）中都有相应的实现。
 Weex 将内核切换成 Vue 2.x 之后，在 Web 端扩展 Vue 组件将变得更加容易。
 扩展 Web 组件Vue.js 本身就是">
-<meta property="og:updated_time" content="2017-02-28T06:16:31.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML5 扩展">
 <meta name="twitter:description" content="如何扩展 Weex Web 端的组件和模块Weex 本身提供了很多内置组件和模块，也具备横向扩展的能力，允许开发者自行扩展和定制。需要注意的是，Weex 是一个跨平台的解决方案，扩展其内置组件或模块，需要在三端（Android、iOS、Web）中都有相应的实现。
@@ -121,12 +78,28 @@ Weex 将内核切换成 Vue 2.x 之后，在 Web 端扩展 Vue 组件将变得�
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/advanced/extend-to-html5.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/advanced/extend-to-html5.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -144,7 +117,7 @@ Weex 将内核切换成 Vue 2.x 之后，在 Web 端扩展 Vue 组件将变得�
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -735,7 +708,7 @@ Weex 将内核切换成 Vue 2.x 之后，在 Web 端扩展 Vue 组件将变得�
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -1331,7 +1304,7 @@ Weex 将内核切换成 Vue 2.x 之后，在 Web 端扩展 Vue 组件将变得�
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -1349,7 +1322,7 @@ Weex 将内核切换成 Vue 2.x 之后，在 Web 端扩展 Vue 组件将变得�
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:16:31.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="如何扩展-Weex-Web-端的组件和模块"><a href="#如何扩展-Weex-Web-端的组件和模块" class="headerlink" title="如何扩展 Weex Web 端的组件和模块"></a>如何扩展 Weex Web 端的组件和模块</h1><p>Weex 本身提供了很多内置组件和模块，也具备横向扩展的能力，允许开发者自行扩展和定制。需要注意的是，Weex 是一个跨平台的解决方案，扩展其内置组件或模块，需要在三端（Android、iOS、Web）中都有相应的实现。</p>
 <p>Weex 将内核切换成 Vue 2.x 之后，在 Web 端扩展 Vue 组件将变得更加容易。</p>
@@ -1395,7 +1368,7 @@ Weex 将内核切换成 Vue 2.x 之后，在 Web 端扩展 Vue 组件将变得�
           <a href="/references/advanced/extend-to-html5.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/references/advanced/extend-to-html5.html" data-lang="cn">中文</a>
+          <a href="/cn/references/advanced/extend-to-html5.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

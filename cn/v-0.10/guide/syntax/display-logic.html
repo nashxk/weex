@@ -5,49 +5,6 @@
   
   <title>展示逻辑控制 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="展示逻辑控制Weex 支持通过两种特殊的特性 if 和 repeat 确定组件的显示逻辑，这会使得整个界面的展示逻辑控制更加简单灵活。
 if通过设置 if 特性值，你可以控制当前组件是否显示。如果值为真，则当前组件会被渲染出来，如果值为假则会被移除。例如：
 &amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;text onclick=&quot;toggle&quot;&amp;gt;Toggle Im">
@@ -58,7 +15,7 @@ if通过设置 if 特性值，你可以控制当前组件是否显示。如果�
 <meta property="og:description" content="展示逻辑控制Weex 支持通过两种特殊的特性 if 和 repeat 确定组件的显示逻辑，这会使得整个界面的展示逻辑控制更加简单灵活。
 if通过设置 if 特性值，你可以控制当前组件是否显示。如果值为真，则当前组件会被渲染出来，如果值为假则会被移除。例如：
 &amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;text onclick=&quot;toggle&quot;&amp;gt;Toggle Im">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="展示逻辑控制">
 <meta name="twitter:description" content="展示逻辑控制Weex 支持通过两种特殊的特性 if 和 repeat 确定组件的显示逻辑，这会使得整个界面的展示逻辑控制更加简单灵活。
@@ -121,12 +78,28 @@ if通过设置 if 特性值，你可以控制当前组件是否显示。如果�
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/guide/syntax/display-logic.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/guide/syntax/display-logic.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -144,7 +117,7 @@ if通过设置 if 特性值，你可以控制当前组件是否显示。如果�
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -519,7 +492,7 @@ if通过设置 if 特性值，你可以控制当前组件是否显示。如果�
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="展示逻辑控制"><a href="#展示逻辑控制" class="headerlink" title="展示逻辑控制"></a>展示逻辑控制</h1><p>Weex 支持通过两种特殊的特性 <code>if</code> 和 <code>repeat</code> 确定组件的显示逻辑，这会使得整个界面的展示逻辑控制更加简单灵活。</p>
 <h2 id="if"><a href="#if" class="headerlink" title="if"></a><code>if</code></h2><p>通过设置 <code>if</code> 特性值，你可以控制当前组件是否显示。如果值为真，则当前组件会被渲染出来，如果值为假则会被移除。例如：</p>
@@ -594,7 +567,7 @@ if通过设置 if 特性值，你可以控制当前组件是否显示。如果�
           <a href="/v-0.10/guide/syntax/display-logic.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/guide/syntax/display-logic.html" data-lang="cn">中文</a>
+          <a href="/cn/v-0.10/guide/syntax/display-logic.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

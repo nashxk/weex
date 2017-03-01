@@ -5,49 +5,6 @@
   
   <title>animation | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="animation 动画流畅且有意义的动画是一个十分有效的提升移动应用用户体验的手段，animation 模块被用于在组件上执行动画。动画可以对组件执行一系列简单的变换 (位置、大小、旋转角度、背景颜色和不透明度)。举个例子，如果有一个 &amp;lt;image&amp;gt; 组件，通过动画你可以对其进行移动、旋转、拉伸或收缩等动作。
 APItransition(el, options, callback)参">
 <meta property="og:type" content="website">
@@ -56,7 +13,7 @@ APItransition(el, options, callback)参">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="animation 动画流畅且有意义的动画是一个十分有效的提升移动应用用户体验的手段，animation 模块被用于在组件上执行动画。动画可以对组件执行一系列简单的变换 (位置、大小、旋转角度、背景颜色和不透明度)。举个例子，如果有一个 &amp;lt;image&amp;gt; 组件，通过动画你可以对其进行移动、旋转、拉伸或收缩等动作。
 APItransition(el, options, callback)参">
-<meta property="og:updated_time" content="2017-02-28T06:16:31.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="animation">
 <meta name="twitter:description" content="animation 动画流畅且有意义的动画是一个十分有效的提升移动应用用户体验的手段，animation 模块被用于在组件上执行动画。动画可以对组件执行一系列简单的变换 (位置、大小、旋转角度、背景颜色和不透明度)。举个例子，如果有一个 &amp;lt;image&amp;gt; 组件，通过动画你可以对其进行移动、旋转、拉伸或收缩等动作。
@@ -118,12 +75,28 @@ APItransition(el, options, callback)参">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/modules/animation.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/modules/animation.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -141,7 +114,7 @@ APItransition(el, options, callback)参">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -732,7 +705,7 @@ APItransition(el, options, callback)参">
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -1328,7 +1301,7 @@ APItransition(el, options, callback)参">
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -1346,7 +1319,7 @@ APItransition(el, options, callback)参">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:16:31.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="animation-动画"><a href="#animation-动画" class="headerlink" title="animation 动画"></a><code>animation</code> 动画</h1><p>流畅且有意义的动画是一个十分有效的提升移动应用用户体验的手段，<code>animation</code> 模块被用于在组件上执行动画。动画可以对组件执行一系列简单的变换 (位置、大小、旋转角度、背景颜色和不透明度)。举个例子，如果有一个 <code>&lt;image&gt;</code> 组件，通过动画你可以对其进行移动、旋转、拉伸或收缩等动作。</p>
 <h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="transition-el-options-callback"><a href="#transition-el-options-callback" class="headerlink" title="transition(el, options, callback)"></a><code>transition(el, options, callback)</code></h3><h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><ul>
@@ -1499,7 +1472,7 @@ APItransition(el, options, callback)参">
           <a href="/references/modules/animation.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/references/modules/animation.html" data-lang="cn">中文</a>
+          <a href="/cn/references/modules/animation.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

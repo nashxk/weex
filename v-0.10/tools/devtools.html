@@ -5,49 +5,6 @@
   
   <title>Devtools | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="DevtoolsWeex devtools is a custom devtools for weex that implements Chrome Debugging Protocol, it is designed to help you quickly inspect your app and debug your JS bundle source in a chrome web page,">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Devtools">
@@ -64,7 +21,7 @@
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1oY6cKFXXXXXQaXXXXXXXXXXX-2880-1800.png">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1aPTEKFXXXXXaXXXXXXXXXXXX-1436-813.png">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1_trbKFXXXXc0XVXXXXXXXXXX-2880-1800.png">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Devtools">
 <meta name="twitter:description" content="DevtoolsWeex devtools is a custom devtools for weex that implements Chrome Debugging Protocol, it is designed to help you quickly inspect your app and debug your JS bundle source in a chrome web page,">
@@ -126,12 +83,28 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/tools/devtools.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/tools/devtools.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -151,7 +124,7 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -169,7 +142,7 @@
           </a>
         </li>
         <li>
-          <a href="/faq">
+          <a href="/faq.html">
             FAQ
           </a>
         </li>
@@ -300,7 +273,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="Devtools"><a href="#Devtools" class="headerlink" title="Devtools"></a>Devtools</h1><p>Weex devtools is a custom devtools for weex that implements <a href="https://developer.chrome.com/devtools/docs/debugger-protocol" target="_blank" rel="external">Chrome Debugging Protocol</a>, it is designed to help you quickly inspect your app and debug your JS bundle source in a chrome web page, both Android and IOS platform are supported.</p>
 <h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ npm install  -g  weex-toolkit</div></pre></td></tr></table></figure>
@@ -354,7 +327,7 @@
           <a href="/v-0.10/tools/devtools.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/tools/devtools.html" data-lang="cn">中文</a>
+          <a href="/cn/v-0.10/tools/devtools.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

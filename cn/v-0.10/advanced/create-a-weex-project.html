@@ -5,49 +5,6 @@
   
   <title>如何创建一个 Weex 项目 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="如何创建一个 Weex 项目对于前端开发者来说开发一个 app 是不容易的，既然 Weex 能以 web 的开发体验构建高性能、可扩展的 native 应用，那我们怎么利用 Weex 简单高效的开发一个 native 应用呢？Weex 替你考虑了这件事。在本章中，我们将学习如何使用 Weexpack 工具快速生成一个全新的 Weex 项目。
 根据你的操作系统的不同，步骤也略有差异，如果你从未接触过">
 <meta property="og:type" content="website">
@@ -59,7 +16,7 @@
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1jLx4OFXXXXaoXFXXXXXXXXXX-212-33.png">
 <meta property="og:image" content="https://gw.alicdn.com/tps/TB1VulhOFXXXXcPXFXXXXXXXXXX-828-686.png">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1CBdgOFXXXXXnXVXXXXXXXXXX-661-392.jpg">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何创建一个 Weex 项目">
 <meta name="twitter:description" content="如何创建一个 Weex 项目对于前端开发者来说开发一个 app 是不容易的，既然 Weex 能以 web 的开发体验构建高性能、可扩展的 native 应用，那我们怎么利用 Weex 简单高效的开发一个 native 应用呢？Weex 替你考虑了这件事。在本章中，我们将学习如何使用 Weexpack 工具快速生成一个全新的 Weex 项目。
@@ -122,12 +79,28 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/v-0.10/advanced/create-a-weex-project.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/v-0.10/advanced/create-a-weex-project.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -147,7 +120,7 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -165,7 +138,7 @@
           </a>
         </li>
         <li>
-          <a href="/cn/faq">
+          <a href="/cn/faq.html">
             FAQ
           </a>
         </li>
@@ -364,7 +337,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="如何创建一个-Weex-项目"><a href="#如何创建一个-Weex-项目" class="headerlink" title="如何创建一个 Weex 项目"></a>如何创建一个 Weex 项目</h1><p>对于前端开发者来说开发一个 app 是不容易的，既然 Weex 能以 web 的开发体验构建高性能、可扩展的 native 应用，那我们怎么利用 Weex 简单高效的开发一个 native 应用呢？Weex 替你考虑了这件事。在本章中，我们将学习如何使用 Weexpack 工具快速生成一个全新的 Weex 项目。</p>
 <p>根据你的操作系统的不同，步骤也略有差异，如果你从未接触过 native 开发，请慢慢来，遇到问题随时查阅 <a href="../faq.md">FAQ</a>。</p>
@@ -503,7 +476,7 @@
           <a href="/v-0.10/advanced/create-a-weex-project.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/advanced/create-a-weex-project.html" data-lang="cn">中文</a>
+          <a href="/cn/v-0.10/advanced/create-a-weex-project.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

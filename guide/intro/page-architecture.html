@@ -5,49 +5,6 @@
   
   <title>Weex Page Architecture | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="Weex Page ArchitectureA Weex page is a independent mobile page which includes UI, interaction logic, device power, lifecycle management etc.
 UINative DOM ModelWeex page has its HTML-like DOM model to">
 <meta property="og:type" content="website">
@@ -56,7 +13,7 @@ UINative DOM ModelWeex page has its HTML-like DOM model to">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Weex Page ArchitectureA Weex page is a independent mobile page which includes UI, interaction logic, device power, lifecycle management etc.
 UINative DOM ModelWeex page has its HTML-like DOM model to">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Weex Page Architecture">
 <meta name="twitter:description" content="Weex Page ArchitectureA Weex page is a independent mobile page which includes UI, interaction logic, device power, lifecycle management etc.
@@ -118,12 +75,28 @@ UINative DOM ModelWeex page has its HTML-like DOM model to">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/guide/intro/page-architecture.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/guide/intro/page-architecture.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -141,7 +114,7 @@ UINative DOM ModelWeex page has its HTML-like DOM model to">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -272,7 +245,7 @@ UINative DOM ModelWeex page has its HTML-like DOM model to">
     
     
       <li>
-        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link">Legacy</a></h3>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link">Old Syntax Doc</a></h3>
       </li>
     
   </ul>
@@ -408,7 +381,7 @@ UINative DOM ModelWeex page has its HTML-like DOM model to">
     
     
       <li>
-        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link">Legacy</a></h3>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link">Old Syntax Doc</a></h3>
       </li>
     
   </ul>
@@ -426,7 +399,7 @@ UINative DOM ModelWeex page has its HTML-like DOM model to">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="Weex-Page-Architecture"><a href="#Weex-Page-Architecture" class="headerlink" title="Weex Page Architecture"></a>Weex Page Architecture</h1><p>A Weex page is a independent mobile page which includes UI, interaction logic, device power, lifecycle management etc.</p>
 <h2 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h2><h3 id="Native-DOM-Model"><a href="#Native-DOM-Model" class="headerlink" title="Native DOM Model"></a>Native DOM Model</h3><p>Weex page has its HTML-like DOM model to manage UI. It will be decomposed into a DOM tree which consists of some DOM nodes.</p>
@@ -472,7 +445,7 @@ UINative DOM ModelWeex page has its HTML-like DOM model to">
           <a href="/guide/intro/page-architecture.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/guide/intro/page-architecture.html" data-lang="cn">中文</a>
+          <a href="/cn/guide/intro/page-architecture.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

@@ -5,49 +5,6 @@
   
   <title>Native DOM APIs | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="Native DOM APIsWeex 在 JS 引擎中，为每个页面都提供了一套 Native DOM APIs，这套接口和 HTML DOM APIs 非常接近，利用这套接口我们可以通过 JavaScript 控制 native 的渲染逻辑。而且 Weex 上层的 Vue 2.0 也是基于这套接口进行适配的。
 绝大多数情况下 JS 框架会把 Native DOM APIs 都封装好，开发者不需要">
 <meta property="og:type" content="website">
@@ -56,7 +13,7 @@
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Native DOM APIsWeex 在 JS 引擎中，为每个页面都提供了一套 Native DOM APIs，这套接口和 HTML DOM APIs 非常接近，利用这套接口我们可以通过 JavaScript 控制 native 的渲染逻辑。而且 Weex 上层的 Vue 2.0 也是基于这套接口进行适配的。
 绝大多数情况下 JS 框架会把 Native DOM APIs 都封装好，开发者不需要">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Native DOM APIs">
 <meta name="twitter:description" content="Native DOM APIsWeex 在 JS 引擎中，为每个页面都提供了一套 Native DOM APIs，这套接口和 HTML DOM APIs 非常接近，利用这套接口我们可以通过 JavaScript 控制 native 的渲染逻辑。而且 Weex 上层的 Vue 2.0 也是基于这套接口进行适配的。
@@ -118,12 +75,28 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/references/native-dom-api.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/references/native-dom-api.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -141,7 +114,7 @@
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -732,7 +705,7 @@
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -1328,7 +1301,7 @@
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -1346,7 +1319,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="Native-DOM-APIs"><a href="#Native-DOM-APIs" class="headerlink" title="Native DOM APIs"></a>Native DOM APIs</h1><p>Weex 在 JS 引擎中，为每个页面都提供了一套 Native DOM APIs，这套接口和 HTML DOM APIs 非常接近，利用这套接口我们可以通过 JavaScript 控制 native 的渲染逻辑。而且 Weex 上层的 Vue 2.0 也是基于这套接口进行适配的。</p>
 <p><em>绝大多数情况下 JS 框架会把 Native DOM APIs 都封装好，开发者不需要直接对 Native DOM 进行操作。</em></p>
@@ -1530,7 +1503,7 @@
           <a href="/references/native-dom-api.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/references/native-dom-api.html" data-lang="cn">中文</a>
+          <a href="/cn/references/native-dom-api.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>

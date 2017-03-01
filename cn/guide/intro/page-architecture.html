@@ -5,49 +5,6 @@
   
   <title>Weex 页面结构 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <script>
-  ;(function(){
-    var currentOrigin = location.origin,
-        currentPathname = location.pathname,
-        currentLang = navigator.language,
-        selectedLang = '';
-
-    if (!currentLang) {
-      currentLang = navigator.browserLanguage;
-    }
-
-    if (window.sessionStorage) {
-      selectedLang = window.sessionStorage.getItem('lang')
-    }
-
-    if (!selectedLang) {
-      if (currentLang.indexOf('zh') >= 0 && currentPathname.indexOf('/cn/') != 0) {
-        location.href = getUrl('cn', currentOrigin, currentPathname);
-      } else if (currentLang.indexOf('en') >= 0 && currentPathname.indexOf('/cn/') == 0) {
-        location.href = getUrl('en', currentOrigin, currentPathname);
-      }
-    }
-
-    function getUrl (lang, origin, path) {
-      if (lang == 'en') {
-        if (path.indexOf('/cn/') == 0) {
-          return origin + path.substr(3)
-        } else {
-          return origin + path
-        }
-      } else {
-        var langPath = '/' + lang + '/'
-        var pathStart = path.indexOf(langPath)
-
-        if (pathStart == 0) {
-          return origin + path
-        } else {
-          return origin + langPath + path.substr(1)
-        }
-      }
-    }
-  })();
-  </script>
   <meta name="description" content="Weex 页面结构一个 Weex 页面就是一个相对独立解耦的移动应用界面，它不仅包括了界面展示、更包含了逻辑处理、设备能力使用、生命周期管理等部分。
 界面DOM 模型Weex 页面通过类似 HTML DOM 的方式管理界面，首先页面会被分解为一个 DOM 树，，每个 DOM 结点都代表了一个相对独立的 native 视图的单元。然后不同的视图单元之间通过树形结构组合在了一起，构成一个完整的页面。">
 <meta property="og:type" content="website">
@@ -56,7 +13,7 @@
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Weex 页面结构一个 Weex 页面就是一个相对独立解耦的移动应用界面，它不仅包括了界面展示、更包含了逻辑处理、设备能力使用、生命周期管理等部分。
 界面DOM 模型Weex 页面通过类似 HTML DOM 的方式管理界面，首先页面会被分解为一个 DOM 树，，每个 DOM 结点都代表了一个相对独立的 native 视图的单元。然后不同的视图单元之间通过树形结构组合在了一起，构成一个完整的页面。">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Weex 页面结构">
 <meta name="twitter:description" content="Weex 页面结构一个 Weex 页面就是一个相对独立解耦的移动应用界面，它不仅包括了界面展示、更包含了逻辑处理、设备能力使用、生命周期管理等部分。
@@ -118,12 +75,28 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
+        </li>
+        <li>
+          <div class="dropdown select-lang">
+            <a href="javascript:;" class="dropdown-toggle">
+              Language
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu pick-lang">
+              <li>
+                <a href="/guide/intro/page-architecture.html" data-lang="en">English</a>
+              </li>
+              <li>
+                <a href="/cn/guide/intro/page-architecture.html" data-lang="zh-cn">中文</a>
+              </li>
+            </ul>
+          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -141,7 +114,7 @@
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -272,7 +245,7 @@
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -408,7 +381,7 @@
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link">旧文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link">旧语法文档</a></h3>
       </li>
     
   </ul>
@@ -426,7 +399,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
 </header>
     <h1 id="Weex-页面结构"><a href="#Weex-页面结构" class="headerlink" title="Weex 页面结构"></a>Weex 页面结构</h1><p>一个 Weex 页面就是一个相对独立解耦的移动应用界面，它不仅包括了界面展示、更包含了逻辑处理、设备能力使用、生命周期管理等部分。</p>
 <h2 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h2><h3 id="DOM-模型"><a href="#DOM-模型" class="headerlink" title="DOM 模型"></a>DOM 模型</h3><p>Weex 页面通过类似 HTML DOM 的方式管理界面，首先页面会被分解为一个 DOM 树，，每个 DOM 结点都代表了一个相对独立的 native 视图的单元。然后不同的视图单元之间通过树形结构组合在了一起，构成一个完整的页面。</p>
@@ -472,7 +445,7 @@
           <a href="/guide/intro/page-architecture.html" data-lang="en">English</a>
         </li>
         <li>
-          <a href="/cn/guide/intro/page-architecture.html" data-lang="cn">中文</a>
+          <a href="/cn/guide/intro/page-architecture.html" data-lang="zh-cn">中文</a>
         </li>
       </ul>
     </div>
