@@ -15,7 +15,7 @@
 <meta property="og:description" content="&amp;lt;refresh&amp;gt;v0.6.1+
 &amp;lt;refresh&amp;gt; 为 &amp;lt;scroller&amp;gt; 和 &amp;lt;list&amp;gt; 提供下拉加载功能。用法与特性与 &amp;lt;loading&amp;gt; 类似，&amp;lt;scroller&amp;gt; 和 &amp;lt;list&amp;gt; 的子组件，且只能在被 &amp;lt;scroller&amp;gt; 和 &amp;lt;list&amp;gt; 包含时才能被正确的渲染。
 子组件">
-<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
+<meta property="og:updated_time" content="2017-03-02T02:43:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<refresh>">
 <meta name="twitter:description" content="&amp;lt;refresh&amp;gt;v0.6.1+
@@ -561,11 +561,11 @@
               </li>
             
               <li>
-                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
-                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
               </li>
             
               <li>
@@ -685,12 +685,12 @@
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
         
           <ul class="chapter">
             
               <li>
-                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
+                <a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a>
               </li>
             
               <li>
@@ -1157,11 +1157,11 @@
               </li>
             
               <li>
-                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
-                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
               </li>
             
               <li>
@@ -1281,12 +1281,12 @@
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
         
           <ul class="chapter">
             
               <li>
-                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
+                <a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a>
               </li>
             
               <li>
@@ -1322,7 +1322,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
+  <time class="article-date" datetime="2017-03-02T02:43:44.000Z">Updated time: 02/03/2017</time>
 </header>
     <h1 id="lt-refresh-gt"><a href="#lt-refresh-gt" class="headerlink" title="&lt;refresh&gt;"></a>&lt;refresh&gt;</h1><p><span class="weex-version">v0.6.1+</span></p>
 <p><code>&lt;refresh&gt;</code> 为 <code>&lt;scroller&gt;</code> 和 <code>&lt;list&gt;</code> 提供下拉加载功能。用法与特性与 <code>&lt;loading&gt;</code> 类似，<code>&lt;scroller&gt;</code> 和 <code>&lt;list&gt;</code> 的子组件，且只能在被 <code>&lt;scroller&gt;</code> 和 <code>&lt;list&gt;</code> 包含时才能被正确的渲染。</p>
@@ -1360,7 +1360,7 @@
 </li>
 </ul>
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">scroller</span> <span class="attr">class</span>=<span class="string">"scroller"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">refresh</span> <span class="attr">class</span>=<span class="string">"refresh"</span> @<span class="attr">refresh</span>=<span class="string">"onrefresh"</span> @<span class="attr">pullingdown</span>=<span class="string">"onpullingdown"</span> <span class="attr">:display</span>=<span class="string">"refreshing ? 'show' : 'hide'"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"indicator"</span>&gt;</span>Refreshing ...<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">refresh</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cell"</span> <span class="attr">v-for</span>=<span class="string">"num in lists"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span>&#123;&#123;num&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">scroller</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">const</span> modal = weex.requireModule(<span class="string">'modal'</span>)</div><div class="line"></div><div class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">    data () &#123;</div><div class="line">      <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">refreshing</span>: <span class="literal">false</span>,</div><div class="line">        <span class="attr">lists</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      onrefresh (event) &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'is refreshing'</span>)</div><div class="line">        modal.toast(&#123; <span class="attr">message</span>: <span class="string">'refresh'</span>, <span class="attr">duration</span>: <span class="number">1</span> &#125;)</div><div class="line">        <span class="keyword">this</span>.refreshing = <span class="literal">true</span></div><div class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">          <span class="keyword">this</span>.refreshing = <span class="literal">false</span></div><div class="line">        &#125;, <span class="number">2000</span>)</div><div class="line">      &#125;,</div><div class="line">      onpullingdown (event) &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'is onpulling down'</span>)</div><div class="line">        modal.toast(&#123; <span class="attr">message</span>: <span class="string">'pulling down'</span>, <span class="attr">duration</span>: <span class="number">1</span> &#125;)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.indicator</span> &#123;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#888888</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">42px</span>;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.panel</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">600px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">250px</span>;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">75px</span>;</div><div class="line">    <span class="attribute">margin-top</span>: <span class="number">35px</span>;</div><div class="line">    <span class="attribute">margin-bottom</span>: <span class="number">35px</span>;</div><div class="line">    <span class="attribute">flex-direction</span>: column;</div><div class="line">    <span class="attribute">justify-content</span>: center;</div><div class="line">    <span class="attribute">border-width</span>: <span class="number">2px</span>;</div><div class="line">    <span class="attribute">border-style</span>: solid;</div><div class="line">    <span class="attribute">border-color</span>: <span class="number">#DDDDDD</span>;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#F5F5F5</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.text</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">50px</span>;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#41B883</span>;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><a href="../../../examples/refresh.html">try it</a></p>
+<p><a href="http://dotwe.org/vue/d3db5f344220a6339de044a5e33c502b" target="_blank" rel="external">try it</a></p>
 <p>更多示例可查看 <a href="./list.html"><code>&lt;list&gt;</code></a></p>
 
   </div>
