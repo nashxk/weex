@@ -23,7 +23,7 @@ Notes: &amp;lt;textarea&amp;gt;支持 &amp;lt;input&amp;gt; 支持的所有的�
 特性
 value {string}：组件的接收到的输入字符。
 placehold">
-<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
+<meta property="og:updated_time" content="2017-03-02T02:49:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<textarea>">
 <meta name="twitter:description" content="&amp;lt;textarea&amp;gt;v0.8+
@@ -573,11 +573,11 @@ placehold">
               </li>
             
               <li>
-                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
-                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
               </li>
             
               <li>
@@ -697,12 +697,12 @@ placehold">
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
         
           <ul class="chapter">
             
               <li>
-                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
+                <a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a>
               </li>
             
               <li>
@@ -1169,11 +1169,11 @@ placehold">
               </li>
             
               <li>
-                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
-                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
               </li>
             
               <li>
@@ -1293,12 +1293,12 @@ placehold">
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
         
           <ul class="chapter">
             
               <li>
-                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
+                <a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a>
               </li>
             
               <li>
@@ -1334,7 +1334,7 @@ placehold">
       </h1>
     
   
-  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
+  <time class="article-date" datetime="2017-03-02T02:49:38.000Z">Updated time: 02/03/2017</time>
 </header>
     <h1 id="lt-textarea-gt"><a href="#lt-textarea-gt" class="headerlink" title="&lt;textarea&gt;"></a>&lt;textarea&gt;</h1><p><span class="weex-version">v0.8+</span></p>
 <p><code>textarea</code> 是 Weex 内置的一个组件，用于用户交互，接受用户输入数据。 可以认为是允许多行的 <code>&lt;input&gt;</code></p>
@@ -1418,7 +1418,7 @@ placehold">
 </li>
 </ul>
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">class</span>=<span class="string">"textarea"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">focus</span>=<span class="string">"onfocus"</span> @<span class="attr">blur</span>=<span class="string">"onblur"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">const</span> modal = weex.requireModule(<span class="string">'modal'</span>)</div><div class="line"></div><div class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      oninput (event) &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'oninput:'</span>, event.value)</div><div class="line">        modal.toast(&#123;</div><div class="line">          <span class="attr">message</span>: <span class="string">`oninput: <span class="subst">$&#123;event.value&#125;</span>`</span>,</div><div class="line">          <span class="attr">duration</span>: <span class="number">0.8</span></div><div class="line">        &#125;)</div><div class="line">      &#125;,</div><div class="line">      onchange (event) &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'onchange:'</span>, event.value)</div><div class="line">        modal.toast(&#123;</div><div class="line">          <span class="attr">message</span>: <span class="string">`onchange: <span class="subst">$&#123;event.value&#125;</span>`</span>,</div><div class="line">          <span class="attr">duration</span>: <span class="number">0.8</span></div><div class="line">        &#125;)</div><div class="line">      &#125;,</div><div class="line">      onfocus (event) &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'onfocus:'</span>, event.value)</div><div class="line">        modal.toast(&#123;</div><div class="line">          <span class="attr">message</span>: <span class="string">`onfocus: <span class="subst">$&#123;event.value&#125;</span>`</span>,</div><div class="line">          <span class="attr">duration</span>: <span class="number">0.8</span></div><div class="line">        &#125;)</div><div class="line">      &#125;,</div><div class="line">      onblur (event) &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'onblur:'</span>, event.value)</div><div class="line">        modal.toast(&#123;</div><div class="line">          <span class="attr">message</span>: <span class="string">`input blur: <span class="subst">$&#123;event.value&#125;</span>`</span>,</div><div class="line">          <span class="attr">duration</span>: <span class="number">0.8</span></div><div class="line">        &#125;)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.textarea</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">50px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">650px</span>;</div><div class="line">    <span class="attribute">margin-top</span>: <span class="number">50px</span>;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">50px</span>;</div><div class="line">    <span class="attribute">padding-top</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">padding-bottom</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">padding-left</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">padding-right</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#666666</span>;</div><div class="line">    <span class="attribute">border-width</span>: <span class="number">2px</span>;</div><div class="line">    <span class="attribute">border-style</span>: solid;</div><div class="line">    <span class="attribute">border-color</span>: <span class="number">#41B883</span>;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><a href="../../../examples/textarea.html">try it</a></p>
+<p><a href="http://dotwe.org/vue/a1877866e8b91ffa1e6ea9bc66c200fa" target="_blank" rel="external">try it</a></p>
 
   </div>
   

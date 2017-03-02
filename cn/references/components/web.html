@@ -25,7 +25,7 @@ src {string}：此特性指定嵌入的 web 页面 url。
 
 样式
 通用样式：不支持部分盒">
-<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
+<meta property="og:updated_time" content="2017-03-02T02:51:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<web>">
 <meta name="twitter:description" content="&amp;lt;web&amp;gt;v0.5+
@@ -576,11 +576,11 @@ src {string}：此特性指定嵌入的 web 页面 url。
               </li>
             
               <li>
-                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
-                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
               </li>
             
               <li>
@@ -700,12 +700,12 @@ src {string}：此特性指定嵌入的 web 页面 url。
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
         
           <ul class="chapter">
             
               <li>
-                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
+                <a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a>
               </li>
             
               <li>
@@ -1172,11 +1172,11 @@ src {string}：此特性指定嵌入的 web 页面 url。
               </li>
             
               <li>
-                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
-                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
               </li>
             
               <li>
@@ -1296,12 +1296,12 @@ src {string}：此特性指定嵌入的 web 页面 url。
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
         
           <ul class="chapter">
             
               <li>
-                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
+                <a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a>
               </li>
             
               <li>
@@ -1337,7 +1337,7 @@ src {string}：此特性指定嵌入的 web 页面 url。
       </h1>
     
   
-  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
+  <time class="article-date" datetime="2017-03-02T02:51:09.000Z">Updated time: 02/03/2017</time>
 </header>
     <h1 id="lt-web-gt"><a href="#lt-web-gt" class="headerlink" title="&lt;web&gt;"></a>&lt;web&gt;</h1><p><span class="weex-version">v0.5+</span></p>
 <p>使用 <code>&lt;web&gt;</code> 组件在 Weex 页面中嵌入一张网页内容。<code>src</code> 属性用来指定资源地址。你也可以使用 <code>webview module</code> 来控制 <code>web</code> 的行为，比如前进、后退和重载。可以在这里查看 <a href="../modules/webview.html"><code>webview</code> module</a>。</p>
@@ -1381,7 +1381,7 @@ src {string}：此特性指定嵌入的 web 页面 url。
 <p>不支持 <code>click</code> 事件。</p>
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>我们用一个简易浏览器示例，来展示如何使用 <code>&lt;web&gt;</code> 组件和 <code>webview</code> module。 查看 <a href="../modules/webview.html">webview module</a>。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"group"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"input"</span> <span class="attr">ref</span>=<span class="string">"input"</span> <span class="attr">type</span>=<span class="string">"url"</span> <span class="attr">autofocus</span>=<span class="string">"false"</span> <span class="attr">value</span>=<span class="string">"https://m.taobao.com"</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"group"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"button"</span> @<span class="attr">click</span>=<span class="string">"loadURL"</span>&gt;</span>LoadURL<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"button"</span> @<span class="attr">click</span>=<span class="string">"reload"</span>&gt;</span>reload<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">web</span> <span class="attr">ref</span>=<span class="string">"webview"</span> <span class="attr">:src</span>=<span class="string">"url"</span> <span class="attr">class</span>=<span class="string">"webview"</span> @<span class="attr">pagestart</span>=<span class="string">"start"</span> @<span class="attr">pagefinish</span>=<span class="string">"finish"</span> @<span class="attr">error</span>=<span class="string">"error"</span>&gt;</span><span class="tag">&lt;/<span class="name">web</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">const</span> webview = weex.requireModule(<span class="string">'webview'</span>)</div><div class="line">  <span class="keyword">const</span> modal = weex.requireModule(<span class="string">'modal'</span>)</div><div class="line"></div><div class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">    data () &#123;</div><div class="line">      <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">url</span> : <span class="string">'https://m.alibaba.com'</span></div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      loadURL (event) &#123;</div><div class="line">        <span class="keyword">this</span>.url = <span class="keyword">this</span>.$refs.input.value</div><div class="line">        modal.toast(&#123; <span class="attr">message</span>: <span class="string">'load url:'</span> + <span class="keyword">this</span>.url &#125;)</div><div class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'will go back.'</span>)</div><div class="line">          modal.toast(&#123; <span class="attr">message</span>: <span class="string">'will go back'</span> &#125;)</div><div class="line">          webview.goBack(<span class="keyword">this</span>.$refs.webview)</div><div class="line">        &#125;, <span class="number">10000</span>)</div><div class="line">      &#125;,</div><div class="line">      reload (event) &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'will reload webview'</span>)</div><div class="line">        modal.toast(&#123; <span class="attr">message</span>: <span class="string">'reload'</span> &#125;)</div><div class="line">        webview.reload(<span class="keyword">this</span>.$refs.webview)</div><div class="line">      &#125;,</div><div class="line">      start (event) &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'pagestart'</span>, event)</div><div class="line">        modal.toast(&#123; <span class="attr">message</span>: <span class="string">'pagestart'</span> &#125;)</div><div class="line">      &#125;,</div><div class="line">      finish (event) &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'pagefinish'</span>, event)</div><div class="line">        modal.toast(&#123; <span class="attr">message</span>: <span class="string">'pagefinish'</span> &#125;)</div><div class="line">      &#125;,</div><div class="line">      finish (event) &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'error'</span>, event)</div><div class="line">        modal.toast(&#123; <span class="attr">message</span>: <span class="string">'error'</span> &#125;)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.group</span> &#123;</div><div class="line">    <span class="attribute">flex-direction</span>: row;</div><div class="line">    <span class="attribute">justify-content</span>: space-around;</div><div class="line">    <span class="attribute">margin-top</span>: <span class="number">20px</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.input</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">600px</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">36px</span>;</div><div class="line">    <span class="attribute">padding-top</span>: <span class="number">15px</span>;</div><div class="line">    <span class="attribute">padding-bottom</span>: <span class="number">15px</span>;</div><div class="line">    <span class="attribute">border-width</span>: <span class="number">2px</span>;</div><div class="line">    <span class="attribute">border-style</span>: solid;</div><div class="line">    <span class="attribute">border-color</span>: <span class="number">#BBBBBB</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.button</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">225px</span>;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#D3D3D3</span>;</div><div class="line">    <span class="attribute">padding-top</span>: <span class="number">15px</span>;</div><div class="line">    <span class="attribute">padding-bottom</span>: <span class="number">15px</span>;</div><div class="line">    <span class="attribute">margin-bottom</span>: <span class="number">30px</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">30px</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="selector-class">.webview</span> &#123;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">75px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">600px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">750px</span>;</div><div class="line">    <span class="attribute">border-width</span>: <span class="number">2px</span>;</div><div class="line">    <span class="attribute">border-style</span>: solid;</div><div class="line">    <span class="attribute">border-color</span>: <span class="number">#41B883</span>;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><a href="../../../examples/web.html">try it</a></p>
+<p><a href="http://dotwe.org/vue/154c7fa8ac13e87ff4e7bf9862147d50" target="_blank" rel="external">try it</a></p>
 
   </div>
   

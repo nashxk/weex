@@ -15,7 +15,7 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
 <meta property="og:description" content="navigator 导航控制v0.6.1+
 众所周知，在浏览器里，我们可以通过前进或者回退按钮来切换页面，iOS/Android 的 navigator 模块就是用来实现类似的效果的。除了前进、回退功能，该模块还允许我们指定在切换页面的时候是否应用动画效果。
 APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指定在页面跳转时是否需要动画，以及操作完成后需">
-<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
+<meta property="og:updated_time" content="2017-03-02T02:42:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="navigator">
 <meta name="twitter:description" content="navigator 导航控制v0.6.1+
@@ -561,11 +561,11 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
               </li>
             
               <li>
-                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
-                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
               </li>
             
               <li>
@@ -685,12 +685,12 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
         
           <ul class="chapter">
             
               <li>
-                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
+                <a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a>
               </li>
             
               <li>
@@ -1157,11 +1157,11 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
               </li>
             
               <li>
-                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
-                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
               </li>
             
               <li>
@@ -1281,12 +1281,12 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
         
           <ul class="chapter">
             
               <li>
-                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
+                <a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a>
               </li>
             
               <li>
@@ -1322,7 +1322,7 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
       </h1>
     
   
-  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
+  <time class="article-date" datetime="2017-03-02T02:42:53.000Z">Updated time: 02/03/2017</time>
 </header>
     <h1 id="navigator-导航控制"><a href="#navigator-导航控制" class="headerlink" title="navigator 导航控制"></a><code>navigator</code> 导航控制</h1><p><span class="weex-version">v0.6.1+</span></p>
 <p>众所周知，在浏览器里，我们可以通过前进或者回退按钮来切换页面，iOS/Android 的 <code>navigator</code> 模块就是用来实现类似的效果的。除了前进、回退功能，该模块还允许我们指定在切换页面的时候是否应用动画效果。</p>
@@ -1345,7 +1345,7 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
 </ul>
 <p><em>注意事项：<code>animated</code> 二级参数目前仅支持字符串的 <code>&quot;true&quot;</code> 和 <code>&quot;false&quot;</code>，传入布尔值类型会导致程序崩溃，未来版本会修复这个问题</em></p>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"button"</span> @<span class="attr">click</span>=<span class="string">"jump"</span>&gt;</span>Jump<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">var</span> navigator = weex.requireModule(<span class="string">'navigator'</span>)</div><div class="line">  <span class="keyword">var</span> modal = weex.requireModule(<span class="string">'modal'</span>)</div><div class="line"></div><div class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      jump (event) &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'will jump'</span>)</div><div class="line">        navigator.push(&#123;</div><div class="line">          <span class="attr">url</span>: <span class="string">'http://dotwe.org/raw/dist/519962541fcf6acd911986357ad9c2ed.js'</span>,</div><div class="line">          <span class="attr">animated</span>: <span class="string">"true"</span></div><div class="line">        &#125;, event =&gt; &#123;</div><div class="line">          modal.toast(&#123; <span class="attr">message</span>: <span class="string">'callback: '</span> + event &#125;)</div><div class="line">        &#125;)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.wrapper</span> &#123;</div><div class="line">    <span class="attribute">flex-direction</span>: column;</div><div class="line">    <span class="attribute">justify-content</span>: center;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.button</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">60px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">450px</span>;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">    <span class="attribute">margin-top</span>: <span class="number">30px</span>;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">150px</span>;</div><div class="line">    <span class="attribute">padding-top</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">padding-bottom</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">border-width</span>: <span class="number">2px</span>;</div><div class="line">    <span class="attribute">border-style</span>: solid;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#666666</span>;</div><div class="line">    <span class="attribute">border-color</span>: <span class="number">#DDDDDD</span>;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#F5F5F5</span></div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><a href="../../../examples/navigator.html">try it</a></p>
+<p><a href="http://dotwe.org/vue/5c670b07735ee6d08de5c8eb93f91f11" target="_blank" rel="external">try it</a></p>
 
   </div>
   

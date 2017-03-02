@@ -15,7 +15,7 @@ storage 是一个在前端比较常用的模块，可以对本地数据进行存
 <meta property="og:description" content="storage 本地存储v0.7+
 备注：0.7及以上版本可用
 storage 是一个在前端比较常用的模块，可以对本地数据进行存储、修改、删除，并且该数据是永久保存的，除非手动清除或者代码清除。但是，storage 模块有一个限制就是浏览器端（H5）只能存储小于5M的数据，因为在 H5/Web 端的实现是采用 HTML5 LocalStorage API。而 Android 和 iOS 这块是没什">
-<meta property="og:updated_time" content="2017-02-28T16:37:42.000Z">
+<meta property="og:updated_time" content="2017-03-02T02:46:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="storage">
 <meta name="twitter:description" content="storage 本地存储v0.7+
@@ -561,11 +561,11 @@ storage 是一个在前端比较常用的模块，可以对本地数据进行存
               </li>
             
               <li>
-                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
-                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
               </li>
             
               <li>
@@ -685,12 +685,12 @@ storage 是一个在前端比较常用的模块，可以对本地数据进行存
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
         
           <ul class="chapter">
             
               <li>
-                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
+                <a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a>
               </li>
             
               <li>
@@ -1157,11 +1157,11 @@ storage 是一个在前端比较常用的模块，可以对本地数据进行存
               </li>
             
               <li>
-                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
+                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
               </li>
             
               <li>
-                <a href="/cn/references/modules/picker.html" class="sidebar-link  ">picker</a>
+                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
               </li>
             
               <li>
@@ -1281,12 +1281,12 @@ storage 是一个在前端比较常用的模块，可以对本地数据进行存
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
         
           <ul class="chapter">
             
               <li>
-                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
+                <a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a>
               </li>
             
               <li>
@@ -1322,7 +1322,7 @@ storage 是一个在前端比较常用的模块，可以对本地数据进行存
       </h1>
     
   
-  <time class="article-date" datetime="2017-03-01T15:55:57.000Z">Updated time: 01/03/2017</time>
+  <time class="article-date" datetime="2017-03-02T02:46:49.000Z">Updated time: 02/03/2017</time>
 </header>
     <h1 id="storage-本地存储"><a href="#storage-本地存储" class="headerlink" title="storage 本地存储"></a><code>storage</code> 本地存储</h1><p><span class="weex-version">v0.7+</span></p>
 <p><strong>备注</strong>：0.7及以上版本可用</p>
@@ -1375,7 +1375,7 @@ storage 是一个在前端比较常用的模块，可以对本地数据进行存
 </li>
 </ul>
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"list"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"group center"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span><span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span>&#123;&#123;state&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"group"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span><span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span> @<span class="attr">click</span>=<span class="string">"setItem"</span>&gt;</span>set<span class="tag">&lt;/<span class="name">text</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span><span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span> @<span class="attr">click</span>=<span class="string">"getItem"</span>&gt;</span>get<span class="tag">&lt;/<span class="name">text</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span><span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span> @<span class="attr">click</span>=<span class="string">"removeItem"</span>&gt;</span>remove<span class="tag">&lt;/<span class="name">text</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span><span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span> @<span class="attr">click</span>=<span class="string">"getAll"</span>&gt;</span>all<span class="tag">&lt;/<span class="name">text</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">const</span> storage = weex.requireModule(<span class="string">'storage'</span>)</div><div class="line">  <span class="keyword">const</span> modal = weex.requireModule(<span class="string">'modal'</span>)</div><div class="line"></div><div class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">    data () &#123;</div><div class="line">      <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">keys</span>: <span class="string">'[]'</span>,</div><div class="line">        <span class="attr">length</span>: <span class="number">0</span>,</div><div class="line">        <span class="attr">state</span>: <span class="string">'----'</span></div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      setItem () &#123;</div><div class="line">        storage.setItem(<span class="string">'name'</span>, <span class="string">'Hanks'</span>, event =&gt; &#123;</div><div class="line">          <span class="keyword">this</span>.state = <span class="string">'set success'</span></div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'set success'</span>)</div><div class="line">        &#125;)</div><div class="line">      &#125;,</div><div class="line">      getItem () &#123;</div><div class="line">        storage.getItem(<span class="string">'name'</span>, event =&gt; &#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'get value:'</span>, event.data)</div><div class="line">          <span class="keyword">this</span>.state = <span class="string">'value: '</span> + event.data</div><div class="line">        &#125;)</div><div class="line">      &#125;,</div><div class="line">      removeItem () &#123;</div><div class="line">        storage.removeItem(<span class="string">'name'</span>, event =&gt; &#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'delete value:'</span>, event.data)</div><div class="line">          <span class="keyword">this</span>.state = <span class="string">'deleted'</span></div><div class="line">        &#125;)</div><div class="line">      &#125;,</div><div class="line">      getAll () &#123;</div><div class="line">        storage.getAllKeys(<span class="function"><span class="params">event</span> =&gt;</span> &#123;</div><div class="line">          <span class="comment">// modal.toast(&#123; message: event.result &#125;)</span></div><div class="line">          <span class="keyword">if</span> (event.result === <span class="string">'success'</span>) &#123;</div><div class="line">            modal.toast(&#123;</div><div class="line">              <span class="attr">message</span>: <span class="string">'props: '</span> + event.data.join(<span class="string">', '</span>)</div><div class="line">            &#125;)</div><div class="line">          &#125;</div><div class="line">        &#125;)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.panel</span> &#123;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">flex-direction</span>: column;</div><div class="line">    <span class="attribute">justify-content</span>: center;</div><div class="line">    <span class="attribute">border-width</span>: <span class="number">2px</span>;</div><div class="line">    <span class="attribute">border-style</span>: solid;</div><div class="line">    <span class="attribute">border-color</span>: <span class="built_in">rgb</span>(162, 217, 192);</div><div class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(162, 217, 192, 0.2);</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.group</span> &#123;</div><div class="line">    <span class="attribute">flex-direction</span>: row;</div><div class="line">    <span class="attribute">justify-content</span>: space-between;</div><div class="line">    <span class="attribute">width</span>: <span class="number">650px</span>;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">50px</span>;</div><div class="line">    <span class="attribute">margin-top</span>: <span class="number">50px</span>;</div><div class="line">    <span class="attribute">margin-bottom</span>: <span class="number">50px</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.center</span> &#123;</div><div class="line">    <span class="attribute">justify-content</span>: center;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.text</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">50px</span>;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">    <span class="attribute">padding-left</span>: <span class="number">25px</span>;</div><div class="line">    <span class="attribute">padding-right</span>: <span class="number">25px</span>;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#41B883</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.small</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">32px</span>;</div><div class="line">    <span class="attribute">padding-left</span>: <span class="number">35px</span>;</div><div class="line">    <span class="attribute">padding-right</span>: <span class="number">35px</span>;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#41B883</span>;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><a href="../../../examples/storage.html">try it</a></p>
+<p><a href="http://dotwe.org/vue/3fdd3e2d1646ca41199d80c7be799858" target="_blank" rel="external">try it</a></p>
 <h2 id="其它参考"><a href="#其它参考" class="headerlink" title="其它参考"></a>其它参考</h2><ul>
 <li><a href="http://www.w3school.com.cn/html5/html_5_webstorage.asp" target="_blank" rel="external">W3school: html5 localStorage</a></li>
 <li><a href="https://github.com/alibaba/weex/blob/dev/examples/module/storage-demo.we" target="_blank" rel="external">storage 模块完整的 Demo</a></li>
