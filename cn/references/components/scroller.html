@@ -22,7 +22,7 @@
 
 &amp;">
 <meta property="og:image" content="https://weex-project.io/../images/scroller_1.jpg">
-<meta property="og:updated_time" content="2017-03-02T02:45:20.000Z">
+<meta property="og:updated_time" content="2017-03-06T02:31:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<scroller>">
 <meta name="twitter:description" content="&amp;lt;scroller&amp;gt;v0.6.1+
@@ -535,11 +535,11 @@
               </li>
             
               <li>
-                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -696,12 +696,12 @@
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
         
           <ul class="chapter">
             
               <li>
-                <a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a>
+                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
               </li>
             
               <li>
@@ -1131,11 +1131,11 @@
               </li>
             
               <li>
-                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -1292,12 +1292,12 @@
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
         
           <ul class="chapter">
             
               <li>
-                <a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a>
+                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
               </li>
             
               <li>
@@ -1333,7 +1333,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-03-02T02:45:20.000Z">Updated time: 02/03/2017</time>
+  <time class="article-date" datetime="2017-03-06T02:31:59.000Z">Updated time: 06/03/2017</time>
 </header>
     <h1 id="lt-scroller-gt"><a href="#lt-scroller-gt" class="headerlink" title="&lt;scroller&gt;"></a>&lt;scroller&gt;</h1><p><span class="weex-version">v0.6.1+</span></p>
 <p><code>&lt;scroller&gt;</code> 是一个竖直的，可以容纳多个排成一列的子组件的滚动器。如果子组件的总高度高于其本身，那么所有的子组件都可滚动。</p>
@@ -1351,7 +1351,13 @@
 </ul>
 <h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
 <li><code>show-scrollbar {boolean}</code>：可选值为 <code>true</code>/ <code>false</code>，默认值为 <code>true</code>。控制是否出现滚动条。</li>
-<li><code>scroll-direction {string}</code>：可选为 <code>horizontal</code> 或者 <code>vertical</code>，默认值为 <code>vertical</code> 。定义滚动的方向。</li>
+<li><code>scroll-direction {string}</code>：可选为 <code>horizontal</code> 或者 <code>vertical</code>，默认值为 <code>vertical</code> 。定义滚动的方向。<ul>
+<li><code>scroll-direction</code>定义了 scroller 的滚动方向，<code>flex-direction</code> 定义了 scroller 的布局方向，两个方向必须一致。</li>
+<li><code>scroll-direction</code> 的默认值是 <code>vertical</code>, <code>flex-direction</code> 的默认值是 <code>row</code>。</li>
+<li>当需要一个水平方向的 scroller 时，使用 <code>scroll-direction:horizontal</code> 和 <code>flex-direction: row</code>。</li>
+<li>当需要一个竖直方向的 scroller 时，使用 <code>scroll-direction:vertical</code> 和 <code>flex-direction: column</code>。由于这两个值均是默认值，当需要一个竖直方向的 scroller 时，这两个值可以不设置。</li>
+</ul>
+</li>
 <li><p><code>loadmoreoffset {number}</code>：默认值为 0，触发 <code>loadmore</code> 事件所需要的垂直偏移距离（设备屏幕底部与页面底部之间的距离）。当页面的滚动条滚动到足够接近页面底部时将会触发 <code>loadmore</code> 这个事件。</p>
 <p><img src="../images/scroller_1.jpg" alt="mobile_preview"></p>
 </li>

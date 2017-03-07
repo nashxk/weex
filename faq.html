@@ -25,7 +25,7 @@ Tools
 
 Command errors in WindowsPlease install Git for Windows first, see For Windows for more information.
 Gradle errors in Android StudioDownloadi">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-03-06T02:23:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FAQ">
 <meta name="twitter:description" content="FAQwhere are legacy docs?
@@ -200,7 +200,7 @@ Gradle errors in Android StudioDownloadi">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-06T02:23:11.000Z">Updated time: 06/03/2017</time>
 </header>
     <h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><h2 id="where-are-legacy-docs"><a href="#where-are-legacy-docs" class="headerlink" title="where are legacy docs?"></a>where are legacy docs?</h2><ul>
 <li><a href="./v-0.10/guide/index.html">Guide</a></li>
@@ -233,7 +233,6 @@ Gradle errors in Android StudioDownloadi">
 <p>We will bring a better syntax design in the future.</p>
 <h2 id="iOS-text-line-height-style-is-abnormal"><a href="#iOS-text-line-height-style-is-abnormal" class="headerlink" title="iOS text line-height style is abnormal"></a>iOS text line-height style is abnormal</h2><p><code>line-height</code> style in text component is different from h5 and Android,  text value will be placed at bottom of line box because of iOS native api. We are trying to optimize it.</p>
 <h2 id="Android-only-support-overflow-hidden"><a href="#Android-only-support-overflow-hidden" class="headerlink" title="Android only support overflow:hidden"></a>Android only support <code>overflow:hidden</code></h2><p>The <code>overflow</code> style in android is <code>hidden</code> and cannot be changed. This is the result of Android View framework. This only happens on Android, iOS will work as expected.</p>
-<h2 id="Android-do-not-support-emoji"><a href="#Android-do-not-support-emoji" class="headerlink" title="Android do not support emoji"></a>Android do not support emoji</h2><p>As Android NDK only supports Modified UTF-8, emoji is not support yet. Any attemp to use emoji may cause crash in case of lower than Android 6.0, and unexpected behavior when it is higher than 6.0. Only use Modified UTF-8, <strong>do not</strong> use emoji.</p>
 <h2 id="How-to-get-rid-of-750-adaption-and-calculate-width-height-in-real-pixels？"><a href="#How-to-get-rid-of-750-adaption-and-calculate-width-height-in-real-pixels？" class="headerlink" title="How to get rid of 750 adaption and calculate width/height in real pixels？"></a>How to get rid of 750 adaption and calculate width/height in real pixels？</h2><p>The deviceHeight and deviceWidth got in <code>this.$getConfig()</code> is the real device width/height in pixels, not the ones with 750-adapted.</p>
 <p>So you can use them to calculate width/height in real pixels.</p>
 <p>Suppose you need to display a navigation bar of fixed 88 pixels, the bar’s height will be:</p>
