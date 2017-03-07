@@ -23,7 +23,7 @@ Weex 盒模型基于 CSS 盒模型，每个 Weex 元素都可视作一个盒子�
 <meta property="og:image" content="https://weex-project.io/images/style_1.jpg">
 <meta property="og:image" content="https://weex-project.io/images/style_2.jpg">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1KGwIPpXXXXbxXFXXXXXXXXXX-400-205.png">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-03-06T02:33:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通用样式">
 <meta name="twitter:description" content="通用样式所有 Weex 组件都支持以下通用样式规则。
@@ -534,11 +534,11 @@ Weex 盒模型基于 CSS 盒模型，每个 Weex 元素都可视作一个盒子�
               </li>
             
               <li>
-                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -695,12 +695,12 @@ Weex 盒模型基于 CSS 盒模型，每个 Weex 元素都可视作一个盒子�
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
         
           <ul class="chapter">
             
               <li>
-                <a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a>
+                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
               </li>
             
               <li>
@@ -1130,11 +1130,11 @@ Weex 盒模型基于 CSS 盒模型，每个 Weex 元素都可视作一个盒子�
               </li>
             
               <li>
-                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -1291,12 +1291,12 @@ Weex 盒模型基于 CSS 盒模型，每个 Weex 元素都可视作一个盒子�
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
         
           <ul class="chapter">
             
               <li>
-                <a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a>
+                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
               </li>
             
               <li>
@@ -1332,7 +1332,7 @@ Weex 盒模型基于 CSS 盒模型，每个 Weex 元素都可视作一个盒子�
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-06T02:33:24.000Z">Updated time: 06/03/2017</time>
 </header>
     <h1 id="通用样式"><a href="#通用样式" class="headerlink" title="通用样式"></a>通用样式</h1><p>所有 Weex 组件都支持以下通用样式规则。</p>
 <h2 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h2><p><img src="./images/css-boxmodel.png" alt="box model @300*"></p>
@@ -1408,8 +1408,15 @@ Weex 盒模型基于 CSS 盒模型，每个 Weex 元素都可视作一个盒子�
 </ul>
 </li>
 </ul>
-<p>注意：目前在 <code>&lt;image&gt;</code> 和 <code>&lt;text&gt;</code> 组件上尚无法只定义一个或几个角的 <code>border-radius</code>。比如你无法在这两个组件上使用 <code>border-top-left-radius</code>。</p>
-<p>Weex 盒模型的 <code>box-sizing</code> 默认为 <code>border-box</code>，即盒子的宽高包含内容、内边距和边框的宽度，不包含外边距的宽度。</p>
+<h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p>Weex 盒模型的 <code>box-sizing</code> 默认为 <code>border-box</code>，即盒子的宽高包含内容、内边距和边框的宽度，不包含外边距的宽度。</p>
+<p>目前在 <code>&lt;image&gt;</code> 组件上尚无法只定义一个或几个角的 <code>border-radius</code>。比如你无法在这两个组件上使用 <code>border-top-left-radius</code>。该约束只对 iOS 生效，Android 并不受此限制。</p>
+<p>尽管 <code>overflow:hidden</code> 在 Android 上是默认行为，但只有下列条件都满足时，一个父 view 才会去 clip 它的子 view。这个限制只对 Android 生效，iOS 不受影响。</p>
+<ul>
+<li>父view是<code>div</code>, <code>a</code>, <code>cell</code>, <code>refresh</code> 或 <code>loading</code>。</li>
+<li>系统版本是 Android 4.3 或更高。</li>
+<li>系统版本不是 Andorid 7.0。</li>
+<li>父 view 没有 <code>background-image</code> 属性或系统版本是 Android 5.0 或更高。</li>
+</ul>
 <h3 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h3><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span>  <span class="attr">style</span>=<span class="string">"width: 400px; height: 200px; margin-left: 20px;"</span> <span class="attr">src</span>=<span class="string">"https://g.alicdn.com/mtb/lab-zikuan/0.0.18/weex/weex_logo_blue@3x.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="Flexbox"><a href="#Flexbox" class="headerlink" title="Flexbox"></a>Flexbox</h2><p>Weex 布局模型基于 CSS <a href="http://www.w3.org/TR/css3-flexbox/" target="_blank" rel="external"><code>Flexbox</code></a>，以便所有页面元素的排版能够一致可预测，同时页面布局能适应各种设备或者屏幕尺寸。</p>
 <p>Flexbox 包含 flex 容器和 flex 成员项。如果一个 Weex 元素可以容纳其他元素，那么它就成为 flex 容器。需要注意的是，flexbox 的老版规范相较新版有些出入，比如是否能支持 wrapping。这些都描述在 W3C 的工作草案中了，你需要注意下新老版本之间的不同。另外，老版本只在安卓 4.4 版以下得到支持。</p>

@@ -12,8 +12,7 @@
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Get StartedWeex is a framework for building Mobile cross-platform high performance UI. Developers can write *.vue files to build native pages or an App. This page will help you write a Weex page in 2">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1Ymw3OpXXXXcvXpXXXXXXXXXX-500-1013.jpg">
-<meta property="og:image" content="https://img.alicdn.com/tps/TB1kHFrOFXXXXaYXXXXXXXXXXXX-615-308.jpg">
-<meta property="og:updated_time" content="2017-03-01T06:31:34.000Z">
+<meta property="og:updated_time" content="2017-03-06T07:15:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Get Started">
 <meta name="twitter:description" content="Get StartedWeex is a framework for building Mobile cross-platform high performance UI. Developers can write *.vue files to build native pages or an App. This page will help you write a Weex page in 2">
@@ -188,6 +187,16 @@
         
       
     
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
    
     
       <li>
@@ -196,12 +205,29 @@
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/guide/dev-with-weexpack.html" class="sidebar-link  ">Build A New App</a></h3>
+        <h3 class="chapter-title"><a href="/guide/set-up-env.html" class="sidebar-link  ">Set Up Development Environment</a></h3>
         
       </li>
     
       <li>
         <h3 class="chapter-title"><a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/guide/tools/index.html" class="sidebar-link  ">Tools</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/guide/tools/devtools.html" class="sidebar-link  ">Using Devtools</a>
+              </li>
+            
+              <li>
+                <a href="/guide/tools/weexpack.html" class="sidebar-link  ">Using Weexpack</a>
+              </li>
+            
+          </ul>
         
       </li>
     
@@ -232,10 +258,6 @@
             
               <li>
                 <a href="/guide/intro/page-architecture.html" class="sidebar-link  ">Weex Page Architecture</a>
-              </li>
-            
-              <li>
-                <a href="/guide/intro/devtools.html" class="sidebar-link  ">Using Devtools</a>
               </li>
             
           </ul>
@@ -324,6 +346,16 @@
         
       
     
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
    
     
       <li>
@@ -332,12 +364,29 @@
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/guide/dev-with-weexpack.html" class="sidebar-link  ">Build A New App</a></h3>
+        <h3 class="chapter-title"><a href="/guide/set-up-env.html" class="sidebar-link  ">Set Up Development Environment</a></h3>
         
       </li>
     
       <li>
         <h3 class="chapter-title"><a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/guide/tools/index.html" class="sidebar-link  ">Tools</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/guide/tools/devtools.html" class="sidebar-link  ">Using Devtools</a>
+              </li>
+            
+              <li>
+                <a href="/guide/tools/weexpack.html" class="sidebar-link  ">Using Weexpack</a>
+              </li>
+            
+          </ul>
         
       </li>
     
@@ -370,10 +419,6 @@
                 <a href="/guide/intro/page-architecture.html" class="sidebar-link  ">Weex Page Architecture</a>
               </li>
             
-              <li>
-                <a href="/guide/intro/devtools.html" class="sidebar-link  ">Using Devtools</a>
-              </li>
-            
           </ul>
         
       </li>
@@ -399,7 +444,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-03-01T06:31:34.000Z">Updated time: 01/03/2017</time>
+  <time class="article-date" datetime="2017-03-06T07:15:59.000Z">Updated time: 06/03/2017</time>
 </header>
     <h1 id="Get-Started"><a href="#Get-Started" class="headerlink" title="Get Started"></a>Get Started</h1><p>Weex is a framework for building Mobile cross-platform high performance UI. Developers can write <code>*.vue</code> files to build native pages or an App. This page will help you write a Weex page in 2 minutes.</p>
 <h2 id="What-is-Vue"><a href="#What-is-Vue" class="headerlink" title="What is Vue?"></a>What is Vue?</h2><p><a href="https://vuejs.org/" target="_blank" rel="external">Vue.js</a> is an excellent progressive JavaScript framework written by <a href="https://twitter.com/youyuxi" target="_blank" rel="external">Evan You</a>. Now Weex and Vue has supported each other officially. Weex put Vue 2.x as its built-in JS Framework, and Vue has already been able to develop native mobile app.</p>
@@ -414,24 +459,6 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span>&#123;&#123;text&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">  .text &#123;</div><div class="line">    font-size: 50;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">    data () &#123;</div><div class="line">      <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">text</span>: <span class="string">'Hello World.'</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>It’s too easy，right? Let’s focus on the syntax, obviously this is vue.</p>
 <p>You can try to modify the Hello World, then generate a new QR code to scan.</p>
-<h2 id="Set-up-development-environment"><a href="#Set-up-development-environment" class="headerlink" title="Set up development environment"></a>Set up development environment</h2><p>Use dotWe is a good choice, But if you want to develop locally on your own machine, you will set up your development environment.</p>
-<p>You will need Node.js and the Weex CLi.</p>
-<p>You can installing Node using <a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a> (Simple bash script to manage multiple active node.js versions). Run the following commands in a Terminal after installing nvm:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ nvm install 6.10.0</div><div class="line">$ nvm use 6.10.0</div></pre></td></tr></table></figure>
-<p>Node.js comes with npm, which lets you install the Weex Cli.</p>
-<p>Run the following command in a Terminal:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ npm install -g weex-toolkit@beta</div></pre></td></tr></table></figure>
-<p><strong>NOTE: </strong> If you get an error like “permission error”,  try installing with <code>sudo</code>.</p>
-<p>Then you can use the weex command to verify that the installation is successful:</p>
-<p><img src="https://img.alicdn.com/tps/TB1kHFrOFXXXXaYXXXXXXXXXXXX-615-308.jpg" alt=""></p>
-<h3 id="Generate-a-new-Weex-project"><a href="#Generate-a-new-Weex-project" class="headerlink" title="Generate a new Weex project"></a>Generate a new Weex project</h3><p>You can use CLi to generate a Weex project called “awesome-project”. Run the following command in a Terminal:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ weex init awesome-project</div></pre></td></tr></table></figure>
-<p>Then we enter the awesome-project folder, the CLi has been for us to generate a standard project structure.</p>
-<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>We enter the awesome-project folder and install dependencies with the following commands:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
-<p>Then we run <code>npm run dev</code> and <code>npm run serve</code> to start watch mode and static server.</p>
-<p>Finally, we can see the Weex page in <code>http://localhost:8080/index.html</code>.</p>
-<p>If you’re curious to learn more about technical details, continue on to the next. And don’t forget to write code at <a href="https://dotwe.org" target="_blank" rel="external">dotWe</a> and preview at anytime.</p>
 
   </div>
   

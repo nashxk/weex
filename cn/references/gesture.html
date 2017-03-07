@@ -19,7 +19,7 @@ Weex 封装了原生的触摸事件以提供手势系统。使用手势类似于
 手势类型目前，仅支持以下四种手势类型：
 
 Touch：当触摸到一个点，移动或从触摸面移开时触发 touch 手势。触摸手势很精准，它会返回所有详细的事件信息。所以，监听 touch 手势可能很慢，即使只移动一丁点也需要处理大量事件。有三种">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-03-07T03:15:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="手势">
 <meta name="twitter:description" content="手势注：该功能属于实验性功能
@@ -530,11 +530,11 @@ Touch：当触摸到一个点，移动或从触摸面移开时触发 touch 手�
               </li>
             
               <li>
-                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -691,12 +691,12 @@ Touch：当触摸到一个点，移动或从触摸面移开时触发 touch 手�
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
         
           <ul class="chapter">
             
               <li>
-                <a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a>
+                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
               </li>
             
               <li>
@@ -1126,11 +1126,11 @@ Touch：当触摸到一个点，移动或从触摸面移开时触发 touch 手�
               </li>
             
               <li>
-                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
+                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/references/components/list.html" class="sidebar-link  ">&lt;list&gt;</a>
+                <a href="/cn/references/components/input.html" class="sidebar-link  ">&lt;input&gt;</a>
               </li>
             
               <li>
@@ -1287,12 +1287,12 @@ Touch：当触摸到一个点，移动或从触摸面移开时触发 touch 手�
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
         
           <ul class="chapter">
             
               <li>
-                <a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a>
+                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
               </li>
             
               <li>
@@ -1328,7 +1328,7 @@ Touch：当触摸到一个点，移动或从触摸面移开时触发 touch 手�
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-07T03:15:55.000Z">Updated time: 07/03/2017</time>
 </header>
     <h1 id="手势"><a href="#手势" class="headerlink" title="手势"></a>手势</h1><p><em>注：该功能属于实验性功能</em></p>
 <p>Weex 封装了原生的触摸事件以提供手势系统。使用手势类似于在 Weex 中使用事件，只需在节点上设置 <code>on</code> 特性来监听手势即可。</p>
@@ -1346,10 +1346,11 @@ Touch：当触摸到一个点，移动或从触摸面移开时触发 touch 手�
 <li><code>panstart</code></li>
 <li><code>panmove</code></li>
 <li><code>panend</code></li>
+<li><code>horizontalpan</code> <span class="api-version">v0.10+</span>：手势的 <code>start/move/end</code> 状态保存在 <code>state</code> 特性中。目前该手势在 Android 下会与 click 事件冲突。</li>
+<li><code>verticalpan</code> <span class="api-version">v0.10+</span>：势的 <code>start/move/end</code> 状态保存在 <code>state</code> 特性中。目前该手势在 Android 下会与 click 事件冲突。</li>
 </ul>
 </li>
-<li><p><strong>Swipe</strong>：<code>swipe</code> 将会在用户在屏幕上滑动时触发，一次连续的滑动只会触发一次 <code>swiper</code> 手势。</p>
-</li>
+<li><strong>Swipe</strong>：<code>swipe</code> 将会在用户在屏幕上滑动时触发，一次连续的滑动只会触发一次 <code>swiper</code> 手势。</li>
 <li><strong>LongPress</strong>：<code>LongPress</code> 将会在触摸点连续保持 500 ms以上时触发。</li>
 </ul>
 <p><code>touch</code> 和 <code>pan</code> 非常接近，它们的特点可以总结成这样：</p>
