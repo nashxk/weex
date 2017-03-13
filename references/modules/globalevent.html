@@ -9,11 +9,11 @@
 SummaryglobalEvent are used to listen for persistent events, such as changes in positioning information, gyroscopes, and so on. A global event is a secondary API that req">
 <meta property="og:type" content="website">
 <meta property="og:title" content="globalEvent">
-<meta property="og:url" content="https://weex-project.io/references/modules/globalevent.html">
+<meta property="og:url" content="https://weex.apache.org/references/modules/globalevent.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="globalEventv0.8+ (developing)
 SummaryglobalEvent are used to listen for persistent events, such as changes in positioning information, gyroscopes, and so on. A global event is a secondary API that req">
-<meta property="og:updated_time" content="2017-02-28T06:16:31.000Z">
+<meta property="og:updated_time" content="2017-03-13T06:24:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="globalEvent">
 <meta name="twitter:description" content="globalEventv0.8+ (developing)
@@ -48,19 +48,19 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
         <li><a href="/references">References</a></li>
         <li><a href="/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">Download</a>
+            <a href="javascript:;">Services &amp; Tools</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/playground.html">Playground</a>
               </li>
               <li>
-                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+                <a href="/guide/tools/devtools.html">Devtools</a>
               </li>
               <li>
-                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -69,7 +69,7 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
@@ -109,6 +109,7 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
+
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
@@ -545,11 +546,11 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
           <ul class="chapter">
             
               <li>
-                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                <a href="/references/modules/globalevent.html" class="sidebar-link current ">globalEvent</a>
               </li>
             
               <li>
-                <a href="/references/modules/globalevent.html" class="sidebar-link current ">globalEvent</a>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
               </li>
             
               <li>
@@ -705,6 +706,7 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
+
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -1132,11 +1134,11 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
           <ul class="chapter">
             
               <li>
-                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                <a href="/references/modules/globalevent.html" class="sidebar-link current ">globalEvent</a>
               </li>
             
               <li>
-                <a href="/references/modules/globalevent.html" class="sidebar-link current ">globalEvent</a>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
               </li>
             
               <li>
@@ -1301,11 +1303,11 @@ SummaryglobalEvent are used to listen for persistent events, such as changes in 
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:16:31.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-13T06:24:16.000Z">Updated time: 13/03/2017</time>
 </header>
     <h1 id="globalEvent"><a href="#globalEvent" class="headerlink" title="globalEvent"></a>globalEvent</h1><p><span class="weex-version">v0.8+ (developing)</span></p>
 <h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p><code>globalEvent</code> are used to listen for persistent events, such as changes in positioning information, gyroscopes, and so on. A global event is a secondary API that requires additional APIs to work with.</p>
-<p>You can register events via <code>addEventListener</code>, which can be removed by <code>removingEventListener</code> when you do not need to listen for <code>globalEvent</code>.</p>
+<p>You can register events via <code>addEventListener</code>, which can be removed by <code>removeEventListener</code> when you do not need to listen for <code>globalEvent</code>. <code>globalEvent</code> is not supported in Vue version.</p>
 <p><em>AUCTION</em> </p>
 <ul>
 <li>Only instance level is not application level . </li>

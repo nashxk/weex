@@ -10,12 +10,12 @@
 移动应用需要动态性如今移动应用不论从研发节奏、部署的灵活性和时效性、包大小、还是从研发到发布再到反馈的迭代周期上，都和移动互联网的发展">
 <meta property="og:type" content="website">
 <meta property="og:title" content="用 Weex 构建移动应用">
-<meta property="og:url" content="https://weex-project.io/cn/guide/intro/app-architecture.html">
+<meta property="og:url" content="https://weex.apache.org/cn/guide/intro/app-architecture.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="用 Weex 构建移动应用今天的移动应用这里谈一谈 Weex 对移动应用的理解。
 移动应用需要支撑并行研发如今移动应用的开发需要并行研发的能力，当一个移动应用发展到一定规模的时候，能否支撑大规模的并行研发就成为了一件非常关键而又重要的事情。否则很容易变成工程瓶颈。
 移动应用需要动态性如今移动应用不论从研发节奏、部署的灵活性和时效性、包大小、还是从研发到发布再到反馈的迭代周期上，都和移动互联网的发展">
-<meta property="og:updated_time" content="2017-03-06T07:29:20.000Z">
+<meta property="og:updated_time" content="2017-03-13T06:24:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用 Weex 构建移动应用">
 <meta name="twitter:description" content="用 Weex 构建移动应用今天的移动应用这里谈一谈 Weex 对移动应用的理解。
@@ -51,19 +51,19 @@
         <li><a href="/cn/references">手册</a></li>
         <li><a href="/cn/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">下载</a>
+            <a href="javascript:;">工具和服务</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+                <a href="/cn/guide/tools/devtools.html">Devtools</a>
               </li>
               <li>
-                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -72,7 +72,7 @@
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
@@ -112,6 +112,7 @@
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
+
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
@@ -201,34 +202,24 @@
         
       
     
+      
+      
+        
+      
+    
    
     
       <li>
         <h3 class="chapter-title"><a href="/cn/guide/index.html" class="sidebar-link  ">快速上手</a></h3>
         
-      </li>
-    
-      <li>
-        <h3 class="chapter-title"><a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a></h3>
-        
-      </li>
-    
-      <li>
-        <h3 class="chapter-title"><a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a></h3>
-        
-      </li>
-    
-      <li>
-        <h3 class="chapter-title"><a href="/cn/guide/tools/index.html" class="sidebar-link  ">周边工具</a></h3>
-        
           <ul class="chapter">
             
               <li>
-                <a href="/cn/guide/tools/devtools.html" class="sidebar-link  ">使用 Devtools</a>
+                <a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a>
               </li>
             
               <li>
-                <a href="/cn/guide/tools/weexpack.html" class="sidebar-link  ">使用 Weexpack</a>
+                <a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a>
               </li>
             
           </ul>
@@ -268,6 +259,28 @@
         
       </li>
     
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/tools/index.html" class="sidebar-link  ">周边工具</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/tools/devtools.html" class="sidebar-link  ">使用 Devtools</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/tools/weexpack.html" class="sidebar-link  ">使用 Weexpack</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/contributing.html" class="sidebar-link  ">如何参与社区</a></h3>
+        
+      </li>
+    
     
     
       <li>
@@ -280,6 +293,7 @@
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
+
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -360,34 +374,24 @@
         
       
     
+      
+      
+        
+      
+    
    
     
       <li>
         <h3 class="chapter-title"><a href="/cn/guide/index.html" class="sidebar-link  ">快速上手</a></h3>
         
-      </li>
-    
-      <li>
-        <h3 class="chapter-title"><a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a></h3>
-        
-      </li>
-    
-      <li>
-        <h3 class="chapter-title"><a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a></h3>
-        
-      </li>
-    
-      <li>
-        <h3 class="chapter-title"><a href="/cn/guide/tools/index.html" class="sidebar-link  ">周边工具</a></h3>
-        
           <ul class="chapter">
             
               <li>
-                <a href="/cn/guide/tools/devtools.html" class="sidebar-link  ">使用 Devtools</a>
+                <a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a>
               </li>
             
               <li>
-                <a href="/cn/guide/tools/weexpack.html" class="sidebar-link  ">使用 Weexpack</a>
+                <a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a>
               </li>
             
           </ul>
@@ -427,6 +431,28 @@
         
       </li>
     
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/tools/index.html" class="sidebar-link  ">周边工具</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/tools/devtools.html" class="sidebar-link  ">使用 Devtools</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/tools/weexpack.html" class="sidebar-link  ">使用 Weexpack</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/contributing.html" class="sidebar-link  ">如何参与社区</a></h3>
+        
+      </li>
+    
     
     
       <li>
@@ -448,7 +474,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-03-06T07:29:20.000Z">Updated time: 06/03/2017</time>
+  <time class="article-date" datetime="2017-03-13T06:24:16.000Z">Updated time: 13/03/2017</time>
 </header>
     <h1 id="用-Weex-构建移动应用"><a href="#用-Weex-构建移动应用" class="headerlink" title="用 Weex 构建移动应用"></a>用 Weex 构建移动应用</h1><h2 id="今天的移动应用"><a href="#今天的移动应用" class="headerlink" title="今天的移动应用"></a>今天的移动应用</h2><p>这里谈一谈 Weex 对移动应用的理解。</p>
 <h3 id="移动应用需要支撑并行研发"><a href="#移动应用需要支撑并行研发" class="headerlink" title="移动应用需要支撑并行研发"></a>移动应用需要支撑并行研发</h3><p>如今移动应用的开发需要并行研发的能力，当一个移动应用发展到一定规模的时候，能否支撑大规模的并行研发就成为了一件非常关键而又重要的事情。否则很容易变成工程瓶颈。</p>

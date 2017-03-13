@@ -9,11 +9,11 @@
 PrerequisitesAssuming you have the Android SDK installed, r">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Integrate to Android">
-<meta property="og:url" content="https://weex-project.io/v-0.10/advanced/integrate-to-android.html">
+<meta property="og:url" content="https://weex.apache.org/v-0.10/advanced/integrate-to-android.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Integrate to AndroidWhen you need to use the new features or to customize specific features, you can rely on the Source SDK for development。
 PrerequisitesAssuming you have the Android SDK installed, r">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-03-13T06:24:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Integrate to Android">
 <meta name="twitter:description" content="Integrate to AndroidWhen you need to use the new features or to customize specific features, you can rely on the Source SDK for development。
@@ -48,19 +48,19 @@ PrerequisitesAssuming you have the Android SDK installed, r">
         <li><a href="/references">References</a></li>
         <li><a href="/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">Download</a>
+            <a href="javascript:;">Services &amp; Tools</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/playground.html">Playground</a>
               </li>
               <li>
-                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+                <a href="/guide/tools/devtools.html">Devtools</a>
               </li>
               <li>
-                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -69,7 +69,7 @@ PrerequisitesAssuming you have the Android SDK installed, r">
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
@@ -109,6 +109,7 @@ PrerequisitesAssuming you have the Android SDK installed, r">
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
+
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
@@ -139,20 +140,19 @@ PrerequisitesAssuming you have the Android SDK installed, r">
           </a>
         </li>
         <li>
-            <p>Download</p>
+            <p>Services &amp; Tools</p>
             <ul class="subnav">
               <li>
                 <a href="/playground.html">Playground</a>
               </li>
               <li>
-                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+                <a href="/guide/tools/devtools.html">Devtools</a>
               </li>
               <li>
-                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
               </li>
               <li>
                 <a href="http://dotwe.org" target="_blank">Snippets</a>
-              </li>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -160,7 +160,7 @@ PrerequisitesAssuming you have the Android SDK installed, r">
             </ul>
         </li>
         <li>
-          <a href="https://github.com/alibaba/weex" target="_blank">
+          <a href="https://github.com/apache/incubator-weex/" target="_blank">
             GitHub
           </a>
         </li>
@@ -169,6 +169,7 @@ PrerequisitesAssuming you have the Android SDK installed, r">
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
+
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -283,14 +284,14 @@ PrerequisitesAssuming you have the Android SDK installed, r">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-13T06:24:16.000Z">Updated time: 13/03/2017</time>
 </header>
     <h1 id="Integrate-to-Android"><a href="#Integrate-to-Android" class="headerlink" title="Integrate to Android"></a>Integrate to Android</h1><p>When you need to use the new features or to customize specific features, you can rely on the Source SDK for development。</p>
 <h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><p>Assuming you have the Android SDK installed, run <code>android</code> to open the Android SDK Manager.</p>
 <p>Make sure you have the following installed:</p>
 <ol>
-<li>Android SDK version 23 (compileSdkVersion in <a href="https://github.com/alibaba/weex/blob/master/android/sdk/build.gradle" target="_blank" rel="external"><code>build.gradle</code></a>)</li>
-<li>SDK build tools version 23.0.2 (buildToolsVersion in <a href="https://github.com/alibaba/weex/blob/master/android/sdk/build.gradle" target="_blank" rel="external"><code>build.gradle</code></a>)</li>
+<li>Android SDK version 23 (compileSdkVersion in <a href="https://github.com/apache/incubator-weex/blob/master/android/sdk/build.gradle" target="_blank" rel="external"><code>build.gradle</code></a>)</li>
+<li>SDK build tools version 23.0.2 (buildToolsVersion in <a href="https://github.com/apache/incubator-weex/blob/master/android/sdk/build.gradle" target="_blank" rel="external"><code>build.gradle</code></a>)</li>
 <li>Android Support Repository &gt;= 17 (for Android Support Library)</li>
 <li>Android NDK (download &amp; extraction instructions <a href="http://developer.android.com/ndk/downloads/index.html" target="_blank" rel="external">here</a>)</li>
 </ol>
@@ -335,7 +336,7 @@ PrerequisitesAssuming you have the Android SDK installed, r">
 <p>Next, </p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Create or find RenderContainer view. </span></div><div class="line"><span class="comment">// Notice: If you create RenderContainer manually, don't forget add it to view tree.</span></div><div class="line">RenderContainer renderContainer = (RenderContainer)findViewById(R.id.container);</div><div class="line"></div><div class="line"><span class="comment">//crate Weex instance</span></div><div class="line">WXSDKInstance mInstance = <span class="keyword">new</span> WXSDKInstance(<span class="keyword">this</span>);</div><div class="line"><span class="comment">//set render container</span></div><div class="line">mInstance.setRenderContainer(renderContainer);</div><div class="line"><span class="comment">//set image Adapter</span></div><div class="line">mInstance.setImgLoaderAdapter(<span class="keyword">new</span> ImageAdapter(<span class="keyword">this</span>));</div><div class="line"><span class="comment">//register render listener</span></div><div class="line">mInstance.registerRenderListener(<span class="keyword">new</span> IWXRenderListener() &#123;</div><div class="line">   <span class="meta">@Override</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onViewCreated</span><span class="params">(WXSDKInstance instance, View resultView)</span> </span>&#123;</div><div class="line">       <span class="comment">// Notice: If you don't setRenderContainer before render, you need add the resultView to view tree here.</span></div><div class="line"></div><div class="line">   &#125; </div><div class="line">   <span class="meta">@Override</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRenderSuccess</span><span class="params">(WXSDKInstance instance)</span> </span>&#123;</div><div class="line">   &#125;</div><div class="line">   <span class="meta">@Override</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onRefreshSuccess</span><span class="params">(WXSDKInstance instance)</span> </span>&#123;</div><div class="line">   &#125;</div><div class="line">   <span class="meta">@Override</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onException</span><span class="params">(WXSDKInstance instance, String errCode,String msg)</span> </span>&#123;</div><div class="line">   &#125;</div><div class="line">&#125;); </div><div class="line"><span class="comment">//start render weex view   </span></div><div class="line">mInstance.render(pageName,template, <span class="keyword">null</span>, <span class="keyword">null</span>, -<span class="number">1</span>, -<span class="number">1</span>, WXRenderStrategy.APPEND_ASYNC);</div></pre></td></tr></table></figure>
 <p>That’s it, your activity is ready to run some JavaScript code.</p>
-<h2 id="Reference-Example"><a href="#Reference-Example" class="headerlink" title="Reference Example"></a>Reference Example</h2><p><a href="https://github.com/alibaba/weex/tree/master/examples" target="_blank" rel="external"><code>Weex Examples</code></a></p>
+<h2 id="Reference-Example"><a href="#Reference-Example" class="headerlink" title="Reference Example"></a>Reference Example</h2><p><a href="https://github.com/apache/incubator-weex/tree/master/examples" target="_blank" rel="external"><code>Weex Examples</code></a></p>
 
   </div>
   

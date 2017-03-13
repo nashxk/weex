@@ -8,10 +8,10 @@
   <meta name="description" content="Differences between using Vue in Web and WeexPlatform DifferencesVue.js was designed for the Web platform at the begining. Although it can be based on Weex to develop native applications, there are st">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Difference with Web">
-<meta property="og:url" content="https://weex-project.io/references/vue/difference-with-web.html">
+<meta property="og:url" content="https://weex.apache.org/references/vue/difference-with-web.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Differences between using Vue in Web and WeexPlatform DifferencesVue.js was designed for the Web platform at the begining. Although it can be based on Weex to develop native applications, there are st">
-<meta property="og:updated_time" content="2017-02-28T06:16:31.000Z">
+<meta property="og:updated_time" content="2017-03-09T03:05:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Difference with Web">
 <meta name="twitter:description" content="Differences between using Vue in Web and WeexPlatform DifferencesVue.js was designed for the Web platform at the begining. Although it can be based on Weex to develop native applications, there are st">
@@ -45,19 +45,19 @@
         <li><a href="/references">References</a></li>
         <li><a href="/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">Download</a>
+            <a href="javascript:;">Services &amp; Tools</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/playground.html">Playground</a>
               </li>
               <li>
-                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+                <a href="/guide/tools/devtools.html">Devtools</a>
               </li>
               <li>
-                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+                <a href="/guide/tools/weexpack.html">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -66,7 +66,7 @@
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
@@ -106,6 +106,7 @@
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
+
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
@@ -542,11 +543,11 @@
           <ul class="chapter">
             
               <li>
-                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
               </li>
             
               <li>
-                <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
               </li>
             
               <li>
@@ -702,6 +703,7 @@
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
+
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -1129,11 +1131,11 @@
           <ul class="chapter">
             
               <li>
-                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
+                <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
               </li>
             
               <li>
-                <a href="/references/modules/globalevent.html" class="sidebar-link  ">globalEvent</a>
+                <a href="/references/modules/animation.html" class="sidebar-link  ">animation</a>
               </li>
             
               <li>
@@ -1298,7 +1300,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:16:31.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-09T03:05:12.000Z">Updated time: 09/03/2017</time>
 </header>
     <h1 id="Differences-between-using-Vue-in-Web-and-Weex"><a href="#Differences-between-using-Vue-in-Web-and-Weex" class="headerlink" title="Differences between using Vue in Web and Weex"></a>Differences between using Vue in Web and Weex</h1><h2 id="Platform-Differences"><a href="#Platform-Differences" class="headerlink" title="Platform Differences"></a>Platform Differences</h2><p>Vue.js was designed for the Web platform at the begining. Although it can be based on Weex to develop native applications, there are still many differences between web and native. See <a href="../ platform-difference.html">Platform Differences Between Weex and Web</a> for more details.</p>
 <p>Due to those differences, Weex doesn’t support those features in Vue.js (mostly are DOM-related):</p>
@@ -1338,7 +1340,7 @@
 <h3 id="Scoped-by-default"><a href="#Scoped-by-default" class="headerlink" title="Scoped by default"></a>Scoped by default</h3><p>In Weex, For single file components, the styles written in the <code>&lt;style&gt;</code> can only be used in the current component.</p>
 <p>In order to maintain consistency with Native, it is recommended that you write the style in the <code>.vue</code> file with the<code>scoped</code> attribute, that is, <code>&lt;style scoped&gt;</code>.</p>
 <h3 id="Supported-CSS-attributes"><a href="#Supported-CSS-attributes" class="headerlink" title="Supported CSS attributes"></a>Supported CSS attributes</h3><p>Weex supports a subset of CSS, and will continue to expand.</p>
-<p>Weex supports <em>box-model</em> and <em>flexbox</em>, as well as other common styles. See <a href="../ common-style.html">Weex Common Style</a> and <a href="http://weex.apache.org/references/web-standards.html" target="_blank" rel="external">Supported Web Standards</a> for more information.</p>
+<p>Weex supports <em>box-model</em> and <em>flexbox</em>, as well as other common styles. See <a href="../ common-style.html">Weex Common Style</a> and <a href="http://weex.apache.org/references/web-standards.html">Supported Web Standards</a> for more information.</p>
 <p>In addition, you should also pay attention to the following points:</p>
 <ul>
 <li>No need to write style prefix.</li>
@@ -1356,7 +1358,7 @@
 <h2 id="Differences-in-development"><a href="#Differences-in-development" class="headerlink" title="Differences in development"></a>Differences in development</h2><p>Because of the platform difference, you have to compile your source file in two different ways:</p>
 <ul>
 <li>For the web, you can compile source files in any official way, such as Webpack + vue-loader or Browserify + vueify. and require the <a href="https://www.npmjs.com/package/weex-vue-render" target="_blank" rel="external">weex-vue-render</a>, which is a group of Weex build-in components.</li>
-<li>For Android and iOS, we’ve provided <a href="https://github.com/weepteam/weep-loader" target="_blank" rel="external">weex-loader</a> to compile the <code>.vue</code> files. That is, use Webpack + weex-loader to generate the js bundle that is available for the native.</li>
+<li>For Android and iOS, we’ve provided <a href="https://github.com/weexteam/weex-loader" target="_blank" rel="external">weex-loader</a> to compile the <code>.vue</code> files. That is, use Webpack + weex-loader to generate the js bundle that is available for the native.</li>
 </ul>
 <h3 id="Use-weex-loader"><a href="#Use-weex-loader" class="headerlink" title="Use weex-loader"></a>Use weex-loader</h3><p><a href="https://github.com/weexteam/weex-loader" target="_blank" rel="external">weex-loader</a> is a loader for Webpack, see the <a href="http://webpack.github.io/docs/using-loaders.html" target="_blank" rel="external">official document</a> to learn how to use it.</p>
 <p>One more thing should be reminded is that if the <em>entry file</em> of your webpack config is a <code>.vue</code> file, you also need to pass an additional <code>entry</code> parameter, usually set to <code>true</code>.</p>
