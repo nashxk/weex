@@ -9,11 +9,11 @@
 界面DOM 模型Weex 页面通过类似 HTML DOM 的方式管理界面，首先页面会被分解为一个 DOM 树，，每个 DOM 结点都代表了一个相对独立的 native 视图的单元。然后不同的视图单元之间通过树形结构组合在了一起，构成一个完整的页面。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Weex 页面结构">
-<meta property="og:url" content="https://weex-project.io/cn/guide/intro/page-architecture.html">
+<meta property="og:url" content="https://weex.apache.org/cn/guide/intro/page-architecture.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Weex 页面结构一个 Weex 页面就是一个相对独立解耦的移动应用界面，它不仅包括了界面展示、更包含了逻辑处理、设备能力使用、生命周期管理等部分。
 界面DOM 模型Weex 页面通过类似 HTML DOM 的方式管理界面，首先页面会被分解为一个 DOM 树，，每个 DOM 结点都代表了一个相对独立的 native 视图的单元。然后不同的视图单元之间通过树形结构组合在了一起，构成一个完整的页面。">
-<meta property="og:updated_time" content="2017-03-06T07:29:29.000Z">
+<meta property="og:updated_time" content="2017-03-13T06:24:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Weex 页面结构">
 <meta name="twitter:description" content="Weex 页面结构一个 Weex 页面就是一个相对独立解耦的移动应用界面，它不仅包括了界面展示、更包含了逻辑处理、设备能力使用、生命周期管理等部分。
@@ -48,19 +48,19 @@
         <li><a href="/cn/references">手册</a></li>
         <li><a href="/cn/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">下载</a>
+            <a href="javascript:;">工具和服务</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
+                <a href="/cn/guide/tools/devtools.html">Devtools</a>
               </li>
               <li>
-                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
+                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -69,7 +69,7 @@
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
@@ -109,6 +109,7 @@
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
+
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
@@ -198,34 +199,24 @@
         
       
     
+      
+      
+        
+      
+    
    
     
       <li>
         <h3 class="chapter-title"><a href="/cn/guide/index.html" class="sidebar-link  ">快速上手</a></h3>
         
-      </li>
-    
-      <li>
-        <h3 class="chapter-title"><a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a></h3>
-        
-      </li>
-    
-      <li>
-        <h3 class="chapter-title"><a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a></h3>
-        
-      </li>
-    
-      <li>
-        <h3 class="chapter-title"><a href="/cn/guide/tools/index.html" class="sidebar-link  ">周边工具</a></h3>
-        
           <ul class="chapter">
             
               <li>
-                <a href="/cn/guide/tools/devtools.html" class="sidebar-link  ">使用 Devtools</a>
+                <a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a>
               </li>
             
               <li>
-                <a href="/cn/guide/tools/weexpack.html" class="sidebar-link  ">使用 Weexpack</a>
+                <a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a>
               </li>
             
           </ul>
@@ -265,6 +256,28 @@
         
       </li>
     
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/tools/index.html" class="sidebar-link  ">周边工具</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/tools/devtools.html" class="sidebar-link  ">使用 Devtools</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/tools/weexpack.html" class="sidebar-link  ">使用 Weexpack</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/contributing.html" class="sidebar-link  ">如何参与社区</a></h3>
+        
+      </li>
+    
     
     
       <li>
@@ -277,6 +290,7 @@
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
+
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -357,34 +371,24 @@
         
       
     
+      
+      
+        
+      
+    
    
     
       <li>
         <h3 class="chapter-title"><a href="/cn/guide/index.html" class="sidebar-link  ">快速上手</a></h3>
         
-      </li>
-    
-      <li>
-        <h3 class="chapter-title"><a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a></h3>
-        
-      </li>
-    
-      <li>
-        <h3 class="chapter-title"><a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a></h3>
-        
-      </li>
-    
-      <li>
-        <h3 class="chapter-title"><a href="/cn/guide/tools/index.html" class="sidebar-link  ">周边工具</a></h3>
-        
           <ul class="chapter">
             
               <li>
-                <a href="/cn/guide/tools/devtools.html" class="sidebar-link  ">使用 Devtools</a>
+                <a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a>
               </li>
             
               <li>
-                <a href="/cn/guide/tools/weexpack.html" class="sidebar-link  ">使用 Weexpack</a>
+                <a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a>
               </li>
             
           </ul>
@@ -424,6 +428,28 @@
         
       </li>
     
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/tools/index.html" class="sidebar-link  ">周边工具</a></h3>
+        
+          <ul class="chapter">
+            
+              <li>
+                <a href="/cn/guide/tools/devtools.html" class="sidebar-link  ">使用 Devtools</a>
+              </li>
+            
+              <li>
+                <a href="/cn/guide/tools/weexpack.html" class="sidebar-link  ">使用 Weexpack</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/contributing.html" class="sidebar-link  ">如何参与社区</a></h3>
+        
+      </li>
+    
     
     
       <li>
@@ -445,7 +471,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-03-06T07:29:29.000Z">Updated time: 06/03/2017</time>
+  <time class="article-date" datetime="2017-03-13T06:24:16.000Z">Updated time: 13/03/2017</time>
 </header>
     <h1 id="Weex-页面结构"><a href="#Weex-页面结构" class="headerlink" title="Weex 页面结构"></a>Weex 页面结构</h1><p>一个 Weex 页面就是一个相对独立解耦的移动应用界面，它不仅包括了界面展示、更包含了逻辑处理、设备能力使用、生命周期管理等部分。</p>
 <h2 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h2><h3 id="DOM-模型"><a href="#DOM-模型" class="headerlink" title="DOM 模型"></a>DOM 模型</h3><p>Weex 页面通过类似 HTML DOM 的方式管理界面，首先页面会被分解为一个 DOM 树，，每个 DOM 结点都代表了一个相对独立的 native 视图的单元。然后不同的视图单元之间通过树形结构组合在了一起，构成一个完整的页面。</p>
