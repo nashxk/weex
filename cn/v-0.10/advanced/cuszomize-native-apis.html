@@ -9,11 +9,11 @@
 关于 URLHelper 的例子新建一个 WXModulepublic class URLHelperModule extends WXModule&amp;#123;    private stat">
 <meta property="og:type" content="website">
 <meta property="og:title" content="自定义 native API">
-<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/advanced/cuszomize-native-apis.html">
+<meta property="og:url" content="https://weex-project.io/cn/v-0.10/advanced/cuszomize-native-apis.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="如何自定义 native API？Weex 的 SDK 只提供了页面渲染的能力，但是一些其它操作，比如网络请求、图片加载、重定向等功能需要你自己去实现，这个例子讲述了如何用原生代码去扩展 Weex 的功能。
 关于 URLHelper 的例子新建一个 WXModulepublic class URLHelperModule extends WXModule&amp;#123;    private stat">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-03-16T06:21:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自定义 native API">
 <meta name="twitter:description" content="如何自定义 native API？Weex 的 SDK 只提供了页面渲染的能力，但是一些其它操作，比如网络请求、图片加载、重定向等功能需要你自己去实现，这个例子讲述了如何用原生代码去扩展 Weex 的功能。
@@ -29,6 +29,7 @@
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="advanced" class="lang-cn">
@@ -48,19 +49,19 @@
         <li><a href="/cn/references">手册</a></li>
         <li><a href="/cn/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">工具和服务</a>
+            <a href="javascript:;">下载</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -69,34 +70,18 @@
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/v-0.10/advanced/cuszomize-native-apis.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/v-0.10/advanced/cuszomize-native-apis.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -109,7 +94,6 @@
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
@@ -117,7 +101,7 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -135,24 +119,25 @@
           </a>
         </li>
         <li>
-          <a href="/cn/faq.html">
+          <a href="/cn/faq">
             FAQ
           </a>
         </li>
         <li>
-            <p>工具和服务</p>
+            <p>下载</p>
             <ul class="subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
                 <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -160,7 +145,7 @@
             </ul>
         </li>
         <li>
-          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+          <a href="https://github.com/alibaba/weex" target="_blank">
             GitHub
           </a>
         </li>
@@ -169,7 +154,6 @@
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -334,7 +318,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:50.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="如何自定义-native-API？"><a href="#如何自定义-native-API？" class="headerlink" title="如何自定义 native API？"></a>如何自定义 native API？</h1><p>Weex 的 SDK 只提供了页面渲染的能力，但是一些其它操作，比如网络请求、图片加载、重定向等功能需要你自己去实现，这个例子讲述了如何用原生代码去扩展 Weex 的功能。</p>
 <h2 id="关于-URLHelper-的例子"><a href="#关于-URLHelper-的例子" class="headerlink" title="关于 URLHelper 的例子"></a>关于 URLHelper 的例子</h2><h3 id="新建一个-WXModule"><a href="#新建一个-WXModule" class="headerlink" title="新建一个 WXModule"></a>新建一个 WXModule</h3><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">URLHelperModule</span> <span class="keyword">extends</span> <span class="title">WXModule</span></span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String WEEX_CATEGORY=<span class="string">"com.taobao.android.intent.category.WEEX"</span>;</div><div class="line">    <span class="meta">@WXModuleAnno</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">openURL</span><span class="params">(String url)</span></span>&#123;</div><div class="line">        <span class="keyword">if</span> (TextUtils.isEmpty(url)) &#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        StringBuilder builder=<span class="keyword">new</span> StringBuilder(<span class="string">"http:"</span>);</div><div class="line">        builder.append(url);</div><div class="line">        Uri uri = Uri.parse(builder.toString());</div><div class="line">        Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW, uri);</div><div class="line">        intent.addCategory(WEEX_CATEGORY);</div><div class="line">        mWXSDKInstance.getContext().startActivity(intent);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -374,12 +358,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/v-0.10/advanced/cuszomize-native-apis.html" data-lang="en">English</a>
+          <a href="/v-0.10/advanced/cuszomize-native-apis.html">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/advanced/cuszomize-native-apis.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/v-0.10/advanced/cuszomize-native-apis.html">中文</a>
         </li>
       </ul>
     </div>
@@ -389,7 +373,7 @@
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

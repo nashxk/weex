@@ -9,11 +9,11 @@
 .box &amp;#123;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Style & Class">
-<meta property="og:url" content="https://weex.apache.org/v-0.10/guide/syntax/style-n-class.html">
+<meta property="og:url" content="https://weex-project.io/v-0.10/guide/syntax/style-n-class.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Style &amp;amp; ClassThe Basic SyntaxCSS style description can be viewed as a series of key-value pairs,each of which describes a particular style, such as the width and height of a component.
 .box &amp;#123;">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-03-16T06:21:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Style & Class">
 <meta name="twitter:description" content="Style &amp;amp; ClassThe Basic SyntaxCSS style description can be viewed as a series of key-value pairs,each of which describes a particular style, such as the width and height of a component.
@@ -29,6 +29,7 @@
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="guide" class="lang-en">
@@ -48,19 +49,19 @@
         <li><a href="/references">References</a></li>
         <li><a href="/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">Services &amp; Tools</a>
+            <a href="javascript:;">Download</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -69,34 +70,18 @@
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/v-0.10/guide/syntax/style-n-class.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/v-0.10/guide/syntax/style-n-class.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -109,13 +94,12 @@
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -317,7 +301,6 @@
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -525,7 +508,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:51.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="Style-amp-Class"><a href="#Style-amp-Class" class="headerlink" title="Style &amp; Class"></a>Style &amp; Class</h1><h2 id="The-Basic-Syntax"><a href="#The-Basic-Syntax" class="headerlink" title="The Basic Syntax"></a>The Basic Syntax</h2><p>CSS style description can be viewed as a series of key-value pairs,each of which describes a particular style, such as the width and height of a component.</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">400</span>; </div><div class="line">  <span class="attribute">height</span>: <span class="number">50</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -572,12 +555,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/v-0.10/guide/syntax/style-n-class.html" data-lang="en">English</a>
+          <a href="/v-0.10/guide/syntax/style-n-class.html">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/guide/syntax/style-n-class.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/v-0.10/guide/syntax/style-n-class.html">中文</a>
         </li>
       </ul>
     </div>
@@ -587,7 +570,7 @@
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

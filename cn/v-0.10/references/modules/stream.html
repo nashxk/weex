@@ -15,7 +15,7 @@ url {string}：请求的 URL
 headers {Object}：HTTP 请求">
 <meta property="og:type" content="website">
 <meta property="og:title" content="stream">
-<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/references/modules/stream.html">
+<meta property="og:url" content="https://weex-project.io/cn/v-0.10/references/modules/stream.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="stream概述以下为 stream 相关的 API，用于实现网络请求。
 APIfetch(options, callback[,progressCallback])发起网络请求
@@ -25,7 +25,7 @@ options {Object}：请求的一些选项
 method {string}：HTTP 方法 GET 或是 POST
 url {string}：请求的 URL
 headers {Object}：HTTP 请求">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-03-16T06:21:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="stream">
 <meta name="twitter:description" content="stream概述以下为 stream 相关的 API，用于实现网络请求。
@@ -47,6 +47,7 @@ headers {Object}：HTTP 请求">
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="references" class="lang-cn">
@@ -66,19 +67,19 @@ headers {Object}：HTTP 请求">
         <li><a href="/cn/references">手册</a></li>
         <li><a href="/cn/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">工具和服务</a>
+            <a href="javascript:;">下载</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -87,34 +88,18 @@ headers {Object}：HTTP 请求">
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/v-0.10/references/modules/stream.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/v-0.10/references/modules/stream.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -127,13 +112,12 @@ headers {Object}：HTTP 请求">
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -593,7 +577,6 @@ headers {Object}：HTTP 请求">
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -1059,7 +1042,7 @@ headers {Object}：HTTP 请求">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:50.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="stream"><a href="#stream" class="headerlink" title="stream"></a>stream</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>以下为 stream 相关的 API，用于实现网络请求。</p>
 <h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="fetch-options-callback-progressCallback"><a href="#fetch-options-callback-progressCallback" class="headerlink" title="fetch(options, callback[,progressCallback])"></a><code>fetch(options, callback[,progressCallback])</code></h3><p>发起网络请求</p>
@@ -1115,12 +1098,12 @@ headers {Object}：HTTP 请求">
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/v-0.10/references/modules/stream.html" data-lang="en">English</a>
+          <a href="/v-0.10/references/modules/stream.html">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/references/modules/stream.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/v-0.10/references/modules/stream.html">中文</a>
         </li>
       </ul>
     </div>
@@ -1130,7 +1113,7 @@ headers {Object}：HTTP 请求">
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

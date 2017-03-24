@@ -10,12 +10,12 @@
 当 handler 被触发时，会有一个事件">
 <meta property="og:type" content="website">
 <meta property="og:title" content="组件通信">
-<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/guide/syntax/comm.html">
+<meta property="og:url" content="https://weex-project.io/cn/v-0.10/guide/syntax/comm.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="组件间通信自定义事件Weex 支持自定义事件，这里有两个相关的设计：1，监听自定义事件；2，创建自定义事件。
 监听自定义事件每个 Weex 的 ViewModel 都支持 this.$on(type, handler) 和 this.$off(type[, handler]) 的 API。type 是监听的自定义事件类型，handler 是事件处理函数。
 当 handler 被触发时，会有一个事件">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-03-16T06:21:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="组件通信">
 <meta name="twitter:description" content="组件间通信自定义事件Weex 支持自定义事件，这里有两个相关的设计：1，监听自定义事件；2，创建自定义事件。
@@ -32,6 +32,7 @@
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="guide" class="lang-cn">
@@ -51,19 +52,19 @@
         <li><a href="/cn/references">手册</a></li>
         <li><a href="/cn/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">工具和服务</a>
+            <a href="javascript:;">下载</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -72,34 +73,18 @@
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/v-0.10/guide/syntax/comm.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/v-0.10/guide/syntax/comm.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -112,13 +97,12 @@
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -303,7 +287,6 @@
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -494,7 +477,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:50.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="组件间通信"><a href="#组件间通信" class="headerlink" title="组件间通信"></a>组件间通信</h1><h2 id="自定义事件"><a href="#自定义事件" class="headerlink" title="自定义事件"></a>自定义事件</h2><p>Weex 支持自定义事件，这里有两个相关的设计：1，监听自定义事件；2，创建自定义事件。</p>
 <h2 id="监听自定义事件"><a href="#监听自定义事件" class="headerlink" title="监听自定义事件"></a>监听自定义事件</h2><p>每个 Weex 的 ViewModel 都支持 <code>this.$on(type, handler)</code> 和 <code>this.$off(type[, handler])</code> 的 API。<code>type</code> 是监听的自定义事件类型，<code>handler</code> 是事件处理函数。</p>
@@ -523,12 +506,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/v-0.10/guide/syntax/comm.html" data-lang="en">English</a>
+          <a href="/v-0.10/guide/syntax/comm.html">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/guide/syntax/comm.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/v-0.10/guide/syntax/comm.html">中文</a>
         </li>
       </ul>
     </div>
@@ -538,7 +521,7 @@
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

@@ -8,12 +8,12 @@
   <meta name="description" content="Weex 工作原理概述总览Weex是跨平台，可扩展的动态化技术. 你能通过在Weex源码中写&amp;lt;template&amp;gt;, &amp;lt;style&amp;gt; 和  &amp;lt;script&amp;gt;标签，然后把这些标签转换为JS Bundle用于部署, 在服务端以这些JS Bundle响应请求. 当客户端接收到JS Bundle时，它能用被客户端中的JS引擎用于管理Native渲染;API调用和用户交互.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Weex 工作原理">
-<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/advanced/index.html">
+<meta property="og:url" content="https://weex-project.io/cn/v-0.10/advanced/index.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Weex 工作原理概述总览Weex是跨平台，可扩展的动态化技术. 你能通过在Weex源码中写&amp;lt;template&amp;gt;, &amp;lt;style&amp;gt; 和  &amp;lt;script&amp;gt;标签，然后把这些标签转换为JS Bundle用于部署, 在服务端以这些JS Bundle响应请求. 当客户端接收到JS Bundle时，它能用被客户端中的JS引擎用于管理Native渲染;API调用和用户交互.">
 <meta property="og:image" content="http://gtms02.alicdn.com/tps/i2/TB1ootBMpXXXXXrXXXXwi60UVXX-596-397.png">
 <meta property="og:image" content="http://gtms03.alicdn.com/tps/i3/TB1_SA4MXXXXXXGaXXXpZ8UVXXX-519-337.png">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-03-16T06:21:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Weex 工作原理">
 <meta name="twitter:description" content="Weex 工作原理概述总览Weex是跨平台，可扩展的动态化技术. 你能通过在Weex源码中写&amp;lt;template&amp;gt;, &amp;lt;style&amp;gt; 和  &amp;lt;script&amp;gt;标签，然后把这些标签转换为JS Bundle用于部署, 在服务端以这些JS Bundle响应请求. 当客户端接收到JS Bundle时，它能用被客户端中的JS引擎用于管理Native渲染;API调用和用户交互.">
@@ -29,6 +29,7 @@
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="advanced" class="lang-cn">
@@ -48,19 +49,19 @@
         <li><a href="/cn/references">手册</a></li>
         <li><a href="/cn/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">工具和服务</a>
+            <a href="javascript:;">下载</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -69,34 +70,18 @@
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/v-0.10/advanced/index.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/v-0.10/advanced/index.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -109,7 +94,6 @@
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
@@ -117,7 +101,7 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -135,24 +119,25 @@
           </a>
         </li>
         <li>
-          <a href="/cn/faq.html">
+          <a href="/cn/faq">
             FAQ
           </a>
         </li>
         <li>
-            <p>工具和服务</p>
+            <p>下载</p>
             <ul class="subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
                 <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -160,7 +145,7 @@
             </ul>
         </li>
         <li>
-          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+          <a href="https://github.com/alibaba/weex" target="_blank">
             GitHub
           </a>
         </li>
@@ -169,7 +154,6 @@
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -334,7 +318,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:50.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="Weex-工作原理概述"><a href="#Weex-工作原理概述" class="headerlink" title="Weex 工作原理概述"></a>Weex 工作原理概述</h1><h2 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h2><p>Weex是跨平台，可扩展的动态化技术. 你能通过在Weex源码中写<code>&lt;template&gt;</code>, <code>&lt;style&gt;</code> 和  <code>&lt;script&gt;</code>标签，然后把这些标签转换为JS Bundle用于部署, 在服务端以这些JS Bundle响应请求. 当客户端接收到JS Bundle时，它能用被客户端中的JS引擎用于管理Native渲染;API调用和用户交互.</p>
 <h3 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Weex we 文件 --------------前端(we源码)</div><div class="line">↓ (转换) ------------------前端(构建过程)</div><div class="line">JS Bundle -----------------前端(JS Bundle代码)</div><div class="line">↓ (部署) ------------------服务器</div><div class="line">在服务器上的JS bundle  ----服务器</div><div class="line">↓ (编译) ------------------ 客户端(JS引擎)</div><div class="line">虚拟 DOM 树 --------------- 客户端(Weex JS Framework)</div><div class="line">↓ (渲染) ------------------ 客户端(渲染引擎)</div><div class="line">Native视图 ---------------  客户端(渲染引擎)</div></pre></td></tr></table></figure>
@@ -399,12 +383,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/v-0.10/advanced/index.html" data-lang="en">English</a>
+          <a href="/v-0.10/advanced/index.html">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/advanced/index.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/v-0.10/advanced/index.html">中文</a>
         </li>
       </ul>
     </div>
@@ -414,7 +398,7 @@
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

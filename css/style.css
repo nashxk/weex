@@ -287,12 +287,10 @@ table th {
   #header .links > li + li {
     margin-left: 40px; }
   #header .info li {
-    margin-left: 40px; }
-  #header .tools > li {
-    margin-left: 30px;
-    position: relative; }
-  #header .tools .search-form {
-    width: 120px; }
+    margin-left: 50px; }
+  #header .tools li {
+    position: relative;
+    margin-left: 4em; }
   #header .dropdown .dropdown-menu {
     width: 200px;
     left: -60%;
@@ -302,22 +300,6 @@ table th {
     #header .dropdown .dropdown-menu a {
       font-size: 15px;
       padding: 5px 10px; }
-  #header .select-lang {
-    width: 90px; }
-  #header .select-lang .dropdown-toggle {
-    color: #00293D; }
-  #header .select-lang .dropdown-menu {
-    width: 105px;
-    left: 0; }
-  #header .caret {
-    display: inline-block;
-    margin-left: 2px;
-    width: 0;
-    height: 0;
-    vertical-align: middle;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 4px solid #999ba4; }
 
 /***********************
 * Variable
@@ -373,8 +355,7 @@ table th {
       list-style: none;
       padding-left: 20px; }
   #sidebar .summary {
-    display: block;
-    margin-top: 20px; }
+    display: block; }
   #sidebar .results-panel {
     width: 300px;
     left: -20px;
@@ -399,7 +380,6 @@ table th {
     #footer .ali-logo img {
       width: 100%; }
   #footer .select-lang {
-    display: none;
     width: 105px;
     height: 25px;
     line-height: 25px;
@@ -538,10 +518,10 @@ pre .attr {
   position: relative;
   height: 100%;
   height: calc(100% - 72px); }
-  .scene:nth-child(even) {
+  .scene:nth-child(odd) {
     background: #f5f5f5;
     color: #00BDFF; }
-  .scene:nth-child(odd) {
+  .scene:nth-child(even) {
     background: #00BDFF;
     color: #fff; }
   .scene h2 {
@@ -1021,7 +1001,10 @@ pre .attr {
 * Mixin
 ***********************/
 .search {
-  position: relative; }
+  position: relative;
+  /*.search-label {
+    display: block;
+  }*/ }
   .search .search-form {
     width: 100%;
     position: relative; }
@@ -1534,8 +1517,6 @@ hue-6-2: #e6c07b
               transform: translateX(0); }
   #footer {
     padding: 0 20px; }
-    #footer .select-lang {
-      display: block; }
   /***********************************************
    * Index
    **********************************************/

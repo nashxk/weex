@@ -9,11 +9,11 @@
 首先要明确的是，组件和 API 模块是基于 Weex 的扩展，但是独立于 Weex，组件的定义本身是不需要依赖于 Weex 的，这样有助">
 <meta property="og:type" content="website">
 <meta property="og:title" content="weex-html5 扩展">
-<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/advanced/extend-to-html5.html">
+<meta property="og:url" content="https://weex-project.io/cn/v-0.10/advanced/extend-to-html5.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="扩展 weex-html5简介Weex 是一个高可扩展性的跨平台动态化开发方案，你可以在现有组件基础上定制自己需要的三端组件。你可以为 Weex API 模块添加新的方法，或者创建新的 API 模块和新的加载器。按照以下几个步骤扩展你的组件，API 或者加载器。
 首先要明确的是，组件和 API 模块是基于 Weex 的扩展，但是独立于 Weex，组件的定义本身是不需要依赖于 Weex 的，这样有助">
-<meta property="og:updated_time" content="2017-03-13T06:24:16.000Z">
+<meta property="og:updated_time" content="2017-03-16T06:21:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="weex-html5 扩展">
 <meta name="twitter:description" content="扩展 weex-html5简介Weex 是一个高可扩展性的跨平台动态化开发方案，你可以在现有组件基础上定制自己需要的三端组件。你可以为 Weex API 模块添加新的方法，或者创建新的 API 模块和新的加载器。按照以下几个步骤扩展你的组件，API 或者加载器。
@@ -29,6 +29,7 @@
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="advanced" class="lang-cn">
@@ -48,19 +49,19 @@
         <li><a href="/cn/references">手册</a></li>
         <li><a href="/cn/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">工具和服务</a>
+            <a href="javascript:;">下载</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -69,34 +70,18 @@
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/v-0.10/advanced/extend-to-html5.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/v-0.10/advanced/extend-to-html5.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -109,7 +94,6 @@
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
@@ -117,7 +101,7 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -135,24 +119,25 @@
           </a>
         </li>
         <li>
-          <a href="/cn/faq.html">
+          <a href="/cn/faq">
             FAQ
           </a>
         </li>
         <li>
-            <p>工具和服务</p>
+            <p>下载</p>
             <ul class="subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
                 <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -160,7 +145,7 @@
             </ul>
         </li>
         <li>
-          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+          <a href="https://github.com/alibaba/weex" target="_blank">
             GitHub
           </a>
         </li>
@@ -169,7 +154,6 @@
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -334,7 +318,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-03-13T06:24:16.000Z">Updated time: 13/03/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:50.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="扩展-weex-html5"><a href="#扩展-weex-html5" class="headerlink" title="扩展 weex-html5"></a>扩展 weex-html5</h1><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Weex 是一个高可扩展性的跨平台动态化开发方案，你可以在现有组件基础上定制自己需要的三端组件。你可以为 Weex API 模块添加新的方法，或者创建新的 API 模块和新的加载器。按照以下几个步骤扩展你的组件，API 或者加载器。</p>
 <p>首先要明确的是，组件和 API 模块是基于 Weex 的扩展，但是独立于 Weex，组件的定义本身是不需要依赖于 Weex 的，这样有助于组件的分散化管理，去除中心化依赖。</p>
@@ -358,7 +342,7 @@
 <li><code>appendChild</code> 在子节点列表的最后加上一个节点.</li>
 <li><code>removeChild</code> 移除一个子节点.</li>
 </ul>
-<p><strong>进阶</strong>：更多关于组件定制和扩展的细节和代码展示，可以参考 <a href="https://github.com/apache/incubator-weex/tree/dev/html5" target="_blank" rel="external">weex 主仓库的代码</a>，这里的组件基本上都是通过上述方式进行定义的。</p>
+<p><strong>进阶</strong>：更多关于组件定制和扩展的细节和代码展示，可以参考 <a href="https://github.com/alibaba/weex/tree/dev/html5/browser/extend/components" target="_blank" rel="external">weex 主仓库的代码</a>，这里的组件基本上都是通过上述方式进行定义的。</p>
 <p>重要的一点，注册组件的关键方法是 <code>Weex.registerComponent</code>，如示例里的 <code>weex-hello</code> 组件的注册：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">Weex.registerComponent(<span class="string">'weex-hello'</span>, Hello)</div></pre></td></tr></table></figure>
 <p>上述代码引自 <a href="https://github.com/MrRaindrop/weex-hello-web/blob/master/src/index.js#L62" target="_blank" rel="external">weex-hello-web/src/index.js</a></p>
@@ -404,12 +388,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/v-0.10/advanced/extend-to-html5.html" data-lang="en">English</a>
+          <a href="/v-0.10/advanced/extend-to-html5.html">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/advanced/extend-to-html5.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/v-0.10/advanced/extend-to-html5.html">中文</a>
         </li>
       </ul>
     </div>
@@ -419,7 +403,7 @@
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

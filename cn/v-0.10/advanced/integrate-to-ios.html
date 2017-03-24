@@ -12,14 +12,14 @@ cocoaPods集成  假设你已经完成了安装iOS 开发环境 和 CocoaPods
 git clone https://github.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="集成到 iOS">
-<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/advanced/integrate-to-ios.html">
+<meta property="og:url" content="https://weex-project.io/cn/v-0.10/advanced/integrate-to-ios.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Weex SDK 集成到 iOScocoaPods 引入 Weex iOS SDK到工程可以通过源码编译出 Weex SDK，可以在新的 feature 或者 bugfix 分支，尝试最新的 feature
 cocoaPods集成  假设你已经完成了安装iOS 开发环境 和 CocoaPods
 
 从 github 上 clone 一份代码    
 git clone https://github.">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-03-16T06:21:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集成到 iOS">
 <meta name="twitter:description" content="Weex SDK 集成到 iOScocoaPods 引入 Weex iOS SDK到工程可以通过源码编译出 Weex SDK，可以在新的 feature 或者 bugfix 分支，尝试最新的 feature
@@ -38,6 +38,7 @@ git clone https://github.">
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="advanced" class="lang-cn">
@@ -57,19 +58,19 @@ git clone https://github.">
         <li><a href="/cn/references">手册</a></li>
         <li><a href="/cn/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">工具和服务</a>
+            <a href="javascript:;">下载</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -78,34 +79,18 @@ git clone https://github.">
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/v-0.10/advanced/integrate-to-ios.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/v-0.10/advanced/integrate-to-ios.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -118,7 +103,6 @@ git clone https://github.">
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
@@ -126,7 +110,7 @@ git clone https://github.">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -144,24 +128,25 @@ git clone https://github.">
           </a>
         </li>
         <li>
-          <a href="/cn/faq.html">
+          <a href="/cn/faq">
             FAQ
           </a>
         </li>
         <li>
-            <p>工具和服务</p>
+            <p>下载</p>
             <ul class="subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
                 <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -169,7 +154,7 @@ git clone https://github.">
             </ul>
         </li>
         <li>
-          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+          <a href="https://github.com/alibaba/weex" target="_blank">
             GitHub
           </a>
         </li>
@@ -178,7 +163,6 @@ git clone https://github.">
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -343,7 +327,7 @@ git clone https://github.">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:50.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="Weex-SDK-集成到-iOS"><a href="#Weex-SDK-集成到-iOS" class="headerlink" title="Weex SDK 集成到 iOS"></a>Weex SDK 集成到 iOS</h1><h3 id="cocoaPods-引入-Weex-iOS-SDK到工程"><a href="#cocoaPods-引入-Weex-iOS-SDK到工程" class="headerlink" title="cocoaPods 引入 Weex iOS SDK到工程"></a>cocoaPods 引入 Weex iOS SDK到工程</h3><p>可以通过源码编译出 Weex SDK，可以在新的 feature 或者 bugfix 分支，尝试最新的 feature</p>
 <h4 id="cocoaPods集成"><a href="#cocoaPods集成" class="headerlink" title="cocoaPods集成"></a>cocoaPods集成</h4><p>  假设你已经完成了安装<a href="https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html" target="_blank" rel="external">iOS 开发环境</a> 和 <a href="https://guides.cocoapods.org/using/getting-started.html" target="_blank" rel="external">CocoaPods</a></p>
@@ -388,12 +372,12 @@ git clone https://github.">
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/v-0.10/advanced/integrate-to-ios.html" data-lang="en">English</a>
+          <a href="/v-0.10/advanced/integrate-to-ios.html">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/advanced/integrate-to-ios.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/v-0.10/advanced/integrate-to-ios.html">中文</a>
         </li>
       </ul>
     </div>
@@ -403,7 +387,7 @@ git clone https://github.">
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

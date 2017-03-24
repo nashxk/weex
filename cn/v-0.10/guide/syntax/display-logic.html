@@ -10,12 +10,12 @@ if通过设置 if 特性值，你可以控制当前组件是否显示。如果�
 &amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;text onclick=&quot;toggle&quot;&amp;gt;Toggle Im">
 <meta property="og:type" content="website">
 <meta property="og:title" content="展示逻辑控制">
-<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/guide/syntax/display-logic.html">
+<meta property="og:url" content="https://weex-project.io/cn/v-0.10/guide/syntax/display-logic.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="展示逻辑控制Weex 支持通过两种特殊的特性 if 和 repeat 确定组件的显示逻辑，这会使得整个界面的展示逻辑控制更加简单灵活。
 if通过设置 if 特性值，你可以控制当前组件是否显示。如果值为真，则当前组件会被渲染出来，如果值为假则会被移除。例如：
 &amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;text onclick=&quot;toggle&quot;&amp;gt;Toggle Im">
-<meta property="og:updated_time" content="2017-03-09T03:13:48.000Z">
+<meta property="og:updated_time" content="2017-03-16T06:21:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="展示逻辑控制">
 <meta name="twitter:description" content="展示逻辑控制Weex 支持通过两种特殊的特性 if 和 repeat 确定组件的显示逻辑，这会使得整个界面的展示逻辑控制更加简单灵活。
@@ -32,6 +32,7 @@ if通过设置 if 特性值，你可以控制当前组件是否显示。如果�
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="guide" class="lang-cn">
@@ -51,19 +52,19 @@ if通过设置 if 特性值，你可以控制当前组件是否显示。如果�
         <li><a href="/cn/references">手册</a></li>
         <li><a href="/cn/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">工具和服务</a>
+            <a href="javascript:;">下载</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -72,34 +73,18 @@ if通过设置 if 特性值，你可以控制当前组件是否显示。如果�
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/v-0.10/guide/syntax/display-logic.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/v-0.10/guide/syntax/display-logic.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -112,13 +97,12 @@ if通过设置 if 特性值，你可以控制当前组件是否显示。如果�
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -303,7 +287,6 @@ if通过设置 if 特性值，你可以控制当前组件是否显示。如果�
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -494,7 +477,7 @@ if通过设置 if 特性值，你可以控制当前组件是否显示。如果�
       </h1>
     
   
-  <time class="article-date" datetime="2017-03-09T03:13:48.000Z">Updated time: 09/03/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:50.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="展示逻辑控制"><a href="#展示逻辑控制" class="headerlink" title="展示逻辑控制"></a>展示逻辑控制</h1><p>Weex 支持通过两种特殊的特性 <code>if</code> 和 <code>repeat</code> 确定组件的显示逻辑，这会使得整个界面的展示逻辑控制更加简单灵活。</p>
 <h2 id="if"><a href="#if" class="headerlink" title="if"></a><code>if</code></h2><p>通过设置 <code>if</code> 特性值，你可以控制当前组件是否显示。如果值为真，则当前组件会被渲染出来，如果值为假则会被移除。例如：</p>
@@ -564,12 +547,12 @@ if通过设置 if 特性值，你可以控制当前组件是否显示。如果�
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/v-0.10/guide/syntax/display-logic.html" data-lang="en">English</a>
+          <a href="/v-0.10/guide/syntax/display-logic.html">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/guide/syntax/display-logic.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/v-0.10/guide/syntax/display-logic.html">中文</a>
         </li>
       </ul>
     </div>
@@ -579,7 +562,7 @@ if通过设置 if 特性值，你可以控制当前组件是否显示。如果�
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

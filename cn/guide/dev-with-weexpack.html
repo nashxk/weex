@@ -3,24 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>周边工具 | Weex</title>
+  <title>构建全新应用 | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="周边工具
-Devtools
-Weexpack">
+  <meta name="description" content="构建全新应用Work in process.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="周边工具">
-<meta property="og:url" content="https://weex.apache.org/cn/guide/tools/index.html">
+<meta property="og:title" content="构建全新应用">
+<meta property="og:url" content="https://weex-project.io/cn/guide/dev-with-weexpack.html">
 <meta property="og:site_name" content="Weex">
-<meta property="og:description" content="周边工具
-Devtools
-Weexpack">
-<meta property="og:updated_time" content="2017-03-13T06:24:16.000Z">
+<meta property="og:description" content="构建全新应用Work in process.">
+<meta property="og:updated_time" content="2017-03-16T06:21:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="周边工具">
-<meta name="twitter:description" content="周边工具
-Devtools
-Weexpack">
+<meta name="twitter:title" content="构建全新应用">
+<meta name="twitter:description" content="构建全新应用Work in process.">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -32,6 +26,7 @@ Weexpack">
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="guide" class="lang-cn">
@@ -51,19 +46,19 @@ Weexpack">
         <li><a href="/cn/references">手册</a></li>
         <li><a href="/cn/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">工具和服务</a>
+            <a href="javascript:;">下载</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -72,34 +67,18 @@ Weexpack">
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/guide/tools/index.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/guide/tools/index.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -112,13 +91,12 @@ Weexpack">
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -192,37 +170,20 @@ Weexpack">
         
       
     
-      
-      
-        
-      
-    
-      
-      
-        
-      
-    
-      
-      
-        
-      
-    
    
     
       <li>
         <h3 class="chapter-title"><a href="/cn/guide/index.html" class="sidebar-link  ">快速上手</a></h3>
         
-          <ul class="chapter">
-            
-              <li>
-                <a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a>
-              </li>
-            
-              <li>
-                <a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a>
-              </li>
-            
-          </ul>
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/dev-with-weexpack.html" class="sidebar-link current ">构建全新应用</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a></h3>
         
       </li>
     
@@ -255,36 +216,18 @@ Weexpack">
                 <a href="/cn/guide/intro/page-architecture.html" class="sidebar-link  ">Weex 页面结构</a>
               </li>
             
-          </ul>
-        
-      </li>
-    
-      <li>
-        <h3 class="chapter-title"><a href="/cn/guide/tools/index.html" class="sidebar-link current ">周边工具</a></h3>
-        
-          <ul class="chapter">
-            
               <li>
-                <a href="/cn/guide/tools/devtools.html" class="sidebar-link  ">使用 Devtools</a>
-              </li>
-            
-              <li>
-                <a href="/cn/guide/tools/weexpack.html" class="sidebar-link  ">使用 Weexpack</a>
+                <a href="/cn/guide/intro/devtools.html" class="sidebar-link  ">使用 Devtools</a>
               </li>
             
           </ul>
         
       </li>
     
-      <li>
-        <h3 class="chapter-title"><a href="/cn/guide/contributing.html" class="sidebar-link  ">如何参与社区</a></h3>
-        
-      </li>
-    
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link">旧语法文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link">旧文档</a></h3>
       </li>
     
   </ul>
@@ -293,7 +236,6 @@ Weexpack">
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -364,37 +306,20 @@ Weexpack">
         
       
     
-      
-      
-        
-      
-    
-      
-      
-        
-      
-    
-      
-      
-        
-      
-    
    
     
       <li>
         <h3 class="chapter-title"><a href="/cn/guide/index.html" class="sidebar-link  ">快速上手</a></h3>
         
-          <ul class="chapter">
-            
-              <li>
-                <a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a>
-              </li>
-            
-              <li>
-                <a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a>
-              </li>
-            
-          </ul>
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/dev-with-weexpack.html" class="sidebar-link current ">构建全新应用</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a></h3>
         
       </li>
     
@@ -427,36 +352,18 @@ Weexpack">
                 <a href="/cn/guide/intro/page-architecture.html" class="sidebar-link  ">Weex 页面结构</a>
               </li>
             
-          </ul>
-        
-      </li>
-    
-      <li>
-        <h3 class="chapter-title"><a href="/cn/guide/tools/index.html" class="sidebar-link current ">周边工具</a></h3>
-        
-          <ul class="chapter">
-            
               <li>
-                <a href="/cn/guide/tools/devtools.html" class="sidebar-link  ">使用 Devtools</a>
-              </li>
-            
-              <li>
-                <a href="/cn/guide/tools/weexpack.html" class="sidebar-link  ">使用 Weexpack</a>
+                <a href="/cn/guide/intro/devtools.html" class="sidebar-link  ">使用 Devtools</a>
               </li>
             
           </ul>
         
       </li>
     
-      <li>
-        <h3 class="chapter-title"><a href="/cn/guide/contributing.html" class="sidebar-link  ">如何参与社区</a></h3>
-        
-      </li>
-    
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link">旧语法文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link">旧文档</a></h3>
       </li>
     
   </ul>
@@ -470,16 +377,13 @@ Weexpack">
   
     
       <h1 class="article-title" itemprop="name">
-        周边工具
+        构建全新应用
       </h1>
     
   
-  <time class="article-date" datetime="2017-03-13T06:24:16.000Z">Updated time: 13/03/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:50.000Z">Updated time: 16/03/2017</time>
 </header>
-    <h1 id="周边工具"><a href="#周边工具" class="headerlink" title="周边工具"></a>周边工具</h1><ul>
-<li><a href="./devtools.html">Devtools</a></li>
-<li><a href="./weexpack.html">Weexpack</a></li>
-</ul>
+    <h1 id="构建全新应用"><a href="#构建全新应用" class="headerlink" title="构建全新应用"></a>构建全新应用</h1><p>Work in process.</p>
 
   </div>
   
@@ -496,12 +400,12 @@ Weexpack">
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/guide/tools/index.html" data-lang="en">English</a>
+          <a href="/guide/dev-with-weexpack.html">English</a>
         </li>
         <li>
-          <a href="/cn/guide/tools/index.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/guide/dev-with-weexpack.html">中文</a>
         </li>
       </ul>
     </div>
@@ -511,7 +415,7 @@ Weexpack">
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

@@ -9,11 +9,11 @@
 UINative DOM ModelWeex page has its HTML-like DOM model to">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Weex Page Architecture">
-<meta property="og:url" content="https://weex.apache.org/guide/intro/page-architecture.html">
+<meta property="og:url" content="https://weex-project.io/guide/intro/page-architecture.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Weex Page ArchitectureA Weex page is a independent mobile page which includes UI, interaction logic, device power, lifecycle management etc.
 UINative DOM ModelWeex page has its HTML-like DOM model to">
-<meta property="og:updated_time" content="2017-03-13T06:24:16.000Z">
+<meta property="og:updated_time" content="2017-03-16T06:21:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Weex Page Architecture">
 <meta name="twitter:description" content="Weex Page ArchitectureA Weex page is a independent mobile page which includes UI, interaction logic, device power, lifecycle management etc.
@@ -29,6 +29,7 @@ UINative DOM ModelWeex page has its HTML-like DOM model to">
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="guide" class="lang-en">
@@ -48,19 +49,19 @@ UINative DOM ModelWeex page has its HTML-like DOM model to">
         <li><a href="/references">References</a></li>
         <li><a href="/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">Services &amp; Tools</a>
+            <a href="javascript:;">Download</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -69,34 +70,18 @@ UINative DOM ModelWeex page has its HTML-like DOM model to">
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/guide/intro/page-architecture.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/guide/intro/page-architecture.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -109,13 +94,12 @@ UINative DOM ModelWeex page has its HTML-like DOM model to">
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -189,37 +173,20 @@ UINative DOM ModelWeex page has its HTML-like DOM model to">
         
       
     
-      
-      
-        
-      
-    
-      
-      
-        
-      
-    
-      
-      
-        
-      
-    
    
     
       <li>
         <h3 class="chapter-title"><a href="/guide/index.html" class="sidebar-link  ">Get Started</a></h3>
         
-          <ul class="chapter">
-            
-              <li>
-                <a href="/guide/set-up-env.html" class="sidebar-link  ">Set Up Development Environment</a>
-              </li>
-            
-              <li>
-                <a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a>
-              </li>
-            
-          </ul>
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/guide/dev-with-weexpack.html" class="sidebar-link  ">Build A New App</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a></h3>
         
       </li>
     
@@ -252,36 +219,18 @@ UINative DOM ModelWeex page has its HTML-like DOM model to">
                 <a href="/guide/intro/page-architecture.html" class="sidebar-link current ">Weex Page Architecture</a>
               </li>
             
-          </ul>
-        
-      </li>
-    
-      <li>
-        <h3 class="chapter-title"><a href="/guide/tools/index.html" class="sidebar-link  ">Tools</a></h3>
-        
-          <ul class="chapter">
-            
               <li>
-                <a href="/guide/tools/devtools.html" class="sidebar-link  ">Using Devtools</a>
-              </li>
-            
-              <li>
-                <a href="/guide/tools/weexpack.html" class="sidebar-link  ">Using Weexpack</a>
+                <a href="/guide/intro/devtools.html" class="sidebar-link  ">Using Devtools</a>
               </li>
             
           </ul>
         
       </li>
     
-      <li>
-        <h3 class="chapter-title"><a href="/guide/contributing.html" class="sidebar-link  ">How to Contribute</a></h3>
-        
-      </li>
-    
     
     
       <li>
-        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link">Old Syntax Doc</a></h3>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link">Legacy</a></h3>
       </li>
     
   </ul>
@@ -290,7 +239,6 @@ UINative DOM ModelWeex page has its HTML-like DOM model to">
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -361,37 +309,20 @@ UINative DOM ModelWeex page has its HTML-like DOM model to">
         
       
     
-      
-      
-        
-      
-    
-      
-      
-        
-      
-    
-      
-      
-        
-      
-    
    
     
       <li>
         <h3 class="chapter-title"><a href="/guide/index.html" class="sidebar-link  ">Get Started</a></h3>
         
-          <ul class="chapter">
-            
-              <li>
-                <a href="/guide/set-up-env.html" class="sidebar-link  ">Set Up Development Environment</a>
-              </li>
-            
-              <li>
-                <a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a>
-              </li>
-            
-          </ul>
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/guide/dev-with-weexpack.html" class="sidebar-link  ">Build A New App</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a></h3>
         
       </li>
     
@@ -424,36 +355,18 @@ UINative DOM ModelWeex page has its HTML-like DOM model to">
                 <a href="/guide/intro/page-architecture.html" class="sidebar-link current ">Weex Page Architecture</a>
               </li>
             
-          </ul>
-        
-      </li>
-    
-      <li>
-        <h3 class="chapter-title"><a href="/guide/tools/index.html" class="sidebar-link  ">Tools</a></h3>
-        
-          <ul class="chapter">
-            
               <li>
-                <a href="/guide/tools/devtools.html" class="sidebar-link  ">Using Devtools</a>
-              </li>
-            
-              <li>
-                <a href="/guide/tools/weexpack.html" class="sidebar-link  ">Using Weexpack</a>
+                <a href="/guide/intro/devtools.html" class="sidebar-link  ">Using Devtools</a>
               </li>
             
           </ul>
         
       </li>
     
-      <li>
-        <h3 class="chapter-title"><a href="/guide/contributing.html" class="sidebar-link  ">How to Contribute</a></h3>
-        
-      </li>
-    
     
     
       <li>
-        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link">Old Syntax Doc</a></h3>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link">Legacy</a></h3>
       </li>
     
   </ul>
@@ -471,7 +384,7 @@ UINative DOM ModelWeex page has its HTML-like DOM model to">
       </h1>
     
   
-  <time class="article-date" datetime="2017-03-13T06:24:16.000Z">Updated time: 13/03/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:51.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="Weex-Page-Architecture"><a href="#Weex-Page-Architecture" class="headerlink" title="Weex Page Architecture"></a>Weex Page Architecture</h1><p>A Weex page is a independent mobile page which includes UI, interaction logic, device power, lifecycle management etc.</p>
 <h2 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h2><h3 id="Native-DOM-Model"><a href="#Native-DOM-Model" class="headerlink" title="Native DOM Model"></a>Native DOM Model</h3><p>Weex page has its HTML-like DOM model to manage UI. It will be decomposed into a DOM tree which consists of some DOM nodes.</p>
@@ -512,12 +425,12 @@ UINative DOM ModelWeex page has its HTML-like DOM model to">
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/guide/intro/page-architecture.html" data-lang="en">English</a>
+          <a href="/guide/intro/page-architecture.html">English</a>
         </li>
         <li>
-          <a href="/cn/guide/intro/page-architecture.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/guide/intro/page-architecture.html">中文</a>
         </li>
       </ul>
     </div>
@@ -527,7 +440,7 @@ UINative DOM ModelWeex page has its HTML-like DOM model to">
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

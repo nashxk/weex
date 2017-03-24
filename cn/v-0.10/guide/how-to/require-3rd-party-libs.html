@@ -9,11 +9,11 @@
 在 Get started 中，我们学习了知道可以在 &amp;lt;script&amp;gt; 标签中编写 JavaScript 代码。但是在项目中常用的功能或模块，例如解析url参数，将属性从一些对象扩展到另一个对象等等，在每个组件中复制和粘贴这些代码是一个糟糕的做法，因此迫切需要通过 require 的方式对可复用的代码进行管理。Weex 为开发人员提供了 CommonJS 风格的">
 <meta property="og:type" content="website">
 <meta property="og:title" content="如何引入第三方库">
-<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/guide/how-to/require-3rd-party-libs.html">
+<meta property="og:url" content="https://weex-project.io/cn/v-0.10/guide/how-to/require-3rd-party-libs.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="如何引入第三方库0.4
 在 Get started 中，我们学习了知道可以在 &amp;lt;script&amp;gt; 标签中编写 JavaScript 代码。但是在项目中常用的功能或模块，例如解析url参数，将属性从一些对象扩展到另一个对象等等，在每个组件中复制和粘贴这些代码是一个糟糕的做法，因此迫切需要通过 require 的方式对可复用的代码进行管理。Weex 为开发人员提供了 CommonJS 风格的">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-03-16T06:21:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何引入第三方库">
 <meta name="twitter:description" content="如何引入第三方库0.4
@@ -29,6 +29,7 @@
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="guide" class="lang-cn">
@@ -48,19 +49,19 @@
         <li><a href="/cn/references">手册</a></li>
         <li><a href="/cn/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">工具和服务</a>
+            <a href="javascript:;">下载</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -69,34 +70,18 @@
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/v-0.10/guide/how-to/require-3rd-party-libs.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/v-0.10/guide/how-to/require-3rd-party-libs.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -109,13 +94,12 @@
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -300,7 +284,6 @@
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -491,7 +474,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:50.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="如何引入第三方库"><a href="#如何引入第三方库" class="headerlink" title="如何引入第三方库"></a>如何引入第三方库</h1><p><span class="weex-version">0.4</span></p>
 <p>在 <a href="../index.html">Get started</a> 中，我们学习了知道可以在 <code>&lt;script&gt;</code> 标签中编写 JavaScript 代码。但是在项目中常用的功能或模块，例如解析url参数，将属性从一些对象扩展到另一个对象等等，在每个组件中复制和粘贴这些代码是一个糟糕的做法，因此迫切需要通过 <code>require</code> 的方式对可复用的代码进行管理。Weex 为开发人员提供了 CommonJS 风格的 require 语法。</p>
@@ -520,12 +503,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/v-0.10/guide/how-to/require-3rd-party-libs.html" data-lang="en">English</a>
+          <a href="/v-0.10/guide/how-to/require-3rd-party-libs.html">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/guide/how-to/require-3rd-party-libs.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/v-0.10/guide/how-to/require-3rd-party-libs.html">中文</a>
         </li>
       </ul>
     </div>
@@ -535,7 +518,7 @@
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">
