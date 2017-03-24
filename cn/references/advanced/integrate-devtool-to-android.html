@@ -9,19 +9,19 @@
 Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devtools aar 的依赖，也可以直接对源码依赖。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="集成 Devtools 到 Android">
-<meta property="og:url" content="https://weex.apache.org/cn/references/advanced/integrate-devtool-to-android.html">
+<meta property="og:url" content="https://weex-project.io/cn/references/advanced/integrate-devtool-to-android.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="集成 Devtools 到 AndroidWeex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 Android 端如何接入 Weex Devtools。
 Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devtools aar 的依赖，也可以直接对源码依赖。">
-<meta property="og:image" content="https://weex.apache.org//img.alicdn.com/tps/TB1aKy4NXXXXXacXVXXXXXXXXXX-1019-756.png">
-<meta property="og:image" content="https://weex.apache.org//img.alicdn.com/tps/TB13fwSKFXXXXXDaXXXXXXXXXXX-887-828.png">
-<meta property="og:image" content="https://weex.apache.org//img.alicdn.com/tps/TB1igLoMVXXXXawapXXXXXXXXXX-786-1610.jpg">
-<meta property="og:updated_time" content="2017-02-28T06:16:31.000Z">
+<meta property="og:image" content="https://weex-project.io//img.alicdn.com/tps/TB1aKy4NXXXXXacXVXXXXXXXXXX-1019-756.png">
+<meta property="og:image" content="https://weex-project.io//img.alicdn.com/tps/TB13fwSKFXXXXXDaXXXXXXXXXXX-887-828.png">
+<meta property="og:image" content="https://weex-project.io//img.alicdn.com/tps/TB1igLoMVXXXXawapXXXXXXXXXX-786-1610.jpg">
+<meta property="og:updated_time" content="2017-03-16T06:21:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集成 Devtools 到 Android">
 <meta name="twitter:description" content="集成 Devtools 到 AndroidWeex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 Android 端如何接入 Weex Devtools。
 Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devtools aar 的依赖，也可以直接对源码依赖。">
-<meta name="twitter:image" content="https://weex.apache.org//img.alicdn.com/tps/TB1aKy4NXXXXXacXVXXXXXXXXXX-1019-756.png">
+<meta name="twitter:image" content="https://weex-project.io//img.alicdn.com/tps/TB1aKy4NXXXXXacXVXXXXXXXXXX-1019-756.png">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -33,6 +33,7 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="references" class="lang-cn">
@@ -52,19 +53,19 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
         <li><a href="/cn/references">手册</a></li>
         <li><a href="/cn/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">工具和服务</a>
+            <a href="javascript:;">下载</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -73,34 +74,18 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/references/advanced/integrate-devtool-to-android.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/references/advanced/integrate-devtool-to-android.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -113,13 +98,12 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -137,16 +121,6 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
   <ul class="doc-summary">
     
     
-    
-      
-      
-        
-      
-    
-      
-      
-        
-      
     
       
       
@@ -490,11 +464,11 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
               </li>
             
               <li>
-                <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -567,10 +541,6 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
               </li>
             
               <li>
-                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
-              </li>
-            
-              <li>
                 <a href="/cn/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
               </li>
             
@@ -632,11 +602,6 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
-        
-      </li>
-    
-      <li>
         <h3 class="chapter-title"><a href="/cn/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
         
           <ul class="chapter">
@@ -687,13 +652,9 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
         
           <ul class="chapter">
-            
-              <li>
-                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
-              </li>
             
               <li>
                 <a href="/cn/references/migration/migration-from-weex.html" class="sidebar-link  ">如何将原有 Weex 项目改造成 Vue 版本</a>
@@ -707,10 +668,15 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
         
       </li>
     
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        
+      </li>
+    
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
       </li>
     
   </ul>
@@ -719,7 +685,6 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -1020,16 +985,6 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
         
       
     
-      
-      
-        
-      
-    
-      
-      
-        
-      
-    
    
     
       <li>
@@ -1087,11 +1042,11 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
               </li>
             
               <li>
-                <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -1164,10 +1119,6 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
               </li>
             
               <li>
-                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
-              </li>
-            
-              <li>
                 <a href="/cn/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
               </li>
             
@@ -1229,11 +1180,6 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
-        
-      </li>
-    
-      <li>
         <h3 class="chapter-title"><a href="/cn/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
         
           <ul class="chapter">
@@ -1284,13 +1230,9 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
         
           <ul class="chapter">
-            
-              <li>
-                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
-              </li>
             
               <li>
                 <a href="/cn/references/migration/migration-from-weex.html" class="sidebar-link  ">如何将原有 Weex 项目改造成 Vue 版本</a>
@@ -1304,10 +1246,15 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
         
       </li>
     
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        
+      </li>
+    
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
       </li>
     
   </ul>
@@ -1325,7 +1272,7 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:16:31.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:50.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="集成-Devtools-到-Android"><a href="#集成-Devtools-到-Android" class="headerlink" title="集成 Devtools 到 Android"></a>集成 Devtools 到 Android</h1><p>Weex Devtools 能够方便调试 Weex 页面，但此功能离不开 Native 的支持。如何让你的 App 也集成 Devtools，在本章将会详细说明 Android 端如何接入 Weex Devtools。</p>
 <h2 id="Android-应用接入"><a href="#Android-应用接入" class="headerlink" title="Android 应用接入"></a>Android 应用接入</h2><h3 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h3><p>可以通过 Gradle 或者 Maven 添加对 devtools aar 的依赖，也可以直接对源码依赖。强烈建议使用最新版本，因为 Weex SDK 和 devtools 都在快速的迭代开发中，新版本会有更多惊喜，同时也修复老版本中一些问题。最新的 release 版本可在<a href="https://github.com/weexteam/weex_devtools_android/releases" target="_blank" rel="external">这里</a>查看。所有的 release 版本都会发布到 <a href="https://bintray.com/alibabaweex/maven/weex_inspector" target="_blank" rel="external">jcenter repo</a>。</p>
@@ -1381,7 +1328,7 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
 </tbody>
 </table>
 <h3 id="添加-Debug-模式开关"><a href="#添加-Debug-模式开关" class="headerlink" title="添加 Debug 模式开关"></a>添加 Debug 模式开关</h3><p>控制调试模式的打开和关闭的关键点可以概括为三条规则。</p>
-<p><strong>规则一：通过 <code>sRemoteDebugMode</code> 和 <code>sRemoteDebugProxyUrl</code> 来设置开关和 Debugger Server 地址。</strong></p>
+<p><strong>规则一：通过 <code>sRemoteDebugMode</code> 和 <code>sRemoteDebugProxyUrl</code> 和来设置开关和 Debugger Server 地址。</strong></p>
 <p>Weex SDK 的 <code>WXEnvironment</code> 类里有一对静态变量标记了 Weex 当前的调试模式是否开启分别是：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> sRemoteDebugMode; <span class="comment">// 是否开启 debug 模式，默认关闭</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> String sRemoteDebugProxyUrl; <span class="comment">// DebugServer的websocket地址</span></div></pre></td></tr></table></figure>
 <p>无论在 App 中无论以何种方式设置 Debug 模式，都必须在恰当的时机调用类似如下的方法来设置 <code>WXEnvironment.sRemoteDebugMode</code> 和 <code>WXEnvironment.sRemoteDebugProxyUrl</code>。</p>
@@ -1395,7 +1342,7 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
 <p>广播 <code>ACTION_DEBUG_INSTANCE_REFRESH</code> 在调试模式切换和 Chrome 调试页面刷新时发出，主要用来通知当前的 Weex容器以 Debug 模式重新加载当前页。在 playground 中的处理过程如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RefreshBroadcastReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (IWXDebugProxy.ACTION_DEBUG_INSTANCE_REFRESH.equals(intent.getAction())) &#123;</div><div class="line">      <span class="keyword">if</span> (mUri != <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">if</span> (TextUtils.equals(mUri.getScheme(), <span class="string">"http"</span>) || TextUtils.equals(mUri.getScheme(), <span class="string">"https"</span>)) &#123;</div><div class="line">          loadWXfromService(mUri.toString());</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">          loadWXfromLocal(<span class="keyword">true</span>);</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>如果接入方的容器未对该广播做处理，那么将不支持刷新和调试过程中编辑代码时的 watch 功能。</p>
-<h2 id="接入示例"><a href="#接入示例" class="headerlink" title="接入示例"></a>接入示例</h2><p>最简单方式就是复用 Playground 的相关代码，比如扫码和刷新等模块，但是扫码不是必须的，它只是与 App 通信的一种形式，二维码里的包含 DebugServer IP 及 bundle 地址等信息，用于建立 App 和 Debugger Server 之间的连接及动态加载 bundle。在 Playground 中给出了两种开启 debug 模式的范例。</p>
+<h2 id="接入示例"><a href="#接入示例" class="headerlink" title="接入示例"></a>接入示例</h2><p>最简单方式就是复用 Playground 的相关代码，比如扫码和刷新等模块，但是扫码不是必须的，它只是与 App 通信的一种形式，二维码里的包含DebugServer IP 及 bundle 地址等信息，用于建立 App 和 Debugger Server 之间的连接及动态加载 bundle。在 Playground 中给出了两种开启 debug 模式的范例。</p>
 <ul>
 <li>范例1：通过在 <code>XXXApplication</code> 中设置开关打开调试模式</li>
 </ul>
@@ -1484,12 +1431,12 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/references/advanced/integrate-devtool-to-android.html" data-lang="en">English</a>
+          <a href="/references/advanced/integrate-devtool-to-android.html">English</a>
         </li>
         <li>
-          <a href="/cn/references/advanced/integrate-devtool-to-android.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/references/advanced/integrate-devtool-to-android.html">中文</a>
         </li>
       </ul>
     </div>
@@ -1499,7 +1446,7 @@ Android 应用接入添加依赖可以通过 Gradle 或者 Maven 添加对 devto
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

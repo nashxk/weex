@@ -10,20 +10,20 @@
 &amp;lt;template&amp;gt;  &amp;lt;list class=&quot;list&quot;&amp;gt;    &amp;lt;cel">
 <meta property="og:type" content="website">
 <meta property="og:title" content="<list>">
-<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/references/components/list.html">
+<meta property="og:url" content="https://weex-project.io/cn/v-0.10/references/components/list.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="&amp;lt;list&amp;gt;&amp;lt;list&amp;gt; 组件是提供垂直列表功能的核心组件，拥有平滑的滚动和高效的内存管理，非常适合用于长列表的展示。最简单的使用方法是在 &amp;lt;list&amp;gt; 标签内使用一组由简单数组 repeat 生成的 &amp;lt;cell&amp;gt; 标签填充。
 一个最简例子：
 &amp;lt;template&amp;gt;  &amp;lt;list class=&quot;list&quot;&amp;gt;    &amp;lt;cel">
-<meta property="og:image" content="https://weex.apache.org/../images/list_2.jpg">
-<meta property="og:image" content="https://weex.apache.org/../images/list_4.jpg">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:image" content="https://weex-project.io/../images/list_2.jpg">
+<meta property="og:image" content="https://weex-project.io/../images/list_4.jpg">
+<meta property="og:updated_time" content="2017-03-16T06:21:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="<list>">
 <meta name="twitter:description" content="&amp;lt;list&amp;gt;&amp;lt;list&amp;gt; 组件是提供垂直列表功能的核心组件，拥有平滑的滚动和高效的内存管理，非常适合用于长列表的展示。最简单的使用方法是在 &amp;lt;list&amp;gt; 标签内使用一组由简单数组 repeat 生成的 &amp;lt;cell&amp;gt; 标签填充。
 一个最简例子：
 &amp;lt;template&amp;gt;  &amp;lt;list class=&quot;list&quot;&amp;gt;    &amp;lt;cel">
-<meta name="twitter:image" content="https://weex.apache.org/../images/list_2.jpg">
+<meta name="twitter:image" content="https://weex-project.io/../images/list_2.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -35,6 +35,7 @@
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="references" class="lang-cn">
@@ -54,19 +55,19 @@
         <li><a href="/cn/references">手册</a></li>
         <li><a href="/cn/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">工具和服务</a>
+            <a href="javascript:;">下载</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -75,34 +76,18 @@
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/v-0.10/references/components/list.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/v-0.10/references/components/list.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -115,13 +100,12 @@
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -581,7 +565,6 @@
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -1047,7 +1030,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:50.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="lt-list-gt"><a href="#lt-list-gt" class="headerlink" title="&lt;list&gt;"></a>&lt;list&gt;</h1><p><code>&lt;list&gt;</code> 组件是提供垂直列表功能的核心组件，拥有平滑的滚动和高效的内存管理，非常适合用于长列表的展示。最简单的使用方法是在 <code>&lt;list&gt;</code> 标签内使用一组由简单数组 <code>repeat</code> 生成的 <code>&lt;cell&gt;</code> 标签填充。</p>
 <p>一个最简例子：</p>
@@ -1143,12 +1126,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/v-0.10/references/components/list.html" data-lang="en">English</a>
+          <a href="/v-0.10/references/components/list.html">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/references/components/list.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/v-0.10/references/components/list.html">中文</a>
         </li>
       </ul>
     </div>
@@ -1158,7 +1141,7 @@
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

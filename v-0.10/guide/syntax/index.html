@@ -9,11 +9,11 @@
 A simple Weex page sample is just a piece of &amp;lt;template&amp;gt;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Syntax">
-<meta property="og:url" content="https://weex.apache.org/v-0.10/guide/syntax/index.html">
+<meta property="og:url" content="https://weex-project.io/v-0.10/guide/syntax/index.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="SyntaxThe syntax of Weex is deeply inspired from Vue.js, an elegant JavaScript framework with component system and reactive data binding.
 A simple Weex page sample is just a piece of &amp;lt;template&amp;gt;">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-03-16T06:21:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Syntax">
 <meta name="twitter:description" content="SyntaxThe syntax of Weex is deeply inspired from Vue.js, an elegant JavaScript framework with component system and reactive data binding.
@@ -29,6 +29,7 @@ A simple Weex page sample is just a piece of &amp;lt;template&amp;gt;">
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="guide" class="lang-en">
@@ -48,19 +49,19 @@ A simple Weex page sample is just a piece of &amp;lt;template&amp;gt;">
         <li><a href="/references">References</a></li>
         <li><a href="/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">Services &amp; Tools</a>
+            <a href="javascript:;">Download</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -69,34 +70,18 @@ A simple Weex page sample is just a piece of &amp;lt;template&amp;gt;">
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/v-0.10/guide/syntax/index.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/v-0.10/guide/syntax/index.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -109,13 +94,12 @@ A simple Weex page sample is just a piece of &amp;lt;template&amp;gt;">
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -317,7 +301,6 @@ A simple Weex page sample is just a piece of &amp;lt;template&amp;gt;">
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -525,7 +508,7 @@ A simple Weex page sample is just a piece of &amp;lt;template&amp;gt;">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:51.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h1><p><em>The syntax of Weex is deeply inspired from <a href="http://vuejs.org/" target="_blank" rel="external">Vue.js</a>, an elegant JavaScript framework with component system and reactive data binding.</em></p>
 <p>A simple Weex page sample is just a piece of <code>&lt;template&gt;</code> code, a piece of <code>&lt;style&gt;</code> code and a piece of <code>&lt;script&gt;</code> code. The three parts together describe a whole Weex page.</p>
@@ -580,12 +563,12 @@ A simple Weex page sample is just a piece of &amp;lt;template&amp;gt;">
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/v-0.10/guide/syntax/index.html" data-lang="en">English</a>
+          <a href="/v-0.10/guide/syntax/index.html">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/guide/syntax/index.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/v-0.10/guide/syntax/index.html">中文</a>
         </li>
       </ul>
     </div>
@@ -595,7 +578,7 @@ A simple Weex page sample is just a piece of &amp;lt;template&amp;gt;">
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

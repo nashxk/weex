@@ -6,33 +6,33 @@
   <title>globalEvent | Weex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="全局事件0.8 (开发中)
-globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的变化。全局事件是需要额外 APIs 处理的次要 API。你能通过 addEventListener 注册事件监听，当你不再需要的时候，也可以通过 removeEventListener 取消事件监听。Vue 版本暂不支持 globalEvent。
+globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的变化。全局事件是需要额外 APIs 处理的次要 API。你能通过 addEventListener 注册事件监听，当你不再需要的时候，也可以通过 removingEventListener 取消事件监听。
 提醒
 
 这是一个实例级别的事件，而非应用级别。
 
-如何让">
+如何让你的模块支持全局事件API 开发完成后，当">
 <meta property="og:type" content="website">
 <meta property="og:title" content="globalEvent">
-<meta property="og:url" content="https://weex.apache.org/cn/references/modules/globalevent.html">
+<meta property="og:url" content="https://weex-project.io/cn/references/modules/globalevent.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="全局事件0.8 (开发中)
-globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的变化。全局事件是需要额外 APIs 处理的次要 API。你能通过 addEventListener 注册事件监听，当你不再需要的时候，也可以通过 removeEventListener 取消事件监听。Vue 版本暂不支持 globalEvent。
+globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的变化。全局事件是需要额外 APIs 处理的次要 API。你能通过 addEventListener 注册事件监听，当你不再需要的时候，也可以通过 removingEventListener 取消事件监听。
 提醒
 
 这是一个实例级别的事件，而非应用级别。
 
-如何让">
-<meta property="og:updated_time" content="2017-03-13T06:24:16.000Z">
+如何让你的模块支持全局事件API 开发完成后，当">
+<meta property="og:updated_time" content="2017-03-16T06:21:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="globalEvent">
 <meta name="twitter:description" content="全局事件0.8 (开发中)
-globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的变化。全局事件是需要额外 APIs 处理的次要 API。你能通过 addEventListener 注册事件监听，当你不再需要的时候，也可以通过 removeEventListener 取消事件监听。Vue 版本暂不支持 globalEvent。
+globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的变化。全局事件是需要额外 APIs 处理的次要 API。你能通过 addEventListener 注册事件监听，当你不再需要的时候，也可以通过 removingEventListener 取消事件监听。
 提醒
 
 这是一个实例级别的事件，而非应用级别。
 
-如何让">
+如何让你的模块支持全局事件API 开发完成后，当">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -44,6 +44,7 @@ globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的�
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="references" class="lang-cn">
@@ -63,19 +64,19 @@ globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的�
         <li><a href="/cn/references">手册</a></li>
         <li><a href="/cn/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">工具和服务</a>
+            <a href="javascript:;">下载</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -84,34 +85,18 @@ globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的�
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/references/modules/globalevent.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/references/modules/globalevent.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -124,13 +109,12 @@ globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的�
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -148,16 +132,6 @@ globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的�
   <ul class="doc-summary">
     
     
-    
-      
-      
-        
-      
-    
-      
-      
-        
-      
     
       
       
@@ -501,11 +475,11 @@ globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的�
               </li>
             
               <li>
-                <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -578,10 +552,6 @@ globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的�
               </li>
             
               <li>
-                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
-              </li>
-            
-              <li>
                 <a href="/cn/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
               </li>
             
@@ -643,11 +613,6 @@ globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的�
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
-        
-      </li>
-    
-      <li>
         <h3 class="chapter-title"><a href="/cn/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
         
           <ul class="chapter">
@@ -698,13 +663,9 @@ globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的�
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
         
           <ul class="chapter">
-            
-              <li>
-                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
-              </li>
             
               <li>
                 <a href="/cn/references/migration/migration-from-weex.html" class="sidebar-link  ">如何将原有 Weex 项目改造成 Vue 版本</a>
@@ -718,10 +679,15 @@ globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的�
         
       </li>
     
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        
+      </li>
+    
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
       </li>
     
   </ul>
@@ -730,7 +696,6 @@ globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的�
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -1031,16 +996,6 @@ globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的�
         
       
     
-      
-      
-        
-      
-    
-      
-      
-        
-      
-    
    
     
       <li>
@@ -1098,11 +1053,11 @@ globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的�
               </li>
             
               <li>
-                <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -1175,10 +1130,6 @@ globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的�
               </li>
             
               <li>
-                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
-              </li>
-            
-              <li>
                 <a href="/cn/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
               </li>
             
@@ -1240,11 +1191,6 @@ globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的�
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
-        
-      </li>
-    
-      <li>
         <h3 class="chapter-title"><a href="/cn/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
         
           <ul class="chapter">
@@ -1295,13 +1241,9 @@ globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的�
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
         
           <ul class="chapter">
-            
-              <li>
-                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
-              </li>
             
               <li>
                 <a href="/cn/references/migration/migration-from-weex.html" class="sidebar-link  ">如何将原有 Weex 项目改造成 Vue 版本</a>
@@ -1315,10 +1257,15 @@ globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的�
         
       </li>
     
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        
+      </li>
+    
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
       </li>
     
   </ul>
@@ -1336,10 +1283,10 @@ globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的�
       </h1>
     
   
-  <time class="article-date" datetime="2017-03-13T06:24:16.000Z">Updated time: 13/03/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:50.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="全局事件"><a href="#全局事件" class="headerlink" title="全局事件"></a>全局事件</h1><p><span class="weex-version">0.8 (开发中)</span></p>
-<p><code>globalEvent</code> 用于监听持久性事件，例如定位信息，陀螺仪等的变化。全局事件是需要额外 APIs 处理的次要 API。你能通过 <code>addEventListener</code> 注册事件监听，当你不再需要的时候，也可以通过 <code>removeEventListener</code> 取消事件监听。Vue 版本暂不支持 <code>globalEvent</code>。</p>
+<p><code>globalEvent</code> 用于监听持久性事件，例如定位信息，陀螺仪等的变化。全局事件是需要额外 APIs 处理的次要 API。你能通过 <code>addEventListener</code> 注册事件监听，当你不再需要的时候，也可以通过 <code>removingEventListener</code> 取消事件监听。</p>
 <p><em>提醒</em></p>
 <ul>
 <li>这是一个实例级别的事件，而非应用级别。</li>
@@ -1378,12 +1325,12 @@ globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的�
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/references/modules/globalevent.html" data-lang="en">English</a>
+          <a href="/references/modules/globalevent.html">English</a>
         </li>
         <li>
-          <a href="/cn/references/modules/globalevent.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/references/modules/globalevent.html">中文</a>
         </li>
       </ul>
     </div>
@@ -1393,7 +1340,7 @@ globalEvent 用于监听持久性事件，例如定位信息，陀螺仪等的�
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

@@ -12,14 +12,14 @@ Component 扩展 实现特别功能的 Native 控件。例如：RichTextview，R
 Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Android 扩展">
-<meta property="og:url" content="https://weex.apache.org/cn/references/advanced/extend-to-android.html">
+<meta property="og:url" content="https://weex-project.io/cn/references/advanced/extend-to-android.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Android 扩展Weex 提供了扩展机制，可以根据自己的业务进行定制自己的功能。主要分为两类扩展：  
 
 Module 扩展 非 UI 的特定功能。例如 sendHttp、openURL 等。
 Component 扩展 实现特别功能的 Native 控件。例如：RichTextview，RefreshListview 等。
 Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
-<meta property="og:updated_time" content="2017-02-28T06:16:31.000Z">
+<meta property="og:updated_time" content="2017-03-16T06:21:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 扩展">
 <meta name="twitter:description" content="Android 扩展Weex 提供了扩展机制，可以根据自己的业务进行定制自己的功能。主要分为两类扩展：  
@@ -38,6 +38,7 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="references" class="lang-cn">
@@ -57,19 +58,19 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
         <li><a href="/cn/references">手册</a></li>
         <li><a href="/cn/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">工具和服务</a>
+            <a href="javascript:;">下载</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -78,34 +79,18 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/references/advanced/extend-to-android.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/references/advanced/extend-to-android.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -118,13 +103,12 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -142,16 +126,6 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
   <ul class="doc-summary">
     
     
-    
-      
-      
-        
-      
-    
-      
-      
-        
-      
     
       
       
@@ -495,11 +469,11 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
               </li>
             
               <li>
-                <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -572,10 +546,6 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
               </li>
             
               <li>
-                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
-              </li>
-            
-              <li>
                 <a href="/cn/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
               </li>
             
@@ -637,11 +607,6 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
-        
-      </li>
-    
-      <li>
         <h3 class="chapter-title"><a href="/cn/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
         
           <ul class="chapter">
@@ -692,13 +657,9 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
         
           <ul class="chapter">
-            
-              <li>
-                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
-              </li>
             
               <li>
                 <a href="/cn/references/migration/migration-from-weex.html" class="sidebar-link  ">如何将原有 Weex 项目改造成 Vue 版本</a>
@@ -712,10 +673,15 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
         
       </li>
     
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        
+      </li>
+    
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
       </li>
     
   </ul>
@@ -724,7 +690,6 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -1025,16 +990,6 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
         
       
     
-      
-      
-        
-      
-    
-      
-      
-        
-      
-    
    
     
       <li>
@@ -1092,11 +1047,11 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
               </li>
             
               <li>
-                <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -1169,10 +1124,6 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
               </li>
             
               <li>
-                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
-              </li>
-            
-              <li>
                 <a href="/cn/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
               </li>
             
@@ -1234,11 +1185,6 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
-        
-      </li>
-    
-      <li>
         <h3 class="chapter-title"><a href="/cn/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
         
           <ul class="chapter">
@@ -1289,13 +1235,9 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
         
           <ul class="chapter">
-            
-              <li>
-                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
-              </li>
             
               <li>
                 <a href="/cn/references/migration/migration-from-weex.html" class="sidebar-link  ">如何将原有 Weex 项目改造成 Vue 版本</a>
@@ -1309,10 +1251,15 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
         
       </li>
     
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        
+      </li>
+    
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
       </li>
     
   </ul>
@@ -1330,7 +1277,7 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:16:31.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:50.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="Android-扩展"><a href="#Android-扩展" class="headerlink" title="Android 扩展"></a>Android 扩展</h1><p>Weex 提供了扩展机制，可以根据自己的业务进行定制自己的功能。<br>主要分为两类扩展：  </p>
 <ul>
@@ -1349,9 +1296,7 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
 <p>示例如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyModule</span> <span class="keyword">extends</span> <span class="title">WXModule</span> </span>&#123;</div><div class="line"></div><div class="line">  <span class="meta">@WXModuleAnno</span>(runOnUIThread = <span class="keyword">true</span>)</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printLog</span><span class="params">(String msg)</span> </span>&#123;</div><div class="line">    Toast.makeText(mWXSDKInstance.getContext(),msg,Toast.LENGTH_SHORT).show();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>JS 调用如下：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">onclick</span>=<span class="string">"click"</span>&gt;</span>点击我测试<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">click</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        weex.requireModule(<span class="string">'myModule'</span>).printLog(<span class="string">"我是一个测试!"</span>);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h4 id="支持-synchronous-asynchronous-回调"><a href="#支持-synchronous-asynchronous-回调" class="headerlink" title="支持 synchronous/asynchronous 回调"></a>支持 synchronous/asynchronous 回调</h4><p>你可以添加 <code>@JSMethod(uiThread = false或true)</code> 注释来选择 moudle 的回调模式。请参见以下示例：</p>
-<figure class="highlight"><table><tr><td class="code"><pre><div class="line">  // as sync-callback mode</div><div class="line">@JSMethod (uiThread = false)</div><div class="line">public void testSyncCall()&#123;</div><div class="line">    WXLogUtils.d("WXComponentSyncTest : Thread.currentThread().getName());</div><div class="line">&#125;</div><div class="line"></div><div class="line">// as async-callback mode</div><div class="line">@JSMethod (uiThread = true)</div><div class="line">public void testAsyncCall()&#123;</div><div class="line">    WXLogUtils.e("WXComponentASynTest : Thread.currentThread().getName() );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">onclick</span>=<span class="string">"click"</span>&gt;</span>点击我测试<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      <span class="attr">click</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">require</span>(<span class="string">'@weex-module/myModule'</span>).printLog(<span class="string">"我是一个测试!"</span>);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="Component-扩展"><a href="#Component-扩展" class="headerlink" title="Component 扩展"></a>Component 扩展</h2><ol>
 <li>Component 扩展类必须集成 WXComponent.</li>
 <li>Component 对应的设置属性的方法必须添加注解 @WXComponentProp(name=value(value is attr or style of dsl))</li>
@@ -1395,12 +1340,12 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/references/advanced/extend-to-android.html" data-lang="en">English</a>
+          <a href="/references/advanced/extend-to-android.html">English</a>
         </li>
         <li>
-          <a href="/cn/references/advanced/extend-to-android.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/references/advanced/extend-to-android.html">中文</a>
         </li>
       </ul>
     </div>
@@ -1410,7 +1355,7 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现">
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

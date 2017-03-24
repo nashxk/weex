@@ -8,10 +8,10 @@
   <meta name="description" content="Transform Code into Js BundleParagraphs Maintain Your Component Code and Require 3rd Party Libs show us how to write and organize weex code. However, Weex DSL code must be transformed to js bundle so">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Transform Code into Js Bundle">
-<meta property="og:url" content="https://weex.apache.org/v-0.10/guide/how-to/transform-code-into-js-bundle.html">
+<meta property="og:url" content="https://weex-project.io/v-0.10/guide/how-to/transform-code-into-js-bundle.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Transform Code into Js BundleParagraphs Maintain Your Component Code and Require 3rd Party Libs show us how to write and organize weex code. However, Weex DSL code must be transformed to js bundle so">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-03-16T06:21:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Transform Code into Js Bundle">
 <meta name="twitter:description" content="Transform Code into Js BundleParagraphs Maintain Your Component Code and Require 3rd Party Libs show us how to write and organize weex code. However, Weex DSL code must be transformed to js bundle so">
@@ -26,6 +26,7 @@
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="guide" class="lang-en">
@@ -45,19 +46,19 @@
         <li><a href="/references">References</a></li>
         <li><a href="/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">Services &amp; Tools</a>
+            <a href="javascript:;">Download</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -66,34 +67,18 @@
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/v-0.10/guide/how-to/transform-code-into-js-bundle.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/v-0.10/guide/how-to/transform-code-into-js-bundle.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -106,13 +91,12 @@
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -314,7 +298,6 @@
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -522,7 +505,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:51.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="Transform-Code-into-Js-Bundle"><a href="#Transform-Code-into-Js-Bundle" class="headerlink" title="Transform Code into Js Bundle"></a>Transform Code into Js Bundle</h1><p>Paragraphs Maintain Your Component Code and <a href="./require-3rd-party-libs.html">Require 3rd Party Libs</a> show us how to write and organize weex code. However, Weex DSL code must be transformed to <code>js bundle</code> so that <code>js framework</code> can parse and execute it for iOS, Android and HTML5 portal. For more information, please refer to <a href="../../advanced/how-it-works.html">How It Works
 </a> and <a href="../../references/specs/js-bundle-format.html">JS Bundle Format</a>.</p>
@@ -581,12 +564,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/v-0.10/guide/how-to/transform-code-into-js-bundle.html" data-lang="en">English</a>
+          <a href="/v-0.10/guide/how-to/transform-code-into-js-bundle.html">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/guide/how-to/transform-code-into-js-bundle.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/v-0.10/guide/how-to/transform-code-into-js-bundle.html">中文</a>
         </li>
       </ul>
     </div>
@@ -596,7 +579,7 @@
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

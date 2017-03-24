@@ -8,7 +8,7 @@
   <meta name="description" content="DevtoolsWeex devtools is a custom devtools for weex that implements Chrome Debugging Protocol, it is designed to help you quickly inspect your app and debug your JS bundle source in a chrome web page,">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Using Devtools">
-<meta property="og:url" content="https://weex.apache.org/guide/tools/devtools.html">
+<meta property="og:url" content="https://weex-project.io/guide/intro/devtools.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="DevtoolsWeex devtools is a custom devtools for weex that implements Chrome Debugging Protocol, it is designed to help you quickly inspect your app and debug your JS bundle source in a chrome web page,">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB13fwSKFXXXXXDaXXXXXXXXXXX-887-828.png">
@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1oY6cKFXXXXXQaXXXXXXXXXXX-2880-1800.png">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1aPTEKFXXXXXaXXXXXXXXXXXX-1436-813.png">
 <meta property="og:image" content="https://img.alicdn.com/tps/TB1_trbKFXXXXc0XVXXXXXXXXXX-2880-1800.png">
-<meta property="og:updated_time" content="2017-03-13T06:24:16.000Z">
+<meta property="og:updated_time" content="2017-03-16T06:21:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Using Devtools">
 <meta name="twitter:description" content="DevtoolsWeex devtools is a custom devtools for weex that implements Chrome Debugging Protocol, it is designed to help you quickly inspect your app and debug your JS bundle source in a chrome web page,">
@@ -37,6 +37,7 @@
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="guide" class="lang-en">
@@ -56,19 +57,19 @@
         <li><a href="/references">References</a></li>
         <li><a href="/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">Services &amp; Tools</a>
+            <a href="javascript:;">Download</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -77,34 +78,18 @@
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/guide/tools/devtools.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/guide/tools/devtools.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -117,13 +102,12 @@
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -197,37 +181,20 @@
         
       
     
-      
-      
-        
-      
-    
-      
-      
-        
-      
-    
-      
-      
-        
-      
-    
    
     
       <li>
         <h3 class="chapter-title"><a href="/guide/index.html" class="sidebar-link  ">Get Started</a></h3>
         
-          <ul class="chapter">
-            
-              <li>
-                <a href="/guide/set-up-env.html" class="sidebar-link  ">Set Up Development Environment</a>
-              </li>
-            
-              <li>
-                <a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a>
-              </li>
-            
-          </ul>
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/guide/dev-with-weexpack.html" class="sidebar-link  ">Build A New App</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a></h3>
         
       </li>
     
@@ -260,36 +227,18 @@
                 <a href="/guide/intro/page-architecture.html" class="sidebar-link  ">Weex Page Architecture</a>
               </li>
             
-          </ul>
-        
-      </li>
-    
-      <li>
-        <h3 class="chapter-title"><a href="/guide/tools/index.html" class="sidebar-link  ">Tools</a></h3>
-        
-          <ul class="chapter">
-            
               <li>
-                <a href="/guide/tools/devtools.html" class="sidebar-link current ">Using Devtools</a>
-              </li>
-            
-              <li>
-                <a href="/guide/tools/weexpack.html" class="sidebar-link  ">Using Weexpack</a>
+                <a href="/guide/intro/devtools.html" class="sidebar-link current ">Using Devtools</a>
               </li>
             
           </ul>
         
       </li>
     
-      <li>
-        <h3 class="chapter-title"><a href="/guide/contributing.html" class="sidebar-link  ">How to Contribute</a></h3>
-        
-      </li>
-    
     
     
       <li>
-        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link">Old Syntax Doc</a></h3>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link">Legacy</a></h3>
       </li>
     
   </ul>
@@ -298,7 +247,6 @@
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -369,37 +317,20 @@
         
       
     
-      
-      
-        
-      
-    
-      
-      
-        
-      
-    
-      
-      
-        
-      
-    
    
     
       <li>
         <h3 class="chapter-title"><a href="/guide/index.html" class="sidebar-link  ">Get Started</a></h3>
         
-          <ul class="chapter">
-            
-              <li>
-                <a href="/guide/set-up-env.html" class="sidebar-link  ">Set Up Development Environment</a>
-              </li>
-            
-              <li>
-                <a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a>
-              </li>
-            
-          </ul>
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/guide/dev-with-weexpack.html" class="sidebar-link  ">Build A New App</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/guide/integrate-to-your-app.html" class="sidebar-link  ">Integrate to Your App</a></h3>
         
       </li>
     
@@ -432,36 +363,18 @@
                 <a href="/guide/intro/page-architecture.html" class="sidebar-link  ">Weex Page Architecture</a>
               </li>
             
-          </ul>
-        
-      </li>
-    
-      <li>
-        <h3 class="chapter-title"><a href="/guide/tools/index.html" class="sidebar-link  ">Tools</a></h3>
-        
-          <ul class="chapter">
-            
               <li>
-                <a href="/guide/tools/devtools.html" class="sidebar-link current ">Using Devtools</a>
-              </li>
-            
-              <li>
-                <a href="/guide/tools/weexpack.html" class="sidebar-link  ">Using Weexpack</a>
+                <a href="/guide/intro/devtools.html" class="sidebar-link current ">Using Devtools</a>
               </li>
             
           </ul>
         
       </li>
     
-      <li>
-        <h3 class="chapter-title"><a href="/guide/contributing.html" class="sidebar-link  ">How to Contribute</a></h3>
-        
-      </li>
-    
     
     
       <li>
-        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link">Old Syntax Doc</a></h3>
+        <h3 class="chapter-title"><a href="/v-0.10/guide/index.html" class="sidebar-link">Legacy</a></h3>
       </li>
     
   </ul>
@@ -479,7 +392,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-03-13T06:24:16.000Z">Updated time: 13/03/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:51.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="Devtools"><a href="#Devtools" class="headerlink" title="Devtools"></a>Devtools</h1><p>Weex devtools is a custom devtools for weex that implements <a href="https://developer.chrome.com/devtools/docs/debugger-protocol" target="_blank" rel="external">Chrome Debugging Protocol</a>, it is designed to help you quickly inspect your app and debug your JS bundle source in a chrome web page, both Android and IOS platform are supported.</p>
 <h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ npm install  -g  weex-toolkit</div></pre></td></tr></table></figure>
@@ -528,12 +441,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/guide/tools/devtools.html" data-lang="en">English</a>
+          <a href="/guide/intro/devtools.html">English</a>
         </li>
         <li>
-          <a href="/cn/guide/tools/devtools.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/guide/intro/devtools.html">中文</a>
         </li>
       </ul>
     </div>
@@ -543,7 +456,7 @@
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

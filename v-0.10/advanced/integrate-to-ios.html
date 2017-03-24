@@ -8,15 +8,15 @@
   <meta name="description" content="import Weex iOS to your projectYou will need to build Weex from source if you want to work on a new feature/bug fix, try out the latest features not released yet, or maintain your own fork with patche">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Integrate to iOS">
-<meta property="og:url" content="https://weex.apache.org/v-0.10/advanced/integrate-to-ios.html">
+<meta property="og:url" content="https://weex-project.io/v-0.10/advanced/integrate-to-ios.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="import Weex iOS to your projectYou will need to build Weex from source if you want to work on a new feature/bug fix, try out the latest features not released yet, or maintain your own fork with patche">
-<meta property="og:image" content="https://weex.apache.org//img4.tbcdn.cn/L1/461/1/4d9f4d6a8441b44e4816c7778627824fb72c58de">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:image" content="https://weex-project.io//img4.tbcdn.cn/L1/461/1/4d9f4d6a8441b44e4816c7778627824fb72c58de">
+<meta property="og:updated_time" content="2017-03-16T06:21:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Integrate to iOS">
 <meta name="twitter:description" content="import Weex iOS to your projectYou will need to build Weex from source if you want to work on a new feature/bug fix, try out the latest features not released yet, or maintain your own fork with patche">
-<meta name="twitter:image" content="https://weex.apache.org//img4.tbcdn.cn/L1/461/1/4d9f4d6a8441b44e4816c7778627824fb72c58de">
+<meta name="twitter:image" content="https://weex-project.io//img4.tbcdn.cn/L1/461/1/4d9f4d6a8441b44e4816c7778627824fb72c58de">
   
     <link rel="alternate" href="/atom.xml" title="Weex" type="application/atom+xml">
   
@@ -28,6 +28,7 @@
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="advanced" class="lang-en">
@@ -47,19 +48,19 @@
         <li><a href="/references">References</a></li>
         <li><a href="/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">Services &amp; Tools</a>
+            <a href="javascript:;">Download</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -68,34 +69,18 @@
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/v-0.10/advanced/integrate-to-ios.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/v-0.10/advanced/integrate-to-ios.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -108,7 +93,6 @@
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
@@ -116,7 +100,7 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -134,24 +118,25 @@
           </a>
         </li>
         <li>
-          <a href="/faq.html">
+          <a href="/faq">
             FAQ
           </a>
         </li>
         <li>
-            <p>Services &amp; Tools</p>
+            <p>Download</p>
             <ul class="subnav">
               <li>
                 <a href="/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
                 <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -159,7 +144,7 @@
             </ul>
         </li>
         <li>
-          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+          <a href="https://github.com/alibaba/weex" target="_blank">
             GitHub
           </a>
         </li>
@@ -168,7 +153,6 @@
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -283,7 +267,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:51.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="import-Weex-iOS-to-your-project"><a href="#import-Weex-iOS-to-your-project" class="headerlink" title="import Weex iOS to your project"></a>import Weex iOS to your project</h1><p>You will need to build Weex from source if you want to work on a new feature/bug fix, try out the latest features not released yet, or maintain your own fork with patches that cannot be merged to the core.</p>
 <p>Assuming you have installed <a href="https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html" target="_blank" rel="external">iOS Develop Environment</a> and <a href="https://guides.cocoapods.org/using/getting-started.html" target="_blank" rel="external">CocoaPods</a>. </p>
@@ -327,12 +311,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/v-0.10/advanced/integrate-to-ios.html" data-lang="en">English</a>
+          <a href="/v-0.10/advanced/integrate-to-ios.html">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/advanced/integrate-to-ios.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/v-0.10/advanced/integrate-to-ios.html">中文</a>
         </li>
       </ul>
     </div>
@@ -342,7 +326,7 @@
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

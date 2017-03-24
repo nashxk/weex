@@ -52,8 +52,7 @@
       list-style: none;
       padding-left: 20px; }
   #sidebar .summary {
-    display: block;
-    margin-top: 20px; }
+    display: block; }
   #sidebar .results-panel {
     width: 300px;
     left: -20px;

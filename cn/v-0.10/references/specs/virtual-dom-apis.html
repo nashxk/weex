@@ -9,11 +9,11 @@
 构造函数new Document(id: string, url: string?)成员createElement(tagName: string, props: Object?): Element创建一个特定类型 Element 对象。props">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Virtual DOM APIs">
-<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/references/specs/virtual-dom-apis.html">
+<meta property="og:url" content="https://weex-project.io/cn/v-0.10/references/specs/virtual-dom-apis.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="Virtual DOM APIsDocument每个实例有一个与实例 id 对应的 document。Document 具有组成一个节点树的多个节点。
 构造函数new Document(id: string, url: string?)成员createElement(tagName: string, props: Object?): Element创建一个特定类型 Element 对象。props">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-03-16T06:21:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Virtual DOM APIs">
 <meta name="twitter:description" content="Virtual DOM APIsDocument每个实例有一个与实例 id 对应的 document。Document 具有组成一个节点树的多个节点。
@@ -29,6 +29,7 @@
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="references" class="lang-cn">
@@ -48,19 +49,19 @@
         <li><a href="/cn/references">手册</a></li>
         <li><a href="/cn/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">工具和服务</a>
+            <a href="javascript:;">下载</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -69,34 +70,18 @@
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/v-0.10/references/specs/virtual-dom-apis.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/v-0.10/references/specs/virtual-dom-apis.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -109,13 +94,12 @@
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -575,7 +559,6 @@
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -1041,7 +1024,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:50.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="Virtual-DOM-APIs"><a href="#Virtual-DOM-APIs" class="headerlink" title="Virtual DOM APIs"></a>Virtual DOM APIs</h1><h2 id="Document"><a href="#Document" class="headerlink" title="Document"></a><code>Document</code></h2><p>每个实例有一个与实例 id 对应的 document。Document 具有组成一个节点树的多个节点。</p>
 <h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><h5 id="new-Document-id-string-url-string"><a href="#new-Document-id-string-url-string" class="headerlink" title="new Document(id: string, url: string?)"></a><code>new Document(id: string, url: string?)</code></h5><h3 id="成员"><a href="#成员" class="headerlink" title="成员"></a>成员</h3><h5 id="createElement-tagName-string-props-Object-Element"><a href="#createElement-tagName-string-props-Object-Element" class="headerlink" title="createElement(tagName: string, props: Object?): Element"></a><code>createElement(tagName: string, props: Object?): Element</code></h5><p>创建一个特定类型 <code>Element</code> 对象。<code>props</code> 对象可能包含一个 <code>attr</code> 对象和一个 <code>style</code> 对象。例如 <code>createBody(&#39;div&#39;, {style: {backgroundColor: &#39;#ffffff&#39;}})</code></p>
@@ -1078,12 +1061,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/v-0.10/references/specs/virtual-dom-apis.html" data-lang="en">English</a>
+          <a href="/v-0.10/references/specs/virtual-dom-apis.html">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/references/specs/virtual-dom-apis.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/v-0.10/references/specs/virtual-dom-apis.html">中文</a>
         </li>
       </ul>
     </div>
@@ -1093,7 +1076,7 @@
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

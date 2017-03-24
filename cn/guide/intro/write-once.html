@@ -16,7 +16,7 @@ Weex 开发同一份代码，可以在不同的端上分别执行，避免了多
 今天绝大多数的移动应用，虽然要同时出现">
 <meta property="og:type" content="website">
 <meta property="og:title" content="一次撰写，多端运行">
-<meta property="og:url" content="https://weex.apache.org/cn/guide/intro/write-once.html">
+<meta property="og:url" content="https://weex-project.io/cn/guide/intro/write-once.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="一次撰写，多端运行Weex 提供了多端一致的技术方案。
 
@@ -27,7 +27,7 @@ Weex 开发同一份代码，可以在不同的端上分别执行，避免了多
 我们这样设计基于以下几点设想：
 
 今天绝大多数的移动应用，虽然要同时出现">
-<meta property="og:updated_time" content="2017-03-13T06:24:16.000Z">
+<meta property="og:updated_time" content="2017-03-16T06:21:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一次撰写，多端运行">
 <meta name="twitter:description" content="一次撰写，多端运行Weex 提供了多端一致的技术方案。
@@ -50,6 +50,7 @@ Weex 开发同一份代码，可以在不同的端上分别执行，避免了多
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="guide" class="lang-cn">
@@ -69,19 +70,19 @@ Weex 开发同一份代码，可以在不同的端上分别执行，避免了多
         <li><a href="/cn/references">手册</a></li>
         <li><a href="/cn/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">工具和服务</a>
+            <a href="javascript:;">下载</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -90,34 +91,18 @@ Weex 开发同一份代码，可以在不同的端上分别执行，避免了多
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/guide/intro/write-once.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/guide/intro/write-once.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -130,13 +115,12 @@ Weex 开发同一份代码，可以在不同的端上分别执行，避免了多
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -210,37 +194,20 @@ Weex 开发同一份代码，可以在不同的端上分别执行，避免了多
         
       
     
-      
-      
-        
-      
-    
-      
-      
-        
-      
-    
-      
-      
-        
-      
-    
    
     
       <li>
         <h3 class="chapter-title"><a href="/cn/guide/index.html" class="sidebar-link  ">快速上手</a></h3>
         
-          <ul class="chapter">
-            
-              <li>
-                <a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a>
-              </li>
-            
-              <li>
-                <a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a>
-              </li>
-            
-          </ul>
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/dev-with-weexpack.html" class="sidebar-link  ">构建全新应用</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a></h3>
         
       </li>
     
@@ -273,36 +240,18 @@ Weex 开发同一份代码，可以在不同的端上分别执行，避免了多
                 <a href="/cn/guide/intro/page-architecture.html" class="sidebar-link  ">Weex 页面结构</a>
               </li>
             
-          </ul>
-        
-      </li>
-    
-      <li>
-        <h3 class="chapter-title"><a href="/cn/guide/tools/index.html" class="sidebar-link  ">周边工具</a></h3>
-        
-          <ul class="chapter">
-            
               <li>
-                <a href="/cn/guide/tools/devtools.html" class="sidebar-link  ">使用 Devtools</a>
-              </li>
-            
-              <li>
-                <a href="/cn/guide/tools/weexpack.html" class="sidebar-link  ">使用 Weexpack</a>
+                <a href="/cn/guide/intro/devtools.html" class="sidebar-link  ">使用 Devtools</a>
               </li>
             
           </ul>
         
       </li>
     
-      <li>
-        <h3 class="chapter-title"><a href="/cn/guide/contributing.html" class="sidebar-link  ">如何参与社区</a></h3>
-        
-      </li>
-    
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link">旧语法文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link">旧文档</a></h3>
       </li>
     
   </ul>
@@ -311,7 +260,6 @@ Weex 开发同一份代码，可以在不同的端上分别执行，避免了多
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -382,37 +330,20 @@ Weex 开发同一份代码，可以在不同的端上分别执行，避免了多
         
       
     
-      
-      
-        
-      
-    
-      
-      
-        
-      
-    
-      
-      
-        
-      
-    
    
     
       <li>
         <h3 class="chapter-title"><a href="/cn/guide/index.html" class="sidebar-link  ">快速上手</a></h3>
         
-          <ul class="chapter">
-            
-              <li>
-                <a href="/cn/guide/set-up-env.html" class="sidebar-link  ">搭建开发环境</a>
-              </li>
-            
-              <li>
-                <a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a>
-              </li>
-            
-          </ul>
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/dev-with-weexpack.html" class="sidebar-link  ">构建全新应用</a></h3>
+        
+      </li>
+    
+      <li>
+        <h3 class="chapter-title"><a href="/cn/guide/integrate-to-your-app.html" class="sidebar-link  ">集成 Weex 到已有应用</a></h3>
         
       </li>
     
@@ -445,36 +376,18 @@ Weex 开发同一份代码，可以在不同的端上分别执行，避免了多
                 <a href="/cn/guide/intro/page-architecture.html" class="sidebar-link  ">Weex 页面结构</a>
               </li>
             
-          </ul>
-        
-      </li>
-    
-      <li>
-        <h3 class="chapter-title"><a href="/cn/guide/tools/index.html" class="sidebar-link  ">周边工具</a></h3>
-        
-          <ul class="chapter">
-            
               <li>
-                <a href="/cn/guide/tools/devtools.html" class="sidebar-link  ">使用 Devtools</a>
-              </li>
-            
-              <li>
-                <a href="/cn/guide/tools/weexpack.html" class="sidebar-link  ">使用 Weexpack</a>
+                <a href="/cn/guide/intro/devtools.html" class="sidebar-link  ">使用 Devtools</a>
               </li>
             
           </ul>
         
       </li>
     
-      <li>
-        <h3 class="chapter-title"><a href="/cn/guide/contributing.html" class="sidebar-link  ">如何参与社区</a></h3>
-        
-      </li>
-    
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link">旧语法文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/guide/index.html" class="sidebar-link">旧文档</a></h3>
       </li>
     
   </ul>
@@ -492,7 +405,7 @@ Weex 开发同一份代码，可以在不同的端上分别执行，避免了多
       </h1>
     
   
-  <time class="article-date" datetime="2017-03-13T06:24:16.000Z">Updated time: 13/03/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:50.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="一次撰写，多端运行"><a href="#一次撰写，多端运行" class="headerlink" title="一次撰写，多端运行"></a>一次撰写，多端运行</h1><p>Weex 提供了多端一致的技术方案。</p>
 <ul>
@@ -528,12 +441,12 @@ Weex 开发同一份代码，可以在不同的端上分别执行，避免了多
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/guide/intro/write-once.html" data-lang="en">English</a>
+          <a href="/guide/intro/write-once.html">English</a>
         </li>
         <li>
-          <a href="/cn/guide/intro/write-once.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/guide/intro/write-once.html">中文</a>
         </li>
       </ul>
     </div>
@@ -543,7 +456,7 @@ Weex 开发同一份代码，可以在不同的端上分别执行，避免了多
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

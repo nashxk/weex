@@ -10,12 +10,12 @@
 APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指定在页面跳转时是否需要动画，以及操作完成后需">
 <meta property="og:type" content="website">
 <meta property="og:title" content="navigator">
-<meta property="og:url" content="https://weex.apache.org/cn/references/modules/navigator.html">
+<meta property="og:url" content="https://weex-project.io/cn/references/modules/navigator.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="navigator 导航控制v0.6.1+
 众所周知，在浏览器里，我们可以通过前进或者回退按钮来切换页面，iOS/Android 的 navigator 模块就是用来实现类似的效果的。除了前进、回退功能，该模块还允许我们指定在切换页面的时候是否应用动画效果。
 APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指定在页面跳转时是否需要动画，以及操作完成后需">
-<meta property="og:updated_time" content="2017-03-06T02:23:11.000Z">
+<meta property="og:updated_time" content="2017-03-16T06:21:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="navigator">
 <meta name="twitter:description" content="navigator 导航控制v0.6.1+
@@ -32,6 +32,7 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="references" class="lang-cn">
@@ -51,19 +52,19 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
         <li><a href="/cn/references">手册</a></li>
         <li><a href="/cn/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">工具和服务</a>
+            <a href="javascript:;">下载</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -72,34 +73,18 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/references/modules/navigator.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/references/modules/navigator.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -112,13 +97,12 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -136,16 +120,6 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
   <ul class="doc-summary">
     
     
-    
-      
-      
-        
-      
-    
-      
-      
-        
-      
     
       
       
@@ -489,11 +463,11 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
               </li>
             
               <li>
-                <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -566,10 +540,6 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
               </li>
             
               <li>
-                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
-              </li>
-            
-              <li>
                 <a href="/cn/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
               </li>
             
@@ -631,11 +601,6 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
-        
-      </li>
-    
-      <li>
         <h3 class="chapter-title"><a href="/cn/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
         
           <ul class="chapter">
@@ -686,13 +651,9 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
         
           <ul class="chapter">
-            
-              <li>
-                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
-              </li>
             
               <li>
                 <a href="/cn/references/migration/migration-from-weex.html" class="sidebar-link  ">如何将原有 Weex 项目改造成 Vue 版本</a>
@@ -706,10 +667,15 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
         
       </li>
     
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        
+      </li>
+    
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
       </li>
     
   </ul>
@@ -718,7 +684,6 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -1019,16 +984,6 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
         
       
     
-      
-      
-        
-      
-    
-      
-      
-        
-      
-    
    
     
       <li>
@@ -1086,11 +1041,11 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
               </li>
             
               <li>
-                <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
+                <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
               </li>
             
               <li>
-                <a href="/cn/references/components/slider.html" class="sidebar-link  ">&lt;slider&gt;</a>
+                <a href="/cn/references/components/indicator.html" class="sidebar-link  ">&lt;indicator&gt;</a>
               </li>
             
               <li>
@@ -1163,10 +1118,6 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
               </li>
             
               <li>
-                <a href="/cn/references/modules/websocket.html" class="sidebar-link  ">WebSocket</a>
-              </li>
-            
-              <li>
                 <a href="/cn/references/modules/clipboard.html" class="sidebar-link  ">clipboard</a>
               </li>
             
@@ -1228,11 +1179,6 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/js-service/index.html" class="sidebar-link  ">JS Service</a></h3>
-        
-      </li>
-    
-      <li>
         <h3 class="chapter-title"><a href="/cn/references/vue/index.html" class="sidebar-link  ">Vue</a></h3>
         
           <ul class="chapter">
@@ -1283,13 +1229,9 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
       </li>
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        <h3 class="chapter-title"><a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a></h3>
         
           <ul class="chapter">
-            
-              <li>
-                <a href="/cn/references/migration/index.html" class="sidebar-link  ">迁移</a>
-              </li>
             
               <li>
                 <a href="/cn/references/migration/migration-from-weex.html" class="sidebar-link  ">如何将原有 Weex 项目改造成 Vue 版本</a>
@@ -1303,10 +1245,15 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
         
       </li>
     
+      <li>
+        <h3 class="chapter-title"><a href="/cn/references/platform-difference.html" class="sidebar-link  ">Weex 和 Web 平台的差异</a></h3>
+        
+      </li>
+    
     
     
       <li>
-        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧语法文档</a></h3>
+        <h3 class="chapter-title"><a href="/cn/v-0.10/references/index.html" class="sidebar-link">旧文档</a></h3>
       </li>
     
   </ul>
@@ -1324,7 +1271,7 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
       </h1>
     
   
-  <time class="article-date" datetime="2017-03-06T02:23:11.000Z">Updated time: 06/03/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:50.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="navigator-导航控制"><a href="#navigator-导航控制" class="headerlink" title="navigator 导航控制"></a><code>navigator</code> 导航控制</h1><p><span class="weex-version">v0.6.1+</span></p>
 <p>众所周知，在浏览器里，我们可以通过前进或者回退按钮来切换页面，iOS/Android 的 <code>navigator</code> 模块就是用来实现类似的效果的。除了前进、回退功能，该模块还允许我们指定在切换页面的时候是否应用动画效果。</p>
@@ -1347,7 +1294,7 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
 </ul>
 <p><em>注意事项：<code>animated</code> 二级参数目前仅支持字符串的 <code>&quot;true&quot;</code> 和 <code>&quot;false&quot;</code>，传入布尔值类型会导致程序崩溃，未来版本会修复这个问题</em></p>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"button"</span> @<span class="attr">click</span>=<span class="string">"jump"</span>&gt;</span>Jump<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">var</span> navigator = weex.requireModule(<span class="string">'navigator'</span>)</div><div class="line">  <span class="keyword">var</span> modal = weex.requireModule(<span class="string">'modal'</span>)</div><div class="line"></div><div class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">      jump (event) &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'will jump'</span>)</div><div class="line">        navigator.push(&#123;</div><div class="line">          <span class="attr">url</span>: <span class="string">'http://dotwe.org/raw/dist/519962541fcf6acd911986357ad9c2ed.js'</span>,</div><div class="line">          <span class="attr">animated</span>: <span class="string">"true"</span></div><div class="line">        &#125;, event =&gt; &#123;</div><div class="line">          modal.toast(&#123; <span class="attr">message</span>: <span class="string">'callback: '</span> + event &#125;)</div><div class="line">        &#125;)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="css"></span></div><div class="line">  <span class="selector-class">.wrapper</span> &#123;</div><div class="line">    <span class="attribute">flex-direction</span>: column;</div><div class="line">    <span class="attribute">justify-content</span>: center;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.button</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">60px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">450px</span>;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">    <span class="attribute">margin-top</span>: <span class="number">30px</span>;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">150px</span>;</div><div class="line">    <span class="attribute">padding-top</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">padding-bottom</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">border-width</span>: <span class="number">2px</span>;</div><div class="line">    <span class="attribute">border-style</span>: solid;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#666666</span>;</div><div class="line">    <span class="attribute">border-color</span>: <span class="number">#DDDDDD</span>;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#F5F5F5</span></div><div class="line">  &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><a href="http://dotwe.org/vue/5c670b07735ee6d08de5c8eb93f91f11" target="_blank" rel="external">try it</a></p>
+<p><a href="../../../examples/navigator.html">try it</a></p>
 
   </div>
   
@@ -1364,12 +1311,12 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/references/modules/navigator.html" data-lang="en">English</a>
+          <a href="/references/modules/navigator.html">English</a>
         </li>
         <li>
-          <a href="/cn/references/modules/navigator.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/references/modules/navigator.html">中文</a>
         </li>
       </ul>
     </div>
@@ -1379,7 +1326,7 @@ APIpush(options, callback)把一个weex页面URL压入导航堆栈中，可指�
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

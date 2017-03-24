@@ -8,10 +8,10 @@
   <meta name="description" content="&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;slider class=&quot;slider&quot; interval=&quot;4500&quot; @change=&quot;onchange&quot;&amp;gt;      &amp;lt;div class=&quot;frame&quot; v-for=&quot;img in imageList&quot;&amp;gt;        &amp;lt;image class=&quot;image&quot; resize=&quot;cover&quot;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="indicator">
-<meta property="og:url" content="https://weex.apache.org/examples/indicator.html">
+<meta property="og:url" content="https://weex-project.io/examples/indicator.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;slider class=&quot;slider&quot; interval=&quot;4500&quot; @change=&quot;onchange&quot;&amp;gt;      &amp;lt;div class=&quot;frame&quot; v-for=&quot;img in imageList&quot;&amp;gt;        &amp;lt;image class=&quot;image&quot; resize=&quot;cover&quot;">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-03-16T06:21:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="indicator">
 <meta name="twitter:description" content="&amp;lt;template&amp;gt;  &amp;lt;div&amp;gt;    &amp;lt;slider class=&quot;slider&quot; interval=&quot;4500&quot; @change=&quot;onchange&quot;&amp;gt;      &amp;lt;div class=&quot;frame&quot; v-for=&quot;img in imageList&quot;&amp;gt;        &amp;lt;image class=&quot;image&quot; resize=&quot;cover&quot;">
@@ -26,6 +26,7 @@
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="example" class="lang-en">
@@ -45,19 +46,19 @@
         <li><a href="/references">References</a></li>
         <li><a href="/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">Services &amp; Tools</a>
+            <a href="javascript:;">Download</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -66,34 +67,18 @@
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/examples/indicator.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/examples/indicator.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -106,7 +91,6 @@
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
@@ -114,7 +98,7 @@
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -132,24 +116,25 @@
           </a>
         </li>
         <li>
-          <a href="/faq.html">
+          <a href="/faq">
             FAQ
           </a>
         </li>
         <li>
-            <p>Services &amp; Tools</p>
+            <p>Download</p>
             <ul class="subnav">
               <li>
                 <a href="/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
                 <a href="http://dotwe.org" target="_blank">Snippets</a>
+              </li>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -157,7 +142,7 @@
             </ul>
         </li>
         <li>
-          <a href="https://github.com/apache/incubator-weex/" target="_blank">
+          <a href="https://github.com/alibaba/weex" target="_blank">
             GitHub
           </a>
         </li>
@@ -166,7 +151,6 @@
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="example-wrapper clearfix">
   <div class="horizontal">
     <h2>indicator</h2>
@@ -219,12 +203,12 @@ var qrcode = new QRCode(document.getElementById("qrcode-img"), {
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/examples/indicator.html" data-lang="en">English</a>
+          <a href="/examples/indicator.html">English</a>
         </li>
         <li>
-          <a href="/cn/examples/indicator.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/examples/indicator.html">中文</a>
         </li>
       </ul>
     </div>
@@ -234,7 +218,7 @@ var qrcode = new QRCode(document.getElementById("qrcode-img"), {
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">

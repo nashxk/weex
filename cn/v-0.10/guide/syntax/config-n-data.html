@@ -11,13 +11,13 @@
 &amp;lt;!-- definition of sub components --&amp;gt;&amp;lt;element name=&quot;sub-">
 <meta property="og:type" content="website">
 <meta property="og:title" content="页面配置和页面数据">
-<meta property="og:url" content="https://weex.apache.org/cn/v-0.10/guide/syntax/config-n-data.html">
+<meta property="og:url" content="https://weex-project.io/cn/v-0.10/guide/syntax/config-n-data.html">
 <meta property="og:site_name" content="Weex">
 <meta property="og:description" content="页面配置和页面数据在 Weex 中，你可以通过一些特殊的 &amp;lt;script&amp;gt; 进行页面整体配置。
 注意事项：这些配置会代表页面整体，所以写在自定义子组件中是无效的，只有写在顶级 ViewModel 的 &amp;lt;sctipt&amp;gt; 中才会生效。
 先举个例子：
 &amp;lt;!-- definition of sub components --&amp;gt;&amp;lt;element name=&quot;sub-">
-<meta property="og:updated_time" content="2017-02-28T06:15:44.000Z">
+<meta property="og:updated_time" content="2017-03-16T06:21:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="页面配置和页面数据">
 <meta name="twitter:description" content="页面配置和页面数据在 Weex 中，你可以通过一些特殊的 &amp;lt;script&amp;gt; 进行页面整体配置。
@@ -35,6 +35,7 @@
   
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/swiper.min.css">
+  <meta http-equiv="refresh" content="0; url=https://weex.apache.org">
 </head>
 
 <body id="guide" class="lang-cn">
@@ -54,19 +55,19 @@
         <li><a href="/cn/references">手册</a></li>
         <li><a href="/cn/faq.html">FAQ</a></li>
         <li class="dropdown">
-            <a href="javascript:;">工具和服务</a>
+            <a href="javascript:;">下载</a>
             <ul class="dropdown-menu subnav">
               <li>
                 <a href="/cn/playground.html">Playground</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/devtools.html">Devtools</a>
+                <a href="https://www.npmjs.com/package/weex-devtool" target="_blank">Devtool</a>
               </li>
               <li>
-                <a href="/cn/guide/tools/weexpack.html">Weexpack</a>
+                <a href="https://www.npmjs.com/package/weexpack" target="_blank">Weexpack</a>
               </li>
               <li>
-                <a href="http://dotwe.org" target="_blank">Code Snippets</a>
+                <a href="http://dotwe.org" target="_blank">Snippets</a>
               </li>
               <li>
                 <a href="https://market.weex-project.io/" target="_blank">Market</a>
@@ -75,34 +76,18 @@
         </li>
       </ul>
       <ul class="info">
-        <li><a href="https://github.com/apache/incubator-weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
+        <li><a href="https://github.com/alibaba/weex/" target="_blank"><span class="btn-github iconfont icon-github"></span></a></li>
       </ul>
       <ul class="tools">
         <li>
           <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-header" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-header" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
   </div>
 </div>
-        </li>
-        <li>
-          <div class="dropdown select-lang">
-            <a href="javascript:;" class="dropdown-toggle">
-              Language
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu pick-lang">
-              <li>
-                <a href="/v-0.10/guide/syntax/config-n-data.html" data-lang="en">English</a>
-              </li>
-              <li>
-                <a href="/cn/v-0.10/guide/syntax/config-n-data.html" data-lang="zh-cn">中文</a>
-              </li>
-            </ul>
-          </div>
         </li>
         <!--<li></li>-->
       </ul>
@@ -115,13 +100,12 @@
     <a class="btn-menu"><span class="iconfont icon-nav"></span></a>
   </div>
 </header>
-
   <div id="sidebar" class="">
   <div class="sidebar-menu">
     
       <div class="search">
   <form id="search-form" class="search-form"> <!-- 搜索框相关 -->
-    <input type="text" id="search-input-sidebar" name="q" results="0" class="form-control search-input" autocomplete="off" autocorrect="off"/>
+    <input type="text" id="search-input-sidebar" name="q" results="0" placeholder="search..." class="form-control search-input" autocomplete="off" autocorrect="off"/>
     <span class="iconfont icon-search"></span>
   </form>
   <div class="results-panel">
@@ -306,7 +290,6 @@
     <a class="btn-close-sidebar iconfont  icon-close"></a>
   </div>
 </div>
-
   <div class="article-wrapper page-layout">
   <div class="doc-nav">
     
@@ -497,7 +480,7 @@
       </h1>
     
   
-  <time class="article-date" datetime="2017-02-28T06:15:44.000Z">Updated time: 28/02/2017</time>
+  <time class="article-date" datetime="2017-03-16T06:21:50.000Z">Updated time: 16/03/2017</time>
 </header>
     <h1 id="页面配置和页面数据"><a href="#页面配置和页面数据" class="headerlink" title="页面配置和页面数据"></a>页面配置和页面数据</h1><p>在 Weex 中，你可以通过一些特殊的 <code>&lt;script&gt;</code> 进行页面整体配置。</p>
 <p><em>注意事项：这些配置会代表页面整体，所以写在自定义子组件中是无效的，只有写在顶级 ViewModel 的 <code>&lt;sctipt&gt;</code> 中才会生效。</em></p>
@@ -529,12 +512,12 @@
         Language
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu pick-lang">
+      <ul class="dropdown-menu">
         <li>
-          <a href="/v-0.10/guide/syntax/config-n-data.html" data-lang="en">English</a>
+          <a href="/v-0.10/guide/syntax/config-n-data.html">English</a>
         </li>
         <li>
-          <a href="/cn/v-0.10/guide/syntax/config-n-data.html" data-lang="zh-cn">中文</a>
+          <a href="/cn/v-0.10/guide/syntax/config-n-data.html">中文</a>
         </li>
       </ul>
     </div>
@@ -544,7 +527,7 @@
   </div>
   <div class="row clearfix">
     <div class="cell"><span>Copyright(c) 2016 </span><a href="https://www.alibaba.com">Alibaba</a></div>
-    <div class="cell"><span>Designed by </span><a href="">阿里云UED AX</a></div>
+    <div class="cell"><span>GroupMade by </span><a href="">阿里云UED AX</a></div>
   </div>
 </footer>
   <div style="display: none;">
